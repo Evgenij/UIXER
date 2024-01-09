@@ -1,0 +1,44 @@
+@import "../../vars/dark";
+
+.dark-theme {
+    .project-page {
+        &__back {
+            color: $gray;
+            svg {
+                path {
+                    stroke: $gray;
+                }
+            }
+
+            &:hover {
+                svg {
+                    path {
+                        stroke: $primary;
+                    }
+                }
+            }
+        }
+
+        &__data {
+            border-left: 1px solid $lines;
+        }
+
+        .tool {
+            border-color: $lines;
+        }
+
+        .project-data {
+            .task {
+                position: relative;
+                &:before {
+                    background: $text-color;
+                }
+            }
+        }
+
+        .tags__line {
+            background: $gray;
+        }
+
+    }
+}

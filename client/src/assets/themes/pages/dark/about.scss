@@ -1,0 +1,50 @@
+@import "../../vars/dark";
+
+.dark-theme {
+    .page-about {
+
+        .personal-data {
+            border-right: 1px solid $lines;
+        }
+
+        .personal-data__langs {
+            .divide {
+                background-color: $lines;
+            }
+        }
+
+        .button {
+            border: 1px solid $primary;
+
+            svg path {
+                stroke: $primary;
+            }
+
+            &.primary {
+                &:hover {
+                    background-color: transparentize($primary, 0.8);
+                }
+            }
+
+            &:hover {
+                color: $primary;
+                svg path {
+                    stroke: $primary;
+                }
+            }
+        }
+
+        .download-buttons {
+            border: 1px solid white;
+
+            .lang__button {
+                border-left: 1px solid rgba(0, 0, 0, 0.1);
+
+                &:hover {
+                    background-color: $primary;
+                }
+            }
+        }
+    }
+}
+

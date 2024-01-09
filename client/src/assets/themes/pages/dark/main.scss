@@ -1,0 +1,21 @@
+@import "../../vars/dark";
+
+.dark-theme {
+    .page-main {
+        .pages-links {
+            z-index: 1000;
+            border-bottom: 1px solid $lines;
+
+            & .main-link {
+
+                & .dot {
+                    background: $text-color;
+                }
+
+                &:after{
+                    background: $lines;
+                }
+            }
+        }
+    }
+}

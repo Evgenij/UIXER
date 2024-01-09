@@ -1,0 +1,25 @@
+@import "../../vars/light";
+
+.light-theme{
+    .page-projects {
+        .project {
+
+            & * {
+                color: $background;
+            }
+
+            &__number {
+                color: $background;
+            }
+
+            &__link {
+                svg {
+                    path {
+                        stroke: $background;
+                    }
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,66 @@
+@import "../../vars/dark";
+
+.dark-theme {
+    .page-skills {
+        .tabs {
+            border-bottom: 1px solid $lines;
+        }
+
+        li {
+            &.is-active {
+                &:before {
+                    background: $primary;
+                }
+            }
+        }
+
+        .numder {
+            &-active {
+                color: $primary;
+            }
+        }
+
+        span.numders__line {
+            background: $back-menu;
+        }
+
+        .skills {
+            border-left: 1px solid $lines;
+
+            &__list {
+                & .skill {
+                    border: 1px solid $lines;
+
+                    &:hover {
+                        border: 1px solid $primary;
+                        color: $lines;
+                        background: $primary;
+                    }
+                }
+            }
+        }
+
+        .nav {
+            .arrows {
+                svg{
+                    path {
+                        stroke: $text-color;
+                    }
+
+                    &:hover {
+                        path {
+                            stroke: $primary;
+                        }
+                    }
+                }
+            }
+        }
+
+        .slider {
+            &__footer {
+                border-top: 1px solid $lines;
+            }
+        }
+    }
+}
+

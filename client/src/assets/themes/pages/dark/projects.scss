@@ -1,0 +1,24 @@
+@import "../../vars/dark";
+
+.dark-theme {
+    .page-projects {
+        .project {
+
+            & * {
+                color: $background;
+            }
+
+            &__number {
+                color: $background;
+            }
+
+            &__link {
+                svg {
+                    path {
+                        stroke: $background;
+                    }
+                }
+            }
+        }
+    }
+}
