@@ -7,8 +7,8 @@
         UIXER
       </div>
     </router-link>
-    <h1 class="grow name flex items-center justify-center font-regular">
-      Eugene Ermolenko
+    <h1 class="grow name flex items-center justify-center font-normal text-xl">
+      Yevhenii Yermolenko
     </h1>
     <div class="flex-none flex items-center justify-center">
       <label
@@ -97,8 +97,9 @@
         </div>
         <span
           class="block flex items-center justify-center uppercase text-lg text-black"
-          >menu</span
         >
+          menu
+        </span>
       </label>
     </div>
   </header>
@@ -108,11 +109,11 @@
 const menuLinks = [
   {
     name: "about me",
-    href: "about1",
+    href: "about",
   },
   {
     name: "skills",
-    href: "skills1",
+    href: "skills",
   },
   {
     name: "projects",
