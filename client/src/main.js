@@ -5,10 +5,7 @@ import PrimeVue from 'primevue/config';
 import '@/assets/app.scss'
 import 'primevue/resources/themes/lara-dark-amber/theme.css'
 
-import mixinTest from "@/mixins/mixinTest.js";
-
-import $ from 'jquery';
-window.$ = window.jQuery = $;
+import changeTheme from "@/mixins/changeThemeMixin.js";
 
 //PrimeVue ui components
 import Button from "primevue/button"
@@ -20,7 +17,6 @@ const app = createApp(App)
 
 app.use(router)
 app.use(PrimeVue);
-app.mixin(mixinTest)
 // registration components
 app.component('Button', Button)
 app.component('UButton', UButton)
