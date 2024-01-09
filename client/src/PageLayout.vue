@@ -1,16 +1,16 @@
 <template>
   <div class="page flex flex-col justify-between grow">
-    <PageHeader />
+    <PageHeader></PageHeader>
     <main class="page-data">
       <RouterView />
     </main>
-    <PageFooter />
+    <PageFooter></PageFooter>
   </div>
 </template>
 
 <script setup>
-import PageHeader from "@/components/page_elements/PageHeader.vue";
-import PageFooter from "./components/page_elements/PageFooter.vue";
+import PageFooter from "./components/elements/PageFooter.vue";
+import PageHeader from "./components/elements/PageHeader.vue";
 </script>
 
 <style scoped>
