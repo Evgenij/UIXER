@@ -112,7 +112,7 @@ const menuLinks = [
   },
   {
     name: "skills",
-    href: "skills",
+    href: "skills1",
   },
   {
     name: "projects",
