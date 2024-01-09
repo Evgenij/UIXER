@@ -15,6 +15,22 @@ const router = createRouter({
           path: '/main',
           name: 'main',
           component: Main,
+        },{
+          path: '/about',
+          name: 'about',
+          component: Main,
+        },{
+          path: '/skills',
+          name: 'skills',
+          component: Main,
+        },{
+          path: '/projects',
+          name: 'projects',
+          component: Main,
+        },{
+          path: '/contact',
+          name: 'contact',
+          component: Main,
         },
       ]
     }

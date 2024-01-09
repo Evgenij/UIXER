@@ -2,31 +2,32 @@
   <section class="content page-main h-full">
     <PageSide side="left"></PageSide>
     <PageSide side="right">
-      <!-- <toggle-theme></toggle-theme> -->
+      <ThemeToggle/>
     </PageSide>
     <div class="pages-links top flex justify-between">
-      <!-- <main-link href="about">About me</main-link>
-      <main-link href="skills">Skills</main-link> -->
+      <MainLink href="about">About me</MainLink>
+      <MainLink href="skills">Skills</MainLink>
     </div>
     <div class="wrapper-photo w-full flex items-center justify-center h-full">
-      <!-- <img
+      <img
         id="main-photo"
-        src="img/main-dark.png"
-        alt="main-dark"
+        src="@/images/main-dark.png"
+         alt="main-dark"
         class="main-photo"
-      /> -->
-      <img id="main-photo" src="" alt="main-dark" class="main-photo" />
+      />
       <h2 class="font-thin nick">UIXER</h2>
-    </div>
-    <div class="pages-links bottom flex justify-between">
-      <!-- <main-link href="projects">Projects</main-link>
-      <main-link href="contact">Contact</main-link> -->
+      <div class="pages-links bottom flex justify-between">
+        <MainLink href="projects">Projects</MainLink>
+        <MainLink href="contact">Contact</MainLink>
+      </div>
     </div>
   </section>
 </template>
 
 <script setup>
 import PageSide from "@/components/elements/PageSide.vue";
+import MainLink from "@/components/MainLink.vue";
+import ThemeToggle from "@/components/ThemeToggle.vue";
 </script>
 
 <style lang="scss" scoped>
