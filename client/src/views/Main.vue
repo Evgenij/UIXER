@@ -28,31 +28,39 @@
 import PageSide from "@/components/elements/PageSide.vue";
 import MainLink from "@/components/MainLink.vue";
 import ThemeToggle from "@/components/ThemeToggle.vue";
+import changeMainPhoto from '@/mixins/mainPhotoMixin.js'
+import setActiveThemeToggle from '@/mixins/themeToggleMixin.js'
+import {onMounted} from "vue";
+
+onMounted(()=>{
+  setActiveThemeToggle()
+  changeMainPhoto()
+})
 </script>
 
 <style lang="scss" scoped>
-img.main-photo {
-  position: absolute;
-  top: -150px;
-  //z-index: 1500;
-}
-
-.pages-links {
-  position: absolute;
-  left: 0;
-  padding: 0 16%;
-  width: 100%;
-
-  &.top {
-    top: 220px;
+  img.main-photo {
+    position: absolute;
+    top: -150px;
+    //z-index: 1500;
   }
 
-  &.bottom {
-    bottom: 220px;
-  }
-}
+  .pages-links {
+    position: absolute;
+    left: 0;
+    padding: 0 16%;
+    width: 100%;
 
-.nick {
-  font-size: 450px;
-}
+    &.top {
+      top: 220px;
+    }
+
+    &.bottom {
+      bottom: 220px;
+    }
+  }
+
+  .nick {
+    font-size: 450px;
+  }
 </style>

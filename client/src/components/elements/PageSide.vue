@@ -7,7 +7,7 @@
       >
         <router-link
           :to="{ name: link.href }"
-          :class="[link.href === getRouteName ? 'font-semibold' : 'opacity-50']"
+          :class="[link.href === $route.name ? 'font-semibold' : 'opacity-50']"
         >
           {{ link.name }}
         </router-link>
@@ -18,7 +18,6 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
 
 defineProps({
   side: {
@@ -31,9 +30,12 @@ defineProps({
   },
 });
 
-const getRouteName = computed(() => {
-  return this.$route.name;
-});
+
+
+// const getRouteName = computed(() => {
+//   //console.log(this.$route)
+//   return this.$router.name;
+// });
 </script>
 
 <style lang="scss" scoped>
