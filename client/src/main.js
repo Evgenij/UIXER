@@ -4,21 +4,27 @@ import router from './router/router.js'
 import PrimeVue from 'primevue/config';
 import '@/assets/app.scss'
 import 'primevue/resources/themes/lara-dark-amber/theme.css'
-
-import changeTheme from "@/mixins/changeThemeMixin.js";
+import 'boxicons'
 
 //PrimeVue ui components
 import Button from "primevue/button"
+import Accordion from 'primevue/accordion';
+import AccordionTab from 'primevue/accordiontab';
 
 //my ui components
 import UButton from "@/components/ui/Button.vue";
 
-const app = createApp(App)
+const app = createApp(App, router)
 
 app.use(router)
 app.use(PrimeVue);
-// registration components
+
+// registration components - PrimeVue
 app.component('Button', Button)
+app.component('Accordion', Accordion)
+app.component('AccordionTab', AccordionTab)
+
+// registration components - Customs components
 app.component('UButton', UButton)
 
 app.mount('#app')

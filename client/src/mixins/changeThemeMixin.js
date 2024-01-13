@@ -1,15 +1,7 @@
 import $ from 'jquery';
 window.$ = window.jQuery = $;
-import changeMainPhoto from "@/mixins/mainPhotoMixin.js";
+import setActiveThemeToggle from '@/mixins/themeToggleMixin.js'
 
-const setActiveThemeToggle = () => {
-	if($('#app').attr('class') === 'light-theme') {
-		$('.toggle-theme__light').prop('checked', true)
-	} else {
-		$('.toggle-theme__dark').prop('checked', true)
-	}
-	changeMainPhoto()
-}
 export default () => {
 		console.log('change theme')
 
@@ -21,7 +13,7 @@ export default () => {
 			document.cookie = "theme=light";
 		}
 
+
 		setActiveThemeToggle()
-		// changeMainPhoto();
 }
 

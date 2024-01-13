@@ -27,13 +27,13 @@
         >
           <h5 class="uppercase font-light text-2xl">menu</h5>
           <div class="links flex w-full flex-col" @mouseup="toggleMenu">
-            <!--            <router-link v-for="(link, index) in menuLinks" :key="index"-->
-            <!--                         :to="{name: link.href}"-->
-            <!--                         class="block-menu__item font-light py-4 uppercase text-center">-->
-            <!--              {{link.name}}-->
-            <!--            </router-link>-->
+            <RouterLink v-for="(link, index) in menuLinks" :key="index"
+                        :to="{name: link.href}"
+                        class="block-menu__item font-light py-4 uppercase text-center">
+              {{link.name}}
+            </RouterLink>
           </div>
-          <!--          <toggle-theme direction="hor"></toggle-theme>-->
+          <ThemeToggle direction="hor"/>
           <div class="links__socials flex space-x-3">
             <a href="" class="social-link flex items-center px-6">
               <svg
@@ -106,6 +106,8 @@
 </template>
 
 <script setup>
+import ThemeToggle from "@/components/ThemeToggle.vue";
+
 const menuLinks = [
   {
     name: "about me",
@@ -126,9 +128,10 @@ const menuLinks = [
 ];
 
 const toggleMenu = () => {
-  setTimeout(() => {
-    $("#menu").prop("checked", false);
-  }, 500);
+  $("#menu").prop("checked", false);
+  // setTimeout(() => {
+  //   $("#menu").prop("checked", false);
+  // }, 1000);
 };
 </script>
 
