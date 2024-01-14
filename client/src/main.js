@@ -14,9 +14,7 @@ import AccordionTab from 'primevue/accordiontab';
 //my ui components
 import UButton from "@/components/ui/Button.vue";
 
-const app = createApp(App, router)
-
-app.use(router)
+const app = createApp(App).use(router)
 app.use(PrimeVue);
 
 // registration components - PrimeVue
