@@ -3,6 +3,8 @@ import PageLayout from "@/PageLayout.vue";
 import Main from "@/views/Main.vue";
 import About from "@/views/About.vue";
 import Skills from "@/views/Skills.vue";
+import Projects from "@/views/Projects.vue";
+import Project from "@/views/Project.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,7 +30,14 @@ const router = createRouter({
         },{
           path: '/projects',
           name: 'projects',
-          component: Main,
+          component: Projects,
+          children: [
+            {
+              path: '/project/:id',
+              name: 'project',
+              component: Project,
+            },
+          ]
         },{
           path: '/contact',
           name: 'contact',

@@ -5,6 +5,7 @@ import PrimeVue from 'primevue/config';
 import '@/assets/app.scss'
 import 'primevue/resources/themes/lara-dark-amber/theme.css'
 import 'boxicons'
+import "vue3-carousel-3d/dist/index.css"
 
 //PrimeVue ui components
 import Button from "primevue/button"
