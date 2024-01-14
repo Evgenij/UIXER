@@ -43,7 +43,7 @@
         &.required {
             .cell-field__label {
                 &:before {
-                    color: $primary;
+                    color: $red;
                 }
             }
         }
