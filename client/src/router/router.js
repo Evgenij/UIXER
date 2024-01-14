@@ -31,14 +31,13 @@ const router = createRouter({
           path: '/projects',
           name: 'projects',
           component: Projects,
-          children: [
-            {
-              path: '/project/:id',
-              name: 'project',
-              component: Project,
-            },
-          ]
-        },{
+        },
+        {
+          path: '/project/:id',
+          name: 'project',
+          component: Project,
+        },
+        {
           path: '/contact',
           name: 'contact',
           component: Main,
