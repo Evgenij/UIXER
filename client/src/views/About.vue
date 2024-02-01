@@ -261,6 +261,7 @@
   .main-data {
     padding-left: 5%;
     padding-right: 5%;
+	  margin-right: 16px;
   }
 
   .personal-data__langs {
