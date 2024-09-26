@@ -19,25 +19,33 @@
         }
     }
 
-    .type-message {
-
-        input[type='radio'] + label {
-            border: 1px solid $lines;
-
-            &:before {
-                border: 1px solid rgba($gray, 0.3);
-            }
-        }
-
-        input[type='radio']:checked + label {
-
-            border-color: $primary;
-
-            &:after {
-                background: $primary;
-            }
-        }
-    }
+    //.type-message {
+    //
+    //    input[type='radio'] + label {
+    //        border: 1px solid $lines;
+    //
+    //        &:hover {
+    //            border-color: $gray;
+    //
+    //            &:before {
+    //                border-color: $gray;
+    //            }
+    //        }
+    //
+    //        &:before {
+    //            border: 1px solid rgba($gray, 0.3);
+    //        }
+    //    }
+    //
+    //    input[type='radio']:checked + label {
+    //
+    //        border-color: $primary;
+    //
+    //        &:after {
+    //            background: $primary;
+    //        }
+    //    }
+    //}
 
     .cell-field {
         &.required {
@@ -48,18 +56,18 @@
             }
         }
 
-        &__input {
-            border: 1px solid $lines;
-            background: $background;
-
-            &:hover {
-                border-color: $primary;
-            }
-
-            &:focus {
-                border-color: $primary;
-            }
-        }
+        //&__input {
+        //    border: 1px solid $lines;
+        //    background: $background;
+        //
+        //    &:hover {
+        //        border-color: $primary;
+        //    }
+        //
+        //    &:focus {
+        //        border-color: $primary;
+        //    }
+        //}
     }
 
     button.button {

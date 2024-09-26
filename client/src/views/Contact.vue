@@ -14,7 +14,7 @@
       </h4>
       <div class="links__content">
         <div class="links__email flex space-x-3">
-          <p ref="email" class="cursor-pointer underline underline-offset-4" @click="copyEmail">evgeniu.ermolenko@gmail.com</p>
+          <p ref="emailCopy" class="cursor-pointer underline underline-offset-4" @click="copyEmail">evgeniu.ermolenko@gmail.com</p>
           <span v-if="copySuccess" class="text-color-green">copied!</span>
         </div>
         <div class="links__socials flex space-x-3 mt-12">
@@ -41,30 +41,30 @@
         </div>
       </div>
     </div>
-    <div class="page-contact__form flex flex-col justify-center basis-1/2">
+    <div class="page-contact__form flex flex-col justify-center basis-1/2 overflow-y-scroll ">
       <div class="types-message mb-16 flex space-x-4">
-        <div class="type-message">
-          <input type="radio" name="type-mess" id="offer" checked>
-          <label for="offer" class="block cursor-pointer px-8 py-5 pl-16">Send offer</label>
-        </div>
-        <div class="type-message cursor-pointer">
-          <input type="radio" name="type-mess" id="hello">
-          <label for="hello" class="block cursor-pointer px-8 py-5 pl-16">Just say "Hello"</label>
-        </div>
+	      <RadioButton type="radio" name="type-mess" id="hello" checked v-model="data.typeMess">
+		      Just say "Hello"
+	      </RadioButton>
+	      <RadioButton type="radio" name="type-mess" id="offer" v-model="data.typeMess">
+		      Send offer
+	      </RadioButton>
       </div>
-      <form action="" @submit.prevent="" class="form-message pr-16 w-full flex flex-col space-y-8">
+      <form action="" @submit.prevent="sendEmail" class="form-message pr-16 w-full flex flex-col space-y-8">
         <div class="row flex space-x-6">
           <div class="cell-field required w-full">
             <label class="cell-field__label block font-light text-2xl mb-2 max-w-fit relative" for="name">
               Name
             </label>
-            <input type="text" name="name" id="name" class="cell-field__input" placeholder="enter the name">
+	          <Input name="name" type="text" id="name" :invalid="v$.name.$error" :errors="v$.name.$errors"
+	                 placeholder="enter the name" v-model="v$.name.$model"/>
           </div>
           <div class="cell-field required w-full">
             <label class="cell-field__label block font-light text-2xl mb-2 max-w-fit relative" for="email">
               Email
             </label>
-            <input type="email" name="name" id="email" class="cell-field__input" placeholder="enter the email">
+	          <Input name="email" type="email" id="email" :invalid="v$.email.$error && v$.email.$dirty" :errors="v$.email.$errors"
+	                 placeholder="enter the email" v-model="v$.email.$model"/>
           </div>
         </div>
         <div class="row flex space-x-6">
@@ -72,13 +72,17 @@
             <label class="cell-field__label block font-light text-2xl mb-2 max-w-fit relative" for="company">
               Company
             </label>
-            <input type="text" name="name" id="company" class="cell-field__input" placeholder="enter the company">
+	          <Input name="company" type="text" id="company"
+	                 placeholder="enter the company" v-model="data.company"/>
           </div>
           <div class="cell-field w-full">
             <label class="cell-field__label block font-light text-2xl mb-2 max-w-fit relative" for="website">
               Website
             </label>
-            <input type="text" name="name" id="website" class="cell-field__input" placeholder="enter the website">
+	          <Input name="website" type="url" id="website"
+	                 placeholder="enter the website" v-model="data.website"/>
+<!--            <input type="url" name="website" id="website" class="cell-field__input" v-model="data.website"-->
+<!--                   placeholder="enter the website">-->
           </div>
         </div>
         <div class="row">
@@ -86,12 +90,13 @@
             <label class="cell-field__label block font-light text-2xl mb-2 max-w-fit relative" for="message">
               Message
             </label>
-            <textarea type="text" name="name" id="message" class="cell-field__input"
-                      placeholder="enter the text message"/>
+	          <Input is-textarea name="message" placeholder="enter the text message" type="text" id="message"
+	                 :invalid="v$.message.$error" :errors="v$.message.$errors"
+	                 v-model="v$.message.$model"/>
           </div>
         </div>
         <div class="row">
-          <button type="submit" class="min-w-fit button py-2 px-4 flex items-center space-x-2">
+          <button type="submit" class="min-w-fit button py-3 px-5 flex items-center space-x-2">
             Send
             <svg class="ml-2" width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M13.5 6.49707L17.5 10.4991L13.5 14.5001M4.5 10.5001H17.5" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
@@ -107,7 +112,11 @@
 
   import PageSide from "@/components/elements/PageSide.vue";
   import ThemeToggle from "@/components/ThemeToggle.vue";
-  import {onMounted, ref} from "vue";
+  import {onMounted, reactive, ref} from "vue";
+  import { required, email } from '@vuelidate/validators'
+  import { useVuelidate } from '@vuelidate/core'
+  import Input from "@/components/ui/Input.vue";
+	import RadioButton from "@/components/ui/RadioButton.vue";
 
   const links = [
     {
@@ -123,13 +132,31 @@
       href: 'skills'
     },
   ]
+
+  const data = reactive({
+	  name: '',
+	  email: '',
+	  company: '',
+	  website: '',
+	  message: '',
+	  typeMess: ''
+  })
+
+  const validationRules = {
+	  name: { required },
+	  email: { required, email },
+	  message: { required }
+  }
+
+  const v$ = useVuelidate(validationRules, data)
+
   const copySuccess = ref(false)
-  const email = ref(null)
+  const emailCopy = ref(null)
 
   const copyEmail = () => {
-    let dataEmail = email.value.textContent.trim()
+    let dataEmail = emailCopy.value.textContent.trim()
 
-    if (email) {
+    if (emailCopy) {
       navigator.clipboard.writeText(dataEmail)
         .then(() => {
           copySuccess.value = true;
@@ -144,8 +171,13 @@
     }
   }
 
+	const sendEmail = () => {
+		v$.value.$validate()
+		console.log(v$.value.email)
+	}
+
   onMounted(()=>{
-    email.value
+	  emailCopy.value
   })
 </script>
 
@@ -165,40 +197,7 @@
     height: 50px;
   }
 
-  .type-message {
-    position: relative;
-    width: fit-content;
 
-    input[type='radio'] {
-      display: none;
-    }
-
-    input[type='radio'] + label {
-
-      &:before, &:after {
-        content: '';
-        position: absolute;
-        display: block;
-        border-radius: 50%;
-        transition: .3s;
-      }
-
-      &:before {
-        left: 24px;
-        top: 22px;
-        width: 22px;
-        height: 22px;
-      }
-
-      &:after {
-        left: 29px;
-        top: 27px;
-        width: 12px;
-        height: 12px;
-        background: transparent;
-      }
-    }
-  }
 
   .cell-field {
     &.required {
@@ -213,17 +212,6 @@
           display: block;
         }
       }
-    }
-
-    &__input {
-      padding: 10px 16px;
-      outline: none;
-      width: 100%;
-    }
-
-    textarea {
-      height: 100px;
-      max-height: 150px;
     }
   }
 </style>
