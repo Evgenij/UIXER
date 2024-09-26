@@ -24,6 +24,14 @@
         input[type='radio'] + label {
             border: 1px solid $lines;
 
+            &:hover {
+                border-color: $gray;
+
+                &:before {
+                    border-color: $gray;
+                }
+            }
+
             &:before {
                 border: 1px solid rgba($gray, 0.3);
             }

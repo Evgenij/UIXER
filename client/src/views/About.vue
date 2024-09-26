@@ -31,7 +31,7 @@
           <div class="lang flex">
             <span class="text-color-gray">PL</span>
             <span class="text-color-gray">-</span>
-            <span class="primary-font">B2</span>
+            <span class="primary-font">B1</span>
           </div>
           <div class="divide"></div>
           <div class="lang flex">
@@ -261,6 +261,7 @@
   .main-data {
     padding-left: 5%;
     padding-right: 5%;
+	  margin-right: 16px;
   }
 
   .personal-data__langs {
