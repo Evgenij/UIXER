@@ -1,0 +1,129 @@
+// IPhone 13
+@media (max-width: 390px) {
+	#app {
+		background-color: aqua;
+	}
+}
+
+// IPhone 14-15
+@media (min-width: 390px) and (max-width: 430px) {
+	#app {
+		background-color: blueviolet;
+	}
+}
+
+// IPad
+@media (min-width: 430px) and (max-width: 768px) {
+	#app {
+		background-color: coral;
+	}
+}
+
+// IPad
+@media (min-width: 768px) and (max-width: 1024px) {
+	#app {
+		background-color: coral;
+	}
+}
+
+// Laptop 1366
+@media (min-width: 1024px) and (max-width: 1366px) {
+	$sizeGrid: 80px;
+
+	#app {
+		// background-color: rgb(10, 138, 21);
+		// background-color: brown;
+
+		.side {
+			width: $sizeGrid;
+		}
+
+		.toggle-menu,
+		.logo {
+			font-size: 1.1em;
+			height: $sizeGrid;
+			width: $sizeGrid;
+		}
+
+		.toggle-theme {
+			font-size: 0.9em;
+			.divider {
+				margin: 1em 0;
+			}
+		}
+
+		.page-footer {
+			font-size: 0.9em;
+			padding: 0 calc($sizeGrid + 2.2em);
+			height: $sizeGrid;
+
+			a {
+				margin-left: 2.3em;
+			}
+		}
+
+		.main-link {
+			font-size: 1.3em;
+		}
+
+		.nick {
+			font-size: 310px;
+		}
+
+		.main-photo {
+			top: -9%;
+		}
+	}
+}
+
+// Laptop 1600
+@media (min-width: 1366px) and (max-width: 1600px) {
+	$sizeGrid: 80px;
+
+	#app {
+		// background-color: brown;
+
+		.side {
+			width: $sizeGrid;
+		}
+
+		.toggle-menu,
+		.logo {
+			font-size: 1.1em;
+			height: $sizeGrid;
+			width: $sizeGrid;
+		}
+
+		.toggle-theme {
+			font-size: 0.9em;
+			.divider {
+				margin: 1em 0;
+			}
+		}
+
+		.page-footer {
+			font-size: 0.9em;
+			padding: 0 calc($sizeGrid + 2.2em);
+			height: $sizeGrid;
+
+			a {
+				margin-left: 2.3em;
+			}
+		}
+
+		.main-link {
+			font-size: 0.9em;
+		}
+
+		.nick {
+			font-size: 400px;
+		}
+	}
+}
+
+// Laptop 1600
+// @media (min-width: 1600px) and (max-width: 1920px) {
+// 	#app {
+// 		background-color: cornflowerblue;
+// 	}
+// }

@@ -1,200 +1,234 @@
 @import "../../vars/dark";
 
 .dark-theme {
-    background-color: $background;
-    color: $text-color;
+	background-color: $background;
+	color: $text-color;
 
-    //* {
-    //    scrollbar-width: thin;
-    //    scrollbar-color: $primary $lines;
-    //}
+	//* {
+	//    scrollbar-width: thin;
+	//    scrollbar-color: $primary $lines;
+	//}
 
-    *::-webkit-scrollbar-track {
-        margin: 20px;
-    }
-    *::-webkit-scrollbar-thumb {
-        background-color: $primary;
-    }
+	*::-webkit-scrollbar-track {
+		margin: 20px;
+	}
+	*::-webkit-scrollbar-thumb {
+		background-color: $primary;
+	}
 
+	//*::-webkit-scrollbar-track,
+	//html *::-webkit-scrollbar-track {
+	//    background: $lines;
+	//    margin: 20px;
+	//}
+	//*::-webkit-scrollbar-thumb,
+	//html *::-webkit-scrollbar-thumb {
+	//    background-color: $primary;
+	//    border: 0 solid $lines;
+	//}
 
-    //*::-webkit-scrollbar-track,
-    //html *::-webkit-scrollbar-track {
-    //    background: $lines;
-    //    margin: 20px;
-    //}
-    //*::-webkit-scrollbar-thumb,
-    //html *::-webkit-scrollbar-thumb {
-    //    background-color: $primary;
-    //    border: 0 solid $lines;
-    //}
+	.font {
+		&-thin {
+			font-weight: 200;
+		}
 
-    .font {
-        &-thin {
-            font-weight: 200;
-        }
+		&-extralight {
+			font-weight: 300;
+		}
 
-        &-extralight {
-            font-weight: 300;
-        }
+		&-light {
+			font-weight: 400;
+		}
 
-        &-light {
-            font-weight: 400;
-        }
+		&-regular {
+			font-weight: 500;
+		}
 
-        &-regular {
-            font-weight: 500;
-        }
+		&-semibold {
+			font-weight: 600;
+		}
 
-        &-semibold {
-            font-weight: 600;
-        }
+		&-bold {
+			font-weight: 700;
+		}
 
-        &-bold {
-            font-weight: 700;
-        }
+		&-heavy {
+			font-weight: 800;
+		}
 
-        &-heavy {
-            font-weight: 800;
-        }
+		&-black {
+			font-weight: 900;
+		}
+	}
 
-        &-black {
-            font-weight: 900;
-        }
-    }
+	.primary {
+		&-font {
+			color: $primary;
+		}
 
-    .primary {
-        &-font {
-            color: $primary;
-        }
+		&-border {
+			border: 1px solid $primary;
+		}
 
-        &-border {
-            border: 1px solid $primary;
-        }
+		&-background {
+			background-color: $primary;
+		}
+	}
 
-        &-background {
-            background-color: $primary;
-        }
-    }
+	.link {
+		&:hover {
+			color: $primary;
+		}
 
-    .link {
-        &:hover {
-            color: $primary;
-        }
+		&.blue {
+			&:hover {
+				color: $link;
 
-        &.blue {
-            &:hover {
-                color: $link;
+				i {
+					transform: translateX(3px);
+					color: $link;
+				}
+			}
+		}
+	}
 
-                i {
-                    transform: translateX(3px);
-                    color: $link;
-                }
-            }
-        }
-    }
+	.main-link {
+		& .dot {
+			&:before {
+				border: 1px solid $primary;
+			}
+		}
+	}
 
-    .main-link {
-        & .dot {
-            &:before {
-                border: 1px solid $primary;
-            }
-        }
-    }
+	.text-color {
+		&-gray {
+			color: $gray;
+		}
+		&-green {
+			color: $text-green;
+		}
+	}
 
-    .text-color {
-        &-gray{
-            color: $gray;
-        }
-        &-green{
-            color: $text-green;
-        }
-    }
+	footer.page-footer span.divider {
+		background: $primary;
+	}
 
-    footer.page-footer span.divider {
-        background: $primary;
-    }
+	.toggle-theme label span {
+		font-weight: normal;
+	}
 
-    .toggle-theme label span {
-        font-weight: normal;
-    }
+	// set dark theme
+	.toggle-theme label input:checked + span.label {
+		font-weight: bold;
+	}
 
-    // set dark theme
-    .toggle-theme label input:checked + span.label {
-        font-weight: bold;
-    }
+	.page-header {
+		border-bottom: 1px solid $lines;
+		z-index: 5000;
 
-    .page-header {
-        border-bottom: 1px solid $lines;
-        z-index: 5000;
+		.logo {
+			background: $primary;
+		}
+	}
 
-        .logo {
-            background: $primary;
-        }
-    }
+	input#menu:checked + .block-menu {
+		background: rgb(25 30 42 / 60%);
+	}
 
-    input#menu:checked + .block-menu {
-        background: rgb(25 30 42 / 60%);
-    }
+	.block-menu {
+		//color: $background;
+		&__item {
+			border-top: 1px solid $lines;
+			&:hover {
+				border-color: $primary;
+				color: $primary;
+				background: rgba($primary, 0.05);
+			}
+		}
 
-    .block-menu{
-        //color: $background;
-        &__item {
-            border-top: 1px solid $lines;
-            &:hover {
-                border-color: $primary;
-                color: $primary;
-                background: rgba($primary, .05)
-            }
-        }
-    }
+		.links__socials .social-link:hover {
+			border-color: $primary;
+			background-color: $primary;
 
-    .page-footer {
-        border-top: 1px solid $lines;
-        z-index: 2000;
-        padding: 0 140px;
-        height: 100px;
-        //background: $background;
-    }
+			svg path {
+				fill: black;
+			}
+		}
+	}
 
-    .side {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 0;
-        height: 100vh;
-        z-index: 2500;
+	.page-footer {
+		border-top: 1px solid $lines;
+		z-index: 2000;
+		padding: 0 140px;
+		height: 100px;
+	}
 
-        &.left {
-            left: 0;
-            border-right: 1px solid $lines;
-        }
+	.side {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+		height: 100vh;
+		z-index: 2500;
 
-        &.right {
-            right: 0;
-            border-left: 1px solid $lines;
-        }
-    }
+		&.left {
+			left: 0;
+			border-right: 1px solid $lines;
+		}
 
-    .toggle-menu {
-        background-color: $back-menu;
+		&.right {
+			right: 0;
+			border-left: 1px solid $lines;
+		}
+	}
 
-        span {
-            color: $background;
-        }
-    }
+	.toggle-menu {
+		background-color: $back-menu;
 
-    span.divider{
-        background: $primary;
-    }
+		span {
+			color: $background;
+		}
+	}
 
-    .toggle-theme{
-        label span {
-            color: $text-color;
-        }
-    }
+	span.divider {
+		background: $primary;
+	}
 
-    .social-link {
-        border: 1px solid $text-color;
-    }
+	.toggle-theme {
+		label span {
+			color: $text-color;
+		}
+	}
+
+	.social-link {
+		border: 1px solid $text-color;
+	}
+
+	// radio-button for contacts
+	.wrapper-radio {
+		input[type="radio"] + label {
+			border: 1px solid $lines;
+
+			&:hover {
+				border-color: $gray;
+
+				&:before {
+					border-color: $gray;
+				}
+			}
+
+			&:before {
+				border: 1px solid rgba($gray, 0.3);
+			}
+		}
+
+		input[type="radio"]:checked + label {
+			border-color: $primary;
+
+			&:after {
+				background: $primary;
+			}
+		}
+	}
 }

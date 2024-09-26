@@ -1,94 +1,104 @@
 @import "../../vars/dark";
 
 .dark-theme {
-    .page-contact {
-        .social-link {
+	.page-contact {
+		.social-link {
+			svg path {
+				fill: $text-color;
+			}
 
-            svg path {
-                fill: $text-color;
-            }
+			&:hover {
+				background: $primary;
+				border: 1px solid $primary;
 
-            &:hover {
-                background: $primary;
-                border: 1px solid $primary;
+				svg path {
+					fill: $background;
+				}
+			}
+		}
+	}
 
-                svg path {
-                    fill: $background;
-                }
-            }
-        }
-    }
+	// radio-button for contacts
+	.wrapper-radio {
+		input[type="radio"] + label {
+			border: 1px solid $lines;
 
-    //.type-message {
-    //
-    //    input[type='radio'] + label {
-    //        border: 1px solid $lines;
-    //
-    //        &:hover {
-    //            border-color: $gray;
-    //
-    //            &:before {
-    //                border-color: $gray;
-    //            }
-    //        }
-    //
-    //        &:before {
-    //            border: 1px solid rgba($gray, 0.3);
-    //        }
-    //    }
-    //
-    //    input[type='radio']:checked + label {
-    //
-    //        border-color: $primary;
-    //
-    //        &:after {
-    //            background: $primary;
-    //        }
-    //    }
-    //}
+			&:hover {
+				border-color: $gray;
 
-    .cell-field {
-        &.required {
-            .cell-field__label {
-                &:before {
-                    color: $primary;
-                }
-            }
-        }
+				&:before {
+					border-color: $gray;
+				}
+			}
 
-        //&__input {
-        //    border: 1px solid $lines;
-        //    background: $background;
-        //
-        //    &:hover {
-        //        border-color: $primary;
-        //    }
-        //
-        //    &:focus {
-        //        border-color: $primary;
-        //    }
-        //}
-    }
+			&:before {
+				border: 1px solid rgba($gray, 0.3);
+			}
+		}
 
-    button.button {
-        border: 1px solid $text-color;
+		input[type="radio"]:checked + label {
+			border-color: $primary;
 
-        svg path {
-            stroke: $text-color;
-        }
+			&:after {
+				background: $primary;
+			}
+		}
+	}
 
-        &:hover {
-            border-color: $primary;
-            background: $primary;
-            color: $background;
+	.cell-field {
+		&.required {
+			.cell-field__label {
+				&:before {
+					color: $primary;
+				}
+			}
+		}
+	}
 
-            svg path {
-                stroke: $background;
-            }
-        }
+	// fields
+	.input {
+		input,
+		textarea {
+			border: 1px solid $lines;
+			background: $background;
 
-        &:focus {
-            outline: #007de8;
-        }
-    }
+			&:not(.error):hover {
+				border-color: $primary;
+			}
+
+			&:not(.error):focus {
+				border-color: $primary;
+			}
+		}
+
+		.error {
+			border-color: $red;
+		}
+
+		.wrapper-error {
+			color: $red;
+		}
+	}
+
+	button.button {
+		border: 1px solid $text-color;
+
+		svg path {
+			stroke: $text-color;
+		}
+
+		&:hover {
+			border-color: $primary;
+			background: $primary;
+			color: $background;
+
+			svg path {
+				stroke: $background;
+			}
+		}
+
+		&:focus {
+			outline: #007de8;
+		}
+	}
 }

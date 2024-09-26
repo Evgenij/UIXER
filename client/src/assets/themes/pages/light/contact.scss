@@ -1,94 +1,104 @@
 @import "../../vars/light";
 
 .light-theme {
-    .page-contact {
-        .social-link {
-            svg path {
-                fill: $text-color;
-            }
+	.page-contact {
+		.social-link {
+			svg path {
+				fill: $text-color;
+			}
 
-            &:hover {
-                background: $primary;
-                border: 1px solid $primary;
+			&:hover {
+				background: $primary;
+				border: 1px solid $primary;
 
-                svg path {
-                    fill: white;
-                }
-            }
-        }
-    }
+				svg path {
+					fill: $background;
+				}
+			}
+		}
+	}
 
+	// radio-button for contacts
+	.wrapper-radio {
+		input[type="radio"] + label {
+			border: 1px solid $lines;
 
-    .type-message {
+			&:hover {
+				border-color: $gray;
 
-        input[type='radio'] + label {
-            border: 1px solid $lines;
+				&:before {
+					border-color: $gray;
+				}
+			}
 
-            &:hover {
-                border-color: $gray;
+			&:before {
+				border: 1px solid rgba($gray, 0.3);
+			}
+		}
 
-                &:before {
-                    border-color: $gray;
-                }
-            }
+		input[type="radio"]:checked + label {
+			border-color: $primary;
 
-            &:before {
-                border: 1px solid rgba($gray, 0.3);
-            }
-        }
+			&:after {
+				background: $primary;
+			}
+		}
+	}
 
-        input[type='radio']:checked + label {
+	.cell-field {
+		&.required {
+			.cell-field__label {
+				&:before {
+					color: $primary;
+				}
+			}
+		}
+	}
 
-            border-color: $primary;
+	// fields
+	.input {
+		input,
+		textarea {
+			border: 1px solid $lines;
+			background: $background;
 
-            &:after {
-                background: $primary;
-            }
-        }
-    }
+			&:not(.error):hover {
+				border-color: $primary;
+			}
 
-    .cell-field {
-        &.required {
-            .cell-field__label {
-                &:before {
-                    color: $red;
-                }
-            }
-        }
+			&:not(.error):focus {
+				border-color: $primary;
+			}
+		}
 
-        &__input {
-            border: 1px solid $lines;
-            background: $background;
+		.error {
+			border-color: $red;
+		}
 
-            &:hover {
-                border-color: $primary;
-            }
+		.wrapper-error {
+			color: $red;
+		}
+	}
 
-            &:focus {
-                border-color: $primary;
-            }
-        }
-    }
+	button.button {
+		border: 1px solid $text-color;
 
-    button.button {
-        border: 1px solid $text-color;
+		svg path {
+			stroke: $text-color;
+		}
 
-        svg path {
-            stroke: $text-color;
-        }
+		&:hover {
+			border-color: $primary;
+			background: $primary;
+			color: $background;
 
-        &:hover {
-            border-color: $primary;
-            background: $primary;
-            color: white;
+			svg path {
+				stroke: $background;
+			}
+		}
 
-            svg path {
-                stroke: white;
-            }
-        }
-
-        &:focus {
-            outline: #007de8;
-        }
-    }
+		&:focus {
+			outline: #007de8;
+		}
+	}
 }

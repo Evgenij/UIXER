@@ -1,210 +1,216 @@
 @import "../../vars/light";
 
 .light-theme {
-    background-color: $background;
-    color: $text-color;
+	background-color: $background;
+	color: $text-color;
 
-    * {
-        scrollbar-width: thin;
-        scrollbar-color: $primary $lines;
-    }
+	* {
+		scrollbar-width: thin;
+		scrollbar-color: $primary $lines;
+	}
 
-    *::-webkit-scrollbar-track,
-    html *::-webkit-scrollbar-track {
-        background: $lines;
-        margin: 20px;
-    }
-    *::-webkit-scrollbar-thumb,
-    html *::-webkit-scrollbar-thumb {
-        background-color: $primary;
-        border: 0 solid $lines;
-    }
+	*::-webkit-scrollbar-track,
+	html *::-webkit-scrollbar-track {
+		background: $lines;
+		margin: 20px;
+	}
+	*::-webkit-scrollbar-thumb,
+	html *::-webkit-scrollbar-thumb {
+		background-color: $primary;
+		border: 0 solid $lines;
+	}
 
-    .font {
-        &-thin {
-            font-weight: 300;
-        }
+	.font {
+		&-thin {
+			font-weight: 300;
+		}
 
-        &-extralight {
-            font-weight: 400;
-        }
+		&-extralight {
+			font-weight: 400;
+		}
 
-        &-light {
-            font-weight: 500;
-        }
+		&-light {
+			font-weight: 500;
+		}
 
-        &-regular {
-            font-weight: 600;
-        }
+		&-regular {
+			font-weight: 600;
+		}
 
-        &-semibold {
-            font-weight: 700;
-        }
+		&-semibold {
+			font-weight: 700;
+		}
 
-        &-bold {
-            font-weight: 800;
-        }
+		&-bold {
+			font-weight: 800;
+		}
 
-        &-heavy {
-            font-weight: 900;
-        }
-    }
+		&-heavy {
+			font-weight: 900;
+		}
+	}
 
-    & h2.nick.font-light {
-        font-weight: 300;
-    }
+	& h2.nick.font-light {
+		font-weight: 300;
+	}
 
-    .primary {
-        &-font {
-            color: $primary;
-        }
+	.primary {
+		&-font {
+			color: $primary;
+		}
 
-        &-border {
-            border: 1px solid $primary;
-        }
+		&-border {
+			border: 1px solid $primary;
+		}
 
-        &-background {
-            background-color: $primary;
-        }
-    }
+		&-background {
+			background-color: $primary;
+		}
+	}
 
-    .link {
-        &:hover {
-            color: $primary;
-        }
+	.link {
+		&:hover {
+			color: $primary;
+		}
 
-        &.blue {
-            &:hover {
-                color: $link;
+		&.blue {
+			&:hover {
+				color: $link;
 
-                i {
-                    transform: translateX(3px);
-                    color: $link;
-                }
-            }
-        }
-    }
+				i {
+					transform: translateX(3px);
+					color: $link;
+				}
+			}
+		}
+	}
 
-    .main-link {
-        & .dot {
-            &:before {
-                border: 1px solid $primary;
-            }
-        }
-    }
+	.main-link {
+		& .dot {
+			&:before {
+				border: 1px solid $primary;
+			}
+		}
+	}
 
-    .text-color {
-        &-gray{
-            color: $gray;
-        }
-        &-green{
-            color: $text-green;
-        }
-    }
+	.text-color {
+		&-gray {
+			color: $gray;
+		}
+		&-green {
+			color: $text-green;
+		}
+	}
 
-    span.divider{
-        background: $primary;
-    }
+	span.divider {
+		background: $primary;
+	}
 
-    .toggle-theme label span {
-        font-weight: 600;
-    }
+	.toggle-theme label span {
+		font-weight: 600;
+	}
 
-    // set dark theme
-    .toggle-theme label input:checked + span.label {
-        font-weight: 800;
-    }
+	// set dark theme
+	.toggle-theme label input:checked + span.label {
+		font-weight: 800;
+	}
 
-    .page-header {
-        border-bottom: 1px solid $lines;
-        z-index: 5000;
+	.page-header {
+		border-bottom: 1px solid $lines;
+		z-index: 5000;
 
-        .logo {
-            background: $primary;
-            color: white;
-        }
-    }
+		.logo {
+			background: $primary;
+			color: white;
+		}
+	}
 
-    input#menu:checked + .block-menu {
-        background: rgb(190 190 192 / 60%);
-    }
+	input#menu:checked + .block-menu {
+		background: rgb(190 190 192 / 60%);
+	}
 
-    .block-menu{
-        //color: $background;
-        &__item {
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            &:hover {
-                border-color: $primary;
-                color: $primary;
-                background: rgba($primary, .10)
-            }
-        }
-    }
+	.block-menu {
+		//color: $background;
+		&__item {
+			border-top: 1px solid rgba(0, 0, 0, 0.1);
+			&:hover {
+				border-color: $primary;
+				color: $primary;
+				background: rgba($primary, 0.1);
+			}
+		}
 
+		.links__socials .social-link:hover {
+			border-color: $primary;
+			background-color: $primary;
 
-    .page-footer {
-        border-top: 1px solid $lines;
-        z-index: 2000;
-        padding: 0 140px;
-        height: 100px;
-        background: $background;
-    }
+			svg path {
+				fill: white;
+			}
+		}
+	}
 
-    .side {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 0;
-        height: 100vh;
-        z-index: 2500;
+	.page-footer {
+		border-top: 1px solid $lines;
+		z-index: 2000;
+		padding: 0 140px;
+		height: 100px;
+	}
 
-        &.left {
-            left: 0;
-            border-right: 1px solid $lines;
-        }
+	.side {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+		height: 100vh;
+		z-index: 2500;
 
-        &.right {
-            right: 0;
-            border-left: 1px solid $lines;
-        }
-    }
+		&.left {
+			left: 0;
+			border-right: 1px solid $lines;
+		}
 
-    .toggle-menu {
-        background-color: $back-menu;
+		&.right {
+			right: 0;
+			border-left: 1px solid $lines;
+		}
+	}
 
-        span {
-            color: $background;
-        }
-    }
+	.toggle-menu {
+		background-color: $back-menu;
 
-    .pages-links {
-        z-index: 1000;
-        border-bottom: 1px solid $lines;
+		span {
+			color: $background;
+		}
+	}
 
-        & .main-link {
+	.pages-links {
+		z-index: 1000;
+		border-bottom: 1px solid $lines;
 
-            & .dot {
-                background: $text-color;
-            }
+		& .main-link {
+			& .dot {
+				background: $text-color;
+			}
 
-            &:after{
-                background: $lines;
-            }
-        }
-    }
+			&:after {
+				background: $lines;
+			}
+		}
+	}
 
-    .toggle-theme{
-        label span {
-            color: $text-color;
-        }
-    }
+	.toggle-theme {
+		label span {
+			color: $text-color;
+		}
+	}
 
-    .social-link {
-        border: 1px solid $text-color;
+	.social-link {
+		border: 1px solid $text-color;
 
-        svg path {
-            fill: $text-color;
-        }
-    }
+		svg path {
+			fill: $text-color;
+		}
+	}
 }
