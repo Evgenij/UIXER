@@ -1,66 +1,65 @@
 @import "../../vars/light";
 
 .light-theme {
-    .page-about {
-        .pages-links {
-            z-index: 1000;
-            border-bottom: 1px solid $lines;
+	.page-about {
+		.pages-links {
+			z-index: 1000;
+			border-bottom: 1px solid $lines;
 
-            & .main-link {
+			& .main-link {
+				& .dot {
+					background: $text-color;
+				}
 
-                & .dot {
-                    background: $text-color;
-                }
+				&:after {
+					background: $lines;
+				}
+			}
+		}
 
-                &:after{
-                    background: $lines;
-                }
-            }
-        }
+		.personal-data {
+			border-right: 1px solid $lines;
+		}
 
-        .personal-data {
-            border-right: 1px solid $lines;
-        }
+		.personal-data__langs {
+			.divide {
+				background-color: $lines;
+			}
+		}
 
-        .personal-data__langs {
-            .divide {
-                background-color: $lines;
-            }
-        }
+		.button {
+			border: 1px solid $primary;
 
-        .button {
-            border: 1px solid $primary;
+			svg path {
+				stroke: $primary;
+			}
 
-            svg path {
-                stroke: $primary;
-            }
+			&.primary {
+				&:hover {
+					background-color: transparentize($primary, 0.9);
+				}
+			}
 
-            &.primary {
-                &:hover {
-                    background-color: transparentize($primary, 0.9);
-                }
-            }
+			&:hover {
+				color: $primary;
+				svg path {
+					stroke: $primary;
+				}
+			}
+		}
 
-            &:hover {
-                color: $primary;
-                svg path {
-                    stroke: $primary;
-                }
-            }
-        }
+		.download-buttons {
+			border: 1px solid rgba($color: black, $alpha: 0.1);
+			background-color: rgba($color: black, $alpha: 0.08);
 
-        .download-buttons {
-            border: 1px solid $lines;
+			.lang__button {
+				border-left: 1px solid rgba($color: black, $alpha: 0.1);
 
-            .lang__button {
-                border-left: 1px solid rgba(0, 0, 0, 0.1);
-
-                &:hover {
-                    color: white;
-                    background-color: $primary;
-                }
-            }
-        }
-    }
+				&:hover {
+					color: white;
+					background-color: $primary;
+				}
+			}
+		}
+	}
 }
-

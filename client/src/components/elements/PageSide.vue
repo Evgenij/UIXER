@@ -2,7 +2,7 @@
 	<section class="side" :class="side">
 		<nav v-if="links" class="links h-full flex flex-col justify-evenly">
 			<div
-				class="side-link text-center uppercase font-light -rotate-90"
+				class="side-link text-center uppercase font-light -rotate-90 min-w-max"
 				v-for="link in links"
 			>
 				<router-link

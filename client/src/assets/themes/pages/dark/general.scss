@@ -9,13 +9,6 @@
 	//    scrollbar-color: $primary $lines;
 	//}
 
-	*::-webkit-scrollbar-track {
-		margin: 20px;
-	}
-	*::-webkit-scrollbar-thumb {
-		background-color: $primary;
-	}
-
 	//*::-webkit-scrollbar-track,
 	//html *::-webkit-scrollbar-track {
 	//    background: $lines;
@@ -26,6 +19,13 @@
 	//    background-color: $primary;
 	//    border: 0 solid $lines;
 	//}
+
+	*::-webkit-scrollbar-track {
+		margin: 20px;
+	}
+	*::-webkit-scrollbar-thumb {
+		background-color: $primary;
+	}
 
 	.font {
 		&-thin {
@@ -132,7 +132,7 @@
 	}
 
 	input#menu:checked + .block-menu {
-		background: rgb(25 30 42 / 60%);
+		background: rgb(black, 0.8);
 	}
 
 	.block-menu {
@@ -202,6 +202,12 @@
 	}
 
 	.social-link {
+		height: fit-content;
+		padding: 1em 1.3em;
+		svg {
+			width: 24px;
+			height: 24px;
+		}
 		border: 1px solid $text-color;
 	}
 

@@ -1,106 +1,104 @@
 @import "../../vars/dark";
 
 .dark-theme {
-  .page-about {
+	.page-about {
+		.personal-data {
+			border-right: 1px solid $lines;
+		}
 
-    .personal-data {
-        border-right: 1px solid $lines;
-    }
+		.personal-data__langs {
+			.divide {
+				background-color: $lines;
+			}
+		}
 
-    .personal-data__langs {
-      .divide {
-        background-color: $lines;
-      }
-    }
+		.button {
+			border: 1px solid $primary;
 
-      .button {
-        border: 1px solid $primary;
+			svg path {
+				stroke: $primary;
+			}
 
-        svg path {
-          stroke: $primary;
-        }
+			&.primary {
+				&:hover {
+					background-color: transparentize($primary, 0.9);
+				}
+			}
 
-        &.primary {
-          &:hover {
-            background-color: transparentize($primary, 0.9);
-          }
-        }
+			&:hover {
+				color: $primary;
+				svg path {
+					stroke: $primary;
+				}
+			}
+		}
 
-        &:hover {
-          color: $primary;
-          svg path {
-            stroke: $primary;
-          }
-        }
-      }
+		.download-buttons {
+			cursor: pointer;
+			border: 1px solid rgba($color: white, $alpha: 0.07);
+			background-color: rgba($color: white, $alpha: 0.04);
 
-      .download-buttons {
-        border: 1px solid white;
+			.lang__button {
+				border-left: 1px solid rgba($color: white, $alpha: 0.07);
 
-        .lang__button {
-          border-left: 1px solid rgba(0, 0, 0, 0.1);
+				&:hover {
+					color: black;
+					background-color: $primary;
+				}
+			}
+		}
 
-          &:hover {
-            background-color: $primary;
-          }
-        }
-      }
+		.certificate {
+			background-color: rgba(255, 255, 255, 0.02);
 
-    .certificate {
-      background-color: rgba(255, 255, 255, 0.02);
-
-      &__accordion {
-        background-color: rgba(255, 255, 255, 0.02);
-        font-weight: 100;
+			&__accordion {
+				background-color: rgba(255, 255, 255, 0.02);
+				font-weight: 100;
 
 				.accordion {
 					&__item {
 						border-bottom: 1px solid $lines;
-            font-size: 14px;
+						font-size: 14px;
 
-            &:hover {
-              color: $link;
-            }
+						&:hover {
+							color: $link;
+						}
 
-            &:last-child {
-              border-bottom: none;
-            }
+						&:last-child {
+							border-bottom: none;
+						}
 					}
 				}
 
-        & .p-accordion {
+				& .p-accordion {
+					&-tab {
+						margin: 0;
+					}
 
-          &-tab {
-            margin: 0;
-          }
-
-          &-header{
-
-            &-link {
+					&-header {
+						&-link {
 							padding: 1.1em 1em;
-            }
+						}
 
-            &-text {
-              font-weight: 300;
-              font-size: 14px;
-            }
+						&-text {
+							font-weight: 300;
+							font-size: 14px;
+						}
+					}
 
-          }
+					&-content {
+						border-top: 1px solid $lines;
+						margin: 0;
+						border-radius: 0;
+						background-color: transparent;
+						padding: 1em;
+					}
+				}
 
-          &-content {
-            border-top: 1px solid $lines;
-            margin: 0;
-            border-radius: 0;
-            background-color: transparent;
-            padding: 1em;
-          }
-        }
-
-        & .p-toggleable-content {
-          margin: 0;
-        }
-      }
-    }
-  }
+				& .p-toggleable-content {
+					margin: 0;
+				}
+			}
+		}
+	}
 }
-
