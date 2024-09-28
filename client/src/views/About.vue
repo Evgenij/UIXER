@@ -1,12 +1,19 @@
 <template>
-	<section class="content page-about flex h-full">
+	<section class="content page-about flex flex-col h-full sm:flex-row">
 		<PageSide side="left" :links="links" />
 		<PageSide side="right">
 			<ThemeToggle />
 		</PageSide>
 
 		<div class="general-data flex flex-col">
-			<div class="photo flex items-center justify-center h-full">
+			<h3
+				class="page-title font-light text-2xl page-name mb-12 block sm:hidden"
+			>
+				About me
+			</h3>
+			<div
+				class="photo flex items-center justify-center h-full overflow-hidden"
+			>
 				<!--        <img src="img/photo-resume.png" alt="photo-resume">-->
 				<img src="@/images/photo-resume.png" alt="photo-resume" />
 			</div>
@@ -15,24 +22,26 @@
 					class="personal-data__main flex justify-between items-start"
 				>
 					<div class="personal-data__name flex flex-col">
-						<h4 class="font-semibold text-lg">
+						<h4 class="font-semibold text-lg leading-normal">
 							Yevhenii Yermolenko
 						</h4>
 						<p class="text-color-gray font-regular">Ukraine</p>
 					</div>
-					<p class="text-color-gray text-lg font-regular">
+					<p class="text-color-gray text-lg font-regular years">
 						{{ getAgeFromBirthday(7, 4, 2000) }} years
 					</p>
 				</div>
 				<div class="personal-data__experience font-regular">
-					<p class="text-color-gray">
+					<p class="text-color-gray experience">
 						Experience
 						<span class="primary-font"
 							>{{ getAgeFromBirthday(4, 7, 2018) }} years</span
 						>
 					</p>
 				</div>
-				<div class="personal-data__langs flex items-center space-x-4">
+				<div
+					class="personal-data__langs flex justify-between items-center space-x-4"
+				>
 					<div class="lang flex">
 						<span class="text-color-gray">EN</span>
 						<span class="text-color-gray">-</span>
@@ -104,16 +113,15 @@
 								download
 								>RU</a
 							>
-							<!--              <a href="./public/files/resume.pdf" class="lang__button py-3 grow text-center" download @click="switchTypesFile">EN</a>-->
-							<!--              <a href="img/index.png" class="lang__button py-3 grow text-center" download @click="switchTypesFile">UA</a>-->
-							<!--              <a href="img/index.png" class="lang__button py-3 grow text-center" download @click="switchTypesFile">RU</a>-->
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="main-data p-16 pb-6 w-full overflow-y-auto">
-			<h3 class="page-title font-light text-2xl page-name mb-12">
+			<h3
+				class="page-title font-light text-2xl page-name mb-12 hidden sm:block"
+			>
 				About me
 			</h3>
 			<header class="font-bold text-2xl mb-16">
@@ -126,8 +134,10 @@
 					many projects and interesting tasks on my professional path.
 				</h4>
 			</header>
-			<section class="my-mind w-full flex space-x-14">
-				<div class="basis-1/2">
+			<section
+				class="my-mind w-full flex sm:flex-row space-x-0 sm:space-x-16 space-y-8 sm:space-y-0"
+			>
+				<div class="w-full sm:w-1/2">
 					<h5 class="primary-font font-bold mb-4">My main idea</h5>
 					<p class="font-regular text-color-gray mb-3">
 						I believe that the key factor influencing the
@@ -144,7 +154,7 @@
 						Design is design, from idea to practical implementation.
 					</p>
 				</div>
-				<div class="basis-1/2">
+				<div class="w-full sm:w-1/2">
 					<h5 class="primary-font font-bold mb-4">
 						Free time forwarding
 					</h5>
@@ -173,17 +183,19 @@
 			</section>
 			<section class="certificates mt-6">
 				<h5 class="primary-font font-bold mb-4">Certificates</h5>
-				<div class="certificates-list grid grid-cols-2 gap-5 flex-wrap">
+				<div
+					class="certificates-list grid grid-cols-1 sm:grid-cols-2 gap-5 flex-wrap"
+				>
 					<div
 						v-for="certificate in certificates"
 						:key="certificate.id"
 						class="certificate flex flex-col h-min"
 					>
 						<div
-							class="certificate__header header flex flex-col space-y-2 justify-center items-center py-7 px-3"
+							class="certificate__header header flex flex-col space-y-2 justify-center items-center py-10 px-3"
 						>
 							<h3
-								class="header__main font-bold text-3xl"
+								class="header__main font-bold text-3xl leading-none"
 								:style="{ color: certificate.color }"
 							>
 								{{ certificate.label }}

@@ -1,5 +1,6 @@
 <template>
 	<footer
+		name="footer"
 		class="page-footer flex items-center justify-between absolute bottom-0 w-full"
 	>
 		<div class="positions flex items-center space-x-6">
@@ -21,6 +22,8 @@
 </template>
 
 <script setup>
+import { onMounted } from "vue";
+
 const socialLinks = [
 	{
 		id: 1,

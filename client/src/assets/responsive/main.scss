@@ -331,7 +331,7 @@
 		}
 
 		.toggle-menu span {
-			font-size: 0.8em;
+			font-size: 0.9em;
 		}
 
 		.toggle-theme {
@@ -363,7 +363,11 @@
 		}
 
 		.main-link {
-			font-size: 0.8em;
+			font-size: 1em;
+
+			.dot {
+				margin-top: 10px;
+			}
 
 			&::after {
 				display: none;
@@ -392,6 +396,7 @@
 			top: 24%;
 			width: 100%;
 			transform: scale(1.8);
+			position: fixed;
 		}
 
 		.positions {

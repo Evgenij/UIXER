@@ -1,5 +1,5 @@
 <template>
-	<section class="content page-main h-full">
+	<section class="content page-main h-full overflow-hidden">
 		<PageSide side="left"></PageSide>
 		<PageSide side="right">
 			<ThemeToggle />
