@@ -1,25 +1,29 @@
 @import "../../vars/light";
 
-.light-theme{
-    .page-projects {
-        .project {
+.light-theme {
+	.page-projects {
+		.project {
+			& * {
+				color: $background;
+			}
 
-            & * {
-                color: $background;
-            }
+			&__number {
+				color: $background;
+			}
 
-            &__number {
-                color: $background;
-            }
-
-            &__link {
-                svg {
-                    path {
-                        stroke: $background;
-                    }
-                }
-            }
-        }
-    }
+			&__link {
+				svg {
+					path {
+						stroke: $background;
+					}
+				}
+			}
+		}
+	}
+	// Laptop 1366
+	@media (max-width: 1366px) {
+		footer[name="footer"] {
+			background: $background;
+		}
+	}
 }
-

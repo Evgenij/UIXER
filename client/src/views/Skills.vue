@@ -168,14 +168,14 @@ li {
 	font-weight: 500;
 }
 
-.numder {
+.number {
 	font-weight: 200 !important;
 }
 
-span.numders__line {
+span.numbers__line {
 	display: block;
 	height: 1px;
-	width: 70px;
+	// width: 70px;
 }
 
 .skills {

@@ -11,12 +11,12 @@
 		<div
 			class="wrapper-photo w-full flex items-center justify-center h-full"
 		>
-			<img
+			<!-- <img
 				id="main-photo"
 				src="@/images/main-dark.png"
 				alt="main-dark"
 				class="main-photo"
-			/>
+			/> -->
 			<h2 class="font-thin nick">UIXER</h2>
 			<div class="pages-links bottom flex justify-between">
 				<MainLink href="projects">Projects</MainLink>

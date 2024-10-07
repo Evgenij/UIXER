@@ -20,4 +20,11 @@
 			}
 		}
 	}
+
+	// Laptop 1366
+	@media (max-width: 1366px) {
+		footer[name="footer"] {
+			background: $background;
+		}
+	}
 }

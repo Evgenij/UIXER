@@ -1,49 +1,38 @@
 // Laptop 1366
 @media (max-width: 1366px) {
 	#app {
-		//background-color: rgb(84, 85, 102);
+		// background-color: rgb(59, 41, 29);
 
 		.page-skills {
-			.page-data {
-				header {
-					padding: 1em 2em;
+			header {
+				padding: 1.6em 2.4em;
+			}
+			.tabs {
+				ul {
+					padding: 0 2.4rem;
 				}
+			}
+
+			.nav {
+				padding: 2rem 2.4rem;
 			}
 
 			.slider {
 				&__item {
 					font-size: 4vw;
+					bottom: -11px;
+					padding-left: 2.4rem;
 				}
 			}
-
-			.number {
-				font-size: 4vw;
-			}
-		}
-
-		.main-data {
-			padding: 4%;
-			margin-right: 16px;
-
-			.page-title {
-				margin-bottom: 2rem;
-				font-size: 1.3rem;
+			.numbers {
+				font-size: 5vw;
 			}
 
-			h2 {
-				font-size: 2rem;
+			.skill {
+				padding: 0.4em 0.8em;
+				font-size: 1.3em;
+				margin: 0 16px 16px 0;
 			}
-
-			h4 {
-				font-size: 20px;
-			}
-		}
-
-		.photo img {
-			height: auto;
-			position: absolute;
-			width: 100%;
-			top: 0;
 		}
 	}
 }
@@ -51,107 +40,64 @@
 // IPad
 @media (max-width: 1024px) {
 	#app {
-		//background-color: rgb(31, 45, 63);
+		// background-color: rgb(20, 41, 70);
 
-		.main-data {
-			padding: 3%;
-			margin-right: 16px;
-
-			.page-title {
-				margin-bottom: 1.3rem;
-				font-size: 1.2rem;
+		.page-skills {
+			.skills-wrapper {
+				width: 40rem;
 			}
 
 			header {
-				margin-bottom: 1.6em;
-			}
+				padding: 1.4em 2em;
 
-			h2 {
-				font-size: 1.7rem;
-			}
-
-			h4 {
-				font-size: 18px;
-			}
-
-			.my-mind {
-				h5 {
-					font-size: 16px;
+				h4 {
+					font-size: 2.5em;
 				}
-				p {
+			}
+
+			.tabs {
+				ul {
+					padding: 0 2rem;
+				}
+			}
+
+			.nav {
+				padding: 1.6rem 2rem;
+			}
+
+			.slider {
+				&__item {
+					font-size: 6vw;
+					bottom: -9px;
+					padding-left: 2rem;
+				}
+
+				&__footer {
+					padding: 1em 1.6em;
+					font-size: 1em;
+				}
+			}
+			.numbers {
+				font-size: 5vw;
+			}
+
+			.skill {
+				padding: 0.3em 0.6em;
+				font-size: 1em;
+				margin: 0 12px 12px 0;
+
+				&s__footer {
+					padding: 1em 1.6em;
+					font-size: 1em;
+				}
+			}
+
+			.tabs {
+				li {
+					padding-bottom: 0.6em;
 					font-size: 14px;
 				}
 			}
-
-			.certificate {
-				&__header {
-					padding: 1.5em;
-
-					h3 {
-						font-size: 20px;
-					}
-
-					span {
-						font-size: 12px;
-					}
-				}
-
-				a.p-accordion-header-link {
-					padding: 0.8em;
-				}
-			}
-		}
-
-		.general-data {
-			width: 45%;
-			.personal-data {
-				padding: 5%;
-
-				.experience,
-				.years {
-					line-height: 1.2;
-					font-size: 14px;
-				}
-
-				.years {
-					min-width: fit-content;
-				}
-
-				.divide {
-					display: none;
-				}
-
-				&__langs {
-					flex-wrap: wrap;
-
-					span {
-						font-size: 14px;
-					}
-				}
-
-				.button {
-					padding: 0.8em;
-					font-size: 0.8em;
-				}
-
-				.download-buttons {
-					p,
-					a {
-						font-size: 0.8em;
-					}
-
-					a {
-						padding: 0.8em;
-					}
-				}
-			}
-		}
-
-		.photo img {
-			height: auto;
-			position: absolute;
-			width: 100%;
-			top: 0;
 		}
 	}
 }
@@ -165,135 +111,87 @@
 
 // IPhone 14-15
 @media (max-width: 430px) {
-	$sizeGrid: 80px;
-
 	#app {
-		//background-color: rgb(31, 45, 63);
+		// background-color: rgb(20, 41, 70);
 
-		.page-data {
-			padding: 5%;
-			margin-top: calc($sizeGrid);
-			overflow: scroll;
-		}
-
-		.main-data {
-			padding: 10% 0;
-			margin-right: 16px;
-			overflow: inherit;
-
-			.page-title {
-				margin-bottom: 1.3rem;
-				font-size: 1.2rem;
+		.page-skills {
+			.skills-wrapper {
+				width: 40rem;
 			}
 
 			header {
-				margin-bottom: 1.6em;
-			}
+				padding: 2em 5%;
 
-			h2 {
-				font-size: 1.7rem;
-			}
-
-			h4 {
-				font-size: 20px;
-			}
-
-			.my-mind {
-				flex-direction: column;
-				h5 {
-					font-size: 18px;
-				}
-				p {
-					font-size: 16px;
+				h4 {
+					top: 0;
+					font-size: 2em;
 				}
 			}
 
-			.certificate {
-				&__header {
-					padding: 1.5em;
-
-					h3 {
-						font-size: 26px;
-					}
+			.tabs {
+				margin-top: 5%;
+				ul {
+					padding: 0 5%;
 
 					span {
-						font-size: 14px;
+						font-size: 16px;
 					}
 				}
-
-				a.p-accordion-header-link {
-					padding: 0.8em;
-				}
-			}
-		}
-
-		.general-data {
-			width: 100%;
-
-			.page-title {
-				margin-top: 0.5rem;
-				margin-bottom: 2rem;
 			}
 
-			.personal-data {
-				padding: 5% 0;
-				border-right: none;
-				border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+			.nav {
+				padding: 1.6rem 2rem;
+			}
 
-				&__name h4 {
-					font-size: 22px;
+			.slider {
+				&__item {
+					font-size: 14vw;
+					bottom: -12px;
+					padding-left: 5%;
 				}
 
-				.experience,
-				.years {
-					line-height: 1.2;
-					font-size: 20px;
-				}
-
-				.years {
-					min-width: fit-content;
-					line-height: 1.5;
-				}
-
-				.divide {
-					display: none;
-				}
-
-				&__langs {
-					margin-top: 8%;
-					flex-wrap: wrap;
-
-					span {
-						font-size: 18px;
-					}
-				}
-
-				.button {
-					padding: 1em;
+				&__footer {
+					padding: 1em 1.6em;
 					font-size: 1em;
 				}
+			}
+			.numbers {
+				font-size: 3em;
+			}
 
-				.download-buttons {
-					p,
-					a {
-						font-size: 1em;
-					}
+			.skill {
+				padding: 0.3em 0.6em;
+				font-size: 1em;
+				margin: 0 12px 12px 0;
 
-					a {
-						padding: 1em;
-					}
+				&s {
+					border-left: none;
+					border-top: 1px solid rgba(255, 255, 255, 0.06);
+				}
+
+				&s__list {
+					padding: 5%;
+					display: flex;
+					flex-wrap: wrap;
+				}
+
+				&s__footer {
+					padding: 1em 1.6em;
+					font-size: 1em;
 				}
 			}
-		}
 
-		.photo {
-			height: 475px;
+			.tabs {
+				li {
+					padding-bottom: 0.6em;
+					font-size: 14px;
+				}
+			}
 
-			img {
-				height: auto;
-				position: absolute;
-				width: 100%;
-				top: 0;
+			.tabs-details {
+				.items {
+					padding-top: 4em;
+				}
 			}
 		}
 	}

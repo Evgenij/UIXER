@@ -42,6 +42,12 @@
 	#app {
 		//background-color: rgb(31, 45, 63);
 
+		// .links {
+		// 	// width: 60px;
+		// 	padding: 60px 0;
+		// 	font-size: 12px;
+		// }
+
 		.main-data {
 			padding: 3%;
 			margin-right: 16px;
@@ -160,13 +166,21 @@
 		//background-color: rgb(31, 45, 63);
 
 		.page-data {
-			padding: 5%;
+			padding: 0;
 			margin-top: calc($sizeGrid);
-			overflow: scroll;
+			overflow: auto;
+
+			.links {
+				.side {
+					&-link a {
+						font-size: 16px;
+					}
+				}
+			}
 		}
 
 		.main-data {
-			padding: 10% 0;
+			padding: 10% 5%;
 			margin-right: 16px;
 			overflow: inherit;
 
@@ -217,6 +231,7 @@
 		}
 
 		.general-data {
+			padding: 5%;
 			width: 100%;
 
 			.page-title {

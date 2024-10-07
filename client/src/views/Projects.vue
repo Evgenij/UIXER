@@ -134,6 +134,12 @@ const projects = [
 		category: "Redesign",
 		type: "Web-application",
 	},
+	{
+		name: "Some name project",
+		img: "https://images.unsplash.com/photo-1617471346061-5d329ab9c574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+		category: "Redesign",
+		type: "Web-application",
+	},
 ];
 
 onMounted(() => {

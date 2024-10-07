@@ -14,13 +14,14 @@
 			}
 		}
 
-		.numder {
+		.number {
 			&-active {
 				color: $primary;
 			}
 		}
 
-		span.numders__line {
+		span.numbers__line {
+			height: 1px;
 			background: $back-menu;
 		}
 
