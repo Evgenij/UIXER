@@ -1,5 +1,5 @@
 <template>
-	<section class="content project-page h-full flex">
+	<section class="content project-page h-full flex flex-col sm:flex-row">
 		<PageSide side="left" :links="links" />
 		<PageSide side="right">
 			<ThemeToggle />
@@ -52,14 +52,14 @@
 			</div>
 		</aside>
 		<section
-			class="basis-7/12 project-page__data project-data p-10 pr-6 mr-4 h-full overflow-y-auto overflow-x-hidden"
+			class="basis-7/12 project-page__data project-data p-10 pr-6 mr-4 h-full sm:overflow-y-auto sm:overflow-x-hidden"
 		>
 			<div class="project-data__preview w-full mb-8">
 				<img src="../images/projects/Desktop.png" alt="" />
 			</div>
 			<div class="project-data__elements flex flex-col space-y-6 mb-4">
-				<div class="row flex space-x-14 w-full">
-					<div class="row__item item flex flex-col">
+				<div class="row flex sm:space-x-14 w-full flex-wrap gap-6">
+					<div class="row__item item flex flex-col flex-shrink-0">
 						<div class="item__name text-color-gray mb-1">
 							Project name
 						</div>
@@ -67,7 +67,7 @@
 							Upgrade
 						</div>
 					</div>
-					<div class="row__item item flex flex-col">
+					<div class="row__item item flex flex-col flex-shrink-0">
 						<div class="item__name text-color-gray mb-1">
 							Type project
 						</div>
@@ -75,7 +75,7 @@
 							Web-application
 						</div>
 					</div>
-					<div class="row__item item flex flex-col">
+					<div class="row__item item flex flex-col flex-shrink-0">
 						<div class="item__name text-color-gray mb-1">
 							Year development
 						</div>
@@ -84,7 +84,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="row flex space-x-14 w-full">
+				<div
+					class="row flex flex-col sm:flex-row sm:space-x-14 w-full gap-6"
+				>
 					<div class="row__item item flex flex-col basis-1/2">
 						<div class="item__name text-color-gray mb-1">
 							Target
@@ -99,7 +101,7 @@
 					<div class="row__item item flex flex-col basis-1/2">
 						<div class="item__name text-color-gray mb-1">Tasks</div>
 						<div
-							class="item__value text-xl font-semibold tasks flex flex-col"
+							class="item__value text-xl font-semibold tasks flex flex-col space-y-1"
 						>
 							<div class="task pl-6">1</div>
 							<div class="task pl-6">2</div>
@@ -112,10 +114,10 @@
 				</div>
 			</div>
 			<div class="project-description">
-				<div class="project-description__img w-full py-4">
+				<div class="project-description__img w-full pt-4">
 					<img src="../images/projects/Desktop.png" alt="Desktop" />
 				</div>
-				<div class="project-description__text text-color-gray py-4">
+				<div class="project-description__text text-color-gray py-6">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 					Accusantium assumenda atque, consequatur, culpa eaque
 					expedita harum id illum, iure molestias officiis quos sit
@@ -123,7 +125,7 @@
 					reprehenderit!
 				</div>
 				<ModalImage :img="img" />
-				<div class="project-description__text text-color-gray py-4">
+				<div class="project-description__text text-color-gray py-6">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 					Accusantium assumenda atque, consequatur, culpa eaque
 					expedita harum id illum, iure molestias officiis quos sit

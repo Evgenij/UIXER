@@ -12,6 +12,17 @@
 			}
 		}
 
+		.main-idea::before {
+			content: '"';
+			position: absolute;
+			top: -40px;
+			right: -10px;
+			opacity: 0.1;
+			font-size: 300px;
+			font-family: math;
+			line-height: 1;
+		}
+
 		.button {
 			border: 1px solid $primary;
 

@@ -1,9 +1,67 @@
+// Laptop 1600
+@media (max-width: 1600px) {
+	#app {
+		// background-color: rgb(17, 61, 11);
+
+		.project-page {
+			&__name h3 {
+				font-size: 4em;
+			}
+		}
+	}
+}
+
 // Laptop 1366
 @media (max-width: 1366px) {
 	#app {
-		background-color: rgb(17, 61, 11);
+		// background-color: rgb(17, 61, 11);
 
 		.project-page {
+			&__main,
+			&__data {
+				padding: 2em;
+			}
+
+			&__data {
+				padding-right: 1.4em;
+			}
+
+			&__name h3 {
+				font-size: 3em;
+			}
+
+			.tags {
+				font-size: 1.2em;
+			}
+
+			.dev-tools {
+				p {
+					font-size: 18px;
+				}
+
+				.tool {
+					font-size: 14px;
+					padding: 0.4rem 0.8rem;
+				}
+			}
+
+			.project-data {
+				&__elements {
+					font-size: 18px;
+
+					.item {
+						&__name {
+							line-height: 1;
+							font-size: 14px;
+						}
+
+						&__value {
+							line-height: 1.45;
+							font-size: 16px;
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -11,56 +69,66 @@
 // IPad
 @media (max-width: 1024px) {
 	#app {
-		background-color: rgb(4, 6, 39);
+		// background-color: rgb(12, 11, 61);
 
-		.page-projects {
-			.page-name {
-				top: 4.5em;
-				left: 4.5em;
-				font-size: 1.4em;
+		.project-page {
+			&__back {
+				transform: scale(0.8);
+				transform-origin: left;
 			}
 
-			.background-panel {
-				width: 400px;
-				margin-left: -200px;
+			&__main {
+				justify-content: start;
+			}
+			&__main,
+			&__data {
+				padding: 1.4em;
 			}
 
-			.carousel-3d {
-				&-slide {
-					&r {
-						width: 400px !important;
-					}
+			&__data {
+				padding-right: 1.2em;
+			}
 
-					width: 350px !important;
-					margin-left: 25px;
+			&__name {
+				margin-bottom: 4em;
 
-					header {
-						h4 {
-							font-size: 1.4em;
-							margin-right: 1em;
-							line-height: 1.3;
-						}
+				h3 {
+					font-size: 2em;
+					line-height: 1.2;
+					margin-bottom: 0.4em;
+				}
+			}
 
-						a {
-							font-size: 1em;
-						}
-					}
+			.tags * {
+				font-size: 12px;
+			}
 
-					&.right-1 {
-						transform: translateX(430px) translateY(15px)
-							translateZ(-120px) !important;
-					}
-					&.left-1 {
-						transform: translateX(-430px) translateY(15px)
-							translateZ(-120px) !important;
-					}
+			.dev-tools {
+				p {
+					font-size: 12px;
+					line-height: 1;
 				}
 
-				&-controls {
-					a {
-						top: 100px;
-						width: 230px !important;
-						height: 200px !important;
+				.tool {
+					font-size: 12px;
+					padding: 0.3rem 0.6rem;
+				}
+			}
+
+			.project-data {
+				&__elements {
+					font-size: 16px;
+
+					.item {
+						&__name {
+							line-height: 1;
+							font-size: 12px;
+						}
+
+						&__value {
+							line-height: 1.45;
+							font-size: 14px;
+						}
 					}
 				}
 			}
@@ -79,119 +147,82 @@
 @media (max-width: 430px) {
 	$sizeGrid: 80px;
 	#app {
-		background-color: rgb(53, 6, 39);
+		// background-color: rgb(61, 11, 28);
 
-		.page-projects {
-			overflow: hidden;
-			.page-name {
-				top: $sizeGrid;
-				left: 0;
-				font-size: 1.5em;
-				padding: 1.6em 5%;
+		.project-page {
+			&__back {
+				transform: scale(1.1);
+				transform-origin: left;
+				width: fit-content;
+				margin: 0.4em 0 1.8em 0;
 			}
 
-			.background-panel {
-				top: 200px;
-				width: 95%;
-				height: 66%;
-				margin-left: (-1 * 100%/2 + 2.5%);
+			&__main,
+			&__data {
+				padding: 5%;
 			}
 
-			.carousel-3d-container {
-				.project__photo {
-					height: 200px;
+			&__data {
+				margin: 0;
+				border-left: none;
+				border-top: 1px solid rgba(255, 255, 255, 0.06);
+			}
+
+			&__name {
+				margin-bottom: 4em;
+
+				h3 {
+					font-size: 2.4em;
+					line-height: 1.2;
+					margin-bottom: 0.4em;
 				}
 			}
 
-			.slider-wrapper {
+			.tags * {
+				font-size: 16px;
+			}
+
+			.dev-tools {
+				p {
+					font-size: 16px;
+					line-height: 1.4;
+				}
+
+				.tool {
+					font-size: 14px;
+					padding: 0.4rem 0.8rem;
+				}
+			}
+
+			.project-data {
+				&__elements {
+					font-size: 16px;
+
+					.item {
+						&__name {
+							line-height: 1;
+							font-size: 14px;
+						}
+
+						&__value {
+							line-height: 1.45;
+							font-size: 16px;
+						}
+					}
+				}
+
+				.task:before {
+					top: 10px;
+				}
+			}
+
+			.project-description {
+				padding-bottom: 2em;
+			}
+			.wrapper-image {
 				width: 100%;
-			}
-
-			.slider-projects {
-				padding: 0;
-				margin-top: 150px !important;
-			}
-
-			.carousel-3d {
-				&-slide {
-					&r {
-						width: 350px !important;
-					}
-
-					justify-content: end;
-					width: 330px !important;
-					margin-left: 10px;
-					height: 500px !important;
-
-					header {
-						h4 {
-							font-size: 1.4em;
-							margin-right: 1em;
-							line-height: 1.3;
-						}
-
-						a {
-							font-size: 1em;
-						}
-					}
-
-					&.right-1 {
-						transform: translateX(350px) translateY(0) translateZ(0) !important;
-
-						& .project {
-							&__name {
-								display: none;
-							}
-							&__number {
-								display: none;
-							}
-							&__link {
-								display: none;
-							}
-							&__category {
-								opacity: 0;
-							}
-							&__type {
-								opacity: 0;
-							}
-						}
-					}
-					&.left-1 {
-						transform: translateX(-350px) translateY(0)
-							translateZ(0) !important;
-						& .project {
-							&__name {
-								display: none;
-							}
-							&__number {
-								display: none;
-							}
-							&__link {
-								display: none;
-							}
-							&__category {
-								opacity: 0;
-							}
-							&__type {
-								opacity: 0;
-							}
-						}
-					}
-
-					& .project {
-						&__number {
-							top: 0;
-						}
-					}
-				}
-
-				&-controls {
-					a {
-						display: none;
-						// top: 100px;
-						// width: 0% !important;
-						// height: 340px !important;
-					}
+				img {
+					padding: 3%;
 				}
 			}
 		}

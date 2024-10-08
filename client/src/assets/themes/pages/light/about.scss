@@ -17,6 +17,17 @@
 			}
 		}
 
+		.main-idea::before {
+			content: '"';
+			position: absolute;
+			top: -40px;
+			right: -10px;
+			opacity: 0.3;
+			font-size: 300px;
+			font-family: math;
+			line-height: 1;
+		}
+
 		.personal-data {
 			border-right: 1px solid $lines;
 		}
@@ -58,6 +69,64 @@
 				&:hover {
 					color: white;
 					background-color: $primary;
+				}
+			}
+		}
+
+		.certificate {
+			background-color: rgba(0, 0, 0, 0.08);
+
+			&__accordion {
+				background-color: rgba(0, 0, 0, 0.08);
+
+				.p-accordion-header span {
+					font-weight: 500;
+				}
+
+				.accordion {
+					&__item {
+						color: $text-color;
+						border-bottom: 1px solid $lines;
+						font-size: 14px;
+						font-weight: 400;
+
+						&:hover {
+							// font-weight: 500;
+						}
+
+						&:last-child {
+							border-bottom: none;
+						}
+					}
+				}
+
+				& .p-accordion {
+					&-tab {
+						margin: 0;
+					}
+
+					&-header {
+						&-link {
+							padding: 1.1em 1em;
+						}
+
+						&-text {
+							font-weight: 300;
+							font-size: 14px;
+						}
+					}
+
+					&-content {
+						border-top: 1px solid $lines;
+						margin: 0;
+						border-radius: 0;
+						background-color: transparent;
+						padding: 1em;
+					}
+				}
+
+				& .p-toggleable-content {
+					margin: 0;
 				}
 			}
 		}

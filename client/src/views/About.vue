@@ -138,7 +138,9 @@
 				class="my-mind w-full flex sm:flex-row space-x-0 sm:space-x-16 space-y-8 sm:space-y-0"
 			>
 				<div class="w-full sm:w-1/2">
-					<h5 class="primary-font font-bold mb-4">My main idea</h5>
+					<h5 class="primary-font main-idea font-bold mb-4 relative">
+						My main idea
+					</h5>
 					<p class="font-regular text-color-gray mb-3">
 						I believe that the key factor influencing the
 						profitability and success of any product is its design,
@@ -173,7 +175,8 @@
 						field of design and give useful tips to the audience
 					</p>
 					<a
-						href=""
+						target="_blank"
+						href="https://www.instagram.com/_uixer_/"
 						class="mt-4 leading-none link blue flex items-center font-regular"
 					>
 						Instagram
@@ -206,7 +209,7 @@
 						</div>
 						<Accordion class="certificate__accordion">
 							<AccordionTab
-								header="certificates"
+								header="Certificates"
 								contentClass="certificate__accordion accordion"
 							>
 								<a

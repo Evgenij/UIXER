@@ -7,6 +7,9 @@
 		>
 			<span class="font-light">Show</span>
 		</div>
+		<button class="button-preview block sm:hidden" @click="toggleModal">
+			Open image
+		</button>
 		<div
 			v-if="activeModal"
 			class="content flex justify-center"
@@ -48,6 +51,16 @@ const toggleModal = () => {
 		z-index: 1000;
 		color: white;
 		font-size: 24px;
+	}
+
+	.button-preview {
+		z-index: 10000;
+		color: white;
+		background-color: black;
+		padding: 0.6em 1em;
+		position: absolute;
+		bottom: 10px;
+		left: 10px;
 	}
 
 	.overlay-panel {

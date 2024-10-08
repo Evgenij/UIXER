@@ -1,14 +1,39 @@
 // Laptop 1600
 @media (max-width: 1600px) {
+	$sizeGrid: 80px;
 	#app {
 		//background-color: brown;
+
+		.side {
+			.links {
+				padding: $sizeGrid 0;
+				// .side {
+				// 	&-link a {
+				// 		font-size: 16px;
+				// 	}
+				// }
+			}
+		}
 	}
 }
 
 // Laptop 1366
 @media (max-width: 1366px) {
+	$sizeGrid: 70px;
+
 	#app {
 		//background-color: rgb(27, 39, 214);
+
+		.side {
+			.links {
+				padding: $sizeGrid 0;
+				// .side {
+				// 	&-link a {
+				// 		font-size: 16px;
+				// 	}
+				// }
+			}
+		}
 
 		.main-data {
 			padding: 4%;
@@ -39,6 +64,8 @@
 
 // IPad
 @media (max-width: 1024px) {
+	$sizeGrid: 60px;
+
 	#app {
 		//background-color: rgb(31, 45, 63);
 
@@ -47,6 +74,17 @@
 		// 	padding: 60px 0;
 		// 	font-size: 12px;
 		// }
+
+		.side {
+			.links {
+				padding: $sizeGrid 0;
+				.side {
+					&-link a {
+						font-size: 12px;
+					}
+				}
+			}
+		}
 
 		.main-data {
 			padding: 3%;
@@ -169,14 +207,6 @@
 			padding: 0;
 			margin-top: calc($sizeGrid);
 			overflow: auto;
-
-			.links {
-				.side {
-					&-link a {
-						font-size: 16px;
-					}
-				}
-			}
 		}
 
 		.main-data {
@@ -250,13 +280,13 @@
 
 				.experience,
 				.years {
-					line-height: 1.2;
-					font-size: 20px;
+					line-height: 1.6;
+					font-size: 18px;
 				}
 
 				.years {
 					min-width: fit-content;
-					line-height: 1.5;
+					line-height: 1.9;
 				}
 
 				.divide {
