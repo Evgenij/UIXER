@@ -47,7 +47,7 @@ const router = createRouter({
 					component: Contact,
 				},
 			],
-		},
+		}
 	],
 });
 

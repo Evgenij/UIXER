@@ -29,7 +29,8 @@
 
 			<div class="project-page__name mb-16">
 				<h3 class="font-heavy text-7xl mb-5">
-					{{ this.$route.params.id }}
+					<!-- {{ this.$route.params.id }} -->
+					{{ projectID }}
 				</h3>
 				<div class="tags flex items-center space-x-2">
 					<h4 class="primary-font text-xl">Redesign</h4>
@@ -142,6 +143,7 @@
 import ModalImage from "@/components/ModalImage.vue";
 import PageSide from "@/components/elements/PageSide.vue";
 import ThemeToggle from "@/components/ThemeToggle.vue";
+import { useRoute } from "vue-router";
 
 const img = "/src/images/projects/Desktop.png";
 
@@ -173,6 +175,10 @@ const tools = [
 	"SCSS",
 	"Tailwind",
 ];
+const route = useRoute();
+
+const projectID = route.params.id;
+console.log(projectID);
 </script>
 
 <style scoped lang="scss">

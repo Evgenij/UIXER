@@ -70,7 +70,7 @@
 						<router-link
 							:to="{
 								name: 'project',
-								params: { id: project.name },
+								params: { id: project.id },
 							}"
 						>
 							<img
@@ -117,24 +117,28 @@ const links = [
 
 const projects = [
 	{
+		id: 1,
 		name: "Some name project",
 		img: "https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
 		category: "Redesign",
 		type: "Web-application",
 	},
 	{
+		id: 22,
 		name: "Some different name project",
 		img: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
 		category: "Concept",
 		type: "Mobile App",
 	},
 	{
+		id: 303,
 		name: "Some name project",
 		img: "https://images.unsplash.com/photo-1617471346061-5d329ab9c574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
 		category: "Redesign",
 		type: "Web-application",
 	},
 	{
+		id: 401,
 		name: "Some name project",
 		img: "https://images.unsplash.com/photo-1617471346061-5d329ab9c574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
 		category: "Redesign",
