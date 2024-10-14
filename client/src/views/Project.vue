@@ -30,42 +30,48 @@
 			<div class="project-page__name mb-16">
 				<h3 class="font-heavy text-7xl mb-5">
 					<!-- {{ this.$route.params.id }} -->
-					{{ projectID }}
+					{{ dataProject.name }}
 				</h3>
 				<div class="tags flex items-center space-x-2">
-					<h4 class="primary-font text-xl">Redesign</h4>
+					<h4 class="primary-font text-xl">
+						{{ dataProject.category }}
+					</h4>
 					<span class="tags__line opacity-60"></span>
 					<h5 class="text-color-gray opacity-80 text-xl">
-						Web-application
+						{{ dataProject.type }}
 					</h5>
 				</div>
 			</div>
 			<div class="dev-tools w-full">
-				<p class="font-semibold text-xl">Development tools</p>
-				<div class="tools mt-3 flex flex-wrap">
+				<p class="font-semibold text-xl mb-3">Development tools</p>
+				<div
+					v-if="dataProject.technologies.length != 0"
+					class="tools flex flex-wrap"
+				>
 					<div
 						class="tool px-3 p-2 border mr-2 mb-2"
-						v-for="tool in tools"
+						v-for="technology in dataProject.technologies"
 					>
-						{{ tool }}
+						{{ technology }}
 					</div>
 				</div>
+				<p v-else class="text-sm opacity-40 font-light">Empty</p>
 			</div>
 		</aside>
 		<section
 			class="basis-7/12 project-page__data project-data p-10 pr-6 mr-4 h-full sm:overflow-y-auto sm:overflow-x-hidden"
 		>
 			<div class="project-data__preview w-full mb-8">
-				<img src="../images/projects/Desktop.png" alt="" />
+				<img :src="dataProject.poster" :alt="dataProject.name" />
 			</div>
 			<div class="project-data__elements flex flex-col space-y-6 mb-4">
 				<div class="row flex sm:space-x-14 w-full flex-wrap gap-6">
 					<div class="row__item item flex flex-col flex-shrink-0">
 						<div class="item__name text-color-gray mb-1">
-							Project name
+							Category
 						</div>
 						<div class="item__value text-xl font-semibold">
-							Upgrade
+							{{ dataProject.category }}
 						</div>
 					</div>
 					<div class="row__item item flex flex-col flex-shrink-0">
@@ -73,7 +79,7 @@
 							Type project
 						</div>
 						<div class="item__value text-xl font-semibold">
-							Web-application
+							{{ dataProject.type }}
 						</div>
 					</div>
 					<div class="row__item item flex flex-col flex-shrink-0">
@@ -104,12 +110,9 @@
 						<div
 							class="item__value text-xl font-semibold tasks flex flex-col space-y-1"
 						>
-							<div class="task pl-6">1</div>
-							<div class="task pl-6">2</div>
-							<div class="task pl-6">3</div>
-							<div class="task pl-6">4</div>
-							<div class="task pl-6">5</div>
-							<div class="task pl-6">6</div>
+							<div v-for="task in tasks" class="task pl-6">
+								{{ task }}
+							</div>
 						</div>
 					</div>
 				</div>
@@ -125,7 +128,7 @@
 					vitae. Accusamus dolorum necessitatibus odio ratione
 					reprehenderit!
 				</div>
-				<ModalImage :img="img" />
+				<ModalImage :img="dataProject.poster" />
 				<div class="project-description__text text-color-gray py-6">
 					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 					Accusantium assumenda atque, consequatur, culpa eaque
@@ -133,7 +136,7 @@
 					vitae. Accusamus dolorum necessitatibus odio ratione
 					reprehenderit!
 				</div>
-				<ModalImage :img="img" />
+				<ModalImage :img="dataProject.poster" />
 			</div>
 		</section>
 	</section>
@@ -144,8 +147,8 @@ import ModalImage from "@/components/ModalImage.vue";
 import PageSide from "@/components/elements/PageSide.vue";
 import ThemeToggle from "@/components/ThemeToggle.vue";
 import { useRoute } from "vue-router";
-
-const img = "/src/images/projects/Desktop.png";
+import getProjectsData from "@/db/getProjectsData";
+import projectsTasks from "@/db/projectsTasks";
 
 const links = [
 	{
@@ -162,23 +165,11 @@ const links = [
 	},
 ];
 
-const tools = [
-	"Figma",
-	"CJM",
-	"MySQL",
-	"PHP",
-	"AJAX",
-	"SCSS",
-	"Tailwind",
-	"PHP",
-	"AJAX",
-	"SCSS",
-	"Tailwind",
-];
 const route = useRoute();
 
 const projectID = route.params.id;
-console.log(projectID);
+const dataProject = getProjectsData(projectID);
+const tasks = projectsTasks[dataProject.id];
 </script>
 
 <style scoped lang="scss">
@@ -203,7 +194,7 @@ console.log(projectID);
 		&__preview,
 		&__project-description {
 			position: relative;
-			height: 300px;
+			height: 40vh;
 
 			img {
 				position: absolute;
@@ -224,7 +215,8 @@ console.log(projectID);
 				height: 2px;
 				width: 14px;
 				position: absolute;
-				top: 13px;
+				top: 50%;
+				margin-top: -2px;
 				left: 0;
 			}
 		}

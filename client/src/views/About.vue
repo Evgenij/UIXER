@@ -88,7 +88,7 @@
 								stroke-linejoin="round"
 							/>
 						</svg>
-						Download resume
+						Download CV
 					</button>
 					<div
 						v-else
@@ -312,17 +312,31 @@ const certificates = [
 		],
 	},
 ];
+
+const url = new URL(`../documents/CV-Yevhenii Yermolenko.pdf`, import.meta.url)
+	.href;
+console.log(url);
+
 const CVs = [
 	{
-		href: "./src/documents/CV-Yevhenii Yermolenko.pdf",
+		href: new URL(
+			`../documents/CV-Yevhenii Yermolenko.pdf`,
+			import.meta.url
+		).href,
 		label: "EN",
 	},
 	{
-		href: "./src/documents/CV-Yevhenii Yermolenko.pdf",
+		href: new URL(
+			`../documents/CV-Yevhenii Yermolenko.pdf`,
+			import.meta.url
+		).href,
 		label: "PL",
 	},
 	{
-		href: "./src/documents/CV-Yevhenii Yermolenko.pdf",
+		href: new URL(
+			`../documents/CV-Yevhenii Yermolenko.pdf`,
+			import.meta.url
+		).href,
 		label: "UA",
 	},
 ];
