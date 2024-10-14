@@ -1,0 +1,229 @@
+// Laptop 1600
+@media (max-width: 1600px) {
+	#app {
+		.page-contact {
+			h4 {
+				font-size: 4.5em;
+			}
+			.types-message {
+				.block {
+					padding: 1em 1.3em 1em 3.4em;
+				}
+
+				.wrapper-radio input[type="radio"] + label:before {
+					left: 18px;
+					top: 18px;
+					width: 22px;
+					height: 22px;
+				}
+				.wrapper-radio input[type="radio"] + label:after {
+					left: 23px;
+					top: 23px;
+					width: 12px;
+					height: 12px;
+				}
+			}
+
+			input,
+			textarea {
+				padding: 0.6em 0.8em;
+			}
+
+			.cell-field__label {
+				font-size: 1.3em;
+				line-height: 1.2;
+			}
+		}
+	}
+}
+
+// Laptop 1366
+@media (max-width: 1366px) {
+	#app {
+		.page-contact {
+			h4 {
+				font-size: 4em;
+			}
+
+			.page-name {
+				top: 5em;
+				left: 5em;
+			}
+
+			&__links {
+				padding: 3em;
+			}
+
+			.types-message {
+				.block {
+					padding: 1em 1.3em 1em 3.4em;
+				}
+
+				.wrapper-radio input[type="radio"] + label:before {
+					left: 18px;
+					top: 18px;
+					width: 22px;
+					height: 22px;
+				}
+				.wrapper-radio input[type="radio"] + label:after {
+					left: 23px;
+					top: 23px;
+					width: 12px;
+					height: 12px;
+				}
+			}
+		}
+	}
+}
+
+// IPad
+@media (max-width: 1024px) {
+	#app {
+		.page-contact {
+			h4 {
+				font-size: 3em;
+			}
+
+			.page-name {
+				top: 4.5em;
+				left: 4.5em;
+			}
+			.links__socials {
+				a {
+					padding: 0.6em 0.8em;
+				}
+			}
+
+			.links__email {
+				font-size: 14px;
+			}
+
+			.types-message {
+				margin-bottom: 2em;
+				.block {
+					padding: 1em 1em 1em 3em;
+					font-size: 12px;
+					line-height: 1.4;
+				}
+
+				.wrapper-radio input[type="radio"] + label:before {
+					left: 14px;
+					top: 14px;
+					width: 16px;
+					height: 16px;
+				}
+				.wrapper-radio input[type="radio"] + label:after {
+					left: 18px;
+					top: 18px;
+					width: 8px;
+					height: 8px;
+				}
+			}
+
+			input,
+			textarea {
+				padding: 0.5em 0.8em;
+				font-size: 14px;
+			}
+
+			.cell-field__label {
+				font-size: 1em;
+				line-height: 1.2;
+			}
+
+			button.button {
+				padding: 0.6em 1em;
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+// IPhone 14-15
+@media (max-width: 375px) {
+	$sizeGrid: 80px;
+	#app {
+		.page-contact {
+			// padding-top: $sizeGrid;
+			h4 {
+				font-size: 3em;
+				margin-bottom: 0.6em;
+			}
+
+			&__links {
+				padding: 0 5%;
+			}
+
+			&__form {
+				padding: 5%;
+				padding-bottom: 10%;
+			}
+
+			.page-name {
+				position: relative;
+				top: 0;
+				left: 0;
+				font-size: 1.5em;
+				padding: 1.6em 5%;
+			}
+
+			.links__socials {
+				a {
+					padding: 0.6em 0.8em;
+				}
+			}
+
+			.links__email {
+				font-size: 14px;
+			}
+
+			.types-message {
+				margin-bottom: 2em;
+				justify-content: space-between;
+
+				.wrapper-radio {
+					width: 100%;
+					text-align: center;
+				}
+
+				.block {
+					width: 100%;
+					padding: 1.3em 1em 1.3em 3em;
+					font-size: 14px;
+					line-height: 1.4;
+				}
+
+				.wrapper-radio input[type="radio"] + label:before {
+					left: 14px;
+					top: 50%;
+					width: 20px;
+					height: 20px;
+					margin-top: -10px;
+				}
+				.wrapper-radio input[type="radio"] + label:after {
+					left: 19px;
+					top: 50%;
+					width: 10px;
+					height: 10px;
+					margin-top: -5px;
+				}
+			}
+
+			input,
+			textarea {
+				padding: 0.8em 1em;
+				font-size: 16px;
+			}
+
+			.cell-field__label {
+				font-size: 1.2em;
+				line-height: 1.2;
+			}
+
+			button.button {
+				padding: 0.8em 1em;
+				font-size: 16px;
+			}
+		}
+	}
+}

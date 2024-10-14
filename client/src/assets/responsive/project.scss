@@ -1,0 +1,215 @@
+// Laptop 1600
+@media (max-width: 1600px) {
+	#app {
+		.project-page {
+			&__name h3 {
+				font-size: 4em;
+			}
+		}
+	}
+}
+
+// Laptop 1366
+@media (max-width: 1366px) {
+	#app {
+		.project-page {
+			&__main,
+			&__data {
+				padding: 2em;
+			}
+
+			&__data {
+				padding-right: 1.4em;
+			}
+
+			&__name h3 {
+				font-size: 3em;
+			}
+
+			.tags {
+				font-size: 1.2em;
+			}
+
+			.dev-tools {
+				p {
+					font-size: 18px;
+				}
+
+				.tool {
+					font-size: 14px;
+					padding: 0.4rem 0.8rem;
+				}
+			}
+
+			.project-data {
+				&__elements {
+					font-size: 18px;
+
+					.item {
+						&__name {
+							line-height: 1;
+							font-size: 14px;
+						}
+
+						&__value {
+							line-height: 1.45;
+							font-size: 16px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// IPad
+@media (max-width: 1024px) {
+	#app {
+		.project-page {
+			&__back {
+				transform: scale(0.8);
+				transform-origin: left;
+			}
+
+			&__main {
+				justify-content: start;
+			}
+			&__main,
+			&__data {
+				padding: 1.4em;
+			}
+
+			&__data {
+				padding-right: 1.2em;
+			}
+
+			&__name {
+				margin-bottom: 4em;
+
+				h3 {
+					font-size: 2em;
+					line-height: 1.2;
+					margin-bottom: 0.4em;
+				}
+			}
+
+			.tags * {
+				font-size: 12px;
+			}
+
+			.dev-tools {
+				p {
+					font-size: 12px;
+					line-height: 1;
+				}
+
+				.tool {
+					font-size: 12px;
+					padding: 0.3rem 0.6rem;
+				}
+			}
+
+			.project-data {
+				&__elements {
+					font-size: 16px;
+
+					.item {
+						&__name {
+							line-height: 1;
+							font-size: 12px;
+						}
+
+						&__value {
+							line-height: 1.45;
+							font-size: 14px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+// IPhone 14-15
+@media (max-width: 430px) {
+	$sizeGrid: 80px;
+	#app {
+		.project-page {
+			&__back {
+				transform: scale(1.1);
+				transform-origin: left;
+				width: fit-content;
+				margin: 0.4em 0 1.8em 0;
+			}
+
+			&__main,
+			&__data {
+				padding: 5%;
+			}
+
+			&__data {
+				margin: 0;
+				border-left: none;
+				border-top: 1px solid rgba(255, 255, 255, 0.06);
+			}
+
+			&__name {
+				margin-bottom: 4em;
+
+				h3 {
+					font-size: 2.4em;
+					line-height: 1.2;
+					margin-bottom: 0.4em;
+				}
+			}
+
+			.tags * {
+				font-size: 16px;
+			}
+
+			.dev-tools {
+				p {
+					font-size: 16px;
+					line-height: 1.4;
+				}
+
+				.tool {
+					font-size: 14px;
+					padding: 0.4rem 0.8rem;
+				}
+			}
+
+			.project-data {
+				&__elements {
+					font-size: 16px;
+
+					.item {
+						&__name {
+							line-height: 1;
+							font-size: 14px;
+						}
+
+						&__value {
+							line-height: 1.45;
+							font-size: 16px;
+						}
+					}
+				}
+
+				.task:before {
+					top: 10px;
+				}
+			}
+
+			.project-description {
+				padding-bottom: 2em;
+			}
+			.wrapper-image {
+				width: 100%;
+				img {
+					padding: 3%;
+				}
+			}
+		}
+	}
+}

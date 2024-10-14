@@ -1,24 +1,30 @@
 @import "../../vars/dark";
 
 .dark-theme {
-    .page-projects {
-        .project {
+	.page-projects {
+		.project {
+			& * {
+				color: $background;
+			}
 
-            & * {
-                color: $background;
-            }
+			&__number {
+				color: $background;
+			}
 
-            &__number {
-                color: $background;
-            }
+			&__link {
+				svg {
+					path {
+						stroke: $background;
+					}
+				}
+			}
+		}
+	}
 
-            &__link {
-                svg {
-                    path {
-                        stroke: $background;
-                    }
-                }
-            }
-        }
-    }
+	// Laptop 1366
+	@media (max-width: 1366px) {
+		footer[name="footer"] {
+			background: $background;
+		}
+	}
 }

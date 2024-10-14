@@ -6,44 +6,46 @@
 @tailwind utilities;
 
 html {
-    overflow: hidden;
+	overflow: hidden;
 }
 
 *::-webkit-scrollbar,
 html *::-webkit-scrollbar {
-    height: 4px;
-    width: 4px;
+	height: 3px;
+	width: 3px;
 }
 
 body {
-    font-family: $font;
-    font-weight: $font-weight;
-    line-height: $line-height;
-    font-size: $font-size;
-    letter-spacing: $letter-spacing;
-    -webkit-font-smoothing: subpixel-antialiased;
+	font-family: $font;
+	font-weight: $font-weight;
+	line-height: $line-height;
+	font-size: $font-size;
+	letter-spacing: $letter-spacing;
+	-webkit-font-smoothing: subpixel-antialiased;
 
-    * {
-        transition: .3s;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        outline: none;
-    }
+	* {
+		transition: 0.2s;
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		outline: none;
+	}
 }
 
 #app {
-    height: 100vh;
+	height: 100vh;
 }
 
 .page-name {
-    opacity: .4;
+	opacity: 0.4;
+	top: 6em;
+	left: 6em;
 }
 
 .p-image-mask {
-    z-index: 5000 !important;
+	z-index: 5000 !important;
 }
 
-
+@import "./responsive/index.scss";

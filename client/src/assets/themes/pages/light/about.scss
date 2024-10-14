@@ -1,66 +1,134 @@
 @import "../../vars/light";
 
 .light-theme {
-    .page-about {
-        .pages-links {
-            z-index: 1000;
-            border-bottom: 1px solid $lines;
+	.page-about {
+		.pages-links {
+			z-index: 1000;
+			border-bottom: 1px solid $lines;
 
-            & .main-link {
+			& .main-link {
+				& .dot {
+					background: $text-color;
+				}
 
-                & .dot {
-                    background: $text-color;
-                }
+				&:after {
+					background: $lines;
+				}
+			}
+		}
 
-                &:after{
-                    background: $lines;
-                }
-            }
-        }
+		.main-idea::before {
+			content: '"';
+			position: absolute;
+			top: -40px;
+			right: -10px;
+			opacity: 0.3;
+			font-size: 300px;
+			font-family: math;
+			line-height: 1;
+		}
 
-        .personal-data {
-            border-right: 1px solid $lines;
-        }
+		.personal-data {
+			border-right: 1px solid $lines;
+		}
 
-        .personal-data__langs {
-            .divide {
-                background-color: $lines;
-            }
-        }
+		.personal-data__langs {
+			.divide {
+				background-color: $lines;
+			}
+		}
 
-        .button {
-            border: 1px solid $primary;
+		.button {
+			border: 1px solid $primary;
 
-            svg path {
-                stroke: $primary;
-            }
+			svg path {
+				stroke: $primary;
+			}
 
-            &.primary {
-                &:hover {
-                    background-color: transparentize($primary, 0.9);
-                }
-            }
+			&.primary {
+				&:hover {
+					background-color: transparentize($primary, 0.9);
+				}
+			}
 
-            &:hover {
-                color: $primary;
-                svg path {
-                    stroke: $primary;
-                }
-            }
-        }
+			&:hover {
+				color: $primary;
+				svg path {
+					stroke: $primary;
+				}
+			}
+		}
 
-        .download-buttons {
-            border: 1px solid $lines;
+		.download-buttons {
+			border: 1px solid rgba($color: black, $alpha: 0.1);
+			background-color: rgba($color: black, $alpha: 0.08);
 
-            .lang__button {
-                border-left: 1px solid rgba(0, 0, 0, 0.1);
+			.lang__button {
+				border-left: 1px solid rgba($color: black, $alpha: 0.1);
 
-                &:hover {
-                    color: white;
-                    background-color: $primary;
-                }
-            }
-        }
-    }
+				&:hover {
+					color: white;
+					background-color: $primary;
+				}
+			}
+		}
+
+		.certificate {
+			background-color: rgba(0, 0, 0, 0.08);
+
+			&__accordion {
+				background-color: rgba(0, 0, 0, 0.08);
+
+				.p-accordion-header span {
+					font-weight: 500;
+				}
+
+				.accordion {
+					&__item {
+						color: $text-color;
+						border-bottom: 1px solid $lines;
+						font-size: 14px;
+						font-weight: 400;
+
+						&:hover {
+							// font-weight: 500;
+						}
+
+						&:last-child {
+							border-bottom: none;
+						}
+					}
+				}
+
+				& .p-accordion {
+					&-tab {
+						margin: 0;
+					}
+
+					&-header {
+						&-link {
+							padding: 1.1em 1em;
+						}
+
+						&-text {
+							font-weight: 300;
+							font-size: 14px;
+						}
+					}
+
+					&-content {
+						border-top: 1px solid $lines;
+						margin: 0;
+						border-radius: 0;
+						background-color: transparent;
+						padding: 1em;
+					}
+				}
+
+				& .p-toggleable-content {
+					margin: 0;
+				}
+			}
+		}
+	}
 }
-

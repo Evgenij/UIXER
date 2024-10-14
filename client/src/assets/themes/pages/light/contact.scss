@@ -1,86 +1,104 @@
 @import "../../vars/light";
 
 .light-theme {
-    .page-contact {
-        .social-link {
-            svg path {
-                fill: $text-color;
-            }
+	.page-contact {
+		.social-link {
+			svg path {
+				fill: $text-color;
+			}
 
-            &:hover {
-                background: $primary;
-                border: 1px solid $primary;
+			&:hover {
+				background: $primary;
+				border: 1px solid $primary;
 
-                svg path {
-                    fill: white;
-                }
-            }
-        }
-    }
+				svg path {
+					fill: $background;
+				}
+			}
+		}
+	}
 
+	// radio-button for contacts
+	.wrapper-radio {
+		input[type="radio"] + label {
+			border: 1px solid $lines;
 
-    .type-message {
+			&:hover {
+				border-color: $gray;
 
-        input[type='radio'] + label {
-            border: 1px solid $lines;
+				&:before {
+					border-color: $gray;
+				}
+			}
 
-            &:before {
-                border: 1px solid rgba($gray, 0.3);
-            }
-        }
+			&:before {
+				border: 1px solid rgba($gray, 0.3);
+			}
+		}
 
-        input[type='radio']:checked + label {
+		input[type="radio"]:checked + label {
+			border-color: $primary;
 
-            border-color: $primary;
+			&:after {
+				background: $primary;
+			}
+		}
+	}
 
-            &:after {
-                background: $primary;
-            }
-        }
-    }
+	.cell-field {
+		&.required {
+			.cell-field__label {
+				&:before {
+					color: $primary;
+				}
+			}
+		}
+	}
 
-    .cell-field {
-        &.required {
-            .cell-field__label {
-                &:before {
-                    color: $primary;
-                }
-            }
-        }
+	// fields
+	.input {
+		input,
+		textarea {
+			border: 1px solid $lines;
+			background: $background;
 
-        &__input {
-            border: 1px solid $lines;
-            background: $background;
+			&:not(.error):hover {
+				border-color: $primary;
+			}
 
-            &:hover {
-                border-color: $primary;
-            }
+			&:not(.error):focus {
+				border-color: $primary;
+			}
+		}
 
-            &:focus {
-                border-color: $primary;
-            }
-        }
-    }
+		.error {
+			border-color: $red;
+		}
 
-    button.button {
-        border: 1px solid $text-color;
+		.wrapper-error {
+			color: $red;
+		}
+	}
 
-        svg path {
-            stroke: $text-color;
-        }
+	button.button {
+		border: 1px solid $text-color;
 
-        &:hover {
-            border-color: $primary;
-            background: $primary;
-            color: white;
+		svg path {
+			stroke: $text-color;
+		}
 
-            svg path {
-                stroke: white;
-            }
-        }
+		&:hover {
+			border-color: $primary;
+			background: $primary;
+			color: $background;
 
-        &:focus {
-            outline: #007de8;
-        }
-    }
+			svg path {
+				stroke: $background;
+			}
+		}
+
+		&:focus {
+			outline: #007de8;
+		}
+	}
 }

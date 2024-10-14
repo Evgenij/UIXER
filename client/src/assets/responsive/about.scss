@@ -1,0 +1,319 @@
+// Laptop 1600
+@media (max-width: 1600px) {
+	$sizeGrid: 80px;
+	#app {
+		.side {
+			.links {
+				padding: $sizeGrid 0;
+				// .side {
+				// 	&-link a {
+				// 		font-size: 16px;
+				// 	}
+				// }
+			}
+		}
+	}
+}
+
+// Laptop 1366
+@media (max-width: 1366px) {
+	$sizeGrid: 70px;
+
+	#app {
+		.side {
+			.links {
+				padding: $sizeGrid 0;
+				// .side {
+				// 	&-link a {
+				// 		font-size: 16px;
+				// 	}
+				// }
+			}
+		}
+
+		.main-data {
+			padding: 4%;
+			margin-right: 16px;
+
+			.page-title {
+				margin-bottom: 2rem;
+				font-size: 1.3rem;
+			}
+
+			h2 {
+				font-size: 2rem;
+			}
+
+			h4 {
+				font-size: 20px;
+			}
+		}
+
+		.photo img {
+			height: auto;
+			position: absolute;
+			width: 100%;
+			top: 0;
+		}
+	}
+}
+
+// IPad
+@media (max-width: 1024px) {
+	$sizeGrid: 60px;
+
+	#app {
+		.side {
+			.links {
+				padding: $sizeGrid 0;
+				.side {
+					&-link a {
+						font-size: 12px;
+					}
+				}
+			}
+		}
+
+		.main-data {
+			padding: 3%;
+			margin-right: 16px;
+
+			.page-title {
+				margin-bottom: 1.3rem;
+				font-size: 1.2rem;
+			}
+
+			header {
+				margin-bottom: 1.6em;
+			}
+
+			h2 {
+				font-size: 1.7rem;
+			}
+
+			h4 {
+				font-size: 18px;
+			}
+
+			.my-mind {
+				h5 {
+					font-size: 16px;
+				}
+				p {
+					font-size: 14px;
+				}
+			}
+
+			.certificate {
+				&__header {
+					padding: 1.5em;
+
+					h3 {
+						font-size: 20px;
+					}
+
+					span {
+						font-size: 12px;
+					}
+				}
+
+				a.p-accordion-header-link {
+					padding: 0.8em;
+				}
+			}
+		}
+
+		.general-data {
+			width: 45%;
+			.personal-data {
+				padding: 5%;
+
+				.experience,
+				.years {
+					line-height: 1.2;
+					font-size: 14px;
+				}
+
+				.years {
+					min-width: fit-content;
+				}
+
+				.divide {
+					display: none;
+				}
+
+				&__langs {
+					flex-wrap: wrap;
+
+					span {
+						font-size: 14px;
+					}
+				}
+
+				.button {
+					padding: 0.8em;
+					font-size: 0.8em;
+				}
+
+				.download-buttons {
+					p,
+					a {
+						font-size: 0.8em;
+					}
+
+					a {
+						padding: 0.8em;
+					}
+				}
+			}
+		}
+
+		.photo img {
+			height: auto;
+			position: absolute;
+			width: 100%;
+			top: 0;
+		}
+	}
+}
+
+// IPad
+@media (max-width: 768px) {
+	#app {
+	}
+}
+
+// IPhone 14-15
+@media (max-width: 430px) {
+	$sizeGrid: 80px;
+
+	#app {
+		.page-data {
+			padding: 0;
+			margin-top: calc($sizeGrid);
+			overflow: auto;
+		}
+
+		.main-data {
+			padding: 10% 5%;
+			margin-right: 16px;
+			overflow: inherit;
+
+			.page-title {
+				margin-bottom: 1.3rem;
+				font-size: 1.2rem;
+			}
+
+			header {
+				margin-bottom: 1.6em;
+			}
+
+			h2 {
+				font-size: 1.7rem;
+			}
+
+			h4 {
+				font-size: 20px;
+			}
+
+			.my-mind {
+				flex-direction: column;
+				h5 {
+					font-size: 18px;
+				}
+				p {
+					font-size: 16px;
+				}
+			}
+
+			.certificate {
+				&__header {
+					padding: 1.5em;
+
+					h3 {
+						font-size: 26px;
+					}
+
+					span {
+						font-size: 14px;
+					}
+				}
+
+				a.p-accordion-header-link {
+					padding: 0.8em;
+				}
+			}
+		}
+
+		.general-data {
+			padding: 5%;
+			width: 100%;
+
+			.page-title {
+				margin-top: 0.5rem;
+				margin-bottom: 2rem;
+			}
+
+			.personal-data {
+				padding: 5% 0;
+				border-right: none;
+				border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+				// &__name h4 {
+				// 	font-size: 10;
+				// }
+
+				.experience,
+				.years {
+					line-height: 1.6;
+					font-size: 18px;
+				}
+
+				.years {
+					min-width: fit-content;
+					line-height: 1.6;
+				}
+
+				.divide {
+					display: none;
+				}
+
+				&__langs {
+					margin-top: 8%;
+					flex-wrap: wrap;
+
+					span {
+						font-size: 18px;
+					}
+				}
+
+				.button {
+					padding: 1em;
+					font-size: 1em;
+				}
+
+				.download-buttons {
+					p,
+					a {
+						font-size: 1em;
+					}
+
+					a {
+						padding: 1em;
+					}
+				}
+			}
+		}
+
+		.photo {
+			height: 410px;
+
+			img {
+				height: auto;
+				position: absolute;
+				width: 100%;
+				top: 0;
+			}
+		}
+	}
+}

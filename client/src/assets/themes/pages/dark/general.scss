@@ -1,192 +1,240 @@
 @import "../../vars/dark";
 
 .dark-theme {
-    background-color: $background;
-    color: $text-color;
+	background-color: $background;
+	color: $text-color;
 
-    * {
-        scrollbar-width: thin;
-        scrollbar-color: $primary $lines;
-    }
+	//* {
+	//    scrollbar-width: thin;
+	//    scrollbar-color: $primary $lines;
+	//}
 
-    *::-webkit-scrollbar-track,
-    html *::-webkit-scrollbar-track {
-        background: $lines;
-        margin: 20px;
-    }
-    *::-webkit-scrollbar-thumb,
-    html *::-webkit-scrollbar-thumb {
-        background-color: $primary;
-        border: 0px solid $lines;
-    }
+	//*::-webkit-scrollbar-track,
+	//html *::-webkit-scrollbar-track {
+	//    background: $lines;
+	//    margin: 20px;
+	//}
+	//*::-webkit-scrollbar-thumb,
+	//html *::-webkit-scrollbar-thumb {
+	//    background-color: $primary;
+	//    border: 0 solid $lines;
+	//}
 
-    .font {
-        &-thin {
-            font-weight: 200;
-        }
+	*::-webkit-scrollbar-track {
+		margin: 20px;
+	}
+	*::-webkit-scrollbar-thumb {
+		background-color: $primary;
+	}
 
-        &-extralight {
-            font-weight: 300;
-        }
+	.font {
+		&-thin {
+			font-weight: 100;
+		}
 
-        &-light {
-            font-weight: 400;
-        }
+		&-extralight {
+			font-weight: 200;
+		}
 
-        &-regular {
-            font-weight: 500;
-        }
+		&-light {
+			font-weight: 300;
+		}
 
-        &-semibold {
-            font-weight: 600;
-        }
+		&-regular {
+			font-weight: 400;
+		}
 
-        &-bold {
-            font-weight: 700;
-        }
+		&-semibold {
+			font-weight: 500;
+		}
 
-        &-heavy {
-            font-weight: 800;
-        }
+		&-bold {
+			font-weight: 600;
+		}
 
-        &-black {
-            font-weight: 900;
-        }
-    }
+		&-heavy {
+			font-weight: 700;
+		}
 
-    .primary {
-        &-font {
-            color: $primary;
-        }
+		&-black {
+			font-weight: 800;
+		}
+	}
 
-        &-border {
-            border: 1px solid $primary;
-        }
+	.primary {
+		&-font {
+			color: $primary;
+		}
 
-        &-background {
-            background-color: $primary;
-        }
-    }
+		&-border {
+			border: 1px solid $primary;
+		}
 
-    .link {
-        &:hover {
-            color: $primary;
-        }
+		&-background {
+			background-color: $primary;
+		}
+	}
 
-        &.blue {
-            &:hover {
-                color: $link;
+	.link {
+		&:hover {
+			color: $primary;
+		}
 
-                i {
-                    transform: translateX(3px);
-                    color: $link;
-                }
-            }
-        }
-    }
+		&.blue {
+			&:hover {
+				color: $link;
 
-    .main-link {
-        & .dot {
-            &:before {
-                border: 1px solid $primary;
-            }
-        }
-    }
+				i {
+					transform: translateX(3px);
+					color: $link;
+				}
+			}
+		}
+	}
 
-    .text-color {
-        &-gray{
-            color: $gray;
-        }
-        &-green{
-            color: $text-green;
-        }
-    }
+	.main-link {
+		& .dot {
+			&:before {
+				border: 1px solid $primary;
+			}
+		}
+	}
 
-    footer.page-footer span.divider {
-        background: $primary;
-    }
+	.text-color {
+		&-gray {
+			color: $gray;
+		}
+		&-green {
+			color: $text-green;
+		}
+	}
 
-    .toggle-theme label span {
-        font-weight: normal;
-    }
+	footer.page-footer span.divider {
+		background: $primary;
+	}
 
-    // set dark theme
-    .toggle-theme label input:checked + span.label {
-        font-weight: bold;
-    }
+	.toggle-theme label span {
+		font-weight: normal;
+	}
 
-    .page-header {
-        border-bottom: 1px solid $lines;
-        z-index: 5000;
+	// set dark theme
+	.toggle-theme label input:checked + span.label {
+		font-weight: bold;
+	}
 
-        .logo {
-            background: $primary;
-        }
-    }
+	.page-header {
+		border-bottom: 1px solid $lines;
+		z-index: 5000;
 
-    input#menu:checked + .block-menu {
-        background: rgb(25 30 42 / 60%);
-    }
+		.logo {
+			background: $primary;
+		}
+	}
 
-    .block-menu{
-        //color: $background;
-        &__item {
-            border-top: 1px solid $lines;
-            &:hover {
-                border-color: $primary;
-                color: $primary;
-                background: rgba($primary, .05)
-            }
-        }
-    }
+	input#menu:checked + .block-menu {
+		background: rgb(black, 0.8);
+	}
 
-    .page-footer {
-        border-top: 1px solid $lines;
-        z-index: 2000;
-        padding: 0 140px;
-        height: 100px;
-        background: $background;
-    }
+	.block-menu {
+		//color: $background;
+		&__item {
+			border-top: 1px solid $lines;
+			&:hover {
+				border-color: $primary;
+				color: $primary;
+				background: rgba($primary, 0.05);
+			}
+		}
 
-    .side {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 0;
-        height: 100vh;
-        z-index: 2500;
+		.links__socials .social-link:hover {
+			border-color: $primary;
+			background-color: $primary;
 
-        &.left {
-            left: 0;
-            border-right: 1px solid $lines;
-        }
+			svg path {
+				fill: black;
+			}
+		}
+	}
 
-        &.right {
-            right: 0;
-            border-left: 1px solid $lines;
-        }
-    }
+	.page-footer {
+		border-top: 1px solid $lines;
+		z-index: 2000;
+		padding: 0 140px;
+		height: 100px;
+	}
 
-    .toggle-menu {
-        background-color: $back-menu;
+	.side {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+		height: 100vh;
+		z-index: 2500;
 
-        span {
-            color: $background;
-        }
-    }
+		&.left {
+			left: 0;
+			border-right: 1px solid $lines;
+		}
 
-    span.divider{
-        background: $primary;
-    }
+		&.right {
+			right: 0;
+			border-left: 1px solid $lines;
+		}
+	}
 
-    .toggle-theme{
-        label span {
-            color: $text-color;
-        }
-    }
+	.toggle-menu {
+		background-color: $back-menu;
 
-    .social-link {
-        border: 1px solid $text-color;
-    }
+		span {
+			color: $background;
+		}
+	}
+
+	span.divider {
+		background: $primary;
+	}
+
+	.toggle-theme {
+		label span {
+			color: $text-color;
+		}
+	}
+
+	.social-link {
+		height: fit-content;
+		padding: 1em 1.3em;
+		svg {
+			width: 24px;
+			height: 24px;
+		}
+		border: 1px solid $text-color;
+	}
+
+	// radio-button for contacts
+	.wrapper-radio {
+		input[type="radio"] + label {
+			border: 1px solid $lines;
+
+			&:hover {
+				border-color: $gray;
+
+				&:before {
+					border-color: $gray;
+				}
+			}
+
+			&:before {
+				border: 1px solid rgba($gray, 0.3);
+			}
+		}
+
+		input[type="radio"]:checked + label {
+			border-color: $primary;
+
+			&:after {
+				background: $primary;
+			}
+		}
+	}
 }

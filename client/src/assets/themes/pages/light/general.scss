@@ -1,210 +1,223 @@
 @import "../../vars/light";
 
 .light-theme {
-    background-color: $background;
-    color: $text-color;
+	background-color: $background;
+	color: $text-color;
 
-    * {
-        scrollbar-width: thin;
-        scrollbar-color: $primary $lines;
-    }
+	// * {
+	// 	scrollbar-width: thin;
+	// 	scrollbar-color: $primary $lines;
+	// }
 
-    *::-webkit-scrollbar-track,
-    html *::-webkit-scrollbar-track {
-        background: $lines;
-        margin: 20px;
-    }
-    *::-webkit-scrollbar-thumb,
-    html *::-webkit-scrollbar-thumb {
-        background-color: $primary;
-        border: 0 solid $lines;
-    }
+	// *::-webkit-scrollbar-track,
+	// html *::-webkit-scrollbar-track {
+	// 	background: $lines;
+	// 	margin: 20px;
+	// }
+	// *::-webkit-scrollbar-thumb,
+	// html *::-webkit-scrollbar-thumb {
+	// 	background-color: $primary;
+	// 	border: 0 solid $lines;
+	// }
 
-    .font {
-        &-thin {
-            font-weight: 300;
-        }
+	*::-webkit-scrollbar-track {
+		margin: 20px;
+	}
+	*::-webkit-scrollbar-thumb {
+		background-color: $primary;
+	}
 
-        &-extralight {
-            font-weight: 400;
-        }
+	.font {
+		&-thin {
+			font-weight: 200;
+		}
 
-        &-light {
-            font-weight: 500;
-        }
+		&-extralight {
+			font-weight: 300;
+		}
 
-        &-regular {
-            font-weight: 600;
-        }
+		&-light {
+			font-weight: 400;
+		}
 
-        &-semibold {
-            font-weight: 700;
-        }
+		&-regular {
+			font-weight: 500;
+		}
 
-        &-bold {
-            font-weight: 800;
-        }
+		&-semibold {
+			font-weight: 600;
+		}
 
-        &-heavy {
-            font-weight: 900;
-        }
-    }
+		&-bold {
+			font-weight: 700;
+		}
 
-    & h2.nick.font-light {
-        font-weight: 300;
-    }
+		&-heavy {
+			font-weight: 800;
+		}
+	}
 
-    .primary {
-        &-font {
-            color: $primary;
-        }
+	& h2.nick.font-light {
+		font-weight: 300;
+	}
 
-        &-border {
-            border: 1px solid $primary;
-        }
+	.primary {
+		&-font {
+			color: $primary;
+		}
 
-        &-background {
-            background-color: $primary;
-        }
-    }
+		&-border {
+			border: 1px solid $primary;
+		}
 
-    .link {
-        &:hover {
-            color: $primary;
-        }
+		&-background {
+			background-color: $primary;
+		}
+	}
 
-        &.blue {
-            &:hover {
-                color: $link;
+	.link {
+		&:hover {
+			color: $primary;
+		}
 
-                i {
-                    transform: translateX(3px);
-                    color: $link;
-                }
-            }
-        }
-    }
+		&.blue {
+			&:hover {
+				color: $link;
 
-    .main-link {
-        & .dot {
-            &:before {
-                border: 1px solid $primary;
-            }
-        }
-    }
+				i {
+					transform: translateX(3px);
+					color: $link;
+				}
+			}
+		}
+	}
 
-    .text-color {
-        &-gray{
-            color: $gray;
-        }
-        &-green{
-            color: $text-green;
-        }
-    }
+	.main-link {
+		& .dot {
+			&:before {
+				border: 1px solid $primary;
+			}
+		}
+	}
 
-    span.divider{
-        background: $primary;
-    }
+	.text-color {
+		&-gray {
+			color: $gray;
+		}
+		&-green {
+			color: $text-green;
+		}
+	}
 
-    .toggle-theme label span {
-        font-weight: 600;
-    }
+	span.divider {
+		background: $primary;
+	}
 
-    // set dark theme
-    .toggle-theme label input:checked + span.label {
-        font-weight: 800;
-    }
+	.toggle-theme label span {
+		font-weight: 600;
+	}
 
-    .page-header {
-        border-bottom: 1px solid $lines;
-        z-index: 5000;
+	// set dark theme
+	.toggle-theme label input:checked + span.label {
+		font-weight: 800;
+	}
 
-        .logo {
-            background: $primary;
-            color: white;
-        }
-    }
+	.page-header {
+		border-bottom: 1px solid $lines;
+		z-index: 5000;
 
-    input#menu:checked + .block-menu {
-        background: rgb(190 190 192 / 60%);
-    }
+		.logo {
+			background: $primary;
+			color: white;
+		}
+	}
 
-    .block-menu{
-        //color: $background;
-        &__item {
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            &:hover {
-                border-color: $primary;
-                color: $primary;
-                background: rgba($primary, .10)
-            }
-        }
-    }
+	input#menu:checked + .block-menu {
+		background: rgb(white, 0.7);
+	}
 
+	.block-menu {
+		//color: $background;
+		&__item {
+			border-top: 1px solid rgba(0, 0, 0, 0.1);
+			&:hover {
+				border-color: $primary;
+				color: $primary;
+				background: rgba($primary, 0.1);
+			}
+		}
 
-    .page-footer {
-        border-top: 1px solid $lines;
-        z-index: 2000;
-        padding: 0 140px;
-        height: 100px;
-        background: $background;
-    }
+		.links__socials .social-link:hover {
+			border-color: $primary;
+			background-color: $primary;
 
-    .side {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        top: 0;
-        height: 100vh;
-        z-index: 2500;
+			svg path {
+				fill: white;
+			}
+		}
+	}
 
-        &.left {
-            left: 0;
-            border-right: 1px solid $lines;
-        }
+	.page-footer {
+		border-top: 1px solid $lines;
+		z-index: 2000;
+		padding: 0 140px;
+		height: 100px;
+	}
 
-        &.right {
-            right: 0;
-            border-left: 1px solid $lines;
-        }
-    }
+	.side {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		top: 0;
+		height: 100vh;
+		z-index: 2500;
 
-    .toggle-menu {
-        background-color: $back-menu;
+		&.left {
+			left: 0;
+			border-right: 1px solid $lines;
+		}
 
-        span {
-            color: $background;
-        }
-    }
+		&.right {
+			right: 0;
+			border-left: 1px solid $lines;
+		}
+	}
 
-    .pages-links {
-        z-index: 1000;
-        border-bottom: 1px solid $lines;
+	.toggle-menu {
+		background-color: $back-menu;
 
-        & .main-link {
+		span {
+			color: $background;
+		}
+	}
 
-            & .dot {
-                background: $text-color;
-            }
+	.pages-links {
+		z-index: 1000;
+		border-bottom: 1px solid $lines;
 
-            &:after{
-                background: $lines;
-            }
-        }
-    }
+		& .main-link {
+			& .dot {
+				background: $text-color;
+			}
 
-    .toggle-theme{
-        label span {
-            color: $text-color;
-        }
-    }
+			&:after {
+				background: $lines;
+			}
+		}
+	}
 
-    .social-link {
-        border: 1px solid $text-color;
+	.toggle-theme {
+		label span {
+			color: $text-color;
+		}
+	}
 
-        svg path {
-            fill: $text-color;
-        }
-    }
+	.social-link {
+		border: 1px solid $text-color;
+
+		svg path {
+			fill: $text-color;
+		}
+	}
 }

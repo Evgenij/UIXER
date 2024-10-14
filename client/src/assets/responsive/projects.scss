@@ -1,0 +1,268 @@
+// Laptop 1600
+@media (max-width: 1600px) {
+	#app {
+		.page-projects {
+			.background-panel {
+				width: 500px;
+				margin-left: -250px;
+			}
+
+			.carousel-3d {
+				&-slide {
+					&r {
+						width: 500px !important;
+					}
+
+					width: 450px !important;
+					margin-left: 25px;
+
+					&.right-1 {
+						transform: translateX(600px) translateY(35px)
+							translateZ(-150px) !important;
+					}
+					&.left-1 {
+						transform: translateX(-600px) translateY(35px)
+							translateZ(-150px) !important;
+					}
+				}
+
+				&-controls {
+					a {
+						width: 400px !important;
+						height: 440px !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Laptop 1366
+@media (max-width: 1366px) {
+	#app {
+		.page-projects {
+			.page-name {
+				top: 4.5em;
+				left: 4.5em;
+			}
+
+			.background-panel {
+				width: 500px;
+				margin-left: -250px;
+			}
+
+			.carousel-3d {
+				&-slide {
+					&r {
+						width: 500px !important;
+					}
+
+					width: 450px !important;
+					margin-left: 25px;
+
+					h4 {
+						font-size: 1.8em;
+						margin-right: 1em;
+					}
+
+					&.right-1 {
+						transform: translateX(540px) translateY(15px)
+							translateZ(0px) !important;
+					}
+					&.left-1 {
+						transform: translateX(-540px) translateY(15px)
+							translateZ(0px) !important;
+					}
+				}
+
+				&-controls {
+					a {
+						width: 300px !important;
+						height: 390px !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+// IPad
+@media (max-width: 1024px) {
+	#app {
+		.page-projects {
+			.page-name {
+				top: 4.5em;
+				left: 4.5em;
+				font-size: 1.4em;
+			}
+
+			.background-panel {
+				width: 400px;
+				margin-left: -200px;
+			}
+
+			.carousel-3d {
+				&-slide {
+					&r {
+						width: 400px !important;
+					}
+
+					width: 350px !important;
+					margin-left: 25px;
+
+					header {
+						h4 {
+							font-size: 1.4em;
+							margin-right: 1em;
+							line-height: 1.3;
+						}
+
+						a {
+							font-size: 1em;
+						}
+					}
+
+					&.right-1 {
+						transform: translateX(430px) translateY(15px)
+							translateZ(-120px) !important;
+					}
+					&.left-1 {
+						transform: translateX(-430px) translateY(15px)
+							translateZ(-120px) !important;
+					}
+				}
+
+				&-controls {
+					a {
+						top: 100px;
+						width: 230px !important;
+						height: 200px !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+// IPhone 14-15
+@media (max-width: 430px) {
+	$sizeGrid: 80px;
+	#app {
+		.page-projects {
+			overflow: hidden;
+
+			.page-name {
+				top: $sizeGrid;
+				left: 0;
+				font-size: 1.5em;
+				padding: 1.2em 5%;
+			}
+
+			.background-panel {
+				top: calc($sizeGrid + 90px);
+				width: 95%;
+				height: 100%;
+				margin-left: calc(-1 * 100% / 2 + 2.5%);
+			}
+
+			.carousel-3d-container {
+				.project__photo {
+					height: 200px;
+				}
+			}
+
+			.slider-wrapper {
+				width: 100%;
+			}
+
+			.slider-projects {
+				padding-top: calc($sizeGrid + 10%);
+				// padding-bottom: 0%;
+				margin-top: 0px !important;
+			}
+
+			.carousel-3d {
+				&-slide {
+					&r {
+						width: 85% !important;
+					}
+
+					justify-content: end;
+					width: 300px !important;
+					margin-left: 10px;
+					height: 430px !important;
+
+					header {
+						h4 {
+							font-size: 1.2em;
+							margin-right: 1em;
+							line-height: 1.3;
+						}
+
+						a {
+							font-size: 1em;
+						}
+					}
+
+					&.right-1 {
+						transform: translateX(315px) translateY(0) translateZ(0) !important;
+
+						& .project {
+							&__name {
+								display: none;
+							}
+							&__number {
+								display: none;
+							}
+							&__link {
+								display: none;
+							}
+							&__category {
+								opacity: 0;
+							}
+							&__type {
+								opacity: 0;
+							}
+						}
+					}
+					&.left-1 {
+						transform: translateX(-315px) translateY(0)
+							translateZ(0) !important;
+						& .project {
+							&__name {
+								display: none;
+							}
+							&__number {
+								display: none;
+							}
+							&__link {
+								display: none;
+							}
+							&__category {
+								opacity: 0;
+							}
+							&__type {
+								opacity: 0;
+							}
+						}
+					}
+
+					& .project {
+						&__number {
+							top: 0;
+						}
+					}
+				}
+
+				&-controls {
+					a {
+						display: none;
+						// top: 100px;
+						// width: 0% !important;
+						// height: 340px !important;
+					}
+				}
+			}
+		}
+	}
+}
