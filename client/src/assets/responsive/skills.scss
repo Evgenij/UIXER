@@ -1,8 +1,6 @@
 // Laptop 1366
 @media (max-width: 1366px) {
 	#app {
-		// background-color: rgb(59, 41, 29);
-
 		.page-skills {
 			header {
 				padding: 1.6em 2.4em;
@@ -40,8 +38,6 @@
 // IPad
 @media (max-width: 1024px) {
 	#app {
-		// background-color: rgb(20, 41, 70);
-
 		.page-skills {
 			.skills-wrapper {
 				width: 40rem;
@@ -102,18 +98,9 @@
 	}
 }
 
-// IPad
-@media (max-width: 768px) {
-	#app {
-		//background-color: rgb(31, 45, 63);
-	}
-}
-
 // IPhone 14-15
 @media (max-width: 430px) {
 	#app {
-		// background-color: rgb(20, 41, 70);
-
 		.page-skills {
 			.skills-wrapper {
 				width: 40rem;
@@ -194,12 +181,5 @@
 				}
 			}
 		}
-	}
-}
-
-// IPhone 13
-@media (max-width: 390px) {
-	#app {
-		//background-color: aqua;
 	}
 }

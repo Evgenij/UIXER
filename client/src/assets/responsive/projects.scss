@@ -1,8 +1,6 @@
 // Laptop 1600
 @media (max-width: 1600px) {
 	#app {
-		// background-color: rgb(59, 41, 29);
-
 		.page-projects {
 			.background-panel {
 				width: 500px;
@@ -42,8 +40,6 @@
 // Laptop 1366
 @media (max-width: 1366px) {
 	#app {
-		// background-color: rgb(17, 61, 11);
-
 		.page-projects {
 			.page-name {
 				top: 4.5em;
@@ -93,8 +89,6 @@
 // IPad
 @media (max-width: 1024px) {
 	#app {
-		// background-color: rgb(4, 6, 39);
-
 		.page-projects {
 			.page-name {
 				top: 4.5em;
@@ -150,32 +144,24 @@
 	}
 }
 
-// IPad
-// @media (max-width: 768px) {
-// 	#app {
-// 		//background-color: rgb(31, 45, 63);
-// 	}
-// }
-
 // IPhone 14-15
 @media (max-width: 430px) {
 	$sizeGrid: 80px;
 	#app {
-		// background-color: rgb(53, 6, 39);
-
 		.page-projects {
 			overflow: hidden;
+
 			.page-name {
 				top: $sizeGrid;
 				left: 0;
 				font-size: 1.5em;
-				padding: 1.6em 5%;
+				padding: 1.2em 5%;
 			}
 
 			.background-panel {
-				top: 200px;
+				top: calc($sizeGrid + 90px);
 				width: 95%;
-				height: 66%;
+				height: 100%;
 				margin-left: calc(-1 * 100% / 2 + 2.5%);
 			}
 
@@ -190,24 +176,25 @@
 			}
 
 			.slider-projects {
-				padding: 0;
-				margin-top: 150px !important;
+				padding-top: calc($sizeGrid + 10%);
+				// padding-bottom: 0%;
+				margin-top: 0px !important;
 			}
 
 			.carousel-3d {
 				&-slide {
 					&r {
-						width: 350px !important;
+						width: 85% !important;
 					}
 
 					justify-content: end;
-					width: 330px !important;
+					width: 300px !important;
 					margin-left: 10px;
-					height: 500px !important;
+					height: 430px !important;
 
 					header {
 						h4 {
-							font-size: 1.4em;
+							font-size: 1.2em;
 							margin-right: 1em;
 							line-height: 1.3;
 						}
@@ -218,7 +205,7 @@
 					}
 
 					&.right-1 {
-						transform: translateX(350px) translateY(0) translateZ(0) !important;
+						transform: translateX(315px) translateY(0) translateZ(0) !important;
 
 						& .project {
 							&__name {
@@ -239,7 +226,7 @@
 						}
 					}
 					&.left-1 {
-						transform: translateX(-350px) translateY(0)
+						transform: translateX(-315px) translateY(0)
 							translateZ(0) !important;
 						& .project {
 							&__name {
@@ -279,10 +266,3 @@
 		}
 	}
 }
-
-// IPhone 13
-// @media (max-width: 390px) {
-// 	#app {
-// 		//background-color: aqua;
-// 	}
-// }

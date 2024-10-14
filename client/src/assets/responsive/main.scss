@@ -3,7 +3,6 @@
 	$sizeGrid: 80px;
 
 	#app {
-		//background-color: brown;
 		.page-data {
 			padding: $sizeGrid;
 		}
@@ -57,7 +56,6 @@
 	$sizeGrid: 70px;
 
 	#app {
-		//background-color: rgb(27, 39, 214);
 		.page-data {
 			padding: $sizeGrid;
 		}
@@ -120,7 +118,6 @@
 	$sizeGrid: 60px;
 
 	#app {
-		//background-color: rgb(36, 126, 17);
 		.page-data {
 			padding: $sizeGrid;
 		}
@@ -211,11 +208,6 @@
 	$sizeGrid: 60px;
 
 	#app {
-		//background-color: rgb(156, 89, 12);
-		// .page-data {
-		// 	padding: $sizeGrid;
-		// }
-
 		.side {
 			width: $sizeGrid;
 		}
@@ -310,8 +302,6 @@
 	$sizeGrid: 80px;
 
 	#app {
-		//background-color: rgb(78, 13, 163);
-
 		.side {
 			width: $sizeGrid;
 			display: none;
@@ -335,8 +325,6 @@
 		}
 
 		.toggle-theme {
-			font-size: 1.4em;
-
 			&.flex-col {
 				font-size: 0.7em;
 
@@ -379,16 +367,17 @@
 			padding-right: 4%;
 
 			&.top {
-				top: 20%;
+				top: 25%;
 			}
 
 			&.bottom {
-				bottom: 20%;
+				bottom: 25%;
 			}
 		}
 
 		.nick {
-			font-size: 9em;
+			font-size: 32vw;
+			transform: translateY(-30px);
 			//width: 90%;
 		}
 
@@ -408,12 +397,12 @@
 
 		.block-menu {
 			h5 {
-				font-size: 2.7em;
+				font-size: 2em;
 			}
 
 			&__item {
 				padding: 1em 0;
-				font-size: 1.2em;
+				font-size: 0.9em;
 			}
 
 			.social-link {
@@ -427,17 +416,3 @@
 		}
 	}
 }
-
-// IPhone 13
-@media (max-width: 390px) {
-	#app {
-		//background-color: aqua;
-	}
-}
-
-// Laptop 1600
-// @media (min-width: 1600px) and (max-width: 1920px) {
-// 	#app {
-// 		background-color: cornflowerblue;
-// 	}
-// }

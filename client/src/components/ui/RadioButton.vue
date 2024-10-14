@@ -1,6 +1,14 @@
 <template>
-	<div class="wrapper-radio" @click="checked = true">
-		<input :type :name :id :value="id" :checked v-model="model" />
+	<div class="wrapper-radio">
+		<input
+			type="radio"
+			:name
+			:id
+			:value="id"
+			:checked
+			v-model="model"
+			@change="$emit('update:modelValue', $event.target.value)"
+		/>
 		<label :for="id" class="block cursor-pointer px-8 py-5 pl-16">
 			<slot />
 		</label>
@@ -10,10 +18,6 @@
 <script setup>
 defineProps({
 	id: {
-		type: String,
-		required: true,
-	},
-	type: {
 		type: String,
 		required: true,
 	},

@@ -35,32 +35,34 @@
 					<p class="text-color-gray experience">
 						Experience
 						<span class="primary-font"
-							>{{ getAgeFromBirthday(4, 7, 2018) }} years</span
+							>{{ getAgeFromBirthday(1, 1, 2023) }} year{{
+								getAgeFromBirthday(1, 1, 2023) > 1 ? "s" : ""
+							}}</span
 						>
 					</p>
 				</div>
 				<div
 					class="personal-data__langs flex justify-between items-center space-x-4"
 				>
-					<div class="lang flex">
+					<div class="lang flex space-x-1">
 						<span class="text-color-gray">EN</span>
 						<span class="text-color-gray">-</span>
 						<span class="primary-font">A2</span>
 					</div>
 					<div class="divide"></div>
-					<div class="lang flex">
+					<div class="lang flex space-x-1">
 						<span class="text-color-gray">PL</span>
 						<span class="text-color-gray">-</span>
 						<span class="primary-font">B1</span>
 					</div>
 					<div class="divide"></div>
-					<div class="lang flex">
+					<div class="lang flex space-x-1">
 						<span class="text-color-gray">UA</span>
 						<span class="text-color-gray">-</span>
 						<span class="primary-font">C2</span>
 					</div>
 					<div class="divide"></div>
-					<div class="lang flex">
+					<div class="lang flex space-x-1">
 						<span class="text-color-gray">RU</span>
 						<span class="text-color-gray">-</span>
 						<span class="primary-font">C2</span>
@@ -96,22 +98,12 @@
 						<p>Language</p>
 						<div class="flex grow">
 							<a
-								href=""
+								v-for="CV in CVs"
+								:key="CV.label"
+								:href="CV.href"
+								target="_blank"
 								class="lang__button py-3 grow text-center"
-								download
-								>EN</a
-							>
-							<a
-								href=""
-								class="lang__button py-3 grow text-center"
-								download
-								>PL</a
-							>
-							<a
-								href=""
-								class="lang__button py-3 grow text-center"
-								download
-								>RU</a
+								>{{ CV.label }}</a
 							>
 						</div>
 					</div>
@@ -318,6 +310,20 @@ const certificates = [
 				href: "",
 			},
 		],
+	},
+];
+const CVs = [
+	{
+		href: "./src/documents/CV-Yevhenii Yermolenko.pdf",
+		label: "EN",
+	},
+	{
+		href: "./src/documents/CV-Yevhenii Yermolenko.pdf",
+		label: "PL",
+	},
+	{
+		href: "./src/documents/CV-Yevhenii Yermolenko.pdf",
+		label: "UA",
 	},
 ];
 const openedTypesFile = ref(false);

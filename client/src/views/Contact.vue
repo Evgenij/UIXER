@@ -108,20 +108,22 @@
 		<div
 			class="page-contact__form flex flex-col justify-center basis-1/2 pr-10"
 		>
-			<div class="types-message mb-12 flex space-x-4">
+			<div
+				class="types-message mb-12 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3"
+			>
 				<RadioButton
-					type="radio"
 					name="type-mess"
 					id="hello"
+					value="hello"
 					checked
 					v-model="data.typeMess"
 				>
 					Just say "Hello"
 				</RadioButton>
 				<RadioButton
-					type="radio"
 					name="type-mess"
 					id="offer"
+					value="offer"
 					v-model="data.typeMess"
 				>
 					Send offer
@@ -226,13 +228,14 @@
 						/>
 					</div>
 				</div>
-				<div class="row">
+				<div class="row flex space-x-3">
 					<button
 						type="submit"
 						class="min-w-fit button py-3 px-5 flex items-center space-x-2"
 					>
-						Send
+						{{ isLoading ? "Sending..." : "Send" }}
 						<svg
+							v-if="!isLoading"
 							class="ml-2"
 							width="21"
 							height="21"
@@ -248,6 +251,12 @@
 							/>
 						</svg>
 					</button>
+					<div
+						v-if="emailIsSended"
+						class="alert py-2 px-4 bg-green-400 text-green-900 flex items-center text-sm sm:text-base"
+					>
+						Message is sended!
+					</div>
 				</div>
 			</form>
 			<div class="links__content block sm:hidden mt-10">
@@ -352,6 +361,7 @@ import { required, email } from "@vuelidate/validators";
 import { useVuelidate } from "@vuelidate/core";
 import Input from "@/components/ui/Input.vue";
 import RadioButton from "@/components/ui/RadioButton.vue";
+import $ from "jquery";
 
 const links = [
 	{
@@ -369,12 +379,12 @@ const links = [
 ];
 
 const data = reactive({
-	name: "",
-	email: "",
-	company: "",
-	website: "",
-	message: "",
-	typeMess: "",
+	name: "Jeka",
+	email: "test@mail.ru",
+	company: "Test company",
+	website: "https://testwebsite.com",
+	message: "Test message",
+	typeMess: "hello",
 });
 
 const validationRules = {
@@ -382,6 +392,9 @@ const validationRules = {
 	email: { required, email },
 	message: { required },
 };
+
+const isLoading = ref(false);
+const emailIsSended = ref(false);
 
 const v$ = useVuelidate(validationRules, data);
 
@@ -409,7 +422,52 @@ const copyEmail = () => {
 
 const sendEmail = () => {
 	v$.value.$validate();
-	console.log(data);
+	if (!v$.value.$invalid) {
+		console.log(data);
+
+		isLoading.value = !isLoading.value;
+
+		var dataMessage = {
+			service_id: "service_bbp5qcq",
+			template_id: "template_UIXER",
+			user_id: "zAtJmtMFqVs9UGSKx",
+			template_params: {
+				message: data.message,
+				from: data.name,
+				type: data.typeMess,
+				email: data.email,
+				company: data.company,
+				website: data.website,
+			},
+		};
+		$.ajax("https://api.emailjs.com/api/v1.0/email/send", {
+			type: "POST",
+			data: JSON.stringify(dataMessage),
+			contentType: "application/json",
+		})
+			.done(function () {
+				emailIsSended.value = !emailIsSended.value;
+
+				setTimeout(() => {
+					emailIsSended.value = !emailIsSended.value;
+				}, 2000);
+			})
+			.fail(function (error) {
+				alert("Oops... " + JSON.stringify(error));
+			})
+			.always(() => {
+				isLoading.value = !isLoading.value;
+			});
+	}
+
+	// emailjs.send("service_bbp5qcq", "template_UIXER", {
+	// 	message: "message",
+	// 	from: "from_name",
+	// 	contact_type: "type",
+	// 	email: "email_person",
+	// 	company: "company",
+	// 	website: "site",
+	// });
 };
 
 onMounted(() => {

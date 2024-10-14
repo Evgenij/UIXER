@@ -1,8 +1,6 @@
 // Laptop 1600
 @media (max-width: 1600px) {
 	#app {
-		// background-color: rgb(66, 33, 11);
-
 		.page-contact {
 			h4 {
 				font-size: 4.5em;
@@ -12,17 +10,13 @@
 					padding: 1em 1.3em 1em 3.4em;
 				}
 
-				.wrapper-radio
-					input[type="radio"]
-					+ label[data-v-2ae011d0]:before {
+				.wrapper-radio input[type="radio"] + label:before {
 					left: 18px;
 					top: 18px;
 					width: 22px;
 					height: 22px;
 				}
-				.wrapper-radio
-					input[type="radio"]
-					+ label[data-v-2ae011d0]:after {
+				.wrapper-radio input[type="radio"] + label:after {
 					left: 23px;
 					top: 23px;
 					width: 12px;
@@ -46,8 +40,6 @@
 // Laptop 1366
 @media (max-width: 1366px) {
 	#app {
-		// background-color: rgb(7, 56, 5);
-
 		.page-contact {
 			h4 {
 				font-size: 4em;
@@ -67,17 +59,13 @@
 					padding: 1em 1.3em 1em 3.4em;
 				}
 
-				.wrapper-radio
-					input[type="radio"]
-					+ label[data-v-2ae011d0]:before {
+				.wrapper-radio input[type="radio"] + label:before {
 					left: 18px;
 					top: 18px;
 					width: 22px;
 					height: 22px;
 				}
-				.wrapper-radio
-					input[type="radio"]
-					+ label[data-v-2ae011d0]:after {
+				.wrapper-radio input[type="radio"] + label:after {
 					left: 23px;
 					top: 23px;
 					width: 12px;
@@ -91,8 +79,6 @@
 // IPad
 @media (max-width: 1024px) {
 	#app {
-		// background-color: rgb(28, 11, 66);
-
 		.page-contact {
 			h4 {
 				font-size: 3em;
@@ -120,17 +106,13 @@
 					line-height: 1.4;
 				}
 
-				.wrapper-radio
-					input[type="radio"]
-					+ label[data-v-2ae011d0]:before {
+				.wrapper-radio input[type="radio"] + label:before {
 					left: 14px;
 					top: 14px;
 					width: 16px;
 					height: 16px;
 				}
-				.wrapper-radio
-					input[type="radio"]
-					+ label[data-v-2ae011d0]:after {
+				.wrapper-radio input[type="radio"] + label:after {
 					left: 18px;
 					top: 18px;
 					width: 8px;
@@ -157,19 +139,10 @@
 	}
 }
 
-// IPad
-// @media (max-width: 768px) {
-// 	#app {
-// 		//background-color: rgb(31, 45, 63);
-// 	}
-// }
-
 // IPhone 14-15
-@media (max-width: 430px) {
+@media (max-width: 375px) {
 	$sizeGrid: 80px;
 	#app {
-		// background-color: rgb(66, 11, 57);
-
 		.page-contact {
 			// padding-top: $sizeGrid;
 			h4 {
@@ -220,27 +193,25 @@
 					line-height: 1.4;
 				}
 
-				.wrapper-radio
-					input[type="radio"]
-					+ label[data-v-2ae011d0]:before {
+				.wrapper-radio input[type="radio"] + label:before {
 					left: 14px;
-					top: 20px;
+					top: 50%;
 					width: 20px;
 					height: 20px;
+					margin-top: -10px;
 				}
-				.wrapper-radio
-					input[type="radio"]
-					+ label[data-v-2ae011d0]:after {
+				.wrapper-radio input[type="radio"] + label:after {
 					left: 19px;
-					top: 25px;
+					top: 50%;
 					width: 10px;
 					height: 10px;
+					margin-top: -5px;
 				}
 			}
 
 			input,
 			textarea {
-				padding: 1em 1.2em;
+				padding: 0.8em 1em;
 				font-size: 16px;
 			}
 
@@ -250,16 +221,9 @@
 			}
 
 			button.button {
-				padding: 1em 1.4em;
+				padding: 0.8em 1em;
 				font-size: 16px;
 			}
 		}
 	}
 }
-
-// IPhone 13
-// @media (max-width: 390px) {
-// 	#app {
-// 		//background-color: aqua;
-// 	}
-// }

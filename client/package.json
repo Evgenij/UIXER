@@ -21,6 +21,7 @@
     "vuelidate": "^0.7.7"
   },
   "devDependencies": {
+    "@types/jquery": "^3.5.31",
     "@vitejs/plugin-vue": "^4.5.2",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.33",

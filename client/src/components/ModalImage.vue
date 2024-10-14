@@ -54,7 +54,7 @@ const toggleModal = () => {
 	}
 
 	.button-preview {
-		z-index: 10000;
+		z-index: 100;
 		color: white;
 		background-color: black;
 		padding: 0.6em 1em;
