@@ -228,10 +228,12 @@
 						/>
 					</div>
 				</div>
-				<div class="row flex space-x-3">
+				<div
+					class="row flex space-x-0 sm:space-x-3 space-y-3 sm:space-y-0 flex-col sm:flex-row"
+				>
 					<button
 						type="submit"
-						class="min-w-fit button py-3 px-5 flex items-center space-x-2"
+						class="max-w-fit button py-3 px-5 flex items-center space-x-2"
 					>
 						{{ isLoading ? "Sending..." : "Send" }}
 						<svg
@@ -253,7 +255,7 @@
 					</button>
 					<div
 						v-if="statusEmail.value !== sendStatuses.default.value"
-						class="alert py-2 px-4 flex items-center font-medium text-sm sm:text-base"
+						class="alert py-2 px-4 flex items-center font-semibold text-sm sm:text-base"
 						:class="{
 							'bg-green-400 text-green-900':
 								statusEmail.value ===
