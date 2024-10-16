@@ -252,10 +252,17 @@
 						</svg>
 					</button>
 					<div
-						v-if="emailIsSended"
-						class="alert py-2 px-4 bg-green-400 text-green-900 flex items-center text-sm sm:text-base"
+						v-if="statusEmail.value !== sendStatuses.default.value"
+						class="alert py-2 px-4 flex items-center font-medium text-sm sm:text-base"
+						:class="{
+							'bg-green-400 text-green-900':
+								statusEmail.value ===
+								sendStatuses.success.value,
+							'bg-red-400 text-red-900':
+								statusEmail.value === sendStatuses.error.value,
+						}"
 					>
-						Message is sended!
+						{{ statusEmail.message }}
 					</div>
 				</div>
 			</form>
@@ -379,11 +386,11 @@ const links = [
 ];
 
 const data = reactive({
-	name: "Jeka",
-	email: "test@mail.ru",
-	company: "Test company",
-	website: "https://testwebsite.com",
-	message: "Test message",
+	name: "",
+	email: "",
+	company: "",
+	website: "",
+	message: "",
 	typeMess: "hello",
 });
 
@@ -400,6 +407,23 @@ const v$ = useVuelidate(validationRules, data);
 
 const copySuccess = ref(false);
 const emailCopy = ref(null);
+
+const sendStatuses = {
+	default: {
+		value: 0,
+		message: null,
+	},
+	success: {
+		value: 1,
+		message: "Message is sended!",
+	},
+	error: {
+		value: 2,
+		message: "Message don't sended... Please repeat later",
+	},
+};
+
+const statusEmail = ref(sendStatuses.default);
 
 const copyEmail = () => {
 	let dataEmail = emailCopy.value.textContent.trim();
@@ -423,8 +447,7 @@ const copyEmail = () => {
 const sendEmail = () => {
 	v$.value.$validate();
 	if (!v$.value.$invalid) {
-		console.log(data);
-
+		statusEmail.value = sendStatuses.default;
 		isLoading.value = !isLoading.value;
 
 		var dataMessage = {
@@ -446,14 +469,16 @@ const sendEmail = () => {
 			contentType: "application/json",
 		})
 			.done(function () {
-				emailIsSended.value = !emailIsSended.value;
+				statusEmail.value = sendStatuses.success;
 
 				setTimeout(() => {
-					emailIsSended.value = !emailIsSended.value;
+					statusEmail.value = sendStatuses.default;
+					isLoading.value = !isLoading.value;
 				}, 2000);
 			})
 			.fail(function (error) {
-				alert("Oops... " + JSON.stringify(error));
+				console.log("Oops... " + JSON.stringify(error));
+				statusEmail.value = sendStatuses.error;
 			})
 			.always(() => {
 				isLoading.value = !isLoading.value;

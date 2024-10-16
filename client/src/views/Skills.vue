@@ -75,11 +75,15 @@ const tabsContents = {
 			},
 			{
 				id: 2,
-				name: "InVision Studio",
+				name: "Adobe Photoshop",
 			},
 			{
 				id: 3,
-				name: "Adobe Photoshop",
+				name: "Adobe Illustrator",
+			},
+			{
+				id: 4,
+				name: "InVision Studio",
 			},
 		],
 		skills: [
@@ -103,28 +107,43 @@ const tabsContents = {
 			},
 			{
 				id: 2,
-				name: "Vue JS",
+				name: "TypeScript",
 			},
 			{
 				id: 3,
+				name: "HTML5",
+			},
+			{
+				id: 4,
+				name: "SCSS",
+			},
+			{
+				id: 5,
+				name: "Tailwind",
+			},
+			{
+				id: 6,
+				name: "React",
+			},
+			{
+				id: 7,
+				name: "Vue JS",
+			},
+			{
+				id: 8,
 				name: "Angular",
 			},
 		],
 		skills: [
-			"Prototyping",
-			"UI-kits",
-			"UI-kits",
-			"UI-kits",
-			"UI-kits",
-			"User Flow",
-			"User Flow",
-			"Design systems",
 			"Responsive design",
 			"Components",
-			"Wireframing",
-			"CJM",
-			"Design systems",
-			"Mobile design",
+			"React Router",
+			"Redux",
+			"Vuex",
+			"Mobile layout",
+			"PrimeReact",
+			"PrimeVue",
+			"GIT",
 		],
 	},
 };
