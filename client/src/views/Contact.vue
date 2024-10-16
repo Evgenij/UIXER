@@ -235,7 +235,12 @@
 						type="submit"
 						class="max-w-fit button py-3 px-5 flex items-center space-x-2"
 					>
+						<i
+							v-if="isLoading"
+							class="bx bx-loader-alt bx-spin mr-2"
+						></i>
 						{{ isLoading ? "Sending..." : "Send" }}
+
 						<svg
 							v-if="!isLoading"
 							class="ml-2"
@@ -417,11 +422,11 @@ const sendStatuses = {
 	},
 	success: {
 		value: 1,
-		message: "Message is sended!",
+		message: "Message is sended",
 	},
 	error: {
 		value: 2,
-		message: "Message don't sended... Please repeat later",
+		message: "Message wasn't sent. Please try again later",
 	},
 };
 
@@ -472,11 +477,6 @@ const sendEmail = () => {
 		})
 			.done(function () {
 				statusEmail.value = sendStatuses.success;
-
-				setTimeout(() => {
-					statusEmail.value = sendStatuses.default;
-					isLoading.value = !isLoading.value;
-				}, 2000);
 			})
 			.fail(function (error) {
 				console.log("Oops... " + JSON.stringify(error));
@@ -484,6 +484,9 @@ const sendEmail = () => {
 			})
 			.always(() => {
 				isLoading.value = !isLoading.value;
+				setTimeout(() => {
+					statusEmail.value = sendStatuses.default;
+				}, 4000);
 			});
 	}
 
