@@ -9,7 +9,12 @@
 		<h3 class="page-title font-light text-2xl page-name absolute">
 			Projects
 		</h3>
-		<div class="slider-wrapper flex h-full">
+		<div class="slider-wrapper flex h-full relative">
+			<!-- <div
+				class="coming-soon text-3xl font-bold px-10 py-8 absolute bg-gray-800 text-yellow-600 -rotate-6 top-1/2 left-1/2 z-50 rounded-lg border-dashed border-4 border-yellow-600"
+			>
+				Coming soon
+			</div> -->
 			<Carousel3d
 				display="3"
 				border="0"
@@ -184,6 +189,10 @@ onMounted(() => {
 	&.right {
 		right: 100px;
 	}
+}
+
+.coming-soon {
+	margin-left: -150px;
 }
 
 .project__number {
