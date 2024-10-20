@@ -15,14 +15,14 @@ const getImage = (typeImage, image, folder) => {
 
 	return new URL(`../images/${typeImage}/${image}`, import.meta.url).href;
 };
-console.log(getImage(typeImage.projects, "1.png", "infurtex"));
 
 const projectsData = [
 	{
 		name: "Infurtex",
-		poster: getImage(typeImage.previews, "preview.png"),
+		poster: getImage(typeImage.previews, "infurtex.jpg"),
 		category: categoriesProjects.frontend.system,
 		type: typesProjects.webApp,
+		date: "July 2022",
 		sources: {
 			demo: null,
 			code: null,
@@ -61,8 +61,14 @@ const projectsData = [
 				type: typeElementDescription.img,
 				data: getImage(typeImage.projects, "1.png", "infurtex"),
 			},
-			{ type: typeElementDescription.p, data: "dfgdfg" },
-			{ type: typeElementDescription.p, data: "dfgdfg" },
+			{
+				type: typeElementDescription.p,
+				data: "As part of my graduation project at university, I developed a system for testing design solutions",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The system allows to connect potential clients or users of any service to get feedback on the design, while design developers get a complete analysis of user behavior when interacting with the design",
+			},
 			{
 				type: typeElementDescription.modalImg,
 				data: getImage(typeImage.projects, "1.png", "infurtex"),
@@ -70,24 +76,31 @@ const projectsData = [
 		],
 	},
 	{
-		name: "Some different name project 2",
-		poster: getImage(typeImage.projects, "modal_image.png"),
+		name: "SEO-X",
+		poster: getImage(typeImage.previews, "seo-x.jpg"),
 		category: "Concept",
 		type: "Mobile App",
 		technologies: [],
 	},
 	{
-		name: "Some name project 3",
-		poster: "https://images.unsplash.com/photo-1617471346061-5d329ab9c574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-		category: "Redesign",
-		type: "Web-application",
+		name: "Mining Fusion",
+		poster: getImage(typeImage.previews, "mining-fusion.jpg"),
+		category: "Concept",
+		type: "Mobile App",
 		technologies: [],
 	},
 	{
-		name: "Some name project 4",
-		poster: "https://images.unsplash.com/photo-1617471346061-5d329ab9c574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-		category: "Redesign",
-		type: "Web-application",
+		name: "Upgrade",
+		poster: getImage(typeImage.previews, "upgrade.jpg"),
+		category: "Concept",
+		type: "Mobile App",
+		technologies: [],
+	},
+	{
+		name: "FNX",
+		poster: getImage(typeImage.previews, "fnx.jpg"),
+		category: "Concept",
+		type: "Mobile App",
 		technologies: [],
 	},
 ];

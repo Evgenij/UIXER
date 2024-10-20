@@ -84,10 +84,10 @@
 					</div>
 					<div class="row__item item flex flex-col flex-shrink-0">
 						<div class="item__name text-color-gray mb-1">
-							Year development
+							Date development
 						</div>
 						<div class="item__value text-xl font-semibold">
-							July 2019
+							{{ dataProject.date }}
 						</div>
 					</div>
 				</div>
@@ -96,7 +96,7 @@
 						<div class="item__name text-color-gray mb-1">Demo</div>
 						<div class="item__value text-xl font-semibold">
 							<a
-								v-if="dataProject.sources.demo"
+								v-if="dataProject?.sources?.demo"
 								href=""
 								target="_blank"
 								class="underline underline-offset-2 opacity-60 hover:opacity-100 hover:text-blue-600"
@@ -109,7 +109,7 @@
 						<div class="item__name text-color-gray mb-1">Code</div>
 						<div class="item__value text-xl font-semibold">
 							<a
-								v-if="dataProject.sources.code"
+								v-if="dataProject?.sources?.code"
 								href=""
 								target="_blank"
 								class="underline underline-offset-2 opacity-60 hover:opacity-100 hover:text-blue-600"
@@ -124,7 +124,7 @@
 						</div>
 						<div class="item__value text-xl font-semibold">
 							<a
-								v-if="dataProject.sources.design"
+								v-if="dataProject?.sources?.design"
 								href=""
 								target="_blank"
 								class="underline underline-offset-2 opacity-60 hover:opacity-100 hover:text-blue-600"
@@ -165,7 +165,7 @@
 				</div>
 			</div>
 			<div class="project-description flex flex-col space-y-6 mt-10">
-				<template v-for="element in dataProject.description">
+				<template v-for="element in dataProject?.description">
 					<div
 						v-if="element.type === typeElementDescription.img"
 						class="project-description__img w-full"
@@ -240,7 +240,6 @@ const route = useRoute();
 
 const projectID = route.params.id;
 const dataProject = getProjectsData(projectID);
-const tasks = projectsTasks[dataProject.id];
 </script>
 
 <style scoped lang="scss">
