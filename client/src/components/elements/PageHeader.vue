@@ -162,6 +162,10 @@ const toggleMenu = () => {
 <style lang="scss" scoped>
 @import "@/assets/variables";
 
+.page-header {
+	z-index: 1500;
+}
+
 .logo {
 	width: 100px;
 	height: 100px;

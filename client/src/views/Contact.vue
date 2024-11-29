@@ -408,7 +408,6 @@ const validationRules = {
 };
 
 const isLoading = ref(false);
-const emailIsSended = ref(false);
 
 const v$ = useVuelidate(validationRules, data);
 

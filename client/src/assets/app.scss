@@ -24,7 +24,6 @@ body {
 	-webkit-font-smoothing: subpixel-antialiased;
 
 	* {
-		transition: 0.2s;
 		-webkit-user-select: none;
 		-khtml-user-select: none;
 		-moz-user-select: none;
@@ -46,6 +45,70 @@ body {
 
 .p-image-mask {
 	z-index: 5000 !important;
+}
+
+.carousel-3d {
+	&-slide {
+		&.right-1 {
+			& .project {
+				&__name {
+					opacity: 0;
+				}
+				&__number {
+					opacity: 0;
+				}
+				&__link {
+					opacity: 0;
+				}
+				&__category {
+					opacity: 0;
+				}
+				&__type {
+					opacity: 0;
+				}
+			}
+		}
+		&.left-1 {
+			& .project {
+				&__name {
+					opacity: 0;
+				}
+				&__number {
+					opacity: 0;
+				}
+				&__link {
+					opacity: 0;
+				}
+				&__category {
+					opacity: 0;
+				}
+				&__type {
+					opacity: 0;
+				}
+			}
+		}
+	}
+}
+
+.viewer {
+	&-backdrop {
+		background-color: rgba(0, 0, 0, 0.9);
+	}
+	&-footer {
+		display: none;
+	}
+	&-tooltip {
+		display: none;
+	}
+	&-button {
+		border-radius: 0%;
+		right: -30px;
+		top: -30px;
+
+		&:focus {
+			box-shadow: none;
+		}
+	}
 }
 
 @import "./responsive/index.scss";

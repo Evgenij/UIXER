@@ -124,7 +124,6 @@
 
 	.page-header {
 		border-bottom: 1px solid $lines;
-		z-index: 5000;
 
 		.logo {
 			background: $primary;
@@ -170,7 +169,6 @@
 		position: absolute;
 		top: 0;
 		height: 100vh;
-		z-index: 2500;
 
 		&.left {
 			left: 0;

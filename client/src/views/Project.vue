@@ -64,83 +64,99 @@
 			<div class="project-data__preview w-full mb-8">
 				<img :src="dataProject.poster" :alt="dataProject.name" />
 			</div>
-			<div class="project-data__elements flex flex-col space-y-8 mb-4">
-				<div class="row flex sm:space-x-14 w-full flex-wrap gap-6">
-					<div class="row__item item flex flex-col flex-shrink-0">
+			<div class="project-data__elements flex flex-col space-y-10 mb-4">
+				<div class="row flex xl:space-x-14 w-full flex-wrap gap-6">
+					<div class="row__item item flex flex-col">
 						<div class="item__name text-color-gray mb-1">
 							Category
 						</div>
-						<div class="item__value text-xl font-semibold">
+						<div class="item__value text-lg font-semibold">
 							{{ dataProject.category }}
 						</div>
 					</div>
-					<div class="row__item item flex flex-col flex-shrink-0">
+					<div class="row__item item flex flex-col">
 						<div class="item__name text-color-gray mb-1">
 							Type project
 						</div>
-						<div class="item__value text-xl font-semibold">
+						<div class="item__value text-lg font-semibold">
 							{{ dataProject.type }}
 						</div>
 					</div>
-					<div class="row__item item flex flex-col flex-shrink-0">
+					<div class="row__item item flex flex-col">
 						<div class="item__name text-color-gray mb-1">
 							Date development
 						</div>
-						<div class="item__value text-xl font-semibold">
+						<div class="item__value text-lg font-semibold">
 							{{ dataProject.date }}
 						</div>
 					</div>
 				</div>
-				<div class="row flex sm:space-x-14 w-full flex-wrap gap-6">
-					<div class="row__item item flex flex-col flex-shrink-0">
+				<div
+					class="row flex flex-col sm:grid w-full gap-8 grid-flow-col auto-cols-fr"
+				>
+					<div class="row__item item flex flex-col truncate">
 						<div class="item__name text-color-gray mb-1">Demo</div>
-						<div class="item__value text-xl font-semibold">
+						<div class="item__value text-lg font-semibold">
 							<a
 								v-if="dataProject?.sources?.demo"
 								href=""
 								target="_blank"
-								class="underline underline-offset-2 opacity-60 hover:opacity-100 hover:text-blue-600"
+								class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
 								>{{ dataProject.sources.demo }}</a
 							>
-							<template v-else>Not available</template>
+							<template v-else
+								><p class="opacity-50">
+									Not available
+								</p></template
+							>
 						</div>
 					</div>
-					<div class="row__item item flex flex-col flex-shrink-0">
+					<div class="row__item item flex flex-col truncate">
 						<div class="item__name text-color-gray mb-1">Code</div>
-						<div class="item__value text-xl font-semibold">
+						<div class="item__value text-lg font-semibold">
 							<a
 								v-if="dataProject?.sources?.code"
-								href=""
+								:href="dataProject.sources.code"
 								target="_blank"
-								class="underline underline-offset-2 opacity-60 hover:opacity-100 hover:text-blue-600"
+								class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
 								>{{ dataProject.sources.code }}</a
 							>
-							<template v-else>Not available</template>
+							<template v-else
+								><p class="opacity-50">
+									Not available
+								</p></template
+							>
 						</div>
 					</div>
-					<div class="row__item item flex flex-col flex-shrink-0">
+					<div class="row__item item flex flex-col truncate">
 						<div class="item__name text-color-gray mb-1">
 							Design
 						</div>
-						<div class="item__value text-xl font-semibold">
+						<div class="item__value text-lg font-semibold">
 							<a
 								v-if="dataProject?.sources?.design"
 								href=""
 								target="_blank"
-								class="underline underline-offset-2 opacity-60 hover:opacity-100 hover:text-blue-600"
+								class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
 								>{{ dataProject.sources.design }}</a
 							>
-							<template v-else>Not available</template>
+							<template v-else
+								><p class="opacity-50">
+									Not available
+								</p></template
+							>
 						</div>
 					</div>
 				</div>
-				<div class="row flex flex-col sm:flex-row sm:space-x-14 w-full">
-					<div class="row__item item flex flex-col w-1/2">
+				<div
+					class="row flex flex-col sm:flex-row sm:space-x-14 space-y-10 sm:space-y-0 w-full"
+				>
+					<div class="row__item item flex flex-col w-full sm:w-1/2">
 						<div class="item__name text-color-gray mb-1">
 							Targets
 						</div>
 						<div
-							class="item__value text-xl font-semibold flex flex-col space-y-5"
+							class="item__value text-lg font-semibold flex flex-col space-y-5"
 						>
 							<div
 								v-for="target in dataProject.targets"
@@ -151,10 +167,10 @@
 							</div>
 						</div>
 					</div>
-					<div class="row__item item flex flex-col w-1/2">
+					<div class="row__item item flex flex-col w-full sm:w-1/2">
 						<div class="item__name text-color-gray mb-1">Tasks</div>
 						<div
-							class="item__value text-xl font-semibold tasks flex flex-col space-y-5"
+							class="item__value text-lg font-semibold tasks flex flex-col space-y-5"
 						>
 							<div v-for="task in dataProject.tasks" class="flex">
 								<span class="primary-font mr-2">▪</span>
@@ -164,9 +180,11 @@
 					</div>
 				</div>
 			</div>
-			<div class="project-description flex flex-col space-y-6 mt-10">
+			<div
+				class="project-description text-lg flex flex-col space-y-6 mt-10"
+			>
 				<template v-for="element in dataProject?.description">
-					<div
+					<!-- <div
 						v-if="element.type === typeElementDescription.img"
 						class="project-description__img w-full"
 					>
@@ -174,19 +192,24 @@
 							:src="element.data"
 							:alt="element.data.split('/').at(-1)"
 						/>
-					</div>
+					</div> -->
+					<ImageViewer
+						v-if="element.type === typeElementDescription.img"
+						:image="element.data"
+					/>
 					<div
 						v-else-if="element.type === typeElementDescription.p"
 						class="project-description__text text-color-gray"
 					>
 						{{ element.data }}
 					</div>
-					<ModalImage
+
+					<!-- <ModalImage
 						v-else-if="
 							element.type === typeElementDescription.modalImg
 						"
 						:img="element.data"
-					/>
+					/> -->
 				</template>
 				<!-- <div class="project-description__img w-full pt-4">
 					<img src="../images/projects/Desktop.png" alt="Desktop" />
@@ -218,8 +241,8 @@ import PageSide from "@/components/elements/PageSide.vue";
 import ThemeToggle from "@/components/ThemeToggle.vue";
 import { useRoute } from "vue-router";
 import getProjectsData from "@/db/getProjectsData";
-import projectsTasks from "@/db/projectsTasks";
 import { typeElementDescription } from "@/helpers/consts";
+import ImageViewer from "@/components/ImageViewer.vue";
 
 const links = [
 	{

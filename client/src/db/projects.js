@@ -18,14 +18,39 @@ const getImage = (typeImage, image, folder) => {
 
 const projectsData = [
 	{
+		name: "Mining Fusion",
+		poster: getImage(typeImage.previews, "mining-fusion.jpg"),
+		category: categoriesProjects.frontend.system,
+		type: typesProjects.webApp,
+		date: "May 2022",
+		sources: {
+			demo: null,
+			code: null,
+			design: null,
+		},
+		technologies: [],
+		targets: [],
+		tasks: [],
+		description: [
+			{
+				type: typeElementDescription.p,
+				data: "p",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "88.jpg", "infurtex"),
+			},
+		],
+	},
+	{
 		name: "Infurtex",
 		poster: getImage(typeImage.previews, "infurtex.jpg"),
 		category: categoriesProjects.frontend.system,
 		type: typesProjects.webApp,
-		date: "July 2022",
+		date: "May 2022",
 		sources: {
 			demo: null,
-			code: null,
+			code: "https://github.com/Evgenij/Infurtex",
 			design: null,
 		},
 		technologies: [
@@ -58,51 +83,214 @@ const projectsData = [
 		],
 		description: [
 			{
+				type: typeElementDescription.p,
+				data: "A login page was developed, as well as a registration page for each type of system user",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Login page",
+			},
+			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "1.png", "infurtex"),
+				data: getImage(typeImage.projects, "auth.jpg", "infurtex"),
 			},
 			{
 				type: typeElementDescription.p,
-				data: "As part of my graduation project at university, I developed a system for testing design solutions",
+				data: "Respondent registration page",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "reg-res.jpg", "infurtex"),
 			},
 			{
 				type: typeElementDescription.p,
-				data: "The system allows to connect potential clients or users of any service to get feedback on the design, while design developers get a complete analysis of user behavior when interacting with the design",
+				data: "Moderator registration page",
 			},
 			{
-				type: typeElementDescription.modalImg,
-				data: getImage(typeImage.projects, "1.png", "infurtex"),
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "reg-mod.jpg", "infurtex"),
+			},
+			{
+				type: typeElementDescription.p,
+				data: "After logging in to the moderator workspace, the user is presented with an opportunity to create a test or a command for test distribution, which can be used later when customizing the test.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The first stage - entering the basic test data, selecting the test object and setting up the questions and answers",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The second stage is choosing the method of sending invitations to take the test. There are several types of mailing such as:",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "1. General mailing",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "2. Link access",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "3. Team mailing",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "11.jpg", "infurtex"),
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The moderator can also create teams for sending invitations to tests, this functionality is presented on the “Teams” page of the workspace.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "On the same page there is a panel for creating a team with all necessary criteria of respondents.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "This mechanism allows you to flexibly customize the criteria to cover a narrow audience for tests. ",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "22.jpg", "infurtex"),
+			},
+			{
+				type: typeElementDescription.p,
+				data: "After entering the respondent workspace, the user is presented with a list of all possible tests to take. The tests are divided into several categories:",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "1. New",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "2. Active",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "3. Favorites",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "4. Passed",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "New tests include tests to which he has received an invitation either through the team to which he belongs or through the general mailing list. ",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Tests that have access through a link are not displayed here, it is assumed that the moderator himself will conduct the event to organize the test. The link can only be provided to certain persons via individual communication channels, such as messengers.",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "33.jpg", "infurtex"),
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "44.jpg", "infurtex"),
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "55.jpg", "infurtex"),
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Below is the page for creating a new navigation test with key zones set for page navigation",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "66.jpg", "infurtex"),
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "77.jpg", "infurtex"),
+			},
+			{
+				type: typeElementDescription.p,
+				data: "And 'Page 404'",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "88.jpg", "infurtex"),
 			},
 		],
 	},
 	{
-		name: "SEO-X",
-		poster: getImage(typeImage.previews, "seo-x.jpg"),
-		category: "Concept",
-		type: "Mobile App",
-		technologies: [],
-	},
-	{
-		name: "Mining Fusion",
-		poster: getImage(typeImage.previews, "mining-fusion.jpg"),
-		category: "Concept",
-		type: "Mobile App",
-		technologies: [],
-	},
-	{
 		name: "Upgrade",
 		poster: getImage(typeImage.previews, "upgrade.jpg"),
-		category: "Concept",
-		type: "Mobile App",
+		category: categoriesProjects.frontend.system,
+		type: typesProjects.webApp,
+		date: "May 2022",
+		sources: {
+			demo: null,
+			code: null,
+			design: null,
+		},
 		technologies: [],
+		targets: [],
+		tasks: [],
+		description: [
+			{
+				type: typeElementDescription.p,
+				data: "p",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "88.jpg", "infurtex"),
+			},
+		],
 	},
-	{
-		name: "FNX",
-		poster: getImage(typeImage.previews, "fnx.jpg"),
-		category: "Concept",
-		type: "Mobile App",
-		technologies: [],
-	},
+	// {
+	// 	name: "FNX",
+	// 	poster: getImage(typeImage.previews, "fnx.jpg"),
+	// 	category: categoriesProjects.frontend.system,
+	// 	type: typesProjects.webApp,
+	// 	date: "May 2022",
+	// 	sources: {
+	// 		demo: null,
+	// 		code: null,
+	// 		design: null,
+	// 	},
+	// 	technologies: [],
+	// 	targets: [],
+	// 	tasks: [],
+	// 	description: [
+	// 		{
+	// 			type: typeElementDescription.p,
+	// 			data: "p",
+	// 		},
+	// 		{
+	// 			type: typeElementDescription.img,
+	// 			data: getImage(typeImage.projects, "88.jpg", "infurtex"),
+	// 		},
+	// 	],
+	// },
+	// {
+	// 	name: "SEO-X",
+	// 	poster: getImage(typeImage.previews, "seo-x.jpg"),
+	// 	category: categoriesProjects.frontend.system,
+	// 	type: typesProjects.webApp,
+	// 	date: "May 2022",
+	// 	sources: {
+	// 		demo: null,
+	// 		code: null,
+	// 		design: null,
+	// 	},
+	// 	technologies: [],
+	// 	targets: [],
+	// 	tasks: [],
+	// 	description: [
+	// 		{
+	// 			type: typeElementDescription.p,
+	// 			data: "p",
+	// 		},
+	// 		{
+	// 			type: typeElementDescription.img,
+	// 			data: getImage(typeImage.projects, "88.jpg", "infurtex"),
+	// 		},
+	// 	],
+	// },
 ];
 
 export default factoryObjectsDB(projectsData, 1);

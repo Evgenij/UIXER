@@ -99,7 +99,7 @@ const toggleModal = () => {
 
 		.wrapper-image {
 			position: relative;
-			width: 90%;
+			width: 95%;
 			height: 100vh;
 			margin: 0 auto;
 

@@ -124,7 +124,7 @@
 					I am a UI/UX Designer and front-end developer in one person.
 					I have been engaged in developing for about 3 years, I have
 					met many projects and interesting tasks on my professional
-					path.
+					path
 				</h4>
 			</header>
 			<section

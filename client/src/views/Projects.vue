@@ -44,10 +44,11 @@
 						>
 							.{{ showNumberItem(index + 1) }}
 						</div>
-						<h4 class="project__name font-bold text-4xl">
+						<h4 class="project__name font-extrabold text-4xl">
 							{{ project.name }}
 						</h4>
 						<router-link
+							v-if="project.technologies.length !== 0"
 							:to="toProject(project.id)"
 							class="project__link font-regular flex items-center text-xl space-x-1"
 						>
@@ -69,7 +70,13 @@
 						</router-link>
 					</header>
 					<main class="project__photo h-full">
-						<router-link :to="toProject(project.id)">
+						<router-link
+							:to="
+								project.technologies.length !== 0
+									? toProject(project.id)
+									: ''
+							"
+						>
 							<img
 								:src="project.poster"
 								:alt="project.name"
