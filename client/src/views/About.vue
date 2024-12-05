@@ -313,12 +313,12 @@
 							class="certificate__header header flex flex-col space-y-2 justify-center items-center py-10 px-3"
 						>
 							<h3
-								class="header__main font-bold text-3xl leading-none"
+								class="header__main font-bold text-3xl leading-none text-center"
 								:style="{ color: certificate.color }"
 							>
 								{{ certificate.label }}
 							</h3>
-							<span class="font-light text-sm">
+							<span class="font-light text-sm text-center">
 								{{ certificate.type }}
 							</span>
 						</div>
@@ -351,7 +351,7 @@
 <script setup>
 import PageSide from "@/components/elements/PageSide.vue";
 import ThemeToggle from "@/components/ThemeToggle.vue";
-import { h, ref } from "vue";
+import { ref } from "vue";
 
 const links = [
 	{
@@ -370,6 +370,20 @@ const links = [
 
 const certificates = [
 	{
+		label: "React",
+		type: "JS framework",
+		color: "#58c4dc",
+		list_cert: [
+			{
+				name: "React Full course",
+				href: new URL(
+					`../documents/certificates/react-course.pdf`,
+					import.meta.url
+				).href,
+			},
+		],
+	},
+	{
 		label: "Angular",
 		type: "JS framework",
 		color: "#ff0032",
@@ -378,6 +392,41 @@ const certificates = [
 				name: "Angular Essential",
 				href: new URL(
 					`../documents/certificates/TP58962405.pdf`,
+					import.meta.url
+				).href,
+			},
+		],
+	},
+	{
+		label: "UI/UX Design",
+		type: "Design",
+		color: "#6d00e9",
+		list_cert: [
+			{
+				name: "UI/UX Design Essential",
+				href: new URL(
+					`../documents/certificates/TP10044539.pdf`,
+					import.meta.url
+				).href,
+			},
+			{
+				name: "UI/UX Design Starter",
+				href: new URL(
+					`../documents/certificates/TP11251734.pdf`,
+					import.meta.url
+				).href,
+			},
+			{
+				name: "UI/UX mobile App Design",
+				href: new URL(
+					`../documents/certificates/TP79487888.pdf`,
+					import.meta.url
+				).href,
+			},
+			{
+				name: "Figma - Online Store Design",
+				href: new URL(
+					`../documents/certificates/TP44664130.pdf`,
 					import.meta.url
 				).href,
 			},
@@ -420,41 +469,6 @@ const certificates = [
 				name: "Introduction to Packet Tracer",
 				href: new URL(
 					`../documents/certificates/cisco/EvgenyErmolenko-Introduction to -certificate (2).pdf`,
-					import.meta.url
-				).href,
-			},
-		],
-	},
-	{
-		label: "UI/UX Design",
-		type: "Design",
-		color: "#6d00e9",
-		list_cert: [
-			{
-				name: "UI/UX Design Essential",
-				href: new URL(
-					`../documents/certificates/TP10044539.pdf`,
-					import.meta.url
-				).href,
-			},
-			{
-				name: "UI/UX Design Starter",
-				href: new URL(
-					`../documents/certificates/TP11251734.pdf`,
-					import.meta.url
-				).href,
-			},
-			{
-				name: "UI/UX mobile App Design",
-				href: new URL(
-					`../documents/certificates/TP79487888.pdf`,
-					import.meta.url
-				).href,
-			},
-			{
-				name: "Figma - Online Store Design",
-				href: new URL(
-					`../documents/certificates/TP44664130.pdf`,
 					import.meta.url
 				).href,
 			},
