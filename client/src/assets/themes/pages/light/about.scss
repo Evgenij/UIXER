@@ -2,9 +2,15 @@
 
 .light-theme {
 	.page-about {
+		.wrapp-info-paragraph:before {
+			background: $primary;
+		}
+
 		.pages-links {
 			z-index: 1000;
 			border-bottom: 1px solid $lines;
+
+
 
 			& .main-link {
 				& .dot {
@@ -122,6 +128,10 @@
 						border-radius: 0;
 						background-color: transparent;
 						padding: 1em;
+
+						a {
+							color: $link
+						}
 					}
 				}
 
@@ -130,6 +140,7 @@
 				}
 			}
 		}
+
 		.work-place {
 			background-color: rgba(0, 0, 0, 0.04);
 			position: relative;

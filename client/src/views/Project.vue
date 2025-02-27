@@ -6,28 +6,26 @@
 		</PageSide>
 
 		<aside class="project-page__main px-14 py-12 h-full basis-5/12">
-			<router-link
-				:to="{ name: 'projects' }"
-				class="project-page__back font-regular flex items-center space-x-1 mb-10"
-			>
-				<svg
-					width="30"
-					height="30"
-					viewBox="0 0 30 30"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M11.7141 9.28125L5.99986 14.9984L11.7141 20.7141M24.5713 14.9998H5.99986"
-						stroke="#8E8E8E"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					/>
-				</svg>
-				<span>back</span>
-			</router-link>
+      <div class="project-page__back font-regular flex items-center space-x-1 mb-10 cursor-pointer"
+           @click="router.back()">
+        <svg
+          width="30"
+          height="30"
+          viewBox="0 0 30 30"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M11.7141 9.28125L5.99986 14.9984L11.7141 20.7141M24.5713 14.9998H5.99986"
+            stroke="#8E8E8E"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <span>back</span>
+      </div>
 
-			<div class="project-page__name mb-16">
+			<div class="project-page__name mb-16" >
 				<h3 class="font-heavy text-7xl mb-5">
 					<!-- {{ this.$route.params.id }} -->
 					{{ dataProject.name }}
@@ -45,7 +43,7 @@
 			<div class="dev-tools w-full">
 				<p class="font-semibold text-xl mb-3">Development tools</p>
 				<div
-					v-if="dataProject.technologies.length != 0"
+					v-if="dataProject.technologies.length !== 0"
 					class="tools flex flex-wrap"
 				>
 					<div
@@ -276,13 +274,13 @@
 </template>
 
 <script setup>
-import ModalImage from "@/components/ModalImage.vue";
 import PageSide from "@/components/elements/PageSide.vue";
 import ThemeToggle from "@/components/ThemeToggle.vue";
 import { useRoute } from "vue-router";
 import getProjectsData from "@/db/getProjectsData";
 import { typeElementDescription } from "@/helpers/consts";
 import ImageViewer from "@/components/ImageViewer.vue";
+import router from "@/router/router.js";
 
 const links = [
 	{

@@ -20,6 +20,8 @@ const projectsData = [
 	{
 		inDeveloping: true,
 		name: "Crypto[IO]",
+		secondName: 'Crypto mining strategy game',
+		subtitle: "Web game about cryptocurrency mining",
 		poster: getImage(typeImage.previews, "mining-fusion.jpg"),
 		category: categoriesProjects.frontend.game,
 		type: typesProjects.webApp,
@@ -61,6 +63,13 @@ const projectsData = [
 		],
 		targets: [],
 		tasks: [],
+		shortenedDescription: ["A multiplayer game about building a system for mining",
+		"The game features an online store, shopping cart and order placement, following the example" +
+		" of modern websites", "The system of user skills research is created and the mechanism of" +
+			" system building through Drag&Drop concept is realized",
+			"The game is developed using React, TypeScript, NodeJS and TailwindCSS.",
+			"JWT is used for authorization. The database is developed on PostgreSQL and ORM Sequelize"
+		],
 		description: [
 			{
 				type: typeElementDescription.info,
@@ -74,6 +83,8 @@ const projectsData = [
 	},
 	{
 		name: "Infurtex",
+		secondName: 'Service for UI/UX design testing',
+		subtitle: "System for testing Design solutions",
 		poster: getImage(typeImage.previews, "infurtex.jpg"),
 		category: categoriesProjects.frontend.system,
 		type: typesProjects.webApp,
@@ -127,6 +138,11 @@ const projectsData = [
 			"The moderator is also provided with functionality for analyzing test results",
 			"Respondent is given the opportunity to take tests with system coins, which gives additional motivation to pass",
 		],
+		shortenedDescription: [
+			"As part of my graduation project at university, I developed a system for testing Design solutions",
+			"The system allows to connect potential clients or users of any service to get feedback on" +
+			" the Design, while Design developers get a complete analysis of user behavior when interacting with the Design",
+			"The system was developed using: Laravel, Vue JS (Vue Router, Vuex), SCSS, Vuesax, Tailwind, MySQL"],
 		description: [
 			// {
 			// 	type: typeElementDescription.problem,
@@ -266,6 +282,8 @@ const projectsData = [
 	},
 	{
 		name: "Upgrade",
+		secondName: 'IT project team development system',
+		subtitle: "System for team development of IT projects",
 		poster: getImage(typeImage.previews, "upgrade.jpg"),
 		category: categoriesProjects.frontend.system,
 		type: typesProjects.webApp,
@@ -304,9 +322,20 @@ const projectsData = [
 		targets: ["Development of an Internet application for a large number of users that would" +
 		" allow creating projects, goals and forming teams for each of them",
 		"Each goal would have several tasks, and tasks in turn would have subtasks and attachments.",
-		"There should be implemented output of statistics on tasks with the possibility of selecting a period, also output of user's efficiency based on statistics. ","User can create projects, i.e." +
-			" be its leader, and also can be just a participant of the project. ","The user should be able to change the color theme of the application in the system settings"],
-		tasks: ["User Authentication","Realize output of user statistics by tasks for a week, month", "Maintain progress of project completion, goals, tasks","changing the color design of the application" ,"creating, modifying, deleting a task, project, goal, attachment, file"],
+		"There should be implemented output of statistics on tasks with the possibility of selecting a " +
+		"period, also output of user's efficiency based on statistics. ","User can create projects, i.e." +
+			" be its leader, and also can be just a participant of the project. ","The user should be able " +
+			"to change the color theme of the application in the system settings"],
+		tasks: ["User Authentication","Realize output of user statistics by tasks for a week, month",
+			"Maintain progress of project completion, goals, tasks","changing the color design of the" +
+			" application" ,"creating, modifying, deleting a task, project, goal, attachment, file"],
+		shortenedDescription: ["As part of a course project at the university, I developed a system" +
+		" for team development of IT projects.", "This project was implemented using: PHP, JS," +
+		" jQuery, Ajax, HTML, SCSS.", "All user interaction was realized through asynchronous requests " +
+		"(Ajax), which allowed to interact with the system without reloading the page.",
+			"The project was implemented without the use of frameworks. All design and functionality" +
+			" was implemented from scratch.", "The work with Sessions, Cookies was done. DB MySQL was used. " +
+			"The project is implemented in two themes - light and dark."],
 		description: [
 			{
 				type: typeElementDescription.p,
@@ -414,56 +443,70 @@ const projectsData = [
 
 		],
 	},
-	// {
-	// 	name: "FNX",
-	// 	poster: getImage(typeImage.previews, "fnx.jpg"),
-	// 	category: categoriesProjects.frontend.system,
-	// 	type: typesProjects.webApp,
-	// 	date: "May 2022",
-	// 	sources: {
-	// 		demo: null,
-	// 		code: null,
-	// 		design: null,
-	// 	},
-	// 	technologies: [],
-	// 	targets: [],
-	// 	tasks: [],
-	// 	description: [
-	// 		{
-	// 			type: typeElementDescription.p,
-	// 			data: "p",
-	// 		},
-	// 		{
-	// 			type: typeElementDescription.img,
-	// 			data: getImage(typeImage.projects, "88.jpg", "infurtex"),
-	// 		},
-	// 	],
-	// },
-	// {
-	// 	name: "SEO-X",
-	// 	poster: getImage(typeImage.previews, "seo-x.jpg"),
-	// 	category: categoriesProjects.frontend.system,
-	// 	type: typesProjects.webApp,
-	// 	date: "May 2022",
-	// 	sources: {
-	// 		demo: null,
-	// 		code: null,
-	// 		design: null,
-	// 	},
-	// 	technologies: [],
-	// 	targets: [],
-	// 	tasks: [],
-	// 	description: [
-	// 		{
-	// 			type: typeElementDescription.p,
-	// 			data: "p",
-	// 		},
-	// 		{
-	// 			type: typeElementDescription.img,
-	// 			data: getImage(typeImage.projects, "88.jpg", "infurtex"),
-	// 		},
-	// 	],
-	// },
+	{
+		name: "FNX",
+		poster: getImage(typeImage.previews, "fnx.jpg"),
+		category: categoriesProjects.design.newDesign,
+		type: typesProjects.website,
+		date: "November 2021",
+		sources: {
+			demo: null,
+			code: null,
+			design: 'https://www.behance.net/gallery/155969223/The-concept-of-the-banks-website',
+		},
+		badges: [
+			{
+				label: technologies.figma,
+				color: colorsTechnologies.figma,
+				textColor: 'white'
+			},
+		], // max 3
+		technologies: [technologies.figma],
+		targets: [],
+		tasks: [],
+		description: [
+			// {
+			// 	type: typeElementDescription.p,
+			// 	data: "p",
+			// },
+			// {
+			// 	type: typeElementDescription.img,
+			// 	data: getImage(typeImage.projects, "88.jpg", "infurtex"),
+			// },
+		],
+	},
+	{
+		name: "SEO-X",
+		poster: getImage(typeImage.previews, "seo-x.jpg"),
+		category: categoriesProjects.design.newDesign,
+		type: typesProjects.landing,
+		date: "December 2021",
+		sources: {
+			demo: null,
+			code: null,
+			design: 'https://www.behance.net/gallery/154950593/Website-of-the-seo-promotion-company',
+		},
+		badges: [
+			{
+				label: technologies.figma,
+				color: colorsTechnologies.figma,
+				textColor: 'white'
+			},
+		], // max 3
+		technologies: [technologies.figma],
+		targets: [],
+		tasks: [],
+		description: [
+			// {
+			// 	type: typeElementDescription.p,
+			// 	data: "p",
+			// },
+			// {
+			// 	type: typeElementDescription.img,
+			// 	data: getImage(typeImage.projects, "88.jpg", "infurtex"),
+			// },
+		],
+	},
 ];
 
 export default factoryObjectsDB(projectsData, 1);

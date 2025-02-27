@@ -2,6 +2,14 @@
 
 .dark-theme {
 	.page-about {
+
+		.p-accordion-content {
+
+		}
+		.wrapp-info-paragraph:before {
+			background: $primary;
+		}
+
 		.personal-data {
 			border-right: 1px solid $lines;
 		}

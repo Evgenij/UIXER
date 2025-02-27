@@ -73,16 +73,7 @@
 									: ''
 							"
 						>
-              <div
-                v-if="project.inDeveloping"
-                class="in-developing bg-zinc-900 text-white absolute border-sky-400 border-2 flex items-center gap-2 justify-center right-2 -top-4 sm:-top-2 z-50 p-1 px-2"
-               >
-                <span class="text-sm" :style="{color: 'white'}">In developing</span>
-                <span class="relative flex align-center justify-center size-3">
-                  <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
-                  <span class="relative inline-flex size-3 rounded-full bg-sky-500"></span>
-                </span>
-              </div>
+              <Badge v-if="project.inDeveloping"/>
 							<img
 								:src="project.poster"
 								:alt="project.name"
@@ -116,6 +107,7 @@ import showNumberItem from "@/mixins/showNumberInSliderMixin.js";
 import { Carousel3d, Slide } from "vue3-carousel-3d";
 import PageSide from "@/components/elements/PageSide.vue";
 import ThemeToggle from "@/components/ThemeToggle.vue";
+import Badge from "@/components/Badge.vue";
 import projects from "@/db/projects";
 
 const links = [

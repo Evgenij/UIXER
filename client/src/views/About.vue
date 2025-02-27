@@ -231,31 +231,31 @@
 					</div>
 				</div>
 				<div class="w-full xl:w-1/2">
-					<h5 class="primary-font font-bold mb-4">
-						Personal projects
-					</h5>
+          <header class="flex align-center justify-between">
+            <h5 class="primary-font font-bold mb-4">
+              Last projects
+            </h5>
+            <a href="/projects" class="font-light text-sm hover:underline underline-offset-4">Show
+              all</a>
+          </header>
+					
 					<div class="projects-list grid grid-cols-1 gap-5 flex-wrap">
 						<div
-							v-for="(project, index) in projects"
-							:key="index + 100"
+							v-for="project in projects.slice(0,3)"
+							:key="project.id"
 							class="project flex flex-col h-min"
 						>
 							<div
-								class="project__header header flex flex-col space-y-2 justify-center items-start p-5"
+								class="project__header relative header flex flex-col space-y-2 justify-center items-start p-5"
 							>
 								<header class="flex items-center space-x-4">
 									<h3
 										class="header__main font-bold text-xl leading-normal"
 									>
-										{{ project.name }}
+										{{ project.secondName }}
+                    <Badge v-if="project.inDeveloping"/>
 									</h3>
-									<!-- <span class="opacity-30 font-light">|</span>
-									<p class="opacity-30 font-light text-base">
-										{{ project.from }} -
-										{{ project.to }}
-									</p> -->
 								</header>
-
 								<span class="font-light text-sm">
 									{{ project.subtitle }}
 								</span>
@@ -265,34 +265,21 @@
 									header="More info"
 									contentClass="project__accordion accordion"
 								>
-									<div class="flex flex-col space-y-1">
-										<div
-											v-for="item in project.description"
-											class="info-item flex space-x-2"
-										>
-											<span class="opacity-40 font-light"
-												>{{ item.name }}:</span
-											>
-											<a
-												v-if="item.href"
-												:href="item.href"
-												target="_blank"
-												class="underline font-normal text-blue-500"
-												>{{ item.label }}</a
-											>
-											<p v-else class="font-light">
-												Not available
-											</p>
-										</div>
-									</div>
-									<div class="flex flex-col space-y-3 mt-4">
-										<p
-											v-for="paragraph in project.paragraphs"
-											class="font-light opacity-80"
-										>
-											▪ {{ paragraph }}
-										</p>
-									</div>
+                  <div class="flex flex-col gap-2">
+                    <div v-if="project.shortenedDescription?.length !== 0" class="flex flex-col gap-2 pl-5">
+                      <div
+                        v-for="item in project.shortenedDescription"
+                        class="wrapp-info-paragraph relative"
+                      >
+                        <p class="font-light opacity-70">{{item}}</p>
+                      </div>
+                    </div>
+                    <p v-else class="px-2">No info</p>
+                    <a :href="`project/${project.id}`"
+                       class="inline-block p-2 font-light hover:underline underline-offset-4">Show
+                      more ></a>
+                  </div>
+
 								</AccordionTab>
 							</Accordion>
 						</div>
@@ -351,6 +338,8 @@
 <script setup>
 import PageSide from "@/components/elements/PageSide.vue";
 import ThemeToggle from "@/components/ThemeToggle.vue";
+import Badge from "@/components/Badge.vue";
+import projects from "@/db/projects";
 import { ref } from "vue";
 
 const links = [
@@ -511,94 +500,6 @@ const placesWorks = [
 	},
 ];
 
-const projects = [
-	{
-		subtitle: "System for testing Design solutions",
-		name: "Service for UI/UX Design testing",
-		from: "Sept 2023",
-		to: "Nov 2023",
-		description: [
-			{
-				name: "Demo",
-				href: "",
-				label: "",
-			},
-			{
-				name: "Code",
-				href: "https://github.com/Evgenij/Infurtex",
-				label: "https://github.com",
-			},
-			{
-				name: "Design",
-				href: "",
-				label: "",
-			},
-		],
-		paragraphs: [
-			"As part of my graduation project at university, I developed a system for testing Design solutions. ",
-			"The system allows to connect potential clients or users of any service to get feedback on the Design, while Design developers get a complete analysis of user behavior when interacting with the Design. ",
-			"The system was developed using: Laravel, Vue JS (Vue Router, Vuex), SCSS, Vuesax, Tailwind, MySQL.",
-		],
-	},
-	{
-		subtitle: "System for team development of IT projects",
-		name: "IT project team development system - Upgrade",
-		from: "Sept 2023",
-		to: "Nov 2023",
-		description: [
-			{
-				name: "Demo",
-				href: "",
-				label: "",
-			},
-			{
-				name: "Code",
-				href: "https://github.com/Evgenij/Upgrade_Web",
-				label: "https://github.com",
-			},
-			{
-				name: "Design",
-				href: "https://www.behance.net/gallery/113790579/sistema-komandnoj-razrabotki-Upgrade",
-				label: "https://www.behance.net",
-			},
-		],
-		paragraphs: [
-			"As part of a course project at the university, I developed a system for team development of IT projects.",
-			"This project was implemented using: PHP, JS, jQuery, Ajax, HTML, SCSS.",
-			"All user interaction was realized through asynchronous requests (Ajax), which allowed to interact with the system without reloading the page.",
-			"The project was implemented without the use of frameworks. All design and functionality was implemented from scratch.",
-			"The work with Sessions, Cookies was done. DBMS MySQL was used. The project is implemented in two themes - light and dark.",
-		],
-	},
-	{
-		subtitle: "System for planning tasks and goals",
-		name: "Desktop application for planning tasks and goals",
-		from: "Sept 2023",
-		to: "Nov 2023",
-		description: [
-			{
-				name: "Demo",
-				href: "",
-				label: "",
-			},
-			{
-				name: "Code",
-				href: "https://github.com/Evgenij/Upgrade",
-				label: "https://github.com",
-			},
-			{
-				name: "Design",
-				href: "https://www.behance.net/gallery/108482153/UIUX-dizajn-prilozhenija-planirovanija-zadach-i-celej",
-				label: "https://www.behance.net",
-			},
-		],
-		paragraphs: [
-			"As part of a course project at the university, I developed a system for planning tasks and goals. ",
-			"This project was realized with the use of: C#, Windows Forms, MS SQL Server.",
-		],
-	},
-];
-
 const CVs = [
 	{
 		href: new URL(
@@ -683,5 +584,15 @@ const switchTypesFile = () => {
 			background: $lines;
 		}
 	}
+}
+
+.wrapp-info-paragraph:before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 6px;
+  height: 6px;
+  left: -16px;
+  top: 8px;
 }
 </style>

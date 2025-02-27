@@ -22,4 +22,5 @@ export const colorsTechnologies = {
 	php: '#4f5b93',
 	mysql: '#3e6e93',
 	javaScript: '#dda100',
+	figma: 'black'
 };

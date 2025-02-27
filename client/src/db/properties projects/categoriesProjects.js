@@ -5,7 +5,7 @@ export default {
 		game: "Game",
 	},
 	design: {
-		newDesign: "Design website",
+		newDesign: "Design",
 		redesign: "Redesign",
 		logo: "Logotype",
 	},

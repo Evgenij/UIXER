@@ -26,6 +26,9 @@ const openImage = () => {
 </script>
 
 <style lang="scss">
+.viewer-container {
+  z-index: 10000 !important;
+}
 .container {
 	position: relative;
 }
