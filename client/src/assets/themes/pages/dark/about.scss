@@ -31,8 +31,21 @@
 			}
 
 			&.primary {
+				background-color: transparentize($primary, 0.9);
+
 				&:hover {
-					background-color: transparentize($primary, 0.9);
+					color: $background;
+					background-color: $primary;
+
+					svg path {
+						stroke: $background;
+					}
+				}
+
+				&-silent {
+					&:hover {
+						background-color: transparentize($primary, 0.9);
+					}
 				}
 			}
 

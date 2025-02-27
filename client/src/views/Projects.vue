@@ -10,11 +10,7 @@
 			Projects
 		</h3>
 		<div class="slider-wrapper flex h-full relative">
-			<!-- <div
-				class="coming-soon text-3xl font-bold px-10 py-8 absolute bg-gray-800 text-yellow-600 -rotate-6 top-1/2 left-1/2 z-50 rounded-lg border-dashed border-4 border-yellow-600"
-			>
-				Coming soon
-			</div> -->
+
 			<Carousel3d
 				display="3"
 				border="0"
@@ -77,11 +73,28 @@
 									: ''
 							"
 						>
+              <div
+                v-if="project.inDeveloping"
+                class="in-developing bg-zinc-900 text-white absolute border-sky-400 border-2 flex items-center gap-2 justify-center right-2 -top-4 sm:-top-2 z-50 p-1 px-2"
+               >
+                <span class="text-sm" :style="{color: 'white'}">In developing</span>
+                <span class="relative flex align-center justify-center size-3">
+                  <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
+                  <span class="relative inline-flex size-3 rounded-full bg-sky-500"></span>
+                </span>
+              </div>
 							<img
 								:src="project.poster"
 								:alt="project.name"
 								class="w-full"
 							/>
+              <div class="badges z-50 absolute flex gap-2 -bottom-3 sm:-bottom-1 left-2">
+                <p v-for="badge in project.badges"
+                   class="badge p-1 px-2 text-sm text-white font-bold"
+                    :style="{backgroundColor: badge.color, color: badge.textColor}">
+                  {{badge.label.toString().trim()}}
+                  </p>
+              </div>
 						</router-link>
 					</main>
 					<footer class="project__articles flex justify-between">
@@ -148,6 +161,12 @@ onMounted(() => {
 		overflow: visible;
 		background-color: transparent;
 		display: flex;
+
+    &.left-1, &.right-1 {
+      .badges, .in-developing{
+        opacity: 0 !important;
+      }
+    }
 	}
 
 	.carousel-3d-controls {
@@ -156,12 +175,12 @@ onMounted(() => {
 
 		& .prev,
 		.next {
-			backdrop-filter: grayscale(1) contrast(1);
+      backdrop-filter: grayscale(1) contrast(1);
 
-			&:hover {
-				opacity: 0 !important;
-			}
-		}
+      &:hover {
+        opacity: 0 !important;
+      }
+    }
 
 		& .prev {
 			left: 0;

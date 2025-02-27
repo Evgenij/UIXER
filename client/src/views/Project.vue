@@ -93,60 +93,50 @@
 				</div>
 				<div
 					class="row flex flex-col sm:grid w-full gap-8 grid-flow-col auto-cols-fr"
-				>
-					<div class="row__item item flex flex-col truncate">
-						<div class="item__name text-color-gray mb-1">Demo</div>
-						<div class="item__value text-lg font-semibold">
-							<a
-								v-if="dataProject?.sources?.demo"
-								href=""
-								target="_blank"
-								class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
-								>{{ dataProject.sources.demo }}</a
-							>
-							<template v-else
-								><p class="opacity-50">
-									Not available
-								</p></template
-							>
-						</div>
-					</div>
-					<div class="row__item item flex flex-col truncate">
-						<div class="item__name text-color-gray mb-1">Code</div>
-						<div class="item__value text-lg font-semibold">
-							<a
-								v-if="dataProject?.sources?.code"
-								:href="dataProject.sources.code"
-								target="_blank"
-								class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
-								>{{ dataProject.sources.code }}</a
-							>
-							<template v-else
-								><p class="opacity-50">
-									Not available
-								</p></template
-							>
-						</div>
-					</div>
-					<div class="row__item item flex flex-col truncate">
-						<div class="item__name text-color-gray mb-1">
-							Design
-						</div>
-						<div class="item__value text-lg font-semibold">
-							<a
-								v-if="dataProject?.sources?.design"
-								href=""
-								target="_blank"
-								class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
-								>{{ dataProject.sources.design }}</a
-							>
-							<template v-else
-								><p class="opacity-50">
-									Not available
-								</p></template
-							>
-						</div>
-					</div>
+				> <template v-if="dataProject?.sources?.demo">
+            <div class="row__item item flex flex-col truncate">
+              <div class="item__name text-color-gray mb-1">Demo</div>
+              <div class="item__value text-lg font-semibold">
+                <a
+                  :href="dataProject.sources.demo"
+                  target="_blank"
+                  class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
+                >{{ dataProject.sources.demo }}</a
+                >
+              </div>
+            </div>
+          </template>
+
+          <template v-if="dataProject?.sources?.code">
+            <div class="row__item item flex flex-col truncate">
+              <div class="item__name text-color-gray mb-1">Code</div>
+              <div class="item__value text-lg font-semibold">
+                <a
+                  :href="dataProject.sources.code"
+                  target="_blank"
+                  class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
+                >{{ dataProject.sources.code }}</a
+                >
+              </div>
+            </div>
+          </template>
+
+          <template v-if="dataProject?.sources?.design">
+            <div class="row__item item flex flex-col truncate">
+              <div class="item__name text-color-gray mb-1">
+                Design
+              </div>
+              <div class="item__value text-lg font-semibold">
+                <a
+                  :href="dataProject.sources.design"
+                  target="_blank"
+                  class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
+                >{{ dataProject.sources.design }}</a
+                >
+              </div>
+            </div>
+          </template>
+
 				</div>
 				<div
 					class="row flex flex-col sm:flex-row sm:space-x-14 space-y-10 sm:space-y-0 w-full"
@@ -202,6 +192,56 @@
 						class="project-description__text text-color-gray"
 					>
 						{{ element.data }}
+					</div>
+					<div
+						v-else-if="element.type === typeElementDescription.list"
+						class="project-description__text text-color-gray"
+					>
+						<ul class="flex flex-col space-y-2 pl-4">
+							<li v-for="(item, index) in element.data">
+								{{ index + 1 + ". " + item }}
+							</li>
+						</ul>
+					</div>
+
+					<div
+						v-else-if="element.type === typeElementDescription.info"
+						class="project-description__text text-color-gray border-2 border-sky-600/40"
+					>
+						<p class="w-full bg-sky-600/40 p-2 text-white">Info</p>
+						<div class="p-2 px-3 flex flex-col gap-3">
+							{{ element.data }}
+						</div>
+					</div>
+					<div
+						v-else-if="
+							element.type === typeElementDescription.problem
+						"
+						class="project-description__text text-color-gray border-2 border-white/15"
+					>
+						<p class="w-full bg-white/15 p-2">
+							{{ element.type.toUpperCase() }}
+						</p>
+						<div class="p-2 px-3 flex flex-col gap-3">
+							<p v-for="paragraph in element.data">
+								{{ paragraph }}
+							</p>
+						</div>
+					</div>
+					<div
+						v-else-if="
+							element.type === typeElementDescription.solution
+						"
+						class="project-description__text text-color-gray border-2 border-green-600"
+					>
+						<p class="w-full bg-green-600 text-white p-2">
+							{{ element.type.toUpperCase() }}
+						</p>
+						<div class="p-2 px-3 flex flex-col gap-3">
+							<p v-for="paragraph in element.data">
+								{{ paragraph }}
+							</p>
+						</div>
 					</div>
 
 					<!-- <ModalImage

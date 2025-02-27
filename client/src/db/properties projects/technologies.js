@@ -14,7 +14,20 @@ export default {
 	jquery: "JQuery",
 	mysql: "MySQL",
 	laravel: "Laravel",
-	tailwind: "Tailwind",
+	tailwind: "Tailwind CSS",
 	scss: "SCSS",
 	mvc: "MVC",
+	nextjs: "NextJS",
+	bootstrap: "Bootstrap",
+	axios: "Axios",
+	phpmyadmin: "PHPMyAdmin",
+	ajax: "AJAX",
+	restApi: "REST Api",
+	sequelize: "Sequelize",
+	vite: "Vite",
+	nodejs: "NodeJS",
+	postgresql: "PostgreSQL",
+	spline: "Spline"
 };
+
+

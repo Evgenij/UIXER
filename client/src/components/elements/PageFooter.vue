@@ -42,7 +42,7 @@ const socialLinks = [
 	},
 	{
 		id: 4,
-		href: "https://www.instagram.com/_uixer_/",
+		href: "https://www.instagram.com/yevhenii.dev/",
 		label: "Instagram",
 	},
 ];

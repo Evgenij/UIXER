@@ -14,16 +14,16 @@
 		</header>
 		<main class="data-page">
 			<Tabs @changeTab="changeTab" :tabs="tabs">
-				<Tab name="UI/UX design" :active-tab="activeTab">
-					<Design
-						:items="tabsContents.design.items"
-						:skills="tabsContents.design.skills"
-					/>
-				</Tab>
 				<Tab name="Frontend" :active-tab="activeTab">
 					<Frontend
 						:items="tabsContents.frontend.items"
 						:skills="tabsContents.frontend.skills"
+					/>
+				</Tab>
+				<Tab name="UI/UX design" :active-tab="activeTab">
+					<Design
+						:items="tabsContents.design.items"
+						:skills="tabsContents.design.skills"
 					/>
 				</Tab>
 			</Tabs>
@@ -57,11 +57,11 @@ const links = [
 
 const tabs = [
 	{
-		name: "UI/UX design",
+		name: "Frontend",
 		isActive: true,
 	},
 	{
-		name: "Frontend",
+		name: "UI/UX design",
 		isActive: false,
 	},
 ];
@@ -111,32 +111,49 @@ const tabsContents = {
 			},
 			{
 				id: 3,
-				name: "HTML5",
-			},
-			{
-				id: 4,
-				name: "SCSS",
-			},
-			{
-				id: 5,
-				name: "Tailwind",
-			},
-			{
-				id: 6,
 				name: "React",
 			},
 			{
+				id: 4,
+				name: "React Router",
+			},
+			{
+				id: 5,
+				name: "Redux",
+			},
+			{
+				id: 6,
+				name: "Node.js",
+			},
+			{
 				id: 7,
-				name: "Vue JS",
+				name: "Vite",
 			},
 			{
 				id: 8,
+				name: "HTML5",
+			},
+			{
+				id: 9,
+				name: "SCSS",
+			},
+			{
+				id: 10,
+				name: "Tailwind",
+			},
+			{
+				id: 11,
+				name: "Vue JS",
+			},
+			{
+				id: 12,
 				name: "Angular",
 			},
 		],
 		skills: [
 			"Responsive design",
 			"Components",
+			"REST API",
 			"React Router",
 			"Redux",
 			"Vuex",
@@ -148,7 +165,7 @@ const tabsContents = {
 	},
 };
 
-const activeTab = ref("UI/UX design");
+const activeTab = ref("Frontend");
 
 const changeTab = (val) => {
 	activeTab.value = val;

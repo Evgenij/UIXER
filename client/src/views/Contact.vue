@@ -392,14 +392,16 @@ const links = [
 	},
 ];
 
-const data = reactive({
+const emptyData = {
 	name: "",
 	email: "",
 	company: "",
 	website: "",
 	message: "",
 	typeMess: "hello",
-});
+};
+
+const data = reactive(emptyData);
 
 const validationRules = {
 	name: { required },
