@@ -4,21 +4,11 @@
 	background-color: $background;
 	color: $text-color;
 
-	// * {
-	// 	scrollbar-width: thin;
-	// 	scrollbar-color: $primary $lines;
-	// }
-
-	// *::-webkit-scrollbar-track,
-	// html *::-webkit-scrollbar-track {
-	// 	background: $lines;
-	// 	margin: 20px;
-	// }
-	// *::-webkit-scrollbar-thumb,
-	// html *::-webkit-scrollbar-thumb {
-	// 	background-color: $primary;
-	// 	border: 0 solid $lines;
-	// }
+	*::-webkit-scrollbar-track,
+	html *::-webkit-scrollbar-track {
+		background: $lines;
+		margin: 20px;
+	}
 
 	*::-webkit-scrollbar-track {
 		margin: 20px;
@@ -171,7 +161,6 @@
 		position: absolute;
 		top: 0;
 		height: 100vh;
-		z-index: 2500;
 
 		&.left {
 			left: 0;
@@ -219,5 +208,9 @@
 		svg path {
 			fill: $text-color;
 		}
+	}
+
+	.badgeStatus {
+		background-color: $dark-gray;
 	}
 }

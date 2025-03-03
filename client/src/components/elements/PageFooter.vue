@@ -37,12 +37,12 @@ const socialLinks = [
 	},
 	{
 		id: 3,
-		href: "https://www.linkedin.com/feed/",
+		href: "https://www.linkedin.com/in/yevhenii-yermolenko/",
 		label: "LinkedIn",
 	},
 	{
 		id: 4,
-		href: "https://www.instagram.com/_uixer_/",
+		href: "https://www.instagram.com/yevhenii.dev/",
 		label: "Instagram",
 	},
 ];

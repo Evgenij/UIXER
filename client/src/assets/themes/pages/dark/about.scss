@@ -2,6 +2,14 @@
 
 .dark-theme {
 	.page-about {
+
+		.p-accordion-content {
+
+		}
+		.wrapp-info-paragraph:before {
+			background: $primary;
+		}
+
 		.personal-data {
 			border-right: 1px solid $lines;
 		}
@@ -31,8 +39,21 @@
 			}
 
 			&.primary {
+				background-color: transparentize($primary, 0.9);
+
 				&:hover {
-					background-color: transparentize($primary, 0.9);
+					color: $background;
+					background-color: $primary;
+
+					svg path {
+						stroke: $background;
+					}
+				}
+
+				&-silent {
+					&:hover {
+						background-color: transparentize($primary, 0.9);
+					}
 				}
 			}
 
@@ -103,6 +124,126 @@
 						border-radius: 0;
 						background-color: transparent;
 						padding: 1em;
+					}
+				}
+
+				& .p-toggleable-content {
+					margin: 0;
+				}
+			}
+		}
+
+		.work-place {
+			background-color: rgba(255, 255, 255, 0.02);
+			position: relative;
+
+			&::before {
+				content: "";
+				position: absolute;
+				width: 10px;
+				height: 10px;
+				background-color: $primary;
+				left: -5px;
+				top: 34px;
+				margin-top: -5px;
+			}
+
+			&__accordion {
+				background-color: rgba(255, 255, 255, 0.02);
+				font-weight: 100;
+
+				.accordion {
+					&__item {
+						border-bottom: 1px solid $lines;
+						font-size: 14px;
+
+						&:hover {
+							color: $link;
+						}
+
+						&:last-child {
+							border-bottom: none;
+						}
+					}
+				}
+
+				& .p-accordion {
+					&-tab {
+						margin: 0;
+					}
+
+					&-header {
+						&-link {
+							padding: 1.1em 1em;
+						}
+
+						&-text {
+							font-weight: 300;
+							font-size: 14px;
+						}
+					}
+
+					&-content {
+						border-top: 1px solid $lines;
+						margin: 0;
+						border-radius: 0;
+						background-color: transparent;
+						padding: 1em;
+						font-size: 14px;
+					}
+				}
+
+				& .p-toggleable-content {
+					margin: 0;
+				}
+			}
+		}
+
+		.project {
+			background-color: rgba(255, 255, 255, 0.02);
+
+			&__accordion {
+				background-color: rgba(255, 255, 255, 0.02);
+				font-weight: 100;
+
+				.accordion {
+					&__item {
+						border-bottom: 1px solid $lines;
+						font-size: 14px;
+
+						&:hover {
+							color: $link;
+						}
+
+						&:last-child {
+							border-bottom: none;
+						}
+					}
+				}
+
+				& .p-accordion {
+					&-tab {
+						margin: 0;
+					}
+
+					&-header {
+						&-link {
+							padding: 1.1em 1em;
+						}
+
+						&-text {
+							font-weight: 300;
+							font-size: 14px;
+						}
+					}
+
+					&-content {
+						border-top: 1px solid $lines;
+						margin: 0;
+						border-radius: 0;
+						background-color: transparent;
+						padding: 1em;
+						font-size: 14px;
 					}
 				}
 

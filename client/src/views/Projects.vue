@@ -9,7 +9,8 @@
 		<h3 class="page-title font-light text-2xl page-name absolute">
 			Projects
 		</h3>
-		<div class="slider-wrapper flex h-full">
+		<div class="slider-wrapper flex h-full relative">
+
 			<Carousel3d
 				display="3"
 				border="0"
@@ -39,14 +40,12 @@
 						>
 							.{{ showNumberItem(index + 1) }}
 						</div>
-						<h4 class="project__name font-bold text-4xl">
+						<h4 class="project__name font-extrabold text-4xl">
 							{{ project.name }}
 						</h4>
 						<router-link
-							:to="{
-								name: 'project',
-								params: { id: project.name },
-							}"
+							v-if="project.technologies.length !== 0"
+							:to="toProject(project.id)"
 							class="project__link font-regular flex items-center text-xl space-x-1"
 						>
 							<span>Explore</span>
@@ -68,16 +67,25 @@
 					</header>
 					<main class="project__photo h-full">
 						<router-link
-							:to="{
-								name: 'project',
-								params: { id: project.name },
-							}"
+							:to="
+								project.technologies.length !== 0
+									? toProject(project.id)
+									: ''
+							"
 						>
+              <Badge v-if="project.inDeveloping"/>
 							<img
-								:src="project.img"
-								:alt="project.img"
+								:src="project.poster"
+								:alt="project.name"
 								class="w-full"
 							/>
+              <div class="badges z-50 absolute flex gap-2 -bottom-3 sm:-bottom-1 left-2">
+                <p v-for="badge in project.badges"
+                   class="badge p-1 px-2 text-sm text-white font-bold"
+                    :style="{backgroundColor: badge.color, color: badge.textColor}">
+                  {{badge.label.toString().trim()}}
+                  </p>
+              </div>
 						</router-link>
 					</main>
 					<footer class="project__articles flex justify-between">
@@ -99,6 +107,8 @@ import showNumberItem from "@/mixins/showNumberInSliderMixin.js";
 import { Carousel3d, Slide } from "vue3-carousel-3d";
 import PageSide from "@/components/elements/PageSide.vue";
 import ThemeToggle from "@/components/ThemeToggle.vue";
+import Badge from "@/components/Badge.vue";
+import projects from "@/db/projects";
 
 const links = [
 	{
@@ -115,32 +125,12 @@ const links = [
 	},
 ];
 
-const projects = [
-	{
-		name: "Some name project",
-		img: "https://images.unsplash.com/photo-1484417894907-623942c8ee29?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
-		category: "Redesign",
-		type: "Web-application",
-	},
-	{
-		name: "Some different name project",
-		img: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-		category: "Concept",
-		type: "Mobile App",
-	},
-	{
-		name: "Some name project",
-		img: "https://images.unsplash.com/photo-1617471346061-5d329ab9c574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-		category: "Redesign",
-		type: "Web-application",
-	},
-	{
-		name: "Some name project",
-		img: "https://images.unsplash.com/photo-1617471346061-5d329ab9c574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
-		category: "Redesign",
-		type: "Web-application",
-	},
-];
+const toProject = (id) => {
+	return {
+		name: "project",
+		params: { id },
+	};
+};
 
 onMounted(() => {
 	themeToggleMixin();
@@ -163,6 +153,12 @@ onMounted(() => {
 		overflow: visible;
 		background-color: transparent;
 		display: flex;
+
+    &.left-1, &.right-1 {
+      .badges, .in-developing{
+        opacity: 0 !important;
+      }
+    }
 	}
 
 	.carousel-3d-controls {
@@ -171,12 +167,12 @@ onMounted(() => {
 
 		& .prev,
 		.next {
-			backdrop-filter: grayscale(1) contrast(1);
+      backdrop-filter: grayscale(1) contrast(1);
 
-			&:hover {
-				opacity: 0 !important;
-			}
-		}
+      &:hover {
+        opacity: 0 !important;
+      }
+    }
 
 		& .prev {
 			left: 0;
@@ -211,6 +207,10 @@ onMounted(() => {
 	&.right {
 		right: 100px;
 	}
+}
+
+.coming-soon {
+	margin-left: -150px;
 }
 
 .project__number {

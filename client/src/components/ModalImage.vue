@@ -39,7 +39,7 @@ const toggleModal = () => {
 <style scoped lang="scss">
 .modal-image {
 	position: relative;
-	height: 400px;
+	height: 50vh;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -99,7 +99,7 @@ const toggleModal = () => {
 
 		.wrapper-image {
 			position: relative;
-			width: 90%;
+			width: 95%;
 			height: 100vh;
 			margin: 0 auto;
 

@@ -14,16 +14,16 @@
 		</header>
 		<main class="data-page">
 			<Tabs @changeTab="changeTab" :tabs="tabs">
-				<Tab name="UI/UX design" :active-tab="activeTab">
-					<Design
-						:items="tabsContents.design.items"
-						:skills="tabsContents.design.skills"
-					/>
-				</Tab>
 				<Tab name="Frontend" :active-tab="activeTab">
 					<Frontend
 						:items="tabsContents.frontend.items"
 						:skills="tabsContents.frontend.skills"
+					/>
+				</Tab>
+				<Tab name="UI/UX design" :active-tab="activeTab">
+					<Design
+						:items="tabsContents.design.items"
+						:skills="tabsContents.design.skills"
 					/>
 				</Tab>
 			</Tabs>
@@ -57,11 +57,11 @@ const links = [
 
 const tabs = [
 	{
-		name: "UI/UX design",
+		name: "Frontend",
 		isActive: true,
 	},
 	{
-		name: "Frontend",
+		name: "UI/UX design",
 		isActive: false,
 	},
 ];
@@ -81,18 +81,31 @@ const tabsContents = {
 				id: 3,
 				name: "Adobe Photoshop",
 			},
+			{
+				id: 4,
+				name: "Adobe Illustrator",
+			},
+			{
+				id: 5,
+				name: "Adobe Premier Pro",
+			},
+			{
+				id: 6,
+				name: "Adobe After Effects",
+			},
 		],
 		skills: [
 			"Prototyping",
 			"UI-kits",
+			"Redesign",
 			"User Flow",
 			"Design systems",
 			"Responsive design",
-			"Components",
+			"UI components",
 			"Wireframing",
+			"Research",
 			"CJM",
 			"Mobile design",
-			"Responsive design",
 		],
 	},
 	frontend: {
@@ -103,33 +116,67 @@ const tabsContents = {
 			},
 			{
 				id: 2,
-				name: "Vue JS",
+				name: "TypeScript",
 			},
 			{
 				id: 3,
+				name: "React",
+			},
+			{
+				id: 4,
+				name: "React Router",
+			},
+			{
+				id: 5,
+				name: "Redux",
+			},
+			{
+				id: 6,
+				name: "Node.js",
+			},
+			{
+				id: 7,
+				name: "Vite",
+			},
+			{
+				id: 8,
+				name: "HTML5",
+			},
+			{
+				id: 9,
+				name: "SCSS",
+			},
+			{
+				id: 10,
+				name: "Tailwind",
+			},
+			{
+				id: 11,
+				name: "Vue JS",
+			},
+			{
+				id: 12,
 				name: "Angular",
 			},
 		],
 		skills: [
-			"Prototyping",
-			"UI-kits",
-			"UI-kits",
-			"UI-kits",
-			"UI-kits",
-			"User Flow",
-			"User Flow",
-			"Design systems",
+			"GIT",
+			"REST API",
+			"Vite",
+			"NPM",
+			"Vuex",
+			"Redux",
+			"React Router",
 			"Responsive design",
 			"Components",
-			"Wireframing",
-			"CJM",
-			"Design systems",
-			"Mobile design",
+			"Mobile layout",
+			"PrimeReact",
+			"PrimeVue",
 		],
 	},
 };
 
-const activeTab = ref("UI/UX design");
+const activeTab = ref("Frontend");
 
 const changeTab = (val) => {
 	activeTab.value = val;

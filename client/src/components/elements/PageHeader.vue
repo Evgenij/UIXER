@@ -81,7 +81,7 @@
 						</a>
 						<a
 							target="_blank"
-							href="https://www.linkedin.com/feed/"
+							href="https://www.linkedin.com/in/yevhenii-yermolenko/"
 							class="social-link flex items-center px-6"
 						>
 							<svg
@@ -101,7 +101,7 @@
 						</a>
 						<a
 							target="_blank"
-							href="https://www.instagram.com/_uixer_/"
+							href="https://www.instagram.com/yevhenii.dev/"
 							class="social-link flex items-center px-6"
 						>
 							<svg
@@ -161,6 +161,10 @@ const toggleMenu = () => {
 
 <style lang="scss" scoped>
 @import "@/assets/variables";
+
+.page-header {
+	z-index: 1500;
+}
 
 .logo {
 	width: 100px;

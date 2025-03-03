@@ -2,6 +2,9 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router/router.js";
 import PrimeVue from "primevue/config";
+import VueViewer from "v-viewer";
+
+import "viewerjs/dist/viewer.css";
 import "@/assets/app.scss";
 import "primevue/resources/themes/lara-dark-amber/theme.css";
 import "boxicons";
@@ -17,6 +20,7 @@ import UButton from "@/components/ui/Button.vue";
 
 const app = createApp(App);
 app.use(PrimeVue);
+app.use(VueViewer);
 
 // registration components - PrimeVue
 app.component("Button", Button);

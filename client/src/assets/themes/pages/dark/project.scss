@@ -39,5 +39,29 @@
 		.tags__line {
 			background: $gray;
 		}
+
+		.section {
+			&.info {
+				border: 2px solid $link;
+
+				header {
+					background-color: $link;
+				}
+			}
+			&.problem {
+				border: 2px solid $dark-gray;
+
+				header {
+					background-color: $dark-gray;
+				}
+			}
+			&.solution {
+				border: 2px solid $text-green;
+
+				header {
+					background-color: $text-green;
+				}
+			}
+		}
 	}
 }

@@ -228,12 +228,19 @@
 						/>
 					</div>
 				</div>
-				<div class="row flex space-x-3">
+				<div
+					class="row flex space-x-0 sm:space-x-3 space-y-3 sm:space-y-0 flex-col sm:flex-row"
+				>
 					<button
 						type="submit"
-						class="min-w-fit button py-3 px-5 flex items-center space-x-2"
+						class="max-w-fit button py-3 px-5 flex items-center space-x-2"
 					>
+						<i
+							v-if="isLoading"
+							class="bx bx-loader-alt bx-spin mr-2"
+						></i>
 						{{ isLoading ? "Sending..." : "Send" }}
+
 						<svg
 							v-if="!isLoading"
 							class="ml-2"
@@ -252,10 +259,17 @@
 						</svg>
 					</button>
 					<div
-						v-if="emailIsSended"
-						class="alert py-2 px-4 bg-green-400 text-green-900 flex items-center text-sm sm:text-base"
+						v-if="statusEmail.value !== sendStatuses.default.value"
+						class="alert py-2 px-4 flex items-center font-semibold text-sm sm:text-base"
+						:class="{
+							'bg-green-400 text-green-900':
+								statusEmail.value ===
+								sendStatuses.success.value,
+							'bg-red-400 text-red-900':
+								statusEmail.value === sendStatuses.error.value,
+						}"
 					>
-						Message is sended!
+						{{ statusEmail.message }}
 					</div>
 				</div>
 			</form>
@@ -378,14 +392,16 @@ const links = [
 	},
 ];
 
-const data = reactive({
-	name: "Jeka",
-	email: "test@mail.ru",
-	company: "Test company",
-	website: "https://testwebsite.com",
-	message: "Test message",
+const emptyData = {
+	name: "",
+	email: "",
+	company: "",
+	website: "",
+	message: "",
 	typeMess: "hello",
-});
+};
+
+const data = reactive(emptyData);
 
 const validationRules = {
 	name: { required },
@@ -394,12 +410,28 @@ const validationRules = {
 };
 
 const isLoading = ref(false);
-const emailIsSended = ref(false);
 
 const v$ = useVuelidate(validationRules, data);
 
 const copySuccess = ref(false);
 const emailCopy = ref(null);
+
+const sendStatuses = {
+	default: {
+		value: 0,
+		message: null,
+	},
+	success: {
+		value: 1,
+		message: "Message is sended",
+	},
+	error: {
+		value: 2,
+		message: "Message wasn't sent. Please try again later",
+	},
+};
+
+const statusEmail = ref(sendStatuses.default);
 
 const copyEmail = () => {
 	let dataEmail = emailCopy.value.textContent.trim();
@@ -423,8 +455,7 @@ const copyEmail = () => {
 const sendEmail = () => {
 	v$.value.$validate();
 	if (!v$.value.$invalid) {
-		console.log(data);
-
+		statusEmail.value = sendStatuses.default;
 		isLoading.value = !isLoading.value;
 
 		var dataMessage = {
@@ -446,17 +477,17 @@ const sendEmail = () => {
 			contentType: "application/json",
 		})
 			.done(function () {
-				emailIsSended.value = !emailIsSended.value;
-
-				setTimeout(() => {
-					emailIsSended.value = !emailIsSended.value;
-				}, 2000);
+				statusEmail.value = sendStatuses.success;
 			})
 			.fail(function (error) {
-				alert("Oops... " + JSON.stringify(error));
+				console.log("Oops... " + JSON.stringify(error));
+				statusEmail.value = sendStatuses.error;
 			})
 			.always(() => {
 				isLoading.value = !isLoading.value;
+				setTimeout(() => {
+					statusEmail.value = sendStatuses.default;
+				}, 4000);
 			});
 	}
 

@@ -17,7 +17,7 @@ const router = createRouter({
 			component: PageLayout,
 			children: [
 				{
-					path: "/main",
+					path: "/",
 					name: "main",
 					component: Main,
 				},

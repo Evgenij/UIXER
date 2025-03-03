@@ -10,7 +10,7 @@
 				<div
 					class="slider__footer font-light text-color-gray opacity-60 text-2xl flex justify-end p-6"
 				>
-					Applications
+					Tools and applications
 				</div>
 			</div>
 			<div class="nav px-12 py-10 flex w-full justify-between mt-8">
