@@ -64,7 +64,7 @@
 			<div class="project-data__preview w-full mb-8">
 				<img :src="dataProject.poster" :alt="dataProject.name" />
 			</div>
-			<div class="project-data__elements flex flex-col space-y-10 mb-4">
+			<div class="project-data__elements flex flex-col gap-8">
 				<div class="row flex xl:space-x-14 w-full flex-wrap gap-6">
 					<div class="row__item item flex flex-col">
 						<div class="item__name text-color-gray mb-1">
@@ -154,7 +154,7 @@
 						>
 							<div
 								v-for="target in dataProject.targets"
-								class="flex"
+								class="flex text-base"
 							>
 								<span class="primary-font mr-2">▪</span>
 								{{ target }}
@@ -166,7 +166,10 @@
 						<div
 							class="item__value text-lg font-semibold tasks flex flex-col gap-2"
 						>
-							<div v-for="task in dataProject.tasks" class="flex">
+							<div
+								v-for="task in dataProject.tasks"
+								class="flex text-base"
+							>
 								<span class="primary-font mr-2">▪</span>
 								{{ task }}
 							</div>
@@ -257,33 +260,7 @@
 							</p>
 						</div>
 					</section>
-
-					<!-- <ModalImage
-						v-else-if="
-							element.type === typeElementDescription.modalImg
-						"
-						:img="element.data"
-					/> -->
 				</template>
-				<!-- <div class="project-description__img w-full pt-4">
-					<img src="../images/projects/Desktop.png" alt="Desktop" />
-				</div>
-				<div class="project-description__text text-color-gray py-6">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Accusantium assumenda atque, consequatur, culpa eaque
-					expedita harum id illum, iure molestias officiis quos sit
-					vitae. Accusamus dolorum necessitatibus odio ratione
-					reprehenderit!
-				</div>
-				<ModalImage :img="dataProject.poster" />
-				<div class="project-description__text text-color-gray py-6">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					Accusantium assumenda atque, consequatur, culpa eaque
-					expedita harum id illum, iure molestias officiis quos sit
-					vitae. Accusamus dolorum necessitatibus odio ratione
-					reprehenderit!
-				</div>
-				<ModalImage :img="dataProject.poster" /> -->
 			</div>
 		</section>
 	</section>

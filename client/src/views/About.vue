@@ -121,15 +121,26 @@
 				About me
 			</h3>
 			<header class="main-header font-extrabold text-2xl mb-16">
-				<h2 class="mb-6 text-4xl leading-normal">
-					Hi, my name's Yevhenii
-				</h2>
-				<h4 class="leading-normal">
-					I am a UI/UX Designer and front-end developer in one person.
-					I have been engaged in developing for about 3 years, I have
-					met many projects and interesting tasks on my professional
-					path
+				<h2 class="text-4xl leading-normal">Hi, my name's Yevhenii</h2>
+				<h4 class="leading-normal mt-4">
+					Ambitious and quality oriented, what I do, frontend
+					developer with 2 years of experience in development and 3
+					years of experience in UI/UX design.
 				</h4>
+				<p class="text-xl font-medium mt-8 leading-relaxed">
+					Experienced in working on websites of varying complexity
+					starting from creating the first design prototype to
+					deployment. Started my way in IT with website and
+					application design. Was engaged in the development of
+					brandbooks and personal style for companies.
+				</p>
+				<p class="text-xl font-medium mt-8 leading-relaxed">
+					Created UI kits and prototypes for interfaces. I got into
+					frontend with Vue and I'm developing on React. Specializing
+					in React, TypeScript and modern JavaScript (ES6+), I turn
+					complex requirements into elegant, user-centric solutions
+					that add business value.
+				</p>
 			</header>
 			<section
 				class="my-mind w-full flex flex-col xl:flex-row space-x-0 xl:space-x-16 space-y-8 xl:space-y-0"
@@ -250,7 +261,7 @@
 
 					<div class="projects-list grid grid-cols-1 gap-5 flex-wrap">
 						<div
-							v-for="project in projects.slice(0, 3)"
+							v-for="project in projects.slice(0, 4)"
 							:key="project.id"
 							class="project flex flex-col h-min"
 						>
@@ -554,7 +565,7 @@ const getAgeFromBirthday = (day, month, year) => {
 	return Math.floor((today - b_date) / 31556952000);
 };
 const switchTypesFile = () => {
-	console.log(openedTypesFile.value);
+	//console.log(openedTypesFile.value);
 
 	openedTypesFile.value = !openedTypesFile.value;
 };

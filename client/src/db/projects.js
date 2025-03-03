@@ -60,16 +60,25 @@ const projectsData = [
 			technologies.postgresql,
 			technologies.figma,
 		],
-		targets: [],
-		tasks: [],
+		targets: [
+			"Create an online store to sell car disks",
+			"Realize the complete process of buying car disks through the website",
+			"Implement the mechanism of authorization and registration on the site",
+			"Create convenient filters and sorting of products on the site",
+			"Realize a shopping cart and mechanism for buying car disks",
+		],
+		tasks: [
+			"Define database entities and create a database schema",
+			"Create relationships and data for each entity",
+			"Create a database using the features of Prisma and Vercel",
+			"Create the necessary pages - catalog, shopping cart, etc.",
+			"Create the necessary API methods to retrieve data from the database",
+		],
 		shortenedDescription: [
-			"A multiplayer game about building a system for mining",
-			"The game features an online store, shopping cart and order placement, following the example" +
-				" of modern websites",
-			"The system of user skills research is created and the mechanism of" +
-				" system building through Drag&Drop concept is realized",
-			"The game is developed using React, TypeScript, NodeJS and TailwindCSS.",
-			"JWT is used for authorization. The database is developed on PostgreSQL and ORM Sequelize",
+			"Modern online store for buying car rims ",
+			"Full-stack application created using modern NextJS framework for React",
+			"Backend written using Vercel and Prisma + PostgreSQL",
+			"Frontend - React (State manager Redux) + TypeScript + TailwindCSS",
 		],
 		description: [
 			{
