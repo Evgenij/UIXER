@@ -15,7 +15,11 @@
 				class="photo flex items-center justify-center h-full overflow-hidden"
 			>
 				<!--        <img src="img/photo-resume.png" alt="photo-resume">-->
-				<img src="@/images/photo-resume.png" alt="photo-resume" />
+				<img
+					src="@/images/photo-resume.png"
+					alt="photo-resume"
+					class="h-full"
+				/>
 			</div>
 			<div class="personal-data p-6 flex flex-col space-y-4 h-max">
 				<div
@@ -47,7 +51,7 @@
 					<div class="lang flex space-x-1">
 						<span class="text-color-gray">EN</span>
 						<span class="text-color-gray">-</span>
-						<span class="primary-font">A2</span>
+						<span class="primary-font">B1</span>
 					</div>
 					<div class="divide"></div>
 					<div class="lang flex space-x-1">
@@ -217,13 +221,15 @@
 									header="More info"
 									contentClass="work-place__accordion accordion"
 								>
-									<div class="flex flex-col space-y-3">
-										<p
+									<div class="flex flex-col gap-2 pl-5">
+										<div
 											v-for="paragraph in placeWork.description"
-											class="font-light opacity-80"
+											class="wrapp-info-paragraph relative"
 										>
-											▪ {{ paragraph }}
-										</p>
+											<p class="font-light opacity-70">
+												{{ paragraph }}
+											</p>
+										</div>
 									</div>
 								</AccordionTab>
 							</Accordion>
@@ -231,17 +237,20 @@
 					</div>
 				</div>
 				<div class="w-full xl:w-1/2">
-          <header class="flex align-center justify-between">
-            <h5 class="primary-font font-bold mb-4">
-              Last projects
-            </h5>
-            <a href="/projects" class="font-light text-sm hover:underline underline-offset-4">Show
-              all</a>
-          </header>
-					
+					<header class="flex align-center justify-between">
+						<h5 class="primary-font font-bold mb-4">
+							Last projects
+						</h5>
+						<a
+							href="/projects"
+							class="font-light text-sm hover:underline underline-offset-4"
+							>Show all</a
+						>
+					</header>
+
 					<div class="projects-list grid grid-cols-1 gap-5 flex-wrap">
 						<div
-							v-for="project in projects.slice(0,3)"
+							v-for="project in projects.slice(0, 3)"
 							:key="project.id"
 							class="project flex flex-col h-min"
 						>
@@ -253,7 +262,7 @@
 										class="header__main font-bold text-xl leading-normal"
 									>
 										{{ project.secondName }}
-                    <Badge v-if="project.inDeveloping"/>
+										<Badge v-if="project.inDeveloping" />
 									</h3>
 								</header>
 								<span class="font-light text-sm">
@@ -265,21 +274,32 @@
 									header="More info"
 									contentClass="project__accordion accordion"
 								>
-                  <div class="flex flex-col gap-2">
-                    <div v-if="project.shortenedDescription?.length !== 0" class="flex flex-col gap-2 pl-5">
-                      <div
-                        v-for="item in project.shortenedDescription"
-                        class="wrapp-info-paragraph relative"
-                      >
-                        <p class="font-light opacity-70">{{item}}</p>
-                      </div>
-                    </div>
-                    <p v-else class="px-2">No info</p>
-                    <a :href="`project/${project.id}`"
-                       class="inline-block p-2 font-light hover:underline underline-offset-4">Show
-                      more ></a>
-                  </div>
-
+									<div class="flex flex-col gap-2">
+										<div
+											v-if="
+												project.shortenedDescription
+													?.length !== 0
+											"
+											class="flex flex-col gap-2 pl-5"
+										>
+											<div
+												v-for="item in project.shortenedDescription"
+												class="wrapp-info-paragraph relative"
+											>
+												<p
+													class="font-light opacity-70"
+												>
+													{{ item }}
+												</p>
+											</div>
+										</div>
+										<p v-else class="px-2">No info</p>
+										<a
+											:href="`project/${project.id}`"
+											class="inline-block p-2 font-light hover:underline underline-offset-4"
+											>Show more ></a
+										>
+									</div>
 								</AccordionTab>
 							</Accordion>
 						</div>
@@ -587,12 +607,12 @@ const switchTypesFile = () => {
 }
 
 .wrapp-info-paragraph:before {
-  content: '';
-  position: absolute;
-  display: block;
-  width: 6px;
-  height: 6px;
-  left: -16px;
-  top: 8px;
+	content: "";
+	position: absolute;
+	display: block;
+	width: 6px;
+	height: 6px;
+	left: -16px;
+	top: 8px;
 }
 </style>

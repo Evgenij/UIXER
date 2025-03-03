@@ -1,44 +1,71 @@
 @import "../../vars/light";
 
 .light-theme {
-    .project-page {
-        &__back {
-            color: $gray;
-            svg {
-                path {
-                    stroke: $gray;
-                }
-            }
+	.project-page {
+		&__back {
+			color: $gray;
+			svg {
+				path {
+					stroke: $gray;
+				}
+			}
 
-            &:hover {
-                svg {
-                    path {
-                        stroke: $primary;
-                    }
-                }
-            }
-        }
+			&:hover {
+				svg {
+					path {
+						stroke: $primary;
+					}
+				}
+			}
+		}
 
-        &__data {
-            border-left: 1px solid $lines;
-        }
+		&__data {
+			border-left: 1px solid $lines;
+		}
 
-        .tool {
-            border-color: $lines;
-        }
+		.tool {
+			border-color: $lines;
+		}
 
-        .project-data {
-            .task {
-                position: relative;
-                &:before {
-                    background: $text-color;
-                }
-            }
-        }
+		.project-data {
+			.task {
+				position: relative;
+				&:before {
+					background: $text-color;
+				}
+			}
+		}
 
-        .tags__line {
-            background: $gray;
-        }
+		.tags__line {
+			background: $gray;
+		}
 
-    }
+		.section {
+			header {
+				color: $background;
+			}
+
+			&.info {
+				border: 2px solid $link;
+
+				header {
+					background-color: $link;
+				}
+			}
+			&.problem {
+				border: 2px solid $red;
+
+				header {
+					background-color: $red;
+				}
+			}
+			&.solution {
+				border: 2px solid $text-green;
+
+				header {
+					background-color: $text-green;
+				}
+			}
+		}
+	}
 }

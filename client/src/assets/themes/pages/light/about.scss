@@ -10,8 +10,6 @@
 			z-index: 1000;
 			border-bottom: 1px solid $lines;
 
-
-
 			& .main-link {
 				& .dot {
 					background: $text-color;
@@ -52,8 +50,15 @@
 			}
 
 			&.primary {
+				background-color: transparentize($primary, 0.8);
+
 				&:hover {
-					background-color: transparentize($primary, 0.9);
+					color: $background;
+					background-color: $primary;
+
+					svg path {
+						stroke: $background;
+					}
 				}
 			}
 
@@ -130,7 +135,7 @@
 						padding: 1em;
 
 						a {
-							color: $link
+							color: $link;
 						}
 					}
 				}

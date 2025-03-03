@@ -81,7 +81,7 @@
 						</a>
 						<a
 							target="_blank"
-							href="https://www.linkedin.com/feed/"
+							href="https://www.linkedin.com/in/yevhenii-yermolenko/"
 							class="social-link flex items-center px-6"
 						>
 							<svg
@@ -101,7 +101,7 @@
 						</a>
 						<a
 							target="_blank"
-							href="https://www.instagram.com/_uixer_/"
+							href="https://www.instagram.com/yevhenii.dev/"
 							class="social-link flex items-center px-6"
 						>
 							<svg

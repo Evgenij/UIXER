@@ -2,7 +2,7 @@ import factoryObjectsDB from "./factoryObjectsDB";
 import categoriesProjects from "./properties projects/categoriesProjects";
 import technologies from "./properties projects/technologies";
 import typesProjects from "./properties projects/typesProjects";
-import {colorsTechnologies, typeImage} from "@/helpers/consts";
+import { colorsTechnologies, typeImage } from "@/helpers/consts";
 import { typeElementDescription } from "@/helpers/consts";
 
 const getImage = (typeImage, image, folder) => {
@@ -19,8 +19,73 @@ const getImage = (typeImage, image, folder) => {
 const projectsData = [
 	{
 		inDeveloping: true,
+		name: "NextWheels",
+		secondName: "Online store for car rims",
+		subtitle: "Online store for car rims",
+		poster: getImage(typeImage.previews, "nextwheels.jpg"),
+		category: categoriesProjects.frontend.website,
+		type: typesProjects.onlineStore,
+		date: "February 2025",
+		sources: {
+			demo: null,
+			code: "https://github.com/Evgenij/WheelsNEXT",
+			design: null,
+		},
+		badges: [
+			{
+				label: technologies.nextjs,
+				color: colorsTechnologies.nextjs,
+				textColor: "white",
+			},
+			{
+				label: technologies.react,
+				color: colorsTechnologies.react,
+			},
+			{
+				label: technologies.typeScript,
+				color: colorsTechnologies.typeScript,
+				textColor: "white",
+			},
+		], // max 3
+		technologies: [
+			technologies.nextjs,
+			technologies.react,
+			technologies.typeScript,
+			technologies.redux,
+			technologies.vercel,
+			technologies.reactRouter,
+			technologies.axios,
+			technologies.vite,
+			technologies.tailwind,
+			technologies.postgresql,
+			technologies.figma,
+		],
+		targets: [],
+		tasks: [],
+		shortenedDescription: [
+			"A multiplayer game about building a system for mining",
+			"The game features an online store, shopping cart and order placement, following the example" +
+				" of modern websites",
+			"The system of user skills research is created and the mechanism of" +
+				" system building through Drag&Drop concept is realized",
+			"The game is developed using React, TypeScript, NodeJS and TailwindCSS.",
+			"JWT is used for authorization. The database is developed on PostgreSQL and ORM Sequelize",
+		],
+		description: [
+			{
+				type: typeElementDescription.info,
+				data: "Project in developing",
+			},
+			// {
+			// 	type: typeElementDescription.img,
+			// 	data: getImage(typeImage.projects, "88.jpg", "infurtex"),
+			// },
+		],
+	},
+	{
+		inDeveloping: true,
 		name: "Crypto[IO]",
-		secondName: 'Crypto mining strategy game',
+		secondName: "Crypto mining strategy game",
 		subtitle: "Web game about cryptocurrency mining",
 		poster: getImage(typeImage.previews, "mining-fusion.jpg"),
 		category: categoriesProjects.frontend.game,
@@ -34,16 +99,16 @@ const projectsData = [
 		badges: [
 			{
 				label: technologies.react,
-				color: colorsTechnologies.react
+				color: colorsTechnologies.react,
 			},
 			{
 				label: technologies.nodejs,
-				color: colorsTechnologies.nodejs
+				color: colorsTechnologies.nodejs,
 			},
 			{
 				label: technologies.postgresql,
 				color: colorsTechnologies.postgresql,
-				textColor: 'white'
+				textColor: "white",
 			},
 		], // max 3
 		technologies: [
@@ -59,16 +124,18 @@ const projectsData = [
 			technologies.nodejs,
 			technologies.postgresql,
 			technologies.figma,
-			technologies.spline
+			technologies.spline,
 		],
 		targets: [],
 		tasks: [],
-		shortenedDescription: ["A multiplayer game about building a system for mining",
-		"The game features an online store, shopping cart and order placement, following the example" +
-		" of modern websites", "The system of user skills research is created and the mechanism of" +
-			" system building through Drag&Drop concept is realized",
+		shortenedDescription: [
+			"A multiplayer game about building a system for mining",
+			"The game features an online store, shopping cart and order placement, following the example" +
+				" of modern websites",
+			"The system of user skills research is created and the mechanism of" +
+				" system building through Drag&Drop concept is realized",
 			"The game is developed using React, TypeScript, NodeJS and TailwindCSS.",
-			"JWT is used for authorization. The database is developed on PostgreSQL and ORM Sequelize"
+			"JWT is used for authorization. The database is developed on PostgreSQL and ORM Sequelize",
 		],
 		description: [
 			{
@@ -83,7 +150,7 @@ const projectsData = [
 	},
 	{
 		name: "Infurtex",
-		secondName: 'Service for UI/UX design testing',
+		secondName: "Service for UI/UX design testing",
 		subtitle: "System for testing Design solutions",
 		poster: getImage(typeImage.previews, "infurtex.jpg"),
 		category: categoriesProjects.frontend.system,
@@ -92,22 +159,22 @@ const projectsData = [
 		sources: {
 			demo: null,
 			code: "https://github.com/Evgenij/Infurtex",
-			design: 'https://www.figma.com/design/q1cpoW4pQgTg8NDrBN14uW/Infurtex---layout?node-id=0-1&t=F91G7LvhKecOrXAn-1',
+			design: "https://www.figma.com/design/q1cpoW4pQgTg8NDrBN14uW/Infurtex---layout?node-id=0-1&t=F91G7LvhKecOrXAn-1",
 		},
 		badges: [
 			{
 				label: technologies.vue,
-				color: colorsTechnologies.vue
+				color: colorsTechnologies.vue,
 			},
 			{
 				label: technologies.php,
 				color: colorsTechnologies.php,
-				textColor: 'white'
+				textColor: "white",
 			},
 			{
 				label: technologies.mysql,
 				color: colorsTechnologies.mysql,
-				textColor: 'white'
+				textColor: "white",
 			},
 		], // max 3
 		technologies: [
@@ -141,8 +208,9 @@ const projectsData = [
 		shortenedDescription: [
 			"As part of my graduation project at university, I developed a system for testing Design solutions",
 			"The system allows to connect potential clients or users of any service to get feedback on" +
-			" the Design, while Design developers get a complete analysis of user behavior when interacting with the Design",
-			"The system was developed using: Laravel, Vue JS (Vue Router, Vuex), SCSS, Vuesax, Tailwind, MySQL"],
+				" the Design, while Design developers get a complete analysis of user behavior when interacting with the Design",
+			"The system was developed using: Laravel, Vue JS (Vue Router, Vuex), SCSS, Vuesax, Tailwind, MySQL",
+		],
 		description: [
 			// {
 			// 	type: typeElementDescription.problem,
@@ -282,7 +350,7 @@ const projectsData = [
 	},
 	{
 		name: "Upgrade",
-		secondName: 'IT project team development system',
+		secondName: "IT project team development system",
 		subtitle: "System for team development of IT projects",
 		poster: getImage(typeImage.previews, "upgrade.jpg"),
 		category: categoriesProjects.frontend.system,
@@ -290,23 +358,23 @@ const projectsData = [
 		date: "November 2020",
 		sources: {
 			demo: null,
-			code: 'https://github.com/Evgenij/Upgrade_Web',
-			design: 'https://www.figma.com/design/nTr0VwRIZAo3PeeUVcRMs7/%D0%9C%D0%B0%D0%BA%D0%B5%D1%82-Web-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F?node-id=0-1&t=pegyRD5xCEeCzJCC-1',
+			code: "https://github.com/Evgenij/Upgrade_Web",
+			design: "https://www.figma.com/design/nTr0VwRIZAo3PeeUVcRMs7/%D0%9C%D0%B0%D0%BA%D0%B5%D1%82-Web-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F?node-id=0-1&t=pegyRD5xCEeCzJCC-1",
 		},
 		badges: [
 			{
 				label: technologies.javaScript,
-				color: colorsTechnologies.javaScript
+				color: colorsTechnologies.javaScript,
 			},
 			{
 				label: technologies.php,
 				color: colorsTechnologies.php,
-				textColor: 'white'
+				textColor: "white",
 			},
 			{
 				label: technologies.mysql,
 				color: colorsTechnologies.mysql,
-				textColor: 'white'
+				textColor: "white",
 			},
 		], // max 3
 		technologies: [
@@ -319,23 +387,36 @@ const projectsData = [
 			technologies.mysql,
 			technologies.figma,
 		],
-		targets: ["Development of an Internet application for a large number of users that would" +
-		" allow creating projects, goals and forming teams for each of them",
-		"Each goal would have several tasks, and tasks in turn would have subtasks and attachments.",
-		"There should be implemented output of statistics on tasks with the possibility of selecting a " +
-		"period, also output of user's efficiency based on statistics. ","User can create projects, i.e." +
-			" be its leader, and also can be just a participant of the project. ","The user should be able " +
-			"to change the color theme of the application in the system settings"],
-		tasks: ["User Authentication","Realize output of user statistics by tasks for a week, month",
-			"Maintain progress of project completion, goals, tasks","changing the color design of the" +
-			" application" ,"creating, modifying, deleting a task, project, goal, attachment, file"],
-		shortenedDescription: ["As part of a course project at the university, I developed a system" +
-		" for team development of IT projects.", "This project was implemented using: PHP, JS," +
-		" jQuery, Ajax, HTML, SCSS.", "All user interaction was realized through asynchronous requests " +
-		"(Ajax), which allowed to interact with the system without reloading the page.",
+		targets: [
+			"Development of an Internet application for a large number of users that would" +
+				" allow creating projects, goals and forming teams for each of them",
+			"Each goal would have several tasks, and tasks in turn would have subtasks and attachments.",
+			"There should be implemented output of statistics on tasks with the possibility of selecting a " +
+				"period, also output of user's efficiency based on statistics. ",
+			"User can create projects, i.e." +
+				" be its leader, and also can be just a participant of the project. ",
+			"The user should be able " +
+				"to change the color theme of the application in the system settings",
+		],
+		tasks: [
+			"User Authentication",
+			"Realize output of user statistics by tasks for a week, month",
+			"Maintain progress of project completion, goals, tasks",
+			"Changing the color design of the" + " application",
+			"Creating, modifying, deleting a task, project, goal, attachment, file",
+		],
+		shortenedDescription: [
+			"As part of a course project at the university, I developed a system" +
+				" for team development of IT projects.",
+			"This project was implemented using: PHP, JS," +
+				" jQuery, Ajax, HTML, SCSS.",
+			"All user interaction was realized through asynchronous requests " +
+				"(Ajax), which allowed to interact with the system without reloading the page.",
 			"The project was implemented without the use of frameworks. All design and functionality" +
-			" was implemented from scratch.", "The work with Sessions, Cookies was done. DB MySQL was used. " +
-			"The project is implemented in two themes - light and dark."],
+				" was implemented from scratch.",
+			"The work with Sessions, Cookies was done. DB MySQL was used. " +
+				"The project is implemented in two themes - light and dark.",
+		],
 		description: [
 			{
 				type: typeElementDescription.p,
@@ -360,28 +441,34 @@ const projectsData = [
 			{
 				type: typeElementDescription.p,
 				data: "After authorization, the user can access the main page of the system, which presents his efficiency and brief information about the progress of projects",
-			},{
+			},
+			{
 				type: typeElementDescription.p,
 				data: "The system also supports light and dark theme. Below is the main page in these themes",
 			},
 			{
 				type: typeElementDescription.img,
 				data: getImage(typeImage.projects, "3.png", "upgrade"),
-			},{
+			},
+			{
 				type: typeElementDescription.img,
 				data: getImage(typeImage.projects, "4.png", "upgrade"),
 			},
 			{
 				type: typeElementDescription.p,
 				data: "The user can also access his tasks page, where he can edit task data and track the status of their completion. ",
-			},{
+			},
+			{
 				type: typeElementDescription.p,
 				data: "The user can set the project and target for the task and the duration of each task.",
 			},
 			{
 				type: typeElementDescription.problem,
-				data: ["In a large number of tasks it will be difficult to find the necessary task"],
-			},{
+				data: [
+					"In a large number of tasks it will be difficult to find the necessary task",
+				],
+			},
+			{
 				type: typeElementDescription.solution,
 				data: ["Creating filters for the list of tasks"],
 			},
@@ -420,27 +507,33 @@ const projectsData = [
 			{
 				type: typeElementDescription.p,
 				data: "The application allows you to create projects, goals and tasks, as well as subtasks for each task. The possibility of assigning goals to separate projects as well as creating attachments with the possibility of attaching files is implemented. ",
-			},{
+			},
+			{
 				type: typeElementDescription.p,
 				data: "The application allows you to create:",
 			},
 			{
 				type: typeElementDescription.list,
-				data: ["Projects", "Goals","Tasks, as well as subtasks for each task",
-				"The of possibility assigning goals to separate projects as well as creating attachments" +
-				" with the possibility of attaching files is implemented. "],
+				data: [
+					"Projects",
+					"Goals",
+					"Tasks, as well as subtasks for each task",
+					"The of possibility assigning goals to separate projects as well as creating attachments" +
+						" with the possibility of attaching files is implemented. ",
+				],
 			},
 			{
 				type: typeElementDescription.p,
 				data: "Each user belongs to a team according to his/her specialization, which allows to divide users into groups. \n",
-			},{
+			},
+			{
 				type: typeElementDescription.p,
 				data: "The user can access personal statistics to monitor his efficiency in project development. ",
-			},{
+			},
+			{
 				type: typeElementDescription.p,
 				data: "The server-side programming language PHP, JavaScript and MySQL database management system were used to solve the problem. Internet-application “Upgrade” can be used by any users for team development of IT-projects.",
 			},
-
 		],
 	},
 	{
@@ -452,13 +545,13 @@ const projectsData = [
 		sources: {
 			demo: null,
 			code: null,
-			design: 'https://www.behance.net/gallery/155969223/The-concept-of-the-banks-website',
+			design: "https://www.behance.net/gallery/155969223/The-concept-of-the-banks-website",
 		},
 		badges: [
 			{
 				label: technologies.figma,
 				color: colorsTechnologies.figma,
-				textColor: 'white'
+				textColor: "white",
 			},
 		], // max 3
 		technologies: [technologies.figma],
@@ -484,13 +577,13 @@ const projectsData = [
 		sources: {
 			demo: null,
 			code: null,
-			design: 'https://www.behance.net/gallery/154950593/Website-of-the-seo-promotion-company',
+			design: "https://www.behance.net/gallery/154950593/Website-of-the-seo-promotion-company",
 		},
 		badges: [
 			{
 				label: technologies.figma,
 				color: colorsTechnologies.figma,
-				textColor: 'white'
+				textColor: "white",
 			},
 		], // max 3
 		technologies: [technologies.figma],

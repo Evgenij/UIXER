@@ -4,3 +4,10 @@
 @import "./projects.scss";
 @import "./project.scss";
 @import "./contact.scss";
+
+// IPhone 14-15
+@media (max-width: 430px) {
+	#app .page-data {
+		padding-bottom: 30px;
+	}
+}

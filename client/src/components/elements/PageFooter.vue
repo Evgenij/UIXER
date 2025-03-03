@@ -37,7 +37,7 @@ const socialLinks = [
 	},
 	{
 		id: 3,
-		href: "https://www.linkedin.com/feed/",
+		href: "https://www.linkedin.com/in/yevhenii-yermolenko/",
 		label: "LinkedIn",
 	},
 	{

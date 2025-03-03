@@ -11,6 +11,7 @@ export default {
 	php: "PHP",
 	openServer: "Open Server",
 	javaScript: "JavaScript",
+	typeScript: "TypeScript",
 	jquery: "JQuery",
 	mysql: "MySQL",
 	laravel: "Laravel",
@@ -27,7 +28,6 @@ export default {
 	vite: "Vite",
 	nodejs: "NodeJS",
 	postgresql: "PostgreSQL",
-	spline: "Spline"
+	spline: "Spline",
+	vercel: "Vercel",
 };
-
-

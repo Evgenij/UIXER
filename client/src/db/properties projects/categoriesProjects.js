@@ -1,6 +1,7 @@
 export default {
 	frontend: {
 		newApp: "Application",
+		website: "Website",
 		system: "Web-system",
 		game: "Game",
 	},

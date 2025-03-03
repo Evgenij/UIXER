@@ -6,26 +6,28 @@
 		</PageSide>
 
 		<aside class="project-page__main px-14 py-12 h-full basis-5/12">
-      <div class="project-page__back font-regular flex items-center space-x-1 mb-10 cursor-pointer"
-           @click="router.back()">
-        <svg
-          width="30"
-          height="30"
-          viewBox="0 0 30 30"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M11.7141 9.28125L5.99986 14.9984L11.7141 20.7141M24.5713 14.9998H5.99986"
-            stroke="#8E8E8E"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-        </svg>
-        <span>back</span>
-      </div>
+			<div
+				class="project-page__back font-regular flex items-center space-x-1 mb-10 cursor-pointer"
+				@click="router.back()"
+			>
+				<svg
+					width="30"
+					height="30"
+					viewBox="0 0 30 30"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<path
+						d="M11.7141 9.28125L5.99986 14.9984L11.7141 20.7141M24.5713 14.9998H5.99986"
+						stroke="#8E8E8E"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					/>
+				</svg>
+				<span>back</span>
+			</div>
 
-			<div class="project-page__name mb-16" >
+			<div class="project-page__name mb-16">
 				<h3 class="font-heavy text-7xl mb-5">
 					<!-- {{ this.$route.params.id }} -->
 					{{ dataProject.name }}
@@ -91,60 +93,64 @@
 				</div>
 				<div
 					class="row flex flex-col sm:grid w-full gap-8 grid-flow-col auto-cols-fr"
-				> <template v-if="dataProject?.sources?.demo">
-            <div class="row__item item flex flex-col truncate">
-              <div class="item__name text-color-gray mb-1">Demo</div>
-              <div class="item__value text-lg font-semibold">
-                <a
-                  :href="dataProject.sources.demo"
-                  target="_blank"
-                  class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
-                >{{ dataProject.sources.demo }}</a
-                >
-              </div>
-            </div>
-          </template>
+				>
+					<template v-if="dataProject?.sources?.demo">
+						<div class="row__item item flex flex-col truncate">
+							<div class="item__name text-color-gray mb-1">
+								Demo
+							</div>
+							<div class="item__value text-lg font-semibold">
+								<a
+									:href="dataProject.sources.demo"
+									target="_blank"
+									class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
+									>{{ dataProject.sources.demo }}</a
+								>
+							</div>
+						</div>
+					</template>
 
-          <template v-if="dataProject?.sources?.code">
-            <div class="row__item item flex flex-col truncate">
-              <div class="item__name text-color-gray mb-1">Code</div>
-              <div class="item__value text-lg font-semibold">
-                <a
-                  :href="dataProject.sources.code"
-                  target="_blank"
-                  class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
-                >{{ dataProject.sources.code }}</a
-                >
-              </div>
-            </div>
-          </template>
+					<template v-if="dataProject?.sources?.code">
+						<div class="row__item item flex flex-col truncate">
+							<div class="item__name text-color-gray mb-1">
+								Code
+							</div>
+							<div class="item__value text-lg font-semibold">
+								<a
+									:href="dataProject.sources.code"
+									target="_blank"
+									class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
+									>{{ dataProject.sources.code }}</a
+								>
+							</div>
+						</div>
+					</template>
 
-          <template v-if="dataProject?.sources?.design">
-            <div class="row__item item flex flex-col truncate">
-              <div class="item__name text-color-gray mb-1">
-                Design
-              </div>
-              <div class="item__value text-lg font-semibold">
-                <a
-                  :href="dataProject.sources.design"
-                  target="_blank"
-                  class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
-                >{{ dataProject.sources.design }}</a
-                >
-              </div>
-            </div>
-          </template>
-
+					<template v-if="dataProject?.sources?.design">
+						<div class="row__item item flex flex-col truncate">
+							<div class="item__name text-color-gray mb-1">
+								Design
+							</div>
+							<div class="item__value text-lg font-semibold">
+								<a
+									:href="dataProject.sources.design"
+									target="_blank"
+									class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
+									>{{ dataProject.sources.design }}</a
+								>
+							</div>
+						</div>
+					</template>
 				</div>
 				<div
-					class="row flex flex-col sm:flex-row sm:space-x-14 space-y-10 sm:space-y-0 w-full"
+					class="row flex flex-col sm:flex-row sm:space-x-8 space-y-10 sm:space-y-0 w-full"
 				>
 					<div class="row__item item flex flex-col w-full sm:w-1/2">
-						<div class="item__name text-color-gray mb-1">
+						<div class="item__name text-color-gray mb-2">
 							Targets
 						</div>
 						<div
-							class="item__value text-lg font-semibold flex flex-col space-y-5"
+							class="item__value text-lg font-semibold flex flex-col gap-2"
 						>
 							<div
 								v-for="target in dataProject.targets"
@@ -156,9 +162,9 @@
 						</div>
 					</div>
 					<div class="row__item item flex flex-col w-full sm:w-1/2">
-						<div class="item__name text-color-gray mb-1">Tasks</div>
+						<div class="item__name text-color-gray mb-2">Tasks</div>
 						<div
-							class="item__value text-lg font-semibold tasks flex flex-col space-y-5"
+							class="item__value text-lg font-semibold tasks flex flex-col gap-2"
 						>
 							<div v-for="task in dataProject.tasks" class="flex">
 								<span class="primary-font mr-2">▪</span>
@@ -185,15 +191,15 @@
 						v-if="element.type === typeElementDescription.img"
 						:image="element.data"
 					/>
-					<div
+					<p
 						v-else-if="element.type === typeElementDescription.p"
-						class="project-description__text text-color-gray"
+						class="project-description__text text-base"
 					>
 						{{ element.data }}
-					</div>
+					</p>
 					<div
 						v-else-if="element.type === typeElementDescription.list"
-						class="project-description__text text-color-gray"
+						class="project-description__text text-base"
 					>
 						<ul class="flex flex-col space-y-2 pl-4">
 							<li v-for="(item, index) in element.data">
@@ -202,45 +208,55 @@
 						</ul>
 					</div>
 
-					<div
+					<section
 						v-else-if="element.type === typeElementDescription.info"
-						class="project-description__text text-color-gray border-2 border-sky-600/40"
+						class="section info"
 					>
-						<p class="w-full bg-sky-600/40 p-2 text-white">Info</p>
+						<header class="w-full p-2">
+							{{ element.type.toUpperCase() }}
+						</header>
 						<div class="p-2 px-3 flex flex-col gap-3">
-							{{ element.data }}
+							<p class="text-base">
+								{{ element.data }}
+							</p>
 						</div>
-					</div>
-					<div
+					</section>
+					<section
 						v-else-if="
 							element.type === typeElementDescription.problem
 						"
-						class="project-description__text text-color-gray border-2 border-white/15"
+						class="section problem"
 					>
-						<p class="w-full bg-white/15 p-2">
+						<header class="w-full p-2">
 							{{ element.type.toUpperCase() }}
-						</p>
+						</header>
 						<div class="p-2 px-3 flex flex-col gap-3">
-							<p v-for="paragraph in element.data">
+							<p
+								v-for="paragraph in element.data"
+								class="text-base"
+							>
 								{{ paragraph }}
 							</p>
 						</div>
-					</div>
-					<div
+					</section>
+					<section
 						v-else-if="
 							element.type === typeElementDescription.solution
 						"
-						class="project-description__text text-color-gray border-2 border-green-600"
+						class="section solution"
 					>
-						<p class="w-full bg-green-600 text-white p-2">
+						<header class="w-full p-2">
 							{{ element.type.toUpperCase() }}
-						</p>
+						</header>
 						<div class="p-2 px-3 flex flex-col gap-3">
-							<p v-for="paragraph in element.data">
+							<p
+								v-for="paragraph in element.data"
+								class="text-base"
+							>
 								{{ paragraph }}
 							</p>
 						</div>
-					</div>
+					</section>
 
 					<!-- <ModalImage
 						v-else-if="
