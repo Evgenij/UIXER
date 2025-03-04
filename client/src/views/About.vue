@@ -32,15 +32,15 @@
 						<p class="text-color-gray font-regular">Ukraine</p>
 					</div>
 					<p class="text-color-gray text-lg font-regular years">
-						{{ getAgeFromBirthday(7, 4, 2000) }} years
+						{{ getDataRange(7, 4, 2000) }} years
 					</p>
 				</div>
 				<div class="personal-data__experience font-regular">
 					<p class="text-color-gray experience">
 						Experience
 						<span class="primary-font"
-							>{{ getAgeFromBirthday(1, 1, 2022) }} year{{
-								getAgeFromBirthday(1, 1, 2022) > 1 ? "s" : ""
+							>{{ getDataRange(1, 1, 2021) }} year{{
+								getDataRange(1, 1, 2022) > 1 ? "s" : ""
 							}}</span
 						>
 					</p>
@@ -556,7 +556,7 @@ const CVs = [
 ];
 const openedTypesFile = ref(false);
 
-const getAgeFromBirthday = (day, month, year) => {
+const getDataRange = (day, month, year) => {
 	let b_date = new Date(year, month, day);
 	let today = new Date();
 	today.setHours(0);
