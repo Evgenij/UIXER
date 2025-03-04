@@ -4,9 +4,9 @@
 		class="page-footer flex items-center justify-between absolute bottom-0 w-full"
 	>
 		<div class="positions flex items-center space-x-6">
-			<p class="font-light">UI/UX designer</p>
-			<span class="divider"></span>
 			<p class="font-light">Frontend developer</p>
+			<span class="divider"></span>
+			<p class="font-light">UI/UX designer</p>
 		</div>
 		<div class="social-links flex items-center space-x-10">
 			<a
@@ -50,6 +50,12 @@ const socialLinks = [
 
 <style lang="scss">
 @import "../../assets/variables";
+
+.page-footer {
+	z-index: 1000;
+	padding: 0 140px;
+	height: 100px;
+}
 
 span.divider {
 	height: 18px;
