@@ -6,8 +6,8 @@
 
 	*::-webkit-scrollbar-track,
 	html *::-webkit-scrollbar-track {
-	    background: $lines;
-	    margin: 20px;
+		background: $lines;
+		margin: 20px;
 	}
 
 	*::-webkit-scrollbar-track {
@@ -147,9 +147,6 @@
 
 	.page-footer {
 		border-top: 1px solid $lines;
-		z-index: 2000;
-		padding: 0 140px;
-		height: 100px;
 	}
 
 	.side {

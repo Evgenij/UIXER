@@ -42,7 +42,7 @@ defineProps({
 <style lang="scss" scoped>
 .side {
 	width: 100px;
-	z-index: 1500px;
+	z-index: 1500;
 }
 .links {
 	padding: 75% 0;
