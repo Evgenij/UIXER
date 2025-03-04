@@ -1,9 +1,9 @@
 <template>
-	<div class="links__socials flex space-x-3 hoba">
+	<div class="links__socials flex space-x-3">
 		<a
 			target="_blank"
 			href="https://github.com/Evgenij"
-			class="social-link flex items-center p-4 px-5"
+			class="social-link flex items-center"
 		>
 			<svg
 				width="26"
@@ -21,7 +21,7 @@
 		<a
 			target="_blank"
 			href="https://www.behance.net/_uixer_"
-			class="social-link flex items-center px-6"
+			class="social-link flex items-center"
 		>
 			<svg
 				width="26"
@@ -39,7 +39,7 @@
 		<a
 			target="_blank"
 			href="https://www.linkedin.com/in/yevhenii-yermolenko/"
-			class="social-link flex items-center px-6"
+			class="social-link flex items-center"
 		>
 			<svg
 				width="24"
@@ -59,7 +59,7 @@
 		<a
 			target="_blank"
 			href="https://www.instagram.com/yevhenii.dev/"
-			class="social-link flex items-center px-6"
+			class="social-link flex items-center"
 		>
 			<svg
 				width="26"
@@ -79,4 +79,14 @@
 
 <script></script>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+  .social-link {
+    padding: 0.8em 1.2em;
+    height: fit-content;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+</style>
