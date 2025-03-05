@@ -94,6 +94,7 @@ const projectsData = [
 	{
 		inDeveloping: true,
 		name: "Crypto[IO]",
+
 		secondName: "Crypto mining strategy game",
 		subtitle: "Web game about cryptocurrency mining",
 		poster: getImage(typeImage.previews, "mining-fusion.jpg"),
@@ -129,6 +130,7 @@ const projectsData = [
 			technologies.reactRouter,
 			technologies.axios,
 			technologies.vite,
+			technologies.vitest,
 			technologies.tailwind,
 			technologies.nodejs,
 			technologies.postgresql,

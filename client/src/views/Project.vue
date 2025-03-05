@@ -46,14 +46,11 @@
 				<p class="font-semibold text-xl mb-3">Development tools</p>
 				<div
 					v-if="dataProject.technologies.length !== 0"
-					class="tools flex flex-wrap"
+					class="tools flex gap-3 flex-wrap"
 				>
-					<div
-						class="tool px-3 p-2 border mr-2 mb-2"
-						v-for="technology in dataProject.technologies"
-					>
-						{{ technology }}
-					</div>
+					<ToolBadge v-for="technology in dataProject.technologies">{{
+						technology
+					}}</ToolBadge>
 				</div>
 				<p v-else class="text-sm opacity-40 font-light">Empty</p>
 			</div>
@@ -274,6 +271,7 @@ import getProjectsData from "@/db/getProjectsData";
 import { typeElementDescription } from "@/helpers/consts";
 import ImageViewer from "@/components/ImageViewer.vue";
 import router from "@/router/router.js";
+import ToolBadge from "@/components/ToolBadge.vue";
 
 const links = [
 	{

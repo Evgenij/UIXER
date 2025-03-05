@@ -221,4 +221,14 @@
 		background-color: $dark-gray;
 		color: $background;
 	}
+
+	.tool-badge {
+		border-color: $lines;
+
+		&:hover {
+			border: 1px solid $primary;
+			color: $background;
+			background: $primary;
+		}
+	}
 }

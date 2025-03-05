@@ -189,7 +189,7 @@ const changeTab = (val) => {
 }
 
 .skills-wrapper {
-	width: 150%;
+	width: 100%;
 	overflow-x: hidden;
 	scroll-behavior: smooth;
 }
@@ -228,8 +228,6 @@ span.numbers__line {
 .skills {
 	&__list {
 		& .skill {
-			padding: 0.7em 1em;
-			margin: 0 20px 20px 0;
 			height: fit-content;
 			width: fit-content;
 		}

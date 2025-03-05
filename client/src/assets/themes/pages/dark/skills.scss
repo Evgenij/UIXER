@@ -28,17 +28,17 @@
 		.skills {
 			border-left: 1px solid $lines;
 
-			&__list {
-				& .skill {
-					border: 1px solid $lines;
+			// &__list {
+			// 	& .skill {
+			// 		//border: 1px solid $lines;
 
-					&:hover {
-						border: 1px solid $primary;
-						color: $background;
-						background: $primary;
-					}
-				}
-			}
+			// 		&:hover {
+			// 			border: 1px solid $primary;
+			// 			color: $background;
+			// 			background: $primary;
+			// 		}
+			// 	}
+			// }
 		}
 
 		.nav {

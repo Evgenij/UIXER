@@ -3,12 +3,14 @@
 		<div class="items flex flex-col justify-end h-full">
 			<div class="slider">
 				<div
-					class="slider__item p-0 leading-none relative pl-12 z-50 text-8xl font-bold"
+					class="slider__item p-0 leading-none relative px-12 z-50 text-8xl font-bold flex items-end"
 				>
-					{{ activeItem.name }}
+					<span class="block h-fit leading-none">{{
+						activeItem.name
+					}}</span>
 				</div>
 				<div
-					class="slider__footer font-light text-color-gray opacity-60 text-2xl flex justify-end p-6"
+					class="slider__footer font-light text-color-gray opacity-70 text-2xl flex justify-end p-6"
 				>
 					Languages & Technologies
 				</div>
@@ -59,18 +61,23 @@
 		</div>
 		<div class="skills flex flex-col justify-between">
 			<div class="scroll-design skills__list p-6 h-full overflow-hidden">
-				<div class="skills-wrapper flex flex-wrap">
-					<div
+				<div class="skills-wrapper flex gap-3 flex-wrap">
+					<ToolBadge classes="skill" v-for="skill in skills">{{
+						skill
+					}}</ToolBadge>
+					<!-- <div
 						class="skill block font-regular text-2xl text-color-gray"
 						v-for="skill in skills"
 					>
-						{{ skill }}
-					</div>
+						
+					</div> -->
 				</div>
 			</div>
 
-			<div class="skills__footer font-light text-color-gray text-2xl p-6">
-				General skills
+			<div
+				class="skills__footer font-light text-color-gray opacity-70 text-2xl p-6"
+			>
+				Frontend skills
 			</div>
 		</div>
 	</div>
@@ -79,6 +86,7 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import showNumberItem from "@/mixins/showNumberInSliderMixin.js";
+import ToolBadge from "../ToolBadge.vue";
 
 const props = defineProps({
 	items: Array,
