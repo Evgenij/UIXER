@@ -127,19 +127,25 @@
 					developer with 2 years of experience in development and 3
 					years of experience in UI/UX design.
 				</h4>
-				<p class="text-xl font-medium mt-8 leading-relaxed">
+				<p class="text-xl font-regular mt-8 leading-relaxed">
 					Experienced in working on websites of varying complexity
 					starting from creating the first design prototype to
 					deployment. Started my way in IT with website and
 					application design. Was engaged in the development of
-					brandbooks and personal style for companies.
+					<b class="primary-font"
+						>websites and mobile applications design</b
+					>. Created<b class="primary-font">
+						UI kits, UX research and prototypes for interfaces</b
+					>
 				</p>
-				<p class="text-xl font-medium mt-8 leading-relaxed">
-					Created UI kits and prototypes for interfaces. I got into
-					frontend with Vue and I'm developing on React. Specializing
-					in React, TypeScript and modern JavaScript (ES6+), I turn
-					complex requirements into elegant, user-centric solutions
-					that add business value.
+				<p class="text-xl font-regular mt-8 leading-relaxed">
+					I got into frontend with Vue and I'm developing on React.
+					Specializing in
+					<b class="primary-font"
+						>React [+Redux], Vue [+Vuex], TypeScript and modern
+						JavaScript (ES6+)</b
+					>, I turn complex requirements into elegant, user-centric
+					solutions that add business value
 				</p>
 			</header>
 			<section
