@@ -30,4 +30,5 @@ export default {
 	postgresql: "PostgreSQL",
 	spline: "Spline",
 	vercel: "Vercel",
+	vitest: "Vitest",
 };
