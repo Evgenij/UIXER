@@ -9,7 +9,7 @@ import { ref } from "vue";
 
 const props = defineProps(["classes"]);
 
-const compClasses = ["tool-badge px-3 p-2 border w-fit", props.classes].join(
+const compClasses = ["tool-badge px-4 p-3 border w-fit", props.classes].join(
 	" "
 );
 </script>
