@@ -292,8 +292,8 @@ const links = [
 
 const route = useRoute();
 
-const projectID = route.params.id;
-const dataProject = getProjectsData(projectID);
+const projectName = route.params.name;
+const dataProject = getProjectsData(projectName);
 </script>
 
 <style scoped lang="scss">

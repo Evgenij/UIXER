@@ -1,4 +1,4 @@
 import projects from "./projects";
 
-export default (projectID) =>
-	projects.find((project) => project.id == projectID);
+export default (projectName) =>
+	projects.find((project) => project.name == projectName);

@@ -10,7 +10,6 @@
 			Projects
 		</h3>
 		<div class="slider-wrapper flex h-full relative">
-
 			<Carousel3d
 				display="3"
 				border="0"
@@ -45,7 +44,7 @@
 						</h4>
 						<router-link
 							v-if="project.technologies.length !== 0"
-							:to="toProject(project.id)"
+							:to="toProject(project.name)"
 							class="project__link font-regular flex items-center text-xl space-x-1"
 						>
 							<span>Explore</span>
@@ -69,23 +68,30 @@
 						<router-link
 							:to="
 								project.technologies.length !== 0
-									? toProject(project.id)
+									? toProject(project.name)
 									: ''
 							"
 						>
-              <Badge v-if="project.inDeveloping"/>
+							<Badge v-if="project.inDeveloping" />
 							<img
 								:src="project.poster"
 								:alt="project.name"
 								class="w-full"
 							/>
-              <div class="badges z-50 absolute flex gap-2 -bottom-3 sm:-bottom-1 left-2">
-                <p v-for="badge in project.badges"
-                   class="badge p-1 px-2 text-sm text-white font-bold"
-                    :style="{backgroundColor: badge.color, color: badge.textColor}">
-                  {{badge.label.toString().trim()}}
-                  </p>
-              </div>
+							<div
+								class="badges z-50 absolute flex gap-2 -bottom-3 sm:-bottom-1 left-2"
+							>
+								<p
+									v-for="badge in project.badges"
+									class="badge p-1 px-2 text-sm text-white font-bold"
+									:style="{
+										backgroundColor: badge.color,
+										color: badge.textColor,
+									}"
+								>
+									{{ badge.label.toString().trim() }}
+								</p>
+							</div>
 						</router-link>
 					</main>
 					<footer class="project__articles flex justify-between">
@@ -125,10 +131,10 @@ const links = [
 	},
 ];
 
-const toProject = (id) => {
+const toProject = (name) => {
 	return {
 		name: "project",
-		params: { id },
+		params: { name },
 	};
 };
 
@@ -154,11 +160,13 @@ onMounted(() => {
 		background-color: transparent;
 		display: flex;
 
-    &.left-1, &.right-1 {
-      .badges, .in-developing{
-        opacity: 0 !important;
-      }
-    }
+		&.left-1,
+		&.right-1 {
+			.badges,
+			.in-developing {
+				opacity: 0 !important;
+			}
+		}
 	}
 
 	.carousel-3d-controls {
@@ -167,12 +175,12 @@ onMounted(() => {
 
 		& .prev,
 		.next {
-      backdrop-filter: grayscale(1) contrast(1);
+			backdrop-filter: grayscale(1) contrast(1);
 
-      &:hover {
-        opacity: 0 !important;
-      }
-    }
+			&:hover {
+				opacity: 0 !important;
+			}
+		}
 
 		& .prev {
 			left: 0;
