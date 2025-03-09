@@ -62,9 +62,11 @@
 		<div class="skills flex flex-col justify-between">
 			<div class="scroll-design skills__list p-6 h-full overflow-hidden">
 				<div class="skills-wrapper flex gap-3 flex-wrap">
-					<ToolBadge classes="skill" v-for="skill in skills">{{
-						skill
-					}}</ToolBadge>
+					<ToolBadge
+						classes="skill px-5 p-4"
+						v-for="skill in skills"
+						>{{ skill }}</ToolBadge
+					>
 					<!-- <div
 						class="skill block font-regular text-2xl text-color-gray"
 						v-for="skill in skills"

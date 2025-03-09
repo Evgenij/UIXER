@@ -31,4 +31,6 @@ export default {
 	spline: "Spline",
 	vercel: "Vercel",
 	vitest: "Vitest",
+	prismaORM: "PrismaORM",
+	zustand: "Zustand",
 };
