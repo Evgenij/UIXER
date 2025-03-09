@@ -540,21 +540,21 @@ const placesWorks = [
 const CVs = [
 	{
 		href: new URL(
-			`../documents/CV-Yevhenii Yermolenko.pdf`,
+			`../documents/CV - Yevhenii Yermolenko Frontend developer.pdf`,
 			import.meta.url
 		).href,
 		label: "EN",
 	},
 	{
 		href: new URL(
-			`../documents/CV-Yevhenii Yermolenko.pdf`,
+			`../documents/CV - Yevhenii Yermolenko Frontend developer.pdf`,
 			import.meta.url
 		).href,
 		label: "PL",
 	},
 	{
 		href: new URL(
-			`../documents/CV-Yevhenii Yermolenko.pdf`,
+			`../documents/CV - Yevhenii Yermolenko Frontend developer.pdf`,
 			import.meta.url
 		).href,
 		label: "UA",
