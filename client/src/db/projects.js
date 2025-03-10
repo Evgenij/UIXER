@@ -55,8 +55,6 @@ const projectsData = [
 			technologies.reactRouter,
 			technologies.vercel,
 			technologies.prismaORM,
-			technologies.zustand,
-
 			technologies.axios,
 			technologies.vite,
 			technologies.tailwind,
@@ -133,7 +131,7 @@ const projectsData = [
 			technologies.axios,
 			technologies.vite,
 			technologies.vitest,
-			technologies.javaScript,
+			technologies.typeScript,
 			technologies.html5,
 			technologies.scss,
 			technologies.figma,
