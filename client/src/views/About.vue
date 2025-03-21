@@ -124,7 +124,7 @@
 				<h2 class="text-4xl leading-normal">Hi, my name's Yevhenii</h2>
 				<h4 class="leading-normal mt-4">
 					Ambitious and quality oriented, what I do, frontend
-					developer with 2 years of experience in development and 3
+					developer with 3 years of experience in development and 2
 					years of experience in UI/UX design.
 				</h4>
 				<p class="text-xl font-regular mt-8 leading-relaxed">
