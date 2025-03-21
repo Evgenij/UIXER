@@ -312,7 +312,7 @@
 										</div>
 										<p v-else class="px-2">No info</p>
 										<a
-											:href="`project/${project.id}`"
+											:href="`project/${project.name}`"
 											class="inline-block p-2 font-light hover:underline underline-offset-4"
 											>Show more ></a
 										>
