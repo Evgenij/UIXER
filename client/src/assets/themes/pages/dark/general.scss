@@ -82,6 +82,12 @@
 		}
 	}
 
+	.border {
+		&-darkgray {
+			border-color: $dark-gray;
+		}
+	}
+
 	.main-link {
 		& .dot {
 			&:before {
@@ -96,6 +102,9 @@
 		}
 		&-green {
 			color: $text-green;
+		}
+		&-black {
+			color: $background;
 		}
 	}
 

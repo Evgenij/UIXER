@@ -58,7 +58,7 @@
 		</a>
 		<a
 			target="_blank"
-			href="https://www.instagram.com/yevhenii.dev/"
+			href="https://www.instagram.com/uixer.design/"
 			class="social-link flex items-center"
 		>
 			<svg
@@ -80,13 +80,13 @@
 <script></script>
 
 <style scoped lang="scss">
-  .social-link {
-    padding: 0.8em 1.2em;
-    height: fit-content;
+.social-link {
+	padding: 0.8em 1.2em;
+	height: fit-content;
 
-    svg {
-      width: 24px;
-      height: 24px;
-    }
-  }
+	svg {
+		width: 24px;
+		height: 24px;
+	}
+}
 </style>

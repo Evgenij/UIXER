@@ -4,9 +4,9 @@
 		class="page-footer flex items-center justify-between absolute bottom-0 w-full"
 	>
 		<div class="positions flex items-center space-x-6">
-			<p class="font-light">Frontend developer</p>
-			<span class="divider"></span>
 			<p class="font-light">UI/UX designer</p>
+			<span class="divider"></span>
+			<p class="font-light">Frontend developer</p>
 		</div>
 		<div class="social-links flex items-center space-x-10">
 			<a
@@ -22,7 +22,7 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+//import { onMounted } from "vue";
 
 const socialLinks = [
 	{
@@ -42,7 +42,7 @@ const socialLinks = [
 	},
 	{
 		id: 4,
-		href: "https://www.instagram.com/yevhenii.dev/",
+		href: "https://www.instagram.com/uixer.design/",
 		label: "Instagram",
 	},
 ];

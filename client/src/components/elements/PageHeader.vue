@@ -89,7 +89,7 @@ const toggleMenu = () => {
 @import "@/assets/variables";
 
 .page-header {
-	z-index: 1600;
+	z-index: 1100;
 }
 
 .logo {

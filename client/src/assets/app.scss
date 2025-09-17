@@ -15,7 +15,8 @@ html *::-webkit-scrollbar {
 	width: 3px;
 }
 
-body {
+body,
+.modal-content {
 	font-family: $font;
 	font-weight: $font-weight;
 	line-height: $line-height;
@@ -109,6 +110,20 @@ body {
 
 		&:focus {
 			box-shadow: none;
+		}
+	}
+}
+
+.p-component-overlay {
+	z-index: 2500;
+	backdrop-filter: blur(20px);
+}
+
+.p-dialog-mask .p-dialog {
+	.modal-content.info-modal {
+		header,
+		footer {
+			border-color: rgba(white, 0.1);
 		}
 	}
 }

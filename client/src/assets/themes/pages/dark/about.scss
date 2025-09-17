@@ -2,15 +2,11 @@
 
 .dark-theme {
 	.page-about {
-
-		.p-accordion-content {
-
-		}
 		.wrapp-info-paragraph:before {
 			background: $primary;
 		}
 
-		.personal-data {
+		.general-data {
 			border-right: 1px solid $lines;
 		}
 
@@ -32,23 +28,17 @@
 		}
 
 		.button {
-			border: 1px solid $primary;
+			transform: translateY(-4px);
+			background-color: $primary;
+			color: $background;
+			box-shadow: 0px 4px 0px darken($color: $primary, $amount: 35);
 
 			svg path {
-				stroke: $primary;
+				stroke: $background;
 			}
 
 			&.primary {
-				background-color: transparentize($primary, 0.9);
-
-				&:hover {
-					color: $background;
-					background-color: $primary;
-
-					svg path {
-						stroke: $background;
-					}
-				}
+				background-color: $primary-hover;
 
 				&-silent {
 					&:hover {
@@ -58,10 +48,12 @@
 			}
 
 			&:hover {
-				color: $primary;
-				svg path {
-					stroke: $primary;
-				}
+				background-color: $primary-hover;
+			}
+
+			&:active {
+				transform: translateY(0);
+				box-shadow: 0px 0px 0px rgba($color: $primary, $alpha: 0.2);
 			}
 		}
 
@@ -134,22 +126,9 @@
 		}
 
 		.work-place {
-			background-color: rgba(255, 255, 255, 0.02);
-			position: relative;
-
-			&::before {
-				content: "";
-				position: absolute;
-				width: 10px;
-				height: 10px;
-				background-color: $primary;
-				left: -5px;
-				top: 34px;
-				margin-top: -5px;
-			}
+			//position: relative;
 
 			&__accordion {
-				background-color: rgba(255, 255, 255, 0.02);
 				font-weight: 100;
 
 				.accordion {
@@ -174,12 +153,16 @@
 
 					&-header {
 						&-link {
-							padding: 1.1em 1em;
+							padding: 1em 1.1em;
 						}
 
 						&-text {
 							font-weight: 300;
 							font-size: 14px;
+						}
+
+						&:hover {
+							color: $primary;
 						}
 					}
 
@@ -188,7 +171,7 @@
 						margin: 0;
 						border-radius: 0;
 						background-color: transparent;
-						padding: 1em;
+						padding: 1em 1.3em;
 						font-size: 14px;
 					}
 				}
