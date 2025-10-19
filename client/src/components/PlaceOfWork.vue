@@ -1,6 +1,7 @@
 <template>
 	<div
-		class="work-place border border-1 border-darkgray flex flex-col space-y-3 h-full"
+		class="work-place border border-1 border-darkgray flex flex-col space-y-3 h-full group cursor-pointer"
+		@click="visible = true"
 	>
 		<div class="work-place__content space-y-4 py-4 px-5 pb-0 h-full">
 			<div class="year flex">
@@ -31,118 +32,146 @@
 					{{ props.data.position }}
 				</h3>
 
-				<a
-					target="_blank"
-					:href="props.data.company.href"
-					class="company-data flex items-center group hover:cursor-pointer"
-				>
-					<p
-						class="font-regular text-color-gray group-hover:underline"
-					>
+				<div class="flex items-center">
+					<p class="font-regular text-color-gray">
+						{{ props.data.company.description }} -
 						{{ props.data.company.name }}
+						<a
+							target="_blank"
+							:href="props.data.company.href"
+							@mousedown="visible = false"
+						>
+							<i
+								class="bx bx-link-external text-white hover:text-sky-500"
+							></i>
+						</a>
 					</p>
-					<i
-						class="bx bx-link text-xl text-sky-700 group-hover:text-sky-400 ml-1"
-					></i>
-				</a>
+				</div>
 			</header>
 		</div>
 		<button
 			@click="visible = true"
-			class="text-left text-sm opacity-50 px-5 py-3 hover:bg-white/[1%] hover:opacity-100"
+			class="text-left text-sm opacity-50 px-5 py-3 group-hover:bg-white group-hover:text-black"
 		>
 			Show more
 		</button>
 	</div>
 
 	<!-- Info modal -->
-
-	<Dialog
-		v-model:visible="visible"
-		modal
-		:draggable="false"
-		:style="{ width: '50rem' }"
-		:closeOnEscape="true"
-		:dismissableMask="true"
+	<Modal
+		:isOpen="visible"
+		@modal-close="visible = !visible"
+		@submit="submitHandler"
+		name="first-modal"
 	>
-		<template #container>
-			<div
-				class="info-modal modal-content bg-transparent"
-				:style="{
-					backgroundColor: 'rgba(0, 0, 0, 0.7)',
-					border: '1px solid rgba(255,255,255,0.1)',
-				}"
-			>
-				<header
-					class="p-6 py-4 flex flex-col space-y-3 justify-start border-b"
+		<template #header
+			><header class="flex flex-col space-y-1 justify-start">
+				<h3 class="text-2xl">{{ props.data.position }}</h3>
+				<div
+					v-if="props.data.current"
+					class="current-label flex space-x-2 items-center h-[22px]"
 				>
-					<div class="general-info flex flex-col space-y-1">
-						<h4 class="text-2xl">{{ props.data.position }}</h4>
-						<div class="year flex">
-							<div
-								v-if="props.data.current"
-								class="current-label flex space-x-2 items-center h-[22px]"
-							>
-								<div
-									class="flex items-center h-full justify-center"
-								>
-									<span class="relative flex size-4">
-										<span
-											class="dot absolute inline-flex h-full w-full animate-ping rounded-full primary-background opacity-75"
-										></span>
-										<span
-											class="dot relative inline-flex left-[2px] top-[2px] size-3 rounded-full primary-background"
-										></span>
-									</span>
-								</div>
-
-								<p class="leading-none">Current</p>
-							</div>
-							<span v-else class="font-light text-color-gray">{{
-								props.data.year
-							}}</span>
-						</div>
+					<div class="flex items-center h-full justify-center">
+						<span class="relative flex size-3">
+							<span
+								class="absolute inline-flex h-full w-full animate-ping rounded-full primary-background opacity-75"
+							></span>
+							<span
+								class="relative inline-flex left-[2px] top-[2px] size-2 rounded-full primary-background"
+							></span>
+						</span>
 					</div>
-					<a
-						target="_blank"
-						:href="props.data.company.href"
-						class="company-data flex items-center group hover:cursor-pointer opacity-50"
-					>
-						<p
-							class="font-regular text-color-gray group-hover:underline"
-						>
+
+					<p class="leading-none text-color-gray">Current</p>
+				</div>
+				<span v-else class="font-light text-color-gray">{{
+					props.data.year
+				}}</span>
+			</header>
+		</template>
+		<template #content>
+			<div class="main-info flex flex-col space-y-6">
+				<div class="info-block flex flex-col space-y-1">
+					<span class="text-sm font-light opacity-50"> Company </span>
+					<div class="flex items-center space-x-2">
+						<p class="font-regular text-white">
 							{{ props.data.company.name }}
+							<a target="_blank" :href="props.data.company.href">
+								<i
+									class="bx bx-link-external hover:text-sky-500 ml-1"
+								></i>
+							</a>
 						</p>
-						<i
-							class="bx bx-link text-xl text-sky-700 group-hover:text-sky-400 ml-1"
-						></i>
-					</a>
-				</header>
-				<main class="p-6 flex">dfgdf</main>
-				<footer class="flex justify-between p-6 border-t">
-					<Button
-						label="Cancel"
-						text
-						severity="secondary"
-						@click="visible = false"
-						autofocus
-					/>
-					<Button
-						label="Save"
-						variant="outlined"
-						severity="secondary"
-						@click="visible = false"
-						autofocus
-					/>
-				</footer>
+						<p class="text-color-gray">
+							- {{ props.data.company.description }}
+						</p>
+					</div>
+				</div>
+				<div
+					class="info-block flex flex-col space-y-1"
+					v-if="props.data.responsibilities.length != 0"
+				>
+					<span class="text-sm font-light opacity-50">
+						Responsibility of
+					</span>
+					<ul class="list-disc list-inside">
+						<li
+							v-for="item in props.data.responsibilities"
+							class="mb-2"
+						>
+							{{ item }}
+						</li>
+					</ul>
+				</div>
+				<div
+					class="info-block flex flex-col space-y-1"
+					v-if="props.data.tools.length != 0"
+				>
+					<span class="text-sm font-light opacity-50">
+						The instruments used
+					</span>
+					<div class="list">
+						<span v-for="(tool, index) in props.data.tools"
+							>{{ tool
+							}}{{
+								index != props.data.tools.length - 1 ? ", " : ""
+							}}
+						</span>
+					</div>
+				</div>
+				<div
+					class="info-block flex flex-col space-y-1"
+					v-if="props.data.projects.length != 0"
+				>
+					<span class="text-sm font-light opacity-50">Projects</span>
+					<div class="list flex">
+						<a
+							:href="project.href"
+							class="underline text-blue-500 hover:text-blue-400"
+							v-for="(project, index) in props.data.projects"
+							>{{ project.name
+							}}{{
+								index != props.data.projects.length - 1
+									? ", "
+									: ""
+							}}
+						</a>
+					</div>
+				</div>
 			</div>
 		</template>
-	</Dialog>
+		<template #footer
+			><Button class="gray" @click="visible = !visible"
+				>Close</Button
+			></template
+		>
+	</Modal>
 </template>
 
 <script setup>
-import Dialog from "primevue/dialog";
 import { ref } from "vue";
+import Button from "./ui/Button.vue";
+import Modal from "./ui/Modal.vue";
 
 const visible = ref(false);
 
@@ -155,6 +184,17 @@ const props = defineProps({
 		current: Boolean,
 	},
 });
+
+const openModal = () => {
+	isModalOpened.value = true;
+};
+const closeModal = () => {
+	isModalOpened.value = false;
+};
+
+const submitHandler = () => {
+	//here you do whatever
+};
 </script>
 
 <style lang="scss" scoped>
@@ -162,5 +202,12 @@ const props = defineProps({
 
 .current-label .dot {
 	background-color: $primary;
+}
+
+.work-place:hover {
+	$effect3D: 6px;
+	border-color: $gray;
+	transform: translate($effect3D * -1, $effect3D * -1);
+	box-shadow: $effect3D $effect3D 0px 0px darken($color: $gray, $amount: 37);
 }
 </style>

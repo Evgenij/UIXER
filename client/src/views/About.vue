@@ -29,7 +29,7 @@
 					<p class="text-color-gray experience">
 						Commercial experience
 						<span class="primary-font ml-1"
-							>{{ getDataRange(1, 1, 2020) }} year{{
+							>{{ getDataRange(1, 1, 2021) }} year{{
 								getDataRange(1, 1, 2022) > 1 ? "s" : ""
 							}}</span
 						>
@@ -107,7 +107,7 @@
 			>
 				About me
 			</h3>
-			<header class="main-header font-extrabold text-2xl mb-9">
+			<header class="main-header font-heavy text-2xl mb-9">
 				<h2 class="text-4xl leading-normal">Hi, I'm Yevhenii</h2>
 				<h4 class="leading-normal mt-4">
 					I’m a UI/UX designer with full-cycle expertise — from
@@ -600,52 +600,55 @@ const placesWorks = [
 	{
 		current: true,
 		company: {
-			name: "AI-based photo and video content generation service - VizoGEN Ltd.",
+			name: "VizoGEN Ltd.",
+			description: "AI-based photo and video content generation service",
 			href: "https://vizogen.ru/",
 		},
 		position: "UI/UX designer",
 		year: 2025,
-		description: [
+		responsibilities: [
 			"Developing websites using Design and programming techniques. ",
 			"Using various programming techniques and communicating with other programmers. Working on user interface on system pages. Worked with Vue 3.",
 		],
+		tools: ["Figma", "Adobe Premier Pro"],
+		projects: [{ name: "Main website", href: "https://vizogen.ru/" }],
 	},
 	{
 		company: {
-			name: "A company that provides travel services - KMV Tour Ltd.",
+			name: "KMV Tour Ltd.",
+			description: "A company that provides travel services",
 			href: "https://kmv-tur.org/",
 		},
 		position: "Frontend developer",
 		year: 2023,
-		description: [
-			"Developing websites using Design and programming techniques. ",
-			"Using various programming techniques and communicating with other programmers. Working on user interface on system pages. Worked with Vue 3.",
-		],
+		responsibilities: [],
+		tools: [],
+		projects: [],
 	},
 	{
 		company: {
-			name: "Internet and television services company - DKT Ltd.",
+			name: "DKT Ltd.",
+			description: "Internet and television services company",
 			href: "https://dkt.ltd/",
 		},
 		position: "Technical Support Engineer / Web Developer",
 		year: 2022,
-		description: [
-			"Customer service in the office and on the hotline. I was responsible for configuring customers' routers and devices. ",
-			"I communicated with foremen regarding calls to the customer's apartment. Received customer calls and resolved problems on the customer side. ",
-			"I created a new updated company website.",
-		],
+		responsibilities: [],
+		tools: [],
+		projects: [],
 	},
-	// {
-	// 	company: "ITD company",
-	// 	position: "UI/UX Designer",
-	// 	from: "July 2021",
-	// 	to: "Feb 2022",
-	// 	description: [
-	// 		"Develop layouts for websites and applications. Communicating with developers, discussing Design solutions. ",
-	// 		"Preparing the project for development. Creating the company's visual image and maintaining a consistent style. ",
-	// 		"Preparing materials for the company's social networks.",
-	// 	],
-	// },
+	{
+		company: {
+			name: "ITD company",
+			description: "Web studio",
+			href: "https://itd.company/",
+		},
+		position: "UI/UX Designer",
+		year: 2021,
+		responsibilities: [],
+		tools: [],
+		projects: [],
+	},
 ];
 
 const CVs = [

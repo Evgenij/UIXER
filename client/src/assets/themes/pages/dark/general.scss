@@ -240,4 +240,17 @@
 			background: $primary;
 		}
 	}
+
+	.modal {
+		&-container {
+			border: 1px solid $dark-gray;
+		}
+
+		&-header {
+			border-bottom: 1px solid $dark-gray;
+		}
+		&-footer {
+			border-top: 1px solid $dark-gray;
+		}
+	}
 }
