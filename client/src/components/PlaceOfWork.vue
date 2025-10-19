@@ -3,7 +3,7 @@
 		class="work-place border border-1 border-darkgray flex flex-col space-y-3 h-full group cursor-pointer"
 		@click="visible = true"
 	>
-		<div class="work-place__content space-y-4 py-4 px-5 pb-0 h-full">
+		<div class="work-place__content space-y-3 py-4 px-5 pb-0 h-full">
 			<div class="year flex">
 				<div
 					v-if="props.data.current"
@@ -49,12 +49,12 @@
 				</div>
 			</header>
 		</div>
-		<button
+		<div
 			@click="visible = true"
-			class="text-left text-sm opacity-50 px-5 py-3 group-hover:bg-white group-hover:text-black"
+			class="text-left opacity-30 text-sm px-5 py-3 group-hover:opacity-100 group-hover:bg-white group-hover:text-black"
 		>
 			Show more
-		</button>
+		</div>
 	</div>
 
 	<!-- Info modal -->
@@ -144,17 +144,17 @@
 					v-if="props.data.projects.length != 0"
 				>
 					<span class="text-sm font-light opacity-50">Projects</span>
-					<div class="list flex">
+					<div class="list flex flex-wrap gap-2">
 						<a
 							:href="project.href"
-							class="underline text-blue-500 hover:text-blue-400"
+							target="_blank"
+							class="underline text-blue-500 hover:text-blue-400 inline-block min-w-max"
 							v-for="(project, index) in props.data.projects"
-							>{{ project.name
-							}}{{
-								index != props.data.projects.length - 1
-									? ", "
-									: ""
-							}}
+						>
+							<span class="text-white opacity-30"
+								>[{{ index + 1 }}]</span
+							>
+							{{ project.name }}
 						</a>
 					</div>
 				</div>
@@ -185,16 +185,16 @@ const props = defineProps({
 	},
 });
 
-const openModal = () => {
-	isModalOpened.value = true;
-};
-const closeModal = () => {
-	isModalOpened.value = false;
-};
+// const openModal = () => {
+// 	isModalOpened.value = true;
+// };
+// const closeModal = () => {
+// 	isModalOpened.value = false;
+// };
 
-const submitHandler = () => {
-	//here you do whatever
-};
+// const submitHandler = () => {
+// 	//here you do whatever
+// };
 </script>
 
 <style lang="scss" scoped>
@@ -206,8 +206,8 @@ const submitHandler = () => {
 
 .work-place:hover {
 	$effect3D: 6px;
-	border-color: $gray;
+	border-color: white;
 	transform: translate($effect3D * -1, $effect3D * -1);
-	box-shadow: $effect3D $effect3D 0px 0px darken($color: $gray, $amount: 37);
+	box-shadow: $effect3D $effect3D 0px 0px darken($color: $gray, $amount: 20);
 }
 </style>

@@ -228,9 +228,9 @@
 					</h5>
 					<div class="works-list grid grid-cols-2 gap-3 flex-wrap">
 						<PlaceOfWork
-							v-for="(placeWork, index) in placesWorks"
+							v-for="placeWork in placesOfWork"
 							:data="placeWork"
-							:key="index"
+							:key="placeWork.id"
 						/>
 						<!-- <div
 							v-for="(placeWork, index) in placesWorks"
@@ -278,72 +278,16 @@
 					</div>
 				</div>
 				<div class="w-full xl:w-2/6">
-					<header class="flex align-center justify-between">
-						<h5 class="primary-font font-bold mb-4">
-							Certificates
-						</h5>
-						<a
-							href="/projects"
-							class="font-light text-sm hover:underline underline-offset-4"
-							>Show all</a
-						>
-					</header>
+					<h5 class="primary-font font-bold mb-4">Certificates</h5>
 
-					<div class="projects-list grid grid-cols-1 gap-5 flex-wrap">
-						<div
-							v-for="project in projects.slice(0, 4)"
-							:key="project.id"
-							class="project flex flex-col h-min"
-						>
-							<div
-								class="project__header relative header flex flex-col space-y-2 justify-center items-start p-5"
-							>
-								<header class="flex items-center space-x-4">
-									<h3
-										class="header__main font-bold text-xl leading-normal"
-									>
-										{{ project.secondName }}
-										<Badge v-if="project.inDeveloping" />
-									</h3>
-								</header>
-								<span class="font-light text-sm">
-									{{ project.subtitle }}
-								</span>
-							</div>
-							<Accordion class="project__accordion">
-								<AccordionTab
-									header="More info"
-									contentClass="project__accordion accordion"
-								>
-									<div class="flex flex-col gap-2">
-										<div
-											v-if="
-												project.shortenedDescription
-													?.length !== 0
-											"
-											class="flex flex-col gap-2 pl-5"
-										>
-											<div
-												v-for="item in project.shortenedDescription"
-												class="wrapp-info-paragraph relative"
-											>
-												<p
-													class="font-light opacity-70"
-												>
-													{{ item }}
-												</p>
-											</div>
-										</div>
-										<p v-else class="px-2">No info</p>
-										<a
-											:href="`project/${project.name}`"
-											class="inline-block p-2 font-light hover:underline underline-offset-4"
-											>Show more ></a
-										>
-									</div>
-								</AccordionTab>
-							</Accordion>
-						</div>
+					<div
+						class="certificates-list grid grid-cols-1 gap-5 flex-wrap"
+					>
+						<CertificateBlock
+							v-for="(certificate, index) in certificates"
+							:key="index"
+							:data="certificate"
+						/>
 					</div>
 				</div>
 				<!-- <div class="w-full xl:w-1/2">
@@ -416,49 +360,20 @@
 					</div>
 				</div> -->
 			</section>
-			<section class="certificates mt-14">
-				<h5 class="primary-font font-bold mb-4">Certificates</h5>
-				<div
-					class="certificates-list grid grid-cols-1 sm:grid-cols-2 gap-5 flex-wrap"
-				>
-					<div
-						v-for="certificate in certificates"
-						:key="certificate.id"
-						class="certificate flex flex-col h-min"
+			<section class="projects mt-14">
+				<header class="flex align-center justify-between">
+					<h5 class="primary-font font-bold mb-4">Last projects</h5>
+					<a
+						href="/projects"
+						class="font-light text-sm hover:underline underline-offset-4"
+						>Show all</a
 					>
-						<div
-							class="certificate__header header flex flex-col space-y-2 justify-center items-center py-10 px-3"
-						>
-							<h3
-								class="header__main font-bold text-3xl leading-none text-center"
-								:style="{ color: certificate.color }"
-							>
-								{{ certificate.label }}
-							</h3>
-							<span class="font-light text-sm text-center">
-								{{ certificate.type }}
-							</span>
-						</div>
-						<Accordion class="certificate__accordion">
-							<AccordionTab
-								header="Certificates"
-								contentClass="certificate__accordion accordion"
-							>
-								<a
-									v-for="certificateItem in certificate.list_cert"
-									target="_blank"
-									:key="certificateItem.id"
-									:href="certificateItem.href"
-									class="group accordion__item flex justify-between font-light hover:underline underline-offset-4 transition-none py-3 first:pt-0 last:pb-0"
-								>
-									<span>{{ certificateItem.name }}</span>
-									<span class="hidden group-hover:block"
-										>open</span
-									>
-								</a>
-							</AccordionTab>
-						</Accordion>
-					</div>
+				</header>
+
+				<div
+					class="projects-list grid grid-cols-1 sm:grid-cols-2 gap-5 flex-wrap"
+				>
+					///
 				</div>
 			</section>
 		</div>
@@ -468,9 +383,10 @@
 <script setup>
 import PageSide from "@/components/elements/PageSide.vue";
 import ThemeToggle from "@/components/ThemeToggle.vue";
-import Badge from "@/components/Badge.vue";
 import projects from "@/db/projects";
 import PlaceOfWork from "@/components/PlaceOfWork.vue";
+import placesOfWork from "@/db/placesOfWork";
+import CertificateBlock from "@/components/CertificateBlock.vue";
 // import { ref } from "vue";
 
 const links = [
@@ -490,38 +406,9 @@ const links = [
 
 const certificates = [
 	{
-		label: "React",
-		type: "JS framework",
-		color: "#58c4dc",
-		list_cert: [
-			{
-				name: "React Full course",
-				href: new URL(
-					`../documents/certificates/react-course.pdf`,
-					import.meta.url
-				).href,
-			},
-		],
-	},
-	{
-		label: "Angular",
-		type: "JS framework",
-		color: "#ff0032",
-		list_cert: [
-			{
-				name: "Angular Essential",
-				href: new URL(
-					`../documents/certificates/TP58962405.pdf`,
-					import.meta.url
-				).href,
-			},
-		],
-	},
-	{
-		label: "UI/UX Design",
-		type: "Design",
-		color: "#6d00e9",
-		list_cert: [
+		name: "UI/UX Design",
+		category: "Design",
+		list: [
 			{
 				name: "UI/UX Design Essential",
 				href: new URL(
@@ -553,10 +440,36 @@ const certificates = [
 		],
 	},
 	{
-		label: "Python",
-		type: "Language",
-		color: "#ff9700",
-		list_cert: [
+		name: "React",
+		category: "JS framework",
+		list: [
+			{
+				name: "React Full course",
+				href: new URL(
+					`../documents/certificates/react-course.pdf`,
+					import.meta.url
+				).href,
+			},
+		],
+	},
+	{
+		name: "Angular",
+		category: "JS framework",
+		list: [
+			{
+				name: "Angular Essential",
+				href: new URL(
+					`../documents/certificates/TP58962405.pdf`,
+					import.meta.url
+				).href,
+			},
+		],
+	},
+
+	{
+		name: "Python",
+		category: "Language",
+		list: [
 			{
 				name: "PCAP: Programming Essentials in Python",
 				href: new URL(
@@ -567,10 +480,9 @@ const certificates = [
 		],
 	},
 	{
-		label: "Cisco",
-		type: "Network technologies",
-		color: "#187ac5",
-		list_cert: [
+		name: "Cisco",
+		category: "Network technologies",
+		list: [
 			{
 				name: "Introduction to Networks",
 				href: new URL(
@@ -593,61 +505,6 @@ const certificates = [
 				).href,
 			},
 		],
-	},
-];
-
-const placesWorks = [
-	{
-		current: true,
-		company: {
-			name: "VizoGEN Ltd.",
-			description: "AI-based photo and video content generation service",
-			href: "https://vizogen.ru/",
-		},
-		position: "UI/UX designer",
-		year: 2025,
-		responsibilities: [
-			"Developing websites using Design and programming techniques. ",
-			"Using various programming techniques and communicating with other programmers. Working on user interface on system pages. Worked with Vue 3.",
-		],
-		tools: ["Figma", "Adobe Premier Pro"],
-		projects: [{ name: "Main website", href: "https://vizogen.ru/" }],
-	},
-	{
-		company: {
-			name: "KMV Tour Ltd.",
-			description: "A company that provides travel services",
-			href: "https://kmv-tur.org/",
-		},
-		position: "Frontend developer",
-		year: 2023,
-		responsibilities: [],
-		tools: [],
-		projects: [],
-	},
-	{
-		company: {
-			name: "DKT Ltd.",
-			description: "Internet and television services company",
-			href: "https://dkt.ltd/",
-		},
-		position: "Technical Support Engineer / Web Developer",
-		year: 2022,
-		responsibilities: [],
-		tools: [],
-		projects: [],
-	},
-	{
-		company: {
-			name: "ITD company",
-			description: "Web studio",
-			href: "https://itd.company/",
-		},
-		position: "UI/UX Designer",
-		year: 2021,
-		responsibilities: [],
-		tools: [],
-		projects: [],
 	},
 ];
 
