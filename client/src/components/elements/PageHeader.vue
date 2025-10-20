@@ -45,7 +45,7 @@
 					<ContactsLinks />
 				</div>
 				<span
-					class="block flex items-center justify-center uppercase text-lg text-black"
+					class="flex items-center justify-center uppercase text-lg text-black"
 				>
 					menu
 				</span>
@@ -72,8 +72,8 @@ const menuLinks = [
 		href: "projects",
 	},
 	{
-		name: "contact",
-		href: "contact",
+		name: "contacts",
+		href: "contacts",
 	},
 ];
 

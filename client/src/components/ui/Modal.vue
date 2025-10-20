@@ -52,7 +52,6 @@ onClickOutside(target, () => emit("modal-close"));
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(0, 0, 0, 0.7);
 	backdrop-filter: blur(15px);
 }
 
@@ -84,7 +83,6 @@ onClickOutside(target, () => emit("modal-close"));
 
 	&-container {
 		width: 50rem;
-		background-color: rgba(0, 0, 0, 0.7);
 		margin: auto;
 
 		.section {

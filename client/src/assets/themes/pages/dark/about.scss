@@ -72,59 +72,6 @@
 			}
 		}
 
-		.certificate {
-			background-color: rgba(255, 255, 255, 0.02);
-
-			&__accordion {
-				background-color: rgba(255, 255, 255, 0.02);
-				font-weight: 100;
-
-				.accordion {
-					&__item {
-						border-bottom: 1px solid $lines;
-						font-size: 14px;
-
-						&:hover {
-							color: $link;
-						}
-
-						&:last-child {
-							border-bottom: none;
-						}
-					}
-				}
-
-				& .p-accordion {
-					&-tab {
-						margin: 0;
-					}
-
-					&-header {
-						&-link {
-							padding: 1.1em 1em;
-						}
-
-						&-text {
-							font-weight: 300;
-							font-size: 14px;
-						}
-					}
-
-					&-content {
-						border-top: 1px solid $lines;
-						margin: 0;
-						border-radius: 0;
-						background-color: transparent;
-						padding: 1em;
-					}
-				}
-
-				& .p-toggleable-content {
-					margin: 0;
-				}
-			}
-		}
-
 		.work-place {
 			//position: relative;
 
@@ -182,56 +129,67 @@
 			}
 		}
 
+		.certificate {
+			border: 1px solid $dark-gray;
+
+			&:hover {
+				border-color: white;
+
+				button {
+					background-color: white;
+
+					i {
+						color: $background;
+					}
+				}
+			}
+
+			button {
+				background-color: rgba($color: white, $alpha: 0.02);
+			}
+
+			.list {
+				border-color: $dark-gray;
+			}
+		}
+
+		.work-place {
+			border-color: $lines;
+
+			&:hover {
+				$effect3D: 6px;
+				border-color: white;
+				box-shadow: $effect3D $effect3D 0px 0px
+					darken($color: $gray, $amount: 20);
+			}
+
+			i {
+				color: white;
+
+				&:hover {
+					color: $link;
+				}
+			}
+		}
+
 		.project {
-			background-color: rgba(255, 255, 255, 0.02);
+			border: 1px solid $dark-gray;
 
-			&__accordion {
-				background-color: rgba(255, 255, 255, 0.02);
-				font-weight: 100;
+			&:hover {
+				border-color: white;
+			}
+		}
 
-				.accordion {
-					&__item {
-						border-bottom: 1px solid $lines;
-						font-size: 14px;
+		.navigation {
+			&__item {
+				border-color: $dark-gray;
 
-						&:hover {
-							color: $link;
-						}
+				&:hover {
+					border-color: white;
 
-						&:last-child {
-							border-bottom: none;
-						}
+					i {
+						color: $primary;
 					}
-				}
-
-				& .p-accordion {
-					&-tab {
-						margin: 0;
-					}
-
-					&-header {
-						&-link {
-							padding: 1.1em 1em;
-						}
-
-						&-text {
-							font-weight: 300;
-							font-size: 14px;
-						}
-					}
-
-					&-content {
-						border-top: 1px solid $lines;
-						margin: 0;
-						border-radius: 0;
-						background-color: transparent;
-						padding: 1em;
-						font-size: 14px;
-					}
-				}
-
-				& .p-toggleable-content {
-					margin: 0;
 				}
 			}
 		}

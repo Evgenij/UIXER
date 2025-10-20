@@ -71,6 +71,7 @@
 		}
 
 		&.blue {
+			color: $link;
 			&:hover {
 				color: $link;
 
@@ -242,8 +243,13 @@
 	}
 
 	.modal {
+		&-mask {
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+
 		&-container {
 			border: 1px solid $dark-gray;
+			background-color: rgba(0, 0, 0, 0.7);
 		}
 
 		&-header {
@@ -251,6 +257,13 @@
 		}
 		&-footer {
 			border-top: 1px solid $dark-gray;
+		}
+
+		.btn-close {
+			&::before,
+			&::after {
+				background-color: $gray;
+			}
 		}
 	}
 }

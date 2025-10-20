@@ -36,7 +36,7 @@
 					</p>
 				</div>
 				<div
-					class="personal-data__langs grid grid-cols-2 2xl:grid-cols-4"
+					class="personal-data__langs grid grid-cols-4 md:grid-cols-2 2xl:grid-cols-4"
 				>
 					<div class="lang flex space-x-1 justify-center">
 						<span class="text-color-gray">EN</span>
@@ -162,7 +162,7 @@
 					<a
 						target="_blank"
 						href="https://www.linkedin.com/in/yevhenii-yermolenko/"
-						class="mt-4 leading-none link text-sky-500 blue flex items-center font-regular w-fit"
+						class="mt-4 leading-none link blue flex items-center font-regular w-fit"
 					>
 						LinkedIn
 						<i class="bx bx-right-arrow-alt text-xl ml-1"></i>
@@ -190,191 +190,97 @@
 					<a
 						target="_blank"
 						href="https://www.instagram.com/uixer.design/"
-						class="mt-4 leading-none text-sky-500 link blue flex items-center font-regular w-fit"
+						class="mt-4 leading-none link blue flex items-center font-regular w-fit"
 					>
 						Instagram
 						<i class="bx bx-right-arrow-alt text-xl ml-1"></i>
 					</a>
 				</div>
-				<!-- <div class="w-full xl:w-1/2">
-					<h5 class="primary-font font-bold mb-4">
-						Free time forwarding
-					</h5>
-					<p class="font-regular text-color-gray mb-3">
-						In my free time, I develop my professional skills and
-						learn new ones in related fields in order to better
-						understand what programmers face when implementing
-						Design solutions.
-					</p>
-					<p class="font-regular text-color-gray mb-3">
-						Sometimes I need a “reboot". A walk around the city with
-						a cup of coffee helps me with this)
-					</p>
-					<p class="font-regular text-color-gray mb-3">
-						I also run my Instagram blog, where I talk about the
-						field of Design and give useful tips to the audience
-					</p>
-					
-				</div> -->
 			</section>
 			<section
 				class="professional-info mt-14 w-full flex flex-col xl:flex-row space-x-0 xl:space-x-10 space-y-10 xl:space-y-0"
 			>
 				<div class="w-full xl:w-4/6">
-					<h5
-						class="primary-font last-places-of-work font-bold mb-4 relative"
-					>
-						Last places of work
-					</h5>
-					<div class="works-list grid grid-cols-2 gap-3 flex-wrap">
-						<PlaceOfWork
-							v-for="placeWork in placesOfWork"
-							:data="placeWork"
-							:key="placeWork.id"
-						/>
-						<!-- <div
-							v-for="(placeWork, index) in placesWorks"
-							:key="index"
-							class="work-place flex flex-col h-min"
+					<section class="places-of-work">
+						<h5
+							class="primary-font last-places-of-work font-bold mb-4 relative"
 						>
-							<div
-								class="work-place__header header flex flex-col space-y-2 justify-center items-start p-5"
-							>
-								<header class="flex items-center space-x-4">
-									<h3
-										class="header__main font-bold text-xl leading-normal"
-									>
-										{{ placeWork.position }}
-									</h3>
-									<span class="opacity-30 font-light">|</span>
-									<p class="opacity-30 font-light text-base">
-										{{ placeWork.from }} -
-										{{ placeWork.to }}
-									</p>
-								</header>
+							Last places of work
+						</h5>
+						<div
+							class="works-list grid grid-cols-1 md:grid-cols-2 gap-3"
+						>
+							<PlaceOfWork
+								v-for="placeWork in placesOfWork"
+								:data="placeWork"
+								:key="placeWork.id"
+							/>
+						</div>
+					</section>
 
-								<span class="font-light text-sm">
-									{{ placeWork.company }}
-								</span>
-							</div>
-							<Accordion class="work-place__accordion">
-								<AccordionTab
-									header="More info"
-									contentClass="work-place__accordion accordion"
-								>
-									<div class="flex flex-col gap-2 pl-5">
-										<div
-											v-for="paragraph in placeWork.description"
-											class="wrapp-info-paragraph relative"
-										>
-											<p class="font-light opacity-70">
-												{{ paragraph }}
-											</p>
-										</div>
-									</div>
-								</AccordionTab>
-							</Accordion>
-						</div> -->
-					</div>
+					<section class="projects mt-14">
+						<header class="flex align-center justify-between">
+							<h5 class="primary-font font-bold mb-4">
+								Last projects
+							</h5>
+							<a
+								href="/projects"
+								class="font-light text-sm hover:underline underline-offset-4"
+								>Show all</a
+							>
+						</header>
+
+						<div
+							class="projects-list grid grid-cols-1 md:grid-cols-2 gap-3"
+						>
+							<ProjectBlock
+								v-for="project in projects.slice(0, 4)"
+								:data="project"
+								:key="project.id"
+								>{{ project.name }}</ProjectBlock
+							>
+						</div>
+					</section>
 				</div>
-				<div class="w-full xl:w-2/6">
+				<div class="w-full xl:w-2/6 h-full sticky top-0">
 					<h5 class="primary-font font-bold mb-4">Certificates</h5>
 
 					<div
-						class="certificates-list grid grid-cols-1 gap-5 flex-wrap"
+						class="certificates-list grid grid-cols-1 gap-3 flex-wrap"
 					>
 						<CertificateBlock
-							v-for="(certificate, index) in certificates"
-							:key="index"
+							v-for="certificate in certificates"
+							:key="certificate.id"
 							:data="certificate"
 						/>
 					</div>
 				</div>
-				<!-- <div class="w-full xl:w-1/2">
-					<header class="flex align-center justify-between">
-						<h5 class="primary-font font-bold mb-4">
-							Last projects
-						</h5>
-						<a
-							href="/projects"
-							class="font-light text-sm hover:underline underline-offset-4"
-							>Show all</a
-						>
-					</header>
-
-					<div class="projects-list grid grid-cols-1 gap-5 flex-wrap">
-						<div
-							v-for="project in projects.slice(0, 4)"
-							:key="project.id"
-							class="project flex flex-col h-min"
-						>
-							<div
-								class="project__header relative header flex flex-col space-y-2 justify-center items-start p-5"
-							>
-								<header class="flex items-center space-x-4">
-									<h3
-										class="header__main font-bold text-xl leading-normal"
-									>
-										{{ project.secondName }}
-										<Badge v-if="project.inDeveloping" />
-									</h3>
-								</header>
-								<span class="font-light text-sm">
-									{{ project.subtitle }}
-								</span>
-							</div>
-							<Accordion class="project__accordion">
-								<AccordionTab
-									header="More info"
-									contentClass="project__accordion accordion"
-								>
-									<div class="flex flex-col gap-2">
-										<div
-											v-if="
-												project.shortenedDescription
-													?.length !== 0
-											"
-											class="flex flex-col gap-2 pl-5"
-										>
-											<div
-												v-for="item in project.shortenedDescription"
-												class="wrapp-info-paragraph relative"
-											>
-												<p
-													class="font-light opacity-70"
-												>
-													{{ item }}
-												</p>
-											</div>
-										</div>
-										<p v-else class="px-2">No info</p>
-										<a
-											:href="`project/${project.name}`"
-											class="inline-block p-2 font-light hover:underline underline-offset-4"
-											>Show more ></a
-										>
-									</div>
-								</AccordionTab>
-							</Accordion>
-						</div>
-					</div>
-				</div> -->
 			</section>
-			<section class="projects mt-14">
-				<header class="flex align-center justify-between">
-					<h5 class="primary-font font-bold mb-4">Last projects</h5>
-					<a
-						href="/projects"
-						class="font-light text-sm hover:underline underline-offset-4"
-						>Show all</a
-					>
-				</header>
-
-				<div
-					class="projects-list grid grid-cols-1 sm:grid-cols-2 gap-5 flex-wrap"
-				>
-					///
-				</div>
+			<section class="navigation mt-14 flex flex-col md:flex-row gap-4">
+				<router-link
+					:to="{ name: 'skills' }"
+					class="navigation__item px-4 py-3 border border-1 flex justify-between items-center w-full group"
+					>Skills
+					<i
+						class="bx bx-right-arrow-alt text-xl group-hover:translate-x-1"
+					></i
+				></router-link>
+				<router-link
+					:to="{ name: 'projects' }"
+					class="navigation__item px-4 py-3 border border-1 flex justify-between items-center w-full group"
+					>Projects
+					<i
+						class="bx bx-right-arrow-alt text-xl group-hover:translate-x-1"
+					></i
+				></router-link>
+				<router-link
+					:to="{ name: 'contacts' }"
+					class="navigation__item px-4 py-3 border border-1 flex justify-between items-center w-full group"
+					>Contacts
+					<i
+						class="bx bx-right-arrow-alt text-xl group-hover:translate-x-1"
+					></i
+				></router-link>
 			</section>
 		</div>
 	</section>
@@ -386,7 +292,9 @@ import ThemeToggle from "@/components/ThemeToggle.vue";
 import projects from "@/db/projects";
 import PlaceOfWork from "@/components/PlaceOfWork.vue";
 import placesOfWork from "@/db/placesOfWork";
+import certificates from "@/db/certificates";
 import CertificateBlock from "@/components/CertificateBlock.vue";
+import ProjectBlock from "@/components/ProjectBlock.vue";
 // import { ref } from "vue";
 
 const links = [
@@ -401,110 +309,6 @@ const links = [
 	{
 		name: "projects",
 		href: "projects",
-	},
-];
-
-const certificates = [
-	{
-		name: "UI/UX Design",
-		category: "Design",
-		list: [
-			{
-				name: "UI/UX Design Essential",
-				href: new URL(
-					`../documents/certificates/TP10044539.pdf`,
-					import.meta.url
-				).href,
-			},
-			{
-				name: "UI/UX Design Starter",
-				href: new URL(
-					`../documents/certificates/TP11251734.pdf`,
-					import.meta.url
-				).href,
-			},
-			{
-				name: "UI/UX mobile App Design",
-				href: new URL(
-					`../documents/certificates/TP79487888.pdf`,
-					import.meta.url
-				).href,
-			},
-			{
-				name: "Figma - Online Store Design",
-				href: new URL(
-					`../documents/certificates/TP44664130.pdf`,
-					import.meta.url
-				).href,
-			},
-		],
-	},
-	{
-		name: "React",
-		category: "JS framework",
-		list: [
-			{
-				name: "React Full course",
-				href: new URL(
-					`../documents/certificates/react-course.pdf`,
-					import.meta.url
-				).href,
-			},
-		],
-	},
-	{
-		name: "Angular",
-		category: "JS framework",
-		list: [
-			{
-				name: "Angular Essential",
-				href: new URL(
-					`../documents/certificates/TP58962405.pdf`,
-					import.meta.url
-				).href,
-			},
-		],
-	},
-
-	{
-		name: "Python",
-		category: "Language",
-		list: [
-			{
-				name: "PCAP: Programming Essentials in Python",
-				href: new URL(
-					`../documents/certificates/cisco/EvgenyErmolenko-Python-20IVT7-certificate (1).pdf`,
-					import.meta.url
-				).href,
-			},
-		],
-	},
-	{
-		name: "Cisco",
-		category: "Network technologies",
-		list: [
-			{
-				name: "Introduction to Networks",
-				href: new URL(
-					`../documents/certificates/cisco/EvgenyErmolenko-CCNA-1v7-20IVT4-certificate.pdf`,
-					import.meta.url
-				).href,
-			},
-			{
-				name: "Switching, Routing, and Wireless Essentials (SRWE)",
-				href: new URL(
-					`../documents/certificates/cisco/EvgenyErmolenko-CCNA-SRWE-21IVT4-certificate.pdf`,
-					import.meta.url
-				).href,
-			},
-			{
-				name: "Introduction to Packet Tracer",
-				href: new URL(
-					`../documents/certificates/cisco/EvgenyErmolenko-Introduction to -certificate (2).pdf`,
-					import.meta.url
-				).href,
-			},
-		],
 	},
 ];
 

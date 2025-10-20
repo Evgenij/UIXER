@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="work-place border border-1 border-darkgray flex flex-col space-y-3 h-full group cursor-pointer"
+		class="work-place border border-1 flex flex-col space-y-3 h-full group cursor-pointer"
 		@click="visible = true"
 	>
 		<div class="work-place__content space-y-3 py-4 px-5 pb-0 h-full">
@@ -41,9 +41,7 @@
 							:href="props.data.company.href"
 							@mousedown="visible = false"
 						>
-							<i
-								class="bx bx-link-external text-white hover:text-sky-500"
-							></i>
+							<i class="bx bx-link-external"></i>
 						</a>
 					</p>
 				</div>
@@ -51,7 +49,7 @@
 		</div>
 		<div
 			@click="visible = true"
-			class="text-left opacity-30 text-sm px-5 py-3 group-hover:opacity-100 group-hover:bg-white group-hover:text-black"
+			class="label-more text-left opacity-50 text-sm px-5 py-3 group-hover:opacity-100 group-hover:bg-white group-hover:text-black"
 		>
 			Show more
 		</div>
@@ -94,7 +92,7 @@
 				<div class="info-block flex flex-col space-y-1">
 					<span class="text-sm font-light opacity-50"> Company </span>
 					<div class="flex items-center space-x-2">
-						<p class="font-regular text-white">
+						<p class="font-regular">
 							{{ props.data.company.name }}
 							<a target="_blank" :href="props.data.company.href">
 								<i
@@ -151,9 +149,7 @@
 							class="underline text-blue-500 hover:text-blue-400 inline-block min-w-max"
 							v-for="(project, index) in props.data.projects"
 						>
-							<span class="text-white opacity-30"
-								>[{{ index + 1 }}]</span
-							>
+							<span class="opacity-70">[{{ index + 1 }}]</span>
 							{{ project.name }}
 						</a>
 					</div>
@@ -206,8 +202,6 @@ const props = defineProps({
 
 .work-place:hover {
 	$effect3D: 6px;
-	border-color: white;
 	transform: translate($effect3D * -1, $effect3D * -1);
-	box-shadow: $effect3D $effect3D 0px 0px darken($color: $gray, $amount: 20);
 }
 </style>

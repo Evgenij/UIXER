@@ -27,7 +27,7 @@
 						>copied!</span
 					>
 				</div>
-        <ContactsLinks/>
+				<ContactsLinks />
 			</div>
 		</div>
 		<div
@@ -234,8 +234,8 @@ const links = [
 		href: "projects",
 	},
 	{
-		name: "contact",
-		href: "contact",
+		name: "contacts",
+		href: "contacts",
 	},
 	{
 		name: "skills",

@@ -126,8 +126,8 @@ const links = [
 		href: "projects",
 	},
 	{
-		name: "contact",
-		href: "contact",
+		name: "contacts",
+		href: "contacts",
 	},
 ];
 

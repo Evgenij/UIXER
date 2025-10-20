@@ -52,7 +52,7 @@ const socialLinks = [
 @import "../../assets/variables";
 
 .page-footer {
-	z-index: 1000;
+	z-index: 950;
 	padding: 0 140px;
 	height: 100px;
 }

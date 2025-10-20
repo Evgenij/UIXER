@@ -18,10 +18,10 @@
 				class="main-photo"
 			/> -->
 			<h2 class="font-thin nick">UIXER</h2>
-			<div class="pages-links bottom flex justify-between">
-				<MainLink href="projects">Projects</MainLink>
-				<MainLink href="contact">Contact</MainLink>
-			</div>
+		</div>
+		<div class="pages-links bottom flex justify-between">
+			<MainLink href="projects">Projects</MainLink>
+			<MainLink href="contacts">Contact</MainLink>
 		</div>
 	</section>
 </template>
