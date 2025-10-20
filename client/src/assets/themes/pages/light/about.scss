@@ -6,33 +6,7 @@
 			background: $primary;
 		}
 
-		.pages-links {
-			z-index: 1000;
-			border-bottom: 1px solid $lines;
-
-			& .main-link {
-				& .dot {
-					background: $text-color;
-				}
-
-				&:after {
-					background: $lines;
-				}
-			}
-		}
-
-		.main-idea::before {
-			content: '"';
-			position: absolute;
-			top: -40px;
-			right: -10px;
-			opacity: 0.3;
-			font-size: 300px;
-			font-family: math;
-			line-height: 1;
-		}
-
-		.personal-data {
+		.general-data {
 			border-right: 1px solid $lines;
 		}
 
@@ -42,246 +16,128 @@
 			}
 		}
 
+		.main-idea::before {
+			content: '"';
+			position: absolute;
+			top: -40px;
+			right: -10px;
+			opacity: 0.1;
+			font-size: 300px;
+			font-family: math;
+			line-height: 1;
+		}
+
 		.button {
-			border: 1px solid $primary;
+			transform: translateY(-4px);
+			background-color: $primary;
+			color: $background;
+			box-shadow: 0px 4px 0px darken($color: $primary, $amount: 35);
 
 			svg path {
-				stroke: $primary;
+				stroke: $background;
 			}
 
 			&.primary {
-				background-color: transparentize($primary, 0.8);
+				background-color: $primary-hover;
 
-				&:hover {
-					color: $background;
-					background-color: $primary;
-
-					svg path {
-						stroke: $background;
+				&-silent {
+					&:hover {
+						background-color: transparentize($primary, 0.9);
 					}
 				}
 			}
 
 			&:hover {
-				color: $primary;
-				svg path {
-					stroke: $primary;
-				}
+				background-color: $primary-hover;
+			}
+
+			&:active {
+				transform: translateY(0);
+				box-shadow: 0px 0px 0px rgba($color: $primary, $alpha: 0.2);
 			}
 		}
 
-		.download-buttons {
-			border: 1px solid rgba($color: black, $alpha: 0.1);
-			background-color: rgba($color: black, $alpha: 0.08);
+		// .download-buttons {
+		// 	cursor: pointer;
+		// 	border: 1px solid rgba($color: white, $alpha: 0.07);
+		// 	background-color: rgba($color: white, $alpha: 0.04);
 
-			.lang__button {
-				border-left: 1px solid rgba($color: black, $alpha: 0.1);
+		// 	.lang__button {
+		// 		border-left: 1px solid rgba($color: white, $alpha: 0.07);
 
-				&:hover {
-					color: white;
-					background-color: $primary;
-				}
-			}
-		}
+		// 		&:hover {
+		// 			color: black;
+		// 			background-color: $primary;
+		// 		}
+		// 	}
+		// }
 
 		.certificate {
-			background-color: rgba(0, 0, 0, 0.04);
+			border: 1px solid $lines;
 
-			&__accordion {
-				background-color: rgba(0, 0, 0, 0.04);
+			&:hover {
+				border-color: black;
 
-				.p-accordion-header span {
-					font-weight: 500;
-				}
+				button {
+					background-color: black;
 
-				.accordion {
-					&__item {
-						color: $text-color;
-						border-bottom: 1px solid $lines;
-						font-size: 14px;
-						font-weight: 400;
-
-						&:hover {
-							// font-weight: 500;
-						}
-
-						&:last-child {
-							border-bottom: none;
-						}
+					i {
+						color: white;
 					}
 				}
+			}
 
-				& .p-accordion {
-					&-tab {
-						margin: 0;
-					}
+			button {
+				background-color: rgba($color: black, $alpha: 0.05);
+			}
 
-					&-header {
-						&-link {
-							padding: 1.1em 1em;
-						}
-
-						&-text {
-							font-weight: 300;
-							font-size: 14px;
-						}
-					}
-
-					&-content {
-						border-top: 1px solid $lines;
-						margin: 0;
-						border-radius: 0;
-						background-color: transparent;
-						padding: 1em;
-
-						a {
-							color: $link;
-						}
-					}
-				}
-
-				& .p-toggleable-content {
-					margin: 0;
-				}
+			.list {
+				border-color: $lines;
 			}
 		}
 
 		.work-place {
-			background-color: rgba(0, 0, 0, 0.04);
-			position: relative;
+			border-color: $lines;
 
-			&::before {
-				content: "";
-				position: absolute;
-				width: 10px;
-				height: 10px;
-				background-color: $primary;
-				left: -5px;
-				top: 34px;
-				margin-top: -5px;
+			&:hover {
+				$effect3D: 6px;
+				border-color: black;
+				box-shadow: $effect3D $effect3D 0px 0px
+					darken($color: $lines, $amount: 20);
+
+				& .label-more {
+					color: white;
+					background-color: black;
+				}
 			}
 
-			&__header p {
-				opacity: 0.6;
-			}
+			i {
+				color: black;
 
-			&__accordion {
-				background-color: rgba(0, 0, 0, 0.04);
-
-				.p-accordion-header span {
-					font-weight: 500;
-				}
-
-				.accordion {
-					&__item {
-						color: $text-color;
-						border-bottom: 1px solid $lines;
-						font-size: 14px;
-						font-weight: 400;
-
-						&:hover {
-							color: $link;
-						}
-
-						&:last-child {
-							border-bottom: none;
-						}
-					}
-				}
-
-				& .p-accordion {
-					&-tab {
-						margin: 0;
-					}
-
-					&-header {
-						&-link {
-							padding: 1.1em 1em;
-						}
-
-						&-text {
-							font-weight: 300;
-							font-size: 14px;
-						}
-					}
-
-					&-content {
-						color: $text-color;
-						border-top: 1px solid $lines;
-						margin: 0;
-						border-radius: 0;
-						background-color: transparent;
-						padding: 1em;
-						font-size: 14px;
-					}
-				}
-
-				& .p-toggleable-content {
-					margin: 0;
+				&:hover {
+					color: $link;
 				}
 			}
 		}
 
 		.project {
-			background-color: rgba(0, 0, 0, 0.04);
+			border: 1px solid $lines;
 
-			&__accordion {
-				background-color: rgba(0, 0, 0, 0.04);
+			&:hover {
+				border-color: black;
+			}
+		}
 
-				.p-accordion-header span {
-					font-weight: 500;
-				}
+		.navigation {
+			&__item {
+				border-color: $lines;
 
-				.accordion {
-					&__item {
-						color: $text-color;
-						border-bottom: 1px solid $lines;
-						font-size: 14px;
-						font-weight: 400;
+				&:hover {
+					border-color: black;
 
-						&:hover {
-							color: $link;
-						}
-
-						&:last-child {
-							border-bottom: none;
-						}
+					i {
+						color: $primary;
 					}
-				}
-
-				& .p-accordion {
-					&-tab {
-						margin: 0;
-					}
-
-					&-header {
-						&-link {
-							padding: 1.1em 1em;
-						}
-
-						&-text {
-							font-weight: 300;
-							font-size: 14px;
-						}
-					}
-
-					&-content {
-						color: $text-color;
-						border-top: 1px solid $lines;
-						margin: 0;
-						border-radius: 0;
-						background-color: transparent;
-						padding: 1em;
-						font-size: 14px;
-
-						span {
-							opacity: 0.6;
-						}
-					}
-				}
-
-				& .p-toggleable-content {
-					margin: 0;
 				}
 			}
 		}

@@ -50,8 +50,8 @@ const links = [
 		href: "skills",
 	},
 	{
-		name: "contact",
-		href: "contact",
+		name: "contacts",
+		href: "contacts",
 	},
 ];
 

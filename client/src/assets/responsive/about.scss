@@ -32,11 +32,11 @@
 		}
 
 		.main-data {
-			padding: 4%;
+			padding: 3%;
 			margin-right: 16px;
 
 			.page-title {
-				margin-bottom: 2rem;
+				margin-bottom: 1rem;
 				font-size: 1.3rem;
 			}
 
@@ -195,13 +195,17 @@
 		}
 
 		.main-data {
-			padding: 10% 5%;
+			padding: 0 5% 6rem 5%;
 			margin-right: 16px;
 			overflow: inherit;
 
 			.page-title {
 				margin-bottom: 1.3rem;
 				font-size: 1.2rem;
+			}
+
+			.navigation {
+				margin-top: 1rem;
 			}
 
 			.main-header {

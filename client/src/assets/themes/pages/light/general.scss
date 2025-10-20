@@ -27,7 +27,7 @@
 		}
 
 		&-light {
-			font-weight: 300;
+			font-weight: 400;
 		}
 
 		&-regular {
@@ -66,9 +66,7 @@
 	}
 
 	.link {
-		&:hover {
-			color: $primary;
-		}
+		color: $link;
 
 		&.blue {
 			&:hover {
@@ -213,5 +211,30 @@
 
 	.tool-badge {
 		border-color: $lines;
+	}
+
+	.modal {
+		&-mask {
+			background-color: rgba(255, 255, 255, 0.7);
+		}
+
+		&-container {
+			border: 1px solid $lines;
+			background-color: rgba(255, 255, 255, 0.7);
+		}
+
+		&-header {
+			border-bottom: 1px solid $lines;
+		}
+		&-footer {
+			border-top: 1px solid $lines;
+		}
+
+		.btn-close {
+			&::before,
+			&::after {
+				background-color: $gray;
+			}
+		}
 	}
 }

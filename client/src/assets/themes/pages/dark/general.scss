@@ -71,6 +71,7 @@
 		}
 
 		&.blue {
+			color: $link;
 			&:hover {
 				color: $link;
 
@@ -79,6 +80,12 @@
 					color: $link;
 				}
 			}
+		}
+	}
+
+	.border {
+		&-darkgray {
+			border-color: $dark-gray;
 		}
 	}
 
@@ -96,6 +103,9 @@
 		}
 		&-green {
 			color: $text-green;
+		}
+		&-black {
+			color: $background;
 		}
 	}
 
@@ -229,6 +239,31 @@
 			border: 1px solid $primary;
 			color: $background;
 			background: $primary;
+		}
+	}
+
+	.modal {
+		&-mask {
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+
+		&-container {
+			border: 1px solid $dark-gray;
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+
+		&-header {
+			border-bottom: 1px solid $dark-gray;
+		}
+		&-footer {
+			border-top: 1px solid $dark-gray;
+		}
+
+		.btn-close {
+			&::before,
+			&::after {
+				background-color: $gray;
+			}
 		}
 	}
 }
