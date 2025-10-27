@@ -5,54 +5,81 @@
 			<ThemeToggle />
 		</PageSide>
 
-		<aside class="project-page__main px-14 py-12 h-full basis-5/12">
-			<div
-				class="project-page__back font-regular flex items-center space-x-1 mb-10 cursor-pointer"
-				@click="router.back()"
-			>
-				<svg
-					width="30"
-					height="30"
-					viewBox="0 0 30 30"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
+		<aside
+			class="project-page__main flex flex-col justify-between items-start px-10 py-8 h-full basis-5/12"
+		>
+			<div>
+				<div
+					class="project-page__back font-regular flex items-center space-x-1 mb-10 cursor-pointer"
+					@click="router.back()"
 				>
-					<path
-						d="M11.7141 9.28125L5.99986 14.9984L11.7141 20.7141M24.5713 14.9998H5.99986"
-						stroke="#8E8E8E"
-						stroke-linecap="round"
-						stroke-linejoin="round"
-					/>
-				</svg>
-				<span>back</span>
+					<svg
+						width="30"
+						height="30"
+						viewBox="0 0 30 30"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<path
+							d="M11.7141 9.28125L5.99986 14.9984L11.7141 20.7141M24.5713 14.9998H5.99986"
+							stroke="#8E8E8E"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						/>
+					</svg>
+					<span>back</span>
+				</div>
+				<div class="project-page__name mb-12">
+					<h3 class="font-heavy text-7xl mb-5">
+						{{ dataProject.name }}
+					</h3>
+					<div class="tags flex items-center space-x-2">
+						<h4 class="primary-font text-xl">
+							{{ dataProject.category }}
+						</h4>
+						<span class="tags__line opacity-60"></span>
+						<h5 class="text-color-gray opacity-80 text-xl">
+							{{ dataProject.type }}
+						</h5>
+					</div>
+					<Badge v-if="dataProject.inDeveloping" class="mt-4" />
+				</div>
+				<div class="dev-tools w-full">
+					<p class="font-semibold text-base mb-3">
+						Development tools
+					</p>
+					<div
+						v-if="dataProject.technologies.length !== 0"
+						class="tools flex gap-3 flex-wrap"
+					>
+						<ToolBadge
+							v-for="technology in dataProject.technologies"
+							>{{ technology }}</ToolBadge
+						>
+					</div>
+					<p v-else class="text-sm opacity-40 font-light">Empty</p>
+				</div>
 			</div>
 
-			<div class="project-page__name mb-16">
-				<h3 class="font-heavy text-7xl mb-5">
-					<!-- {{ this.$route.params.id }} -->
-					{{ dataProject.name }}
-				</h3>
-				<div class="tags flex items-center space-x-2">
-					<h4 class="primary-font text-xl">
-						{{ dataProject.category }}
-					</h4>
-					<span class="tags__line opacity-60"></span>
-					<h5 class="text-color-gray opacity-80 text-xl">
-						{{ dataProject.type }}
-					</h5>
-				</div>
-			</div>
-			<div class="dev-tools w-full">
-				<p class="font-semibold text-xl mb-3">Development tools</p>
-				<div
-					v-if="dataProject.technologies.length !== 0"
-					class="tools flex gap-3 flex-wrap"
+			<div class="wrapp-btn flex items-end">
+				<Button class="primary lg" @click="visible = true"
+					>Order a similar project</Button
 				>
-					<ToolBadge v-for="technology in dataProject.technologies">{{
-						technology
-					}}</ToolBadge>
-				</div>
-				<p v-else class="text-sm opacity-40 font-light">Empty</p>
+				<Modal
+					:isOpen="visible"
+					@modal-close="visible = !visible"
+					name="first-modal"
+				>
+					<template #header> </template>
+					<template #content> </template>
+					<template #footer
+						><Button class="gray" @click="visible = !visible"
+							>Close</Button
+						><Button class="primary" @click="submitHandler"
+							>Send</Button
+						></template
+					>
+				</Modal>
 			</div>
 		</aside>
 		<section
@@ -272,6 +299,10 @@ import { typeElementDescription } from "@/helpers/consts";
 import ImageViewer from "@/components/ImageViewer.vue";
 import router from "@/router/router.js";
 import ToolBadge from "@/components/ToolBadge.vue";
+import Badge from "@/components/Badge.vue";
+import Button from "@/components/ui/Button.vue";
+import Modal from "@/components/ui/Modal.vue";
+import { ref } from "vue";
 
 const links = [
 	{
@@ -292,6 +323,12 @@ const route = useRoute();
 
 const projectName = route.params.name;
 const dataProject = getProjectsData(projectName);
+
+const visible = ref(false);
+
+const submitHandler = () => {
+	console.log("!!!");
+};
 </script>
 
 <style scoped lang="scss">

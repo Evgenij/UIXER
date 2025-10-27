@@ -63,5 +63,12 @@
 				}
 			}
 		}
+
+		.badgeStatus {
+			background-color: rgba($color: $primary, $alpha: 0.1);
+			span.label {
+				color: $primary;
+			}
+		}
 	}
 }

@@ -156,7 +156,30 @@
 				<div
 					class="row flex space-x-0 sm:space-x-3 space-y-3 sm:space-y-0 flex-col sm:flex-row"
 				>
-					<button
+					<Button class="primary lg" type="submit">
+						<i
+							v-if="isLoading"
+							class="bx bx-loader-alt bx-spin mr-2"
+						></i>
+						{{ isLoading ? "Sending..." : "Send" }}
+						<svg
+							v-if="!isLoading"
+							class="ml-2"
+							width="21"
+							height="21"
+							viewBox="0 0 21 21"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M13.5 6.49707L17.5 10.4991L13.5 14.5001M4.5 10.5001H17.5"
+								stroke="black"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</Button>
+					<!-- <button
 						type="submit"
 						class="max-w-fit button py-3 px-5 flex items-center space-x-2"
 					>
@@ -182,7 +205,7 @@
 								stroke-linejoin="round"
 							/>
 						</svg>
-					</button>
+					</button> -->
 					<div
 						v-if="statusEmail.value !== sendStatuses.default.value"
 						class="alert py-2 px-4 flex items-center font-semibold text-sm sm:text-base"
@@ -227,6 +250,7 @@ import Input from "@/components/ui/Input.vue";
 import RadioButton from "@/components/ui/RadioButton.vue";
 import ContactsLinks from "@/components/ContactsLinks.vue";
 import $ from "jquery";
+import Button from "@/components/ui/Button.vue";
 
 const links = [
 	{
@@ -310,7 +334,7 @@ const sendEmail = () => {
 		isLoading.value = !isLoading.value;
 
 		var dataMessage = {
-			service_id: "service_bbp5qcq",
+			service_id: "service_4z4xzlk",
 			template_id: "template_UIXER",
 			user_id: "zAtJmtMFqVs9UGSKx",
 			template_params: {

@@ -228,8 +228,15 @@
 	}
 
 	.badgeStatus {
-		background-color: $dark-gray;
-		color: $background;
+		background-color: $background;
+		span.label {
+			color: $text-color;
+		}
+
+		.circle-pulse,
+		.circle-stable {
+			background-color: $primary;
+		}
 	}
 
 	.tool-badge {

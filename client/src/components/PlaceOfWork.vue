@@ -59,7 +59,6 @@
 	<Modal
 		:isOpen="visible"
 		@modal-close="visible = !visible"
-		@submit="submitHandler"
 		name="first-modal"
 	>
 		<template #header
