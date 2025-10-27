@@ -160,6 +160,7 @@ const projectsData = [
 		],
 	},
 	{
+		showInProd: true,
 		name: "Infurtex",
 		secondName: "Service for UI/UX design testing",
 		subtitle: "System for testing Design solutions",
@@ -360,6 +361,7 @@ const projectsData = [
 		],
 	},
 	{
+		showInProd: true,
 		name: "Upgrade",
 		secondName: "IT project team development system",
 		subtitle: "System for team development of IT projects",
@@ -549,6 +551,7 @@ const projectsData = [
 	},
 	{
 		name: "FNX",
+		showInProd: true,
 		poster: getImage(typeImage.previews, "fnx.jpg"),
 		category: categoriesProjects.design.newDesign,
 		type: typesProjects.website,

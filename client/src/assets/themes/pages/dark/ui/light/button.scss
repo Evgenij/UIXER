@@ -1,0 +1,38 @@
+@import "../../../../vars/light.scss";
+
+.light-theme {
+	.uix-button {
+		&.primary {
+			$mainColor: $primary;
+			$textColor: $background;
+
+			background-color: $mainColor;
+			color: $textColor;
+			box-shadow: 0px 4px 0px darken($color: $mainColor, $amount: 15);
+
+			&:hover {
+				background-color: darken($color: $mainColor, $amount: 5);
+			}
+
+			&:active {
+				box-shadow: 0px 0px 0px rgba($color: $mainColor, $alpha: 0.2);
+			}
+		}
+
+		&.gray {
+			$textColor: $text-color;
+
+			background-color: rgba($color: black, $alpha: 0.1);
+			color: $textColor;
+			box-shadow: 0px 4px 0px rgba($color: black, $alpha: 0.2);
+
+			&:hover {
+				background-color: rgba($color: black, $alpha: 0.15);
+			}
+
+			&:active {
+				box-shadow: 0px 0px 0px rgba($color: black, $alpha: 0.1);
+			}
+		}
+	}
+}

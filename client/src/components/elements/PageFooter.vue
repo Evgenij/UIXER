@@ -3,10 +3,9 @@
 		name="footer"
 		class="page-footer flex items-center justify-between absolute bottom-0 w-full"
 	>
-		<div class="positions flex items-center space-x-6">
-			<p class="font-light">UI/UX designer</p>
-			<span class="divider"></span>
-			<p class="font-light">Frontend developer</p>
+		<div class="positions flex items-center space-x-4">
+			<p>UI/UX designer</p>
+			<p class="text-color-gray">with a Developer Background</p>
 		</div>
 		<div class="social-links flex items-center space-x-10">
 			<a

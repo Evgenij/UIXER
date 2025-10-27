@@ -66,9 +66,12 @@
 	}
 
 	.link {
-		color: $link;
+		&:hover {
+			color: $primary;
+		}
 
 		&.blue {
+			color: $link;
 			&:hover {
 				color: $link;
 
@@ -206,7 +209,15 @@
 	}
 
 	.badgeStatus {
-		background-color: $dark-gray;
+		background-color: $background;
+		span.label {
+			color: $text-color;
+		}
+
+		.circle-pulse,
+		.circle-stable {
+			background-color: $primary;
+		}
 	}
 
 	.tool-badge {

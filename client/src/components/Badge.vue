@@ -1,19 +1,19 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
-  <div
-    class="badgeStatus absolute flex items-center gap-2 justify-center right-2 -top-4 sm:-top-2 z-50 p-1 px-2"
-  >
-    <span class="text-sm" :style="{color: 'white'}">In developing</span>
-    <span class="relative flex align-center justify-center size-3">
-      <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
-      <span class="relative inline-flex size-3 rounded-full bg-sky-500"></span>
-    </span>
-  </div>
+	<div
+		class="badgeStatus flex items-center gap-2 w-fit p-1 px-2 rounded-full"
+	>
+		<span class="relative flex align-center justify-center size-3">
+			<span
+				class="absolute circle-pulse inline-flex h-full w-full animate-ping rounded-full opacity-75"
+			></span>
+			<span
+				class="relative circle-stable inline-flex size-3 rounded-full"
+			></span>
+		</span>
+		<span class="text-sm font-bold label">In developing</span>
+	</div>
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

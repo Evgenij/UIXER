@@ -8,20 +8,15 @@
 					<slot name="header"></slot>
 					<button
 						@click.stop="emit('modal-close')"
+						type="button"
 						class="btn-close h-[36px] w-[36px] flex items-start justify-center hover:bg-white/5"
 					></button>
 				</section>
 				<section class="modal-body section">
-					<slot name="content"> default content </slot>
+					<slot name="content"></slot>
 				</section>
-				<section class="modal-footer section">
-					<slot name="footer">
-						<div>
-							<button @click.stop="emit('modal-close')">
-								Submit
-							</button>
-						</div>
-					</slot>
+				<section class="modal-footer flex justify-between section">
+					<slot name="footer"> </slot>
 				</section>
 			</div>
 		</div>
