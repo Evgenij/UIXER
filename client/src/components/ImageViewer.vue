@@ -26,8 +26,10 @@ const openImage = () => {
 </script>
 
 <style lang="scss">
+.image-viewer {
+}
 .viewer-container {
-  z-index: 10000 !important;
+	z-index: 10000 !important;
 }
 .container {
 	position: relative;
@@ -37,6 +39,7 @@ const openImage = () => {
 	width: 100%;
 	height: auto;
 }
+
 .overlay {
 	position: absolute;
 	top: 0;

@@ -61,7 +61,7 @@
 				</div>
 			</div>
 
-			<div class="wrapp-btn flex items-end">
+			<div class="wrapp-btn flex items-end opacity-0">
 				<Button class="primary lg" @click="visible = true"
 					>Order a similar project</Button
 				>
