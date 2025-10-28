@@ -4,8 +4,10 @@
 		class="page-footer flex items-center justify-between absolute bottom-0 w-full"
 	>
 		<div class="positions flex items-center space-x-4">
-			<p>UI/UX designer</p>
-			<p class="text-color-gray">with a Developer Background</p>
+			<p class="text-center">UI/UX designer</p>
+			<p class="text-color-gray text-center">
+				with development experience
+			</p>
 		</div>
 		<div class="social-links flex items-center space-x-10">
 			<a

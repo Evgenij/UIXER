@@ -80,25 +80,9 @@
 		}
 	}
 
-	button.button {
-		border: 1px solid $text-color;
-
+	button {
 		svg path {
-			stroke: $text-color;
-		}
-
-		&:hover {
-			border-color: $primary;
-			background: $primary;
-			color: $background;
-
-			svg path {
-				stroke: $background;
-			}
-		}
-
-		&:focus {
-			outline: #007de8;
+			stroke: $background;
 		}
 	}
 }

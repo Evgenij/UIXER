@@ -411,4 +411,10 @@ onMounted(() => {
 		}
 	}
 }
+
+button {
+	svg path {
+		stroke: black;
+	}
+}
 </style>
