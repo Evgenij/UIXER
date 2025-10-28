@@ -27,7 +27,7 @@
 				<div
 					class="block-menu h-full w-full fixed flex flex-col space-y-16 items-center justify-center"
 				>
-					<h5 class="uppercase font-light text-2xl">menu</h5>
+					<h5 class="uppercase font-light text-xl">menu</h5>
 					<div
 						class="links flex w-full flex-col"
 						@mouseup="toggleMenu"
@@ -36,16 +36,20 @@
 							v-for="(link, index) in menuLinks"
 							:key="index"
 							:to="{ name: link.href }"
-							class="block-menu__item font-light py-4 uppercase text-center"
+							class="block-menu__item text-2xl font-semibold py-5 uppercase text-center hover:underline underline-offset-4"
 						>
 							{{ link.name }}
 						</RouterLink>
 					</div>
+					<span
+						id="back-label"
+						class="block-menu__back-label absolute uppercase -z-10 min-w-max"
+					></span>
 					<ThemeToggle direction="hor" />
 					<ContactsLinks />
 				</div>
 				<span
-					class="flex items-center justify-center uppercase text-lg text-black"
+					class="menu-label flex items-center justify-center uppercase text-lg text-black"
 				>
 					menu
 				</span>
@@ -57,6 +61,7 @@
 <script setup>
 import ThemeToggle from "@/components/ThemeToggle.vue";
 import ContactsLinks from "@/components/ContactsLinks.vue";
+import { onMounted } from "vue";
 
 const menuLinks = [
 	{
@@ -83,6 +88,20 @@ const toggleMenu = () => {
 	//   $("#menu").prop("checked", false);
 	// }, 1000);
 };
+
+onMounted(() => {
+	const menuItems = document.querySelectorAll(".block-menu__item");
+	const backLabel = document.getElementById("back-label");
+
+	menuItems.forEach((item) => {
+		item.addEventListener("mouseenter", () => {
+			backLabel.innerHTML = item.innerHTML;
+		});
+		item.addEventListener("mouseleave", () => {
+			backLabel.innerHTML = "";
+		});
+	});
+});
 </script>
 
 <style lang="scss" scoped>

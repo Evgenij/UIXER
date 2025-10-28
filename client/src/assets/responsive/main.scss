@@ -1,3 +1,19 @@
+@media screen and (width >= 2000px) {
+	#app {
+		.block-menu__back-label {
+			font-size: 30rem;
+		}
+	}
+}
+
+@media screen and (width >= 1900px) {
+	#app {
+		.block-menu__back-label {
+			font-size: 25rem;
+		}
+	}
+}
+
 // Laptop 1600
 @media (max-width: 1600px) {
 	$sizeGrid: 80px;
@@ -16,6 +32,10 @@
 			font-size: 1.1em;
 			height: $sizeGrid;
 			width: $sizeGrid;
+		}
+
+		.block-menu__back-label {
+			font-size: 20rem;
 		}
 
 		.toggle-theme {
@@ -71,7 +91,7 @@
 			width: $sizeGrid;
 		}
 
-		.toggle-menu span {
+		.toggle-theme span {
 			font-size: 0.9em;
 		}
 
@@ -139,7 +159,7 @@
 			width: $sizeGrid;
 		}
 
-		.toggle-menu span {
+		.toggle-theme span {
 			font-size: 0.8em;
 		}
 
@@ -225,7 +245,7 @@
 			width: $sizeGrid;
 		}
 
-		.toggle-menu span {
+		.toggle-theme span {
 			font-size: 0.8em;
 		}
 
@@ -320,7 +340,7 @@
 			width: $sizeGrid;
 		}
 
-		.toggle-menu span {
+		.toggle-theme span {
 			font-size: 0.9em;
 		}
 
@@ -402,7 +422,7 @@
 
 			&__item {
 				padding: 1em 0;
-				font-size: 0.9em;
+				font-size: 1.2em;
 			}
 
 			.social-link {

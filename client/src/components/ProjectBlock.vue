@@ -5,7 +5,7 @@
 		>
 			<div class="wrapp-img h-[200px] relative" :style="dynamicImage">
 				<div
-					class="label font-bold absolute px-2 py-1 text-xs text-white top-2 left-2 bg-black"
+					class="label font-bold absolute px-2 py-1 text-xs text-black top-2 left-2 bg-white"
 				>
 					{{
 						props.data.inDeveloping

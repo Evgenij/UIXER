@@ -127,7 +127,7 @@
 								<a
 									:href="dataProject.sources.demo"
 									target="_blank"
-									class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
+									class="underline underline-offset-2 link blue"
 									>{{ dataProject.sources.demo }}</a
 								>
 							</div>
@@ -143,7 +143,7 @@
 								<a
 									:href="dataProject.sources.code"
 									target="_blank"
-									class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
+									class="underline underline-offset-2 link blue"
 									>{{ dataProject.sources.code }}</a
 								>
 							</div>
@@ -159,7 +159,7 @@
 								<a
 									:href="dataProject.sources.design"
 									target="_blank"
-									class="underline underline-offset-2 hover:opacity-100 hover:text-blue-600"
+									class="underline underline-offset-2 link blue"
 									>{{ dataProject.sources.design }}</a
 								>
 							</div>

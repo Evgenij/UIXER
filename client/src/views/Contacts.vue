@@ -6,14 +6,12 @@
 		</PageSide>
 
 		<h3 class="page-title font-light text-2xl page-name absolute">
-			Contact
+			Contacts
 		</h3>
 		<div
 			class="page-contact__links links basis-1/2 flex flex-col justify-center px-14 py-16"
 		>
-			<h4 class="font-heavy links__title mb-16">
-				Is there anything to discuss?
-			</h4>
+			<h4 class="font-heavy links__title mb-16">Let's work together</h4>
 			<div class="links__content flex-col gap-8 hidden sm:flex">
 				<div class="links__email flex space-x-3">
 					<p
@@ -38,20 +36,20 @@
 			>
 				<RadioButton
 					name="type-mess"
-					id="hello"
-					value="hello"
-					checked
-					v-model="data.typeMess"
-				>
-					Just say "Hello"
-				</RadioButton>
-				<RadioButton
-					name="type-mess"
 					id="offer"
 					value="offer"
 					v-model="data.typeMess"
+					checked
 				>
 					Send offer
+				</RadioButton>
+				<RadioButton
+					name="type-mess"
+					id="hello"
+					value="hello"
+					v-model="data.typeMess"
+				>
+					Just say "Hello"
 				</RadioButton>
 			</div>
 			<form
@@ -273,7 +271,7 @@ const emptyData = {
 	company: "",
 	website: "",
 	message: "",
-	typeMess: "hello",
+	typeMess: "offer",
 };
 
 const data = reactive(emptyData);

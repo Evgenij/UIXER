@@ -14,16 +14,16 @@
 		</header>
 		<main class="data-page">
 			<Tabs @changeTab="changeTab" :tabs="tabs">
-				<Tab name="Frontend" :active-tab="activeTab">
-					<Frontend
-						:items="tabsContents.frontend.items"
-						:skills="tabsContents.frontend.skills"
-					/>
-				</Tab>
 				<Tab name="UI/UX design" :active-tab="activeTab">
 					<Design
 						:items="tabsContents.design.items"
 						:skills="tabsContents.design.skills"
+					/>
+				</Tab>
+				<Tab name="Frontend" :active-tab="activeTab">
+					<Frontend
+						:items="tabsContents.frontend.items"
+						:skills="tabsContents.frontend.skills"
 					/>
 				</Tab>
 			</Tabs>
@@ -57,11 +57,11 @@ const links = [
 
 const tabs = [
 	{
-		name: "Frontend",
+		name: "UI/UX design",
 		isActive: true,
 	},
 	{
-		name: "UI/UX design",
+		name: "Frontend",
 		isActive: false,
 	},
 ];
@@ -176,7 +176,7 @@ const tabsContents = {
 	},
 };
 
-const activeTab = ref("Frontend");
+const activeTab = ref("UI/UX design");
 
 const changeTab = (val) => {
 	activeTab.value = val;

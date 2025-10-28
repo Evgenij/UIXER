@@ -72,7 +72,7 @@ const model = defineModel();
 	}
 
 	textarea {
-		height: 100px;
+		//height: 100px;
 		max-height: 150px;
 		min-height: 50px;
 	}

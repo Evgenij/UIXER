@@ -234,7 +234,9 @@
 							class="projects-list grid grid-cols-1 md:grid-cols-2 gap-3"
 						>
 							<ProjectBlock
-								v-for="project in projects.slice(0, 4)"
+								v-for="project in projects
+									.filter((project) => project.showInProd)
+									.slice(0, 4)"
 								:data="project"
 								:key="project.id"
 								>{{ project.name }}</ProjectBlock

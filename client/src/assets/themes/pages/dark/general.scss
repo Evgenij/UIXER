@@ -73,7 +73,7 @@
 		&.blue {
 			color: $link;
 			&:hover {
-				color: $link;
+				color: lighten($color: $link, $amount: 15);
 
 				i {
 					transform: translateX(3px);
@@ -136,12 +136,13 @@
 
 	.block-menu {
 		//color: $background;
+
 		&__item {
-			border-top: 1px solid $lines;
+			//border-top: 1px solid $lines;
 			&:hover {
-				border-color: $primary;
+				// border-color: $primary;
 				color: $primary;
-				background: rgba($primary, 0.05);
+				// background: rgba($primary, 0.05);
 			}
 		}
 
@@ -181,7 +182,7 @@
 	.toggle-menu {
 		background-color: $back-menu;
 
-		span {
+		span.menu-label {
 			color: $background;
 		}
 	}
@@ -272,5 +273,9 @@
 				background-color: $gray;
 			}
 		}
+	}
+
+	#back-label {
+		opacity: 0.02;
 	}
 }
