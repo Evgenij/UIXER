@@ -6,7 +6,7 @@
 
 	*::-webkit-scrollbar-track,
 	html *::-webkit-scrollbar-track {
-		background: $lines;
+		background: rgba(black, 0.1);
 		margin: 20px;
 	}
 
@@ -73,7 +73,7 @@
 		&.blue {
 			color: $link;
 			&:hover {
-				color: $link;
+				color: lighten($color: $link, $amount: 15);
 
 				i {
 					transform: translateX(3px);
@@ -129,12 +129,13 @@
 
 	.block-menu {
 		//color: $background;
+
 		&__item {
-			border-top: 1px solid rgba(0, 0, 0, 0.1);
+			//border-top: 1px solid rgba(0, 0, 0, 0.1);
 			&:hover {
-				border-color: $primary;
+				// border-color: $primary;
 				color: $primary;
-				background: rgba($primary, 0.1);
+				// background: rgba($primary, 0.1);
 			}
 		}
 
@@ -174,7 +175,7 @@
 	.toggle-menu {
 		background-color: $back-menu;
 
-		span {
+		span.menu-label {
 			color: $background;
 		}
 	}
@@ -247,5 +248,9 @@
 				background-color: $gray;
 			}
 		}
+	}
+
+	#back-label {
+		opacity: 0.06;
 	}
 }
