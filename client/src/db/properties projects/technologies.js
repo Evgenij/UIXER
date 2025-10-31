@@ -33,4 +33,13 @@ export default {
 	vitest: "Vitest",
 	prismaORM: "PrismaORM",
 	zustand: "Zustand",
+	behance: "Behance",
+	dribble: "Dribble",
+	uiKit: "UI Kit",
+	atomicDesign: "Atomic Design",
+	figmaStyles: "Figma Styles",
+	responsiveDesign: "Responsive Design",
+	userFlow: "User Flow",
+	figmaComponents: "Figma Components",
+	figmaPrototyping: "Figma Prototyping",
 };

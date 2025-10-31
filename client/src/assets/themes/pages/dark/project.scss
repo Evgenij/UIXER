@@ -62,6 +62,14 @@
 					background-color: $text-green;
 				}
 			}
+			&.result {
+				border: 2px solid $primary;
+
+				header {
+					color: black;
+					background-color: $primary;
+				}
+			}
 		}
 
 		.badgeStatus {

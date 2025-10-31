@@ -16,7 +16,7 @@
 			>
 				<!--        <img src="img/photo-resume.png" alt="photo-resume">-->
 				<img
-					src="@/images/photo-resume.png"
+					src="@/images/photo-resume.webp"
 					alt="photo-resume"
 					class="h-full"
 				/>
