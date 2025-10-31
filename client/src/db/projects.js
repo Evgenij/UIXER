@@ -8,12 +8,13 @@ import { typeElementDescription } from "@/helpers/consts";
 const getImage = (typeImage, image, folder) => {
 	if (folder) {
 		return new URL(
-			`../images/${typeImage}/${folder}/${image}`,
+			`../images/${typeImage}/${folder}/${image}.webp`,
 			import.meta.url
 		).href;
 	}
 
-	return new URL(`../images/${typeImage}/${image}`, import.meta.url).href;
+	return new URL(`../images/${typeImage}/${image}.webp`, import.meta.url)
+		.href;
 };
 
 const projectsData = [
@@ -164,7 +165,7 @@ const projectsData = [
 		name: "Infurtex",
 		secondName: "Service for UI/UX design testing",
 		subtitle: "System for testing Design solutions",
-		poster: getImage(typeImage.previews, "infurtex.jpg"),
+		poster: getImage(typeImage.previews, "infurtex"),
 		category: categoriesProjects.frontend.system,
 		type: typesProjects.webApp,
 		date: "May 2022",
@@ -244,7 +245,7 @@ const projectsData = [
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "db.png", "infurtex"),
+				data: getImage(typeImage.projects, "db", "infurtex"),
 			},
 			{
 				type: typeElementDescription.p,
@@ -256,7 +257,7 @@ const projectsData = [
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "auth.jpg", "infurtex"),
+				data: getImage(typeImage.projects, "auth", "infurtex"),
 			},
 			{
 				type: typeElementDescription.p,
@@ -264,7 +265,7 @@ const projectsData = [
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "reg-res.jpg", "infurtex"),
+				data: getImage(typeImage.projects, "reg-res", "infurtex"),
 			},
 			{
 				type: typeElementDescription.p,
@@ -272,7 +273,7 @@ const projectsData = [
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "reg-mod.jpg", "infurtex"),
+				data: getImage(typeImage.projects, "reg-mod", "infurtex"),
 			},
 			{
 				type: typeElementDescription.p,
@@ -292,7 +293,7 @@ const projectsData = [
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "11.jpg", "infurtex"),
+				data: getImage(typeImage.projects, "11", "infurtex"),
 			},
 			{
 				type: typeElementDescription.p,
@@ -308,7 +309,7 @@ const projectsData = [
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "22.jpg", "infurtex"),
+				data: getImage(typeImage.projects, "22", "infurtex"),
 			},
 			{
 				type: typeElementDescription.p,
@@ -328,15 +329,15 @@ const projectsData = [
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "33.jpg", "infurtex"),
+				data: getImage(typeImage.projects, "33", "infurtex"),
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "44.jpg", "infurtex"),
+				data: getImage(typeImage.projects, "44", "infurtex"),
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "55.jpg", "infurtex"),
+				data: getImage(typeImage.projects, "55", "infurtex"),
 			},
 			{
 				type: typeElementDescription.p,
@@ -344,11 +345,11 @@ const projectsData = [
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "66.jpg", "infurtex"),
+				data: getImage(typeImage.projects, "66", "infurtex"),
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "77.jpg", "infurtex"),
+				data: getImage(typeImage.projects, "77", "infurtex"),
 			},
 			{
 				type: typeElementDescription.p,
@@ -356,7 +357,7 @@ const projectsData = [
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "88.jpg", "infurtex"),
+				data: getImage(typeImage.projects, "88", "infurtex"),
 			},
 		],
 	},
@@ -365,7 +366,7 @@ const projectsData = [
 		name: "Upgrade",
 		secondName: "IT project team development system",
 		subtitle: "System for team development of IT projects",
-		poster: getImage(typeImage.previews, "upgrade.jpg"),
+		poster: getImage(typeImage.previews, "upgrade"),
 		category: categoriesProjects.frontend.system,
 		type: typesProjects.webApp,
 		date: "November 2020",
@@ -437,7 +438,7 @@ const projectsData = [
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "db.png", "upgrade"),
+				data: getImage(typeImage.projects, "db", "upgrade"),
 			},
 			{
 				type: typeElementDescription.p,
@@ -445,11 +446,11 @@ const projectsData = [
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "1.png", "upgrade"),
+				data: getImage(typeImage.projects, "1", "upgrade"),
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "2.png", "upgrade"),
+				data: getImage(typeImage.projects, "2", "upgrade"),
 			},
 			{
 				type: typeElementDescription.p,
@@ -461,11 +462,11 @@ const projectsData = [
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "3.png", "upgrade"),
+				data: getImage(typeImage.projects, "3", "upgrade"),
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "4.png", "upgrade"),
+				data: getImage(typeImage.projects, "4", "upgrade"),
 			},
 			{
 				type: typeElementDescription.p,
@@ -503,7 +504,7 @@ const projectsData = [
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "6.png", "upgrade"),
+				data: getImage(typeImage.projects, "6", "upgrade"),
 			},
 			{
 				type: typeElementDescription.p,
@@ -511,7 +512,7 @@ const projectsData = [
 			},
 			{
 				type: typeElementDescription.img,
-				data: getImage(typeImage.projects, "7.png", "upgrade"),
+				data: getImage(typeImage.projects, "7", "upgrade"),
 			},
 			{
 				type: typeElementDescription.p,
@@ -552,7 +553,9 @@ const projectsData = [
 	{
 		name: "FNX",
 		showInProd: true,
-		poster: getImage(typeImage.previews, "fnx.jpg"),
+		secondName: "IT project team development system",
+		subtitle: "Website design bank",
+		poster: getImage(typeImage.previews, "fnx"),
 		category: categoriesProjects.design.newDesign,
 		type: typesProjects.website,
 		date: "November 2021",
@@ -568,18 +571,153 @@ const projectsData = [
 				textColor: "white",
 			},
 		], // max 3
-		technologies: [technologies.figma],
-		targets: [],
-		tasks: [],
+		technologies: [
+			technologies.figma,
+			technologies.behance,
+			technologies.dribble,
+			technologies.uiKit,
+			technologies.atomicDesign,
+			technologies.figmaStyles,
+			technologies.responsiveDesign,
+			technologies.figmaComponents,
+			technologies.figmaPrototyping,
+		],
+		targets: [
+			"Create a modern and user-friendly website design for a bank",
+			"Showcasing my UI/UX design skills and my ability to develop interfaces for financial services",
+			"The project was not done for a specific client, but for my portfolio, to demonstrate the process of comprehensive website design from scratch.",
+		],
+		tasks: [
+			"Develop an intuitive interface that provides convenient navigation through banking services.",
+			"Create a visual system that reflects the trustworthiness, stability, and technological capabilities of the financial institution.",
+			"Demonstrate the ability to work with typography, colors, icons, and micro-animations.",
+			"Develop a responsive design for mobile devices",
+		],
 		description: [
-			// {
-			// 	type: typeElementDescription.p,
-			// 	data: "p",
-			// },
-			// {
-			// 	type: typeElementDescription.img,
-			// 	data: getImage(typeImage.projects, "88.jpg", "infurtex"),
-			// },
+			{
+				type: typeElementDescription.h2,
+				data: "1. Analysis and research",
+			},
+
+			{
+				type: typeElementDescription.p,
+				data: "There are many banking websites on the market, many of which are overloaded with information and difficult for users to navigate.",
+			},
+			{
+				type: typeElementDescription.solution,
+				data: [
+					"I researched existing banking websites and collected best practices in financial service interfaces. I analyzed the structure of information, visual accents, and user paths.",
+				],
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Tools: Google, Dribbble, Behance, Figma.",
+			},
+			{
+				type: typeElementDescription.h2,
+				data: "2. Concept development and prototyping",
+			},
+			{
+				type: typeElementDescription.problem,
+				data: [
+					"Users often get lost on the website due to poor structure and complex information presentation.",
+				],
+			},
+			{
+				type: typeElementDescription.solution,
+				data: [
+					"Created the site's information architecture and identified key blocks: home page, products and services, personal account, contacts, and help.",
+					"Developed an interactive prototype to test the navigation logic.",
+				],
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Tools: Figma (prototypes), Miro (user flow maps).",
+			},
+			{
+				type: typeElementDescription.h2,
+				data: "3. Visual style development",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Financial topics are often associated with dryness and complexity.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Developed a modern visual style with an emphasis on ease of information perception, trustworthy colors (blue and gray shades), readable typography, and neat icons.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Added micro-animations for interactive elements to make the interaction more enjoyable.",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "Slice 1", "fnx"),
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Tools: Figma, Adobe Illustrator, Iconscout, Lottie (for animations).",
+			},
+			{
+				type: typeElementDescription.h2,
+				data: "4. Creating page layouts",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "It is important that each page is clear and concise, without overloading the user with information.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Created layouts for key pages of the site, including the home page with promotional blocks, the product page with filtering and service cards, and the personal account page with simple account management.",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "Slice 2", "fnx"),
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "Slice 6", "fnx"),
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "Slice 3", "fnx"),
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "Slice 4", "fnx"),
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Tools: Figma, Photoshop (for image processing).",
+			},
+			{
+				type: typeElementDescription.h2,
+				data: "5. Responsive design and prototyping",
+			},
+			{
+				type: typeElementDescription.problem,
+				data: [
+					"Most of the bank's users access the site from mobile devices.",
+				],
+			},
+			{
+				type: typeElementDescription.solution,
+				data: [
+					"Developed responsive versions of the site for tablets and smartphones, checked text readability, button accessibility, and form usability.",
+				],
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "Slice 5", "fnx"),
+			},
+			{
+				type: typeElementDescription.result,
+				data: [
+					"A fully thought-out, modern design for the bank's website with clear navigation and an attractive visual style.",
+					"A ready-made interactive prototype for demonstrating functionality and user flows.",
+					"The project has become an excellent example of a comprehensive approach to UI/UX design.",
+				],
+			},
 		],
 	},
 	{

@@ -1,9 +1,13 @@
+import { h } from "vue";
+
 export const typeImage = {
 	previews: "previews",
 	projects: "projects",
 };
 export const typeElementDescription = {
 	p: "paragraph",
+	h2: "header2",
+	h3: "header3",
 	info: "info",
 	list: "list",
 	img: "image",
@@ -11,6 +15,7 @@ export const typeElementDescription = {
 	problem: "problem",
 	solution: "solution",
 	task: "task",
+	result: "result",
 };
 
 export const colorsTechnologies = {

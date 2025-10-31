@@ -30,9 +30,9 @@
 					<span>back</span>
 				</div>
 				<div class="project-page__name mb-12">
-					<h3 class="font-heavy text-7xl mb-5">
+					<h2 class="font-heavy text-7xl mb-5">
 						{{ dataProject.name }}
-					</h3>
+					</h2>
 					<div class="tags flex items-center space-x-2">
 						<h4 class="primary-font text-xl">
 							{{ dataProject.category }}
@@ -83,7 +83,7 @@
 			</div>
 		</aside>
 		<section
-			class="basis-7/12 project-page__data project-data p-10 pr-6 mr-4 h-full sm:overflow-y-auto sm:overflow-x-hidden"
+			class="basis-7/12 project-page__data project-data p-6 pr-4 mr-4 h-full sm:overflow-y-auto sm:overflow-x-hidden"
 		>
 			<div class="project-data__preview w-full mb-8">
 				<img :src="dataProject.poster" :alt="dataProject.name" />
@@ -218,9 +218,18 @@
 						v-if="element.type === typeElementDescription.img"
 						:image="element.data"
 					/>
+					<h2
+						class="font-bold"
+						v-else-if="element.type === typeElementDescription.h2"
+					>
+						{{ element.data }}
+					</h2>
+					<h3 v-else-if="element.type === typeElementDescription.h3">
+						{{ element.data }}
+					</h3>
 					<p
 						v-else-if="element.type === typeElementDescription.p"
-						class="project-description__text text-base"
+						class="project-description__text text-base text-color-gray"
 					>
 						{{ element.data }}
 					</p>
@@ -271,6 +280,24 @@
 							element.type === typeElementDescription.solution
 						"
 						class="section solution"
+					>
+						<header class="w-full p-2">
+							{{ element.type.toUpperCase() }}
+						</header>
+						<div class="p-2 px-3 flex flex-col gap-3">
+							<p
+								v-for="paragraph in element.data"
+								class="text-base"
+							>
+								{{ paragraph }}
+							</p>
+						</div>
+					</section>
+					<section
+						v-else-if="
+							element.type === typeElementDescription.result
+						"
+						class="section result"
 					>
 						<header class="w-full p-2">
 							{{ element.type.toUpperCase() }}

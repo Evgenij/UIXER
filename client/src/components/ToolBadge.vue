@@ -7,7 +7,7 @@
 <script setup>
 const props = defineProps(["classes"]);
 const compClasses = [
-	"tool-badge skill px-3 p-2 border w-fit",
+	"tool-badge text-sm skill px-2 p-1 border w-fit",
 	props.classes,
 ].join(" ");
 </script>
