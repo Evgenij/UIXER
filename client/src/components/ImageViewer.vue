@@ -1,6 +1,6 @@
 <template>
-	<viewer class="image-viewer container clearfix">
-		<img ref="imageTarget" :src="image" class="image" alt="" />
+	<viewer class="image-viewer container clearfix overflow-hidden">
+		<img ref="imageTarget" :src="image" class="image" :alt="image" />
 		<div class="overlay cursor-pointer" @click="openImage">
 			<div class="text">Open</div>
 		</div>
@@ -26,13 +26,12 @@ const openImage = () => {
 </script>
 
 <style lang="scss">
-.image-viewer {
-}
 .viewer-container {
 	z-index: 10000 !important;
 }
 .container {
 	position: relative;
+	max-height: 500px;
 }
 .image {
 	display: block;

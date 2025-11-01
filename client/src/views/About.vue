@@ -236,7 +236,7 @@
 							<ProjectBlock
 								v-for="project in projects
 									.filter((project) => project.showInProd)
-									.slice(0, 4)"
+									.slice(0, 6)"
 								:data="project"
 								:key="project.id"
 								>{{ project.name }}</ProjectBlock

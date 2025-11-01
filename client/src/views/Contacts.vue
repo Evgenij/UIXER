@@ -34,6 +34,7 @@
 			<div
 				class="types-message mb-12 flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-3"
 			>
+				<!-- TODO change style to squere btn -->
 				<RadioButton
 					name="type-mess"
 					id="offer"
@@ -220,7 +221,7 @@
 				</div>
 			</form>
 			<div class="links__content block sm:hidden mt-10">
-				<div class="links__email flex space-x-3">
+				<div class="links__email flex space-x-3 mb-10 sm:mb-0">
 					<p
 						ref="emailCopy"
 						class="cursor-pointer underline underline-offset-4 hover:text-blue-700"
