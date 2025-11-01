@@ -61,6 +61,8 @@
 				</div>
 			</div>
 
+			<!-- TODO create modal for order similar project of 'type' -->
+
 			<div class="wrapp-btn flex items-end opacity-0">
 				<Button class="primary lg" @click="visible = true"
 					>Order a similar project</Button
@@ -71,7 +73,9 @@
 					name="first-modal"
 				>
 					<template #header> </template>
-					<template #content> </template>
+					<template #content>
+						<!-- TODO Pre-select current type project in select -->
+					</template>
 					<template #footer
 						><Button class="gray" @click="visible = !visible"
 							>Close</Button

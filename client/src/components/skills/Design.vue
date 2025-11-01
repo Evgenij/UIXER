@@ -77,7 +77,7 @@
 			</div>
 
 			<div
-				class="skills__footer font-light text-color-gray opacity-70 text-2xl p-6 pb-12 sm:p-6"
+				class="skills__footer font-light text-color-gray opacity-70 text-2xl p-6"
 			>
 				UI/UX skills
 			</div>

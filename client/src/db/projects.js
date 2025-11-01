@@ -721,6 +721,231 @@ const projectsData = [
 		],
 	},
 	{
+		showInProd: false,
+		name: "Personal greenhouse",
+		poster: getImage(typeImage.previews, "plants"),
+		category: categoriesProjects.design.newDesign,
+		type: typesProjects.mobileApp,
+		date: "July 2024",
+		sources: {
+			demo: null,
+			code: null,
+			design: null,
+		},
+		badges: [
+			{
+				label: technologies.figma,
+				color: colorsTechnologies.figma,
+				textColor: "white",
+			},
+		], // max 3
+		technologies: [technologies.figma],
+		targets: [],
+		tasks: [],
+		description: [
+			// {
+			// 	type: typeElementDescription.p,
+			// 	data: "p",
+			// },
+			// {
+			// 	type: typeElementDescription.img,
+			// 	data: getImage(typeImage.projects, "88.jpg", "infurtex"),
+			// },
+		],
+	},
+	{
+		showInProd: true,
+		name: "El Camino",
+		poster: getImage(typeImage.previews, "spanish"),
+		category: categoriesProjects.design.newDesign,
+		type: typesProjects.landing,
+		date: "August 2021",
+		sources: {
+			demo: null,
+			code: null,
+			design: "https://www.behance.net/gallery/158449223/Spanish-language-course-site",
+		},
+		badges: [
+			{
+				label: technologies.figma,
+				color: colorsTechnologies.figma,
+				textColor: "white",
+			},
+		], // max 3
+		technologies: [technologies.figma],
+		targets: [
+			"The goal of this project is to create a modern, visually appealing, and user-friendly landing page that presents Spanish language courses and encourages users to sign up for classes.",
+			"The design should convey professionalism, trust, and cultural identity while maintaining clarity and simplicity.",
+		],
+		tasks: [
+			"Create a website to attract new students to Spanish courses. Clean layout and structured typography.",
+			"The site should display the main types of courses and provide information about the workload of days",
+			"Use of warm tones associated with Spain (red, yellow, beige, terracotta)",
+			"Emphasis on call-to-action elements (sign-up button, form, course info)",
+		],
+		description: [
+			{
+				type: typeElementDescription.h2,
+				data: "Customer's logo",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The customer provided a logo. The whole concept of the site, its colors and visual forms, was built on its basis. For the role of the main color, yellow was chosen.",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "logo", "spanish"),
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The font was chosen in the style of old fonts to emphasize elegance and the Spanish spirit.",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "colors", "spanish"),
+			},
+			{
+				type: typeElementDescription.h2,
+				data: "1. Research and Analysis",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Before starting the visual design, I analyzed multiple websites of language schools to understand their strengths and weaknesses.",
+			},
+			{
+				type: typeElementDescription.problem,
+				data: [
+					"Most competitors relied on outdated layouts overloaded with text and lacked emotional engagement.",
+				],
+			},
+			{
+				type: typeElementDescription.solution,
+				data: [
+					"I aimed for a balanced structure where key information is easy to scan, supported by a friendly visual style and a clear hierarchy.",
+				],
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The target audience consists of adults and teenagers studying Spanish both online and offline. This insight helped me define a tone that feels professional yet welcoming and inspiring.",
+			},
+			{
+				type: typeElementDescription.h2,
+				data: "2. Visual Concept",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The concept draws inspiration from Spanish warmth and optimism — represented through a palette of soft yellows, white backgrounds, and rounded shapes.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Yellow acts as the key emotional color, evoking sunlight, friendliness, and motivation.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Typography was chosen to enhance clarity and trust: a modern geometric sans-serif for headings and a neutral, readable typeface for paragraphs. The visual rhythm between headlines, icons, and illustrations guides the eye naturally through the content.",
+			},
+			{
+				type: typeElementDescription.h2,
+				data: "3. Layout and Composition",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Each section is structured around a clear hierarchy and white space.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Rounded containers, soft shadows, and gentle gradients give the interface a polished yet approachable feel.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Buttons and CTAs are strategically placed with strong contrast to attract attention without overwhelming the layout.",
+			},
+
+			{
+				type: typeElementDescription.h3,
+				data: "The consistent pattern",
+			},
+			{
+				type: typeElementDescription.list,
+				data: ["Headline", "Text", "Visual", "CTA"],
+			},
+			{
+				type: typeElementDescription.p,
+				data: "— builds predictable flow and improves readability.",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "page", "spanish"),
+			},
+			{
+				type: typeElementDescription.h2,
+				data: "4. UX and Accessibility",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The design focuses on simplicity and accessibility:",
+			},
+			{
+				type: typeElementDescription.list,
+				data: [
+					"Clear section hierarchy and scroll-based navigation",
+					"Readable typography and balanced contrast",
+					"Consistent spacing and rhythm between sections",
+					"Repeated CTA buttons for better conversion",
+					"Minimal form at the end — only key fields for quick submission",
+				],
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The entire interface encourages smooth interaction and easy comprehension.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Modal windows were created for ordering a course and receiving a callback",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "modals", "spanish"),
+			},
+			{
+				type: typeElementDescription.h2,
+				data: "5. Responsive Design",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "After finalizing the desktop layout, I adapted the design for tablets and mobile devices.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Main adjustments included:",
+			},
+			{
+				type: typeElementDescription.list,
+				data: [
+					"Stacking horizontal blocks vertically",
+					"Enlarging buttons and form inputs for touch interaction",
+					"Simplifying the header navigation",
+					"Reducing photo weight and optimizing visual assets",
+				],
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The mobile version maintains the same emotional tone and usability, ensuring a seamless experience on all devices.",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "mobiles", "spanish"),
+			},
+			{
+				type: typeElementDescription.result,
+				data: [
+					"The final design reflects the essence of Spanish culture — warm, approachable, and inspiring.",
+					"It combines clarity, emotional engagement, and usability, creating a digital space that encourages people to start learning Spanish with confidence and enthusiasm.",
+				],
+			},
+		],
+	},
+	{
 		name: "SEO-X",
 		poster: getImage(typeImage.previews, "seo-x.jpg"),
 		category: categoriesProjects.design.newDesign,

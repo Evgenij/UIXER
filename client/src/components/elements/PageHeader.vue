@@ -10,7 +10,9 @@
 		<h1
 			class="grow name flex items-center justify-center font-normal text-xl"
 		>
-			Yevhenii Yermolenko
+			<router-link :to="{ name: 'about' }"
+				>Yevhenii Yermolenko</router-link
+			>
 		</h1>
 		<div class="flex-none flex items-center justify-center">
 			<label
