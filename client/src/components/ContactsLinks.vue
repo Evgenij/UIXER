@@ -20,7 +20,7 @@
 		</a>
 		<a
 			target="_blank"
-			href="https://www.behance.net/_uixer_"
+			href="https://www.behance.net/uixer_design"
 			class="social-link flex items-center"
 		>
 			<svg
