@@ -772,7 +772,15 @@ const projectsData = [
 				textColor: "white",
 			},
 		], // max 3
-		technologies: [technologies.figma],
+		technologies: [
+			technologies.figma,
+			technologies.uiKit,
+			technologies.atomicDesign,
+			technologies.figmaStyles,
+			technologies.responsiveDesign,
+			technologies.figmaComponents,
+			technologies.figmaPrototyping,
+		],
 		targets: [
 			"The goal of this project is to create a modern, visually appealing, and user-friendly landing page that presents Spanish language courses and encourages users to sign up for classes.",
 			"The design should convey professionalism, trust, and cultural identity while maintaining clarity and simplicity.",

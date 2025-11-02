@@ -33,7 +33,7 @@ const socialLinks = [
 	},
 	{
 		id: 2,
-		href: "https://www.behance.net/_uixer_",
+		href: "https://www.behance.net/uixer_design",
 		label: "Behance",
 	},
 	{
