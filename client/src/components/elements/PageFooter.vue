@@ -3,10 +3,10 @@
 		name="footer"
 		class="page-footer flex items-center justify-between absolute bottom-0 w-full"
 	>
-		<div class="positions flex items-center space-x-4">
+		<div class="positions flex items-center w-full justify-between sm:space-x-4 ">
 			<p class="text-center">UI/UX designer</p>
-			<p class="text-color-gray text-center">
-				with development experience
+			<p class="text-color-gray text-left">
+				with development <br class="sm:hidden "></br> experience
 			</p>
 		</div>
 		<div class="social-links flex items-center space-x-10">

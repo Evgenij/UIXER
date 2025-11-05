@@ -9,26 +9,7 @@
 			class="project-page__main flex flex-col justify-between items-start px-10 py-8 h-full basis-5/12"
 		>
 			<div>
-				<div
-					class="project-page__back font-regular flex items-center space-x-1 mb-10 cursor-pointer"
-					@click="router.back()"
-				>
-					<svg
-						width="30"
-						height="30"
-						viewBox="0 0 30 30"
-						fill="none"
-						xmlns="http://www.w3.org/2000/svg"
-					>
-						<path
-							d="M11.7141 9.28125L5.99986 14.9984L11.7141 20.7141M24.5713 14.9998H5.99986"
-							stroke="#8E8E8E"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-						/>
-					</svg>
-					<span>back</span>
-				</div>
+				<BackBtn class="mb-10" />
 				<div class="project-page__name mb-12">
 					<h2 class="font-heavy text-7xl mb-5">
 						{{ dataProject.name }}
@@ -328,12 +309,12 @@ import { useRoute } from "vue-router";
 import getProjectsData from "@/db/getProjectsData";
 import { typeElementDescription } from "@/helpers/consts";
 import ImageViewer from "@/components/ImageViewer.vue";
-import router from "@/router/router.js";
 import ToolBadge from "@/components/ToolBadge.vue";
 import Badge from "@/components/Badge.vue";
 import Button from "@/components/ui/Button.vue";
 import Modal from "@/components/ui/Modal.vue";
 import { ref } from "vue";
+import BackBtn from "@/components/elements/BackBtn.vue";
 
 const links = [
 	{
@@ -370,14 +351,6 @@ const submitHandler = () => {
 }
 
 .project-page {
-	&__back {
-		&:hover {
-			svg {
-				transform: translateX(-3px);
-			}
-		}
-	}
-
 	.project-data {
 		scroll-behavior: smooth;
 

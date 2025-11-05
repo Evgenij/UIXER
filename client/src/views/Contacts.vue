@@ -5,29 +5,32 @@
 			<ThemeToggle />
 		</PageSide>
 
-		<h3 class="page-title font-light text-2xl page-name absolute">
-			Contacts
-		</h3>
 		<div
-			class="page-contact__links links basis-1/2 flex flex-col justify-center px-14 py-16"
+			class="page-contact__links links flex flex-col basis-1/2 justify-center px-14 py-16"
 		>
-			<h4 class="font-heavy links__title mb-16">Let's work together</h4>
-			<div class="links__content flex-col gap-8 hidden sm:flex">
-				<div class="links__email flex space-x-3">
-					<p
-						ref="emailCopy"
-						class="cursor-pointer underline underline-offset-4 hover:text-blue-700"
-						@click="copyEmail"
-					>
-						yevhenii.uixer@gmail.com
-					</p>
-					<span v-if="copySuccess" class="text-color-green"
-						>copied!</span
-					>
+			<BackBtn class="my-8 sm:mb-10" />
+			<div class="h-full flex flex-col justify-center">
+				<h4 class="font-heavy links__title mb-16">
+					Let's work together
+				</h4>
+				<div class="links__content flex-col gap-8 hidden sm:flex">
+					<div class="links__email flex space-x-3">
+						<p
+							ref="emailCopy"
+							class="cursor-pointer underline underline-offset-4 hover:text-blue-700"
+							@click="copyEmail"
+						>
+							yevhenii.uixer@gmail.com
+						</p>
+						<span v-if="copySuccess" class="text-color-green"
+							>copied!</span
+						>
+					</div>
+					<ContactsLinks />
 				</div>
-				<ContactsLinks />
 			</div>
 		</div>
+
 		<div
 			class="page-contact__form flex flex-col justify-center basis-1/2 pr-10"
 		>
@@ -250,6 +253,7 @@ import RadioButton from "@/components/ui/RadioButton.vue";
 import ContactsLinks from "@/components/ContactsLinks.vue";
 import $ from "jquery";
 import Button from "@/components/ui/Button.vue";
+import BackBtn from "@/components/elements/BackBtn.vue";
 
 const links = [
 	{
