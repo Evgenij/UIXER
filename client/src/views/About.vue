@@ -258,31 +258,34 @@
 					</div>
 				</div>
 			</section>
-			<section class="navigation mt-14 flex flex-col md:flex-row gap-4">
-				<router-link
-					:to="{ name: 'skills' }"
-					class="navigation__item px-4 py-3 border border-1 flex justify-between items-center w-full group"
-					>Skills
-					<i
-						class="bx bx-right-arrow-alt text-xl group-hover:translate-x-1"
-					></i
-				></router-link>
-				<router-link
-					:to="{ name: 'projects' }"
-					class="navigation__item px-4 py-3 border border-1 flex justify-between items-center w-full group"
-					>Projects
-					<i
-						class="bx bx-right-arrow-alt text-xl group-hover:translate-x-1"
-					></i
-				></router-link>
-				<router-link
-					:to="{ name: 'contacts' }"
-					class="navigation__item px-4 py-3 border border-1 flex justify-between items-center w-full group"
-					>Contacts
-					<i
-						class="bx bx-right-arrow-alt text-xl group-hover:translate-x-1"
-					></i
-				></router-link>
+			<section class="navigation mt-14">
+				<h5 class="primary-font font-bold mb-4">Go to</h5>
+				<div class="blocks flex flex-col md:flex-row gap-4">
+					<router-link
+						:to="{ name: 'projects' }"
+						class="navigation__item px-4 py-3 border border-1 flex justify-between items-center w-full group"
+						>Projects
+						<i
+							class="bx bx-right-arrow-alt text-xl group-hover:translate-x-1"
+						></i
+					></router-link>
+					<router-link
+						:to="{ name: 'skills' }"
+						class="navigation__item px-4 py-3 border border-1 flex justify-between items-center w-full group"
+						>Skills
+						<i
+							class="bx bx-right-arrow-alt text-xl group-hover:translate-x-1"
+						></i
+					></router-link>
+					<router-link
+						:to="{ name: 'contacts' }"
+						class="navigation__item px-4 py-3 border border-1 flex justify-between items-center w-full group"
+						>Contacts
+						<i
+							class="bx bx-right-arrow-alt text-xl group-hover:translate-x-1"
+						></i
+					></router-link>
+				</div>
 			</section>
 		</div>
 	</section>

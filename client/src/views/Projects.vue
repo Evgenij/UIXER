@@ -6,9 +6,7 @@
 		</PageSide>
 
 		<div class="background-panel primary-background absolute h-full"></div>
-		<h3 class="page-title font-light text-2xl page-name absolute">
-			Projects
-		</h3>
+		<BackBtn class="p-4 py-6 sm:p-10" />
 		<div class="slider-wrapper flex h-full relative">
 			<Carousel3d
 				display="3"
@@ -117,6 +115,7 @@ import PageSide from "@/components/elements/PageSide.vue";
 import ThemeToggle from "@/components/ThemeToggle.vue";
 import Badge from "@/components/Badge.vue";
 import projects from "@/db/projects";
+import BackBtn from "@/components/elements/BackBtn.vue";
 
 const links = [
 	{

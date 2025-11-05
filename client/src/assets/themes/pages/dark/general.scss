@@ -272,4 +272,16 @@
 	#back-label {
 		opacity: 0.02;
 	}
+
+	.btn-back {
+		&:hover {
+			svg {
+				transform: translateX(-3px);
+
+				path {
+					stroke: $primary;
+				}
+			}
+		}
+	}
 }

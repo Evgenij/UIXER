@@ -4,11 +4,22 @@
 		<PageSide side="right">
 			<ThemeToggle />
 		</PageSide>
-		<header
-			class="flex items-center w-full justify-between py-10 px-12 pb-4"
-		>
-			<h3 class="page-title font-light text-2xl page-name">Skills</h3>
-			<h4 class="font-semibold text-6xl relative top-2 area">
+		<header class="flex items-center w-full p-10 pb-4 sm:pb-6">
+			<!-- <div class="flex justify-between w-full">
+				
+				</div>
+				
+			</div> -->
+			<!-- <h3
+					class="page-title font-light text-2xl page-name w-full text-center"
+				>
+					Skills
+				</h3> -->
+			<div class="w-full">
+				<BackBtn />
+			</div>
+
+			<h4 class="font-semibold text-6xl relative top-2 area min-w-fit">
 				{{ activeTab }}
 			</h4>
 		</header>
@@ -39,6 +50,7 @@ import { ref } from "vue";
 import Tab from "@/components/elements/Tabs/Tab.vue";
 import Design from "@/components/skills/Design.vue";
 import Frontend from "@/components/skills/Frontend.vue";
+import BackBtn from "@/components/elements/BackBtn.vue";
 
 const links = [
 	{
