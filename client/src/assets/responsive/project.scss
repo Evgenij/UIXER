@@ -180,6 +180,9 @@
 			}
 
 			.project-data {
+				&__preview {
+					height: 260px;
+				}
 				&__elements {
 					font-size: 16px;
 

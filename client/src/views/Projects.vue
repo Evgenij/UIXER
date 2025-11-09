@@ -6,7 +6,7 @@
 		</PageSide>
 
 		<div class="background-panel primary-background absolute h-full"></div>
-		<BackBtn class="p-4 py-6 sm:p-10" />
+		<BackBtn class="absolute m-4 my-6 sm:mt-10 sm:ml-10" />
 		<div class="slider-wrapper flex h-full relative">
 			<Carousel3d
 				display="3"

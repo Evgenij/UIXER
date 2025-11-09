@@ -9,7 +9,7 @@
 			class="project-page__main flex flex-col justify-between items-start px-10 py-8 h-full basis-5/12"
 		>
 			<div>
-				<BackBtn class="mb-10" />
+				<BackBtn class="mb-10 mt-2" />
 				<div class="project-page__name mb-12">
 					<h2 class="font-heavy text-7xl mb-5">
 						{{ dataProject.name }}

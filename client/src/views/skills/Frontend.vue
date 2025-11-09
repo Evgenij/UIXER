@@ -1,18 +1,18 @@
 <template>
-	<div class="design grid grid-cols-1 sm:grid-cols-2 h-full">
+	<div class="frontend grid grid-cols-1 sm:grid-cols-2 h-full">
 		<div class="items flex flex-col justify-end h-full">
 			<div class="slider">
 				<div
 					class="slider__item p-0 leading-none relative px-12 z-50 text-8xl font-bold flex items-end"
 				>
-					<span class="block h-fit leading-none">{{
-						activeItem.name
-					}}</span>
+					<h3 class="block h-fit leading-none">
+						{{ activeItem.name }}
+					</h3>
 				</div>
 				<div
 					class="slider__footer font-light text-color-gray opacity-70 text-2xl flex justify-end p-6"
 				>
-					Tools and applications
+					Languages & Technologies
 				</div>
 			</div>
 			<div class="nav px-12 py-10 flex w-full justify-between mt-8">
@@ -79,7 +79,7 @@
 			<div
 				class="skills__footer font-light text-color-gray opacity-70 text-2xl p-6"
 			>
-				UI/UX skills
+				Frontend skills
 			</div>
 		</div>
 	</div>
@@ -88,7 +88,7 @@
 <script setup>
 import { onMounted, ref } from "vue";
 import showNumberItem from "@/mixins/showNumberInSliderMixin.js";
-import ToolBadge from "../ToolBadge.vue";
+import ToolBadge from "@/components/ToolBadge.vue";
 
 const props = defineProps({
 	items: Array,
