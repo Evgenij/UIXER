@@ -213,7 +213,7 @@
 			}
 
 			h2 {
-				font-size: 1.7rem;
+				font-size: 2rem;
 			}
 
 			h4 {
@@ -263,9 +263,10 @@
 				border-right: none;
 				border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 
-				// &__name h4 {
-				// 	font-size: 10;
-				// }
+				&__name h4 {
+					font-size: 1.8em;
+					font-weight: 600;
+				}
 
 				.experience,
 				.years {
@@ -292,8 +293,8 @@
 				}
 
 				.button {
-					padding: 1em;
-					font-size: 1em;
+					padding: 0.9em;
+					font-size: 1.1em;
 				}
 
 				.download-buttons {
