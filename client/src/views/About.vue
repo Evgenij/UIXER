@@ -198,9 +198,9 @@
 				</div>
 			</section>
 			<section
-				class="professional-info mt-14 w-full flex flex-col xl:flex-row space-x-0 xl:space-x-10 space-y-10 xl:space-y-0"
+				class="professional-info mt-12 w-full flex flex-col xl:flex-row space-x-0 xl:space-x-10 space-y-10 xl:space-y-0"
 			>
-				<div class="w-full xl:w-4/6">
+				<div class="w-full xl:w-4/6 flex flex-col space-y-12">
 					<section class="places-of-work">
 						<h5
 							class="primary-font last-places-of-work font-bold mb-4 relative"
@@ -218,7 +218,7 @@
 						</div>
 					</section>
 
-					<section class="projects mt-14">
+					<section class="projects">
 						<header class="flex align-center justify-between">
 							<h5 class="primary-font font-bold mb-4">
 								Last projects
@@ -244,7 +244,7 @@
 						</div>
 					</section>
 				</div>
-				<div class="w-full xl:w-2/6 h-full sticky top-0">
+				<div class="w-full xl:w-2/6 h-full sm:sticky top-0">
 					<h5 class="primary-font font-bold mb-4">Certificates</h5>
 
 					<div
@@ -258,7 +258,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="navigation mt-14">
+			<section class="navigation mt-8 sm:mt-12">
 				<h5 class="primary-font font-bold mb-4">Go to</h5>
 				<div class="blocks flex flex-col md:flex-row gap-4">
 					<router-link

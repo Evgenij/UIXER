@@ -756,6 +756,7 @@ const projectsData = [
 	{
 		showInProd: true,
 		name: "El Camino",
+		subtitle: "Website that presents Spanish language courses",
 		poster: getImage(typeImage.previews, "spanish"),
 		category: categoriesProjects.design.newDesign,
 		type: typesProjects.landing,

@@ -1,6 +1,27 @@
+// Laptop 1600
+@media (max-width: 1600px) {
+	#app {
+		.page-skills {
+			.slider {
+				&__item {
+					font-size: 4vw;
+					bottom: -11px;
+					padding-left: 2.4rem;
+				}
+			}
+			.numbers {
+				font-size: 4vw;
+			}
+		}
+	}
+}
+
 // Laptop 1366
 @media (max-width: 1366px) {
 	#app {
+		.menu-label {
+			font-size: 0.9em;
+		}
 		.page-skills {
 			header {
 				padding: 1.6em 2.4em;
@@ -20,10 +41,14 @@
 					font-size: 4vw;
 					bottom: -11px;
 					padding-left: 2.4rem;
+
+					h3 {
+						font-size: 5vw;
+					}
 				}
 			}
 			.numbers {
-				font-size: 5vw;
+				font-size: 4vw;
 			}
 		}
 	}
@@ -32,6 +57,9 @@
 // IPad
 @media (max-width: 1024px) {
 	#app {
+		.menu-label {
+			font-size: 1em;
+		}
 		.page-skills {
 			header {
 				padding: 1.4em 2em;
@@ -53,9 +81,12 @@
 
 			.slider {
 				&__item {
-					font-size: 6vw;
 					bottom: -12px;
 					padding-left: 2rem;
+
+					h3 {
+						font-size: 6vw;
+					}
 				}
 
 				&__footer {
@@ -123,6 +154,10 @@
 					font-size: 14vw;
 					padding-left: 5%;
 					padding-right: 5%;
+
+					h3 {
+						font-size: 3.4rem;
+					}
 				}
 
 				&__footer {

@@ -48,9 +48,9 @@ import ThemeToggle from "@/components/ThemeToggle.vue";
 import Tabs from "@/components/elements/Tabs/Tabs.vue";
 import { ref } from "vue";
 import Tab from "@/components/elements/Tabs/Tab.vue";
-import Design from "@/components/skills/Design.vue";
-import Frontend from "@/components/skills/Frontend.vue";
 import BackBtn from "@/components/elements/BackBtn.vue";
+import Design from "./skills/Design.vue";
+import Frontend from "./skills/Frontend.vue";
 
 const links = [
 	{

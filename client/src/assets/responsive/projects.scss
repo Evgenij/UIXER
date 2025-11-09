@@ -16,12 +16,39 @@
 }
 
 // Laptop 1600
+@media (max-width: 1900px) {
+	#app {
+		.page-projects {
+			.slider-projects {
+				padding-top: 10%;
+				padding-bottom: 3%;
+			}
+			.carousel-3d {
+				&-controls {
+					a {
+						top: -20px;
+						width: 500px !important;
+						height: 480px !important;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Laptop 1600
 @media (max-width: 1600px) {
 	#app {
 		.page-projects {
 			.background-panel {
 				width: 500px;
 				margin-left: -250px;
+			}
+
+			.slider-projects {
+				padding-top: 12%;
+				padding-bottom: 3%;
+				margin-top: 0px !important;
 			}
 
 			.carousel-3d {
@@ -118,6 +145,12 @@
 				margin-left: -200px;
 			}
 
+			.slider-projects {
+				padding-top: 13%;
+				padding-bottom: 13%;
+				margin-top: 0px !important;
+			}
+
 			.carousel-3d {
 				&-slide {
 					&r {
@@ -151,7 +184,7 @@
 
 				&-controls {
 					a {
-						top: 40px;
+						top: 0;
 						width: 230px !important;
 						height: 300px !important;
 					}
@@ -193,7 +226,7 @@
 			}
 
 			.slider-projects {
-				padding-top: 10%;
+				padding-top: 30%;
 				margin-top: 0px !important;
 			}
 

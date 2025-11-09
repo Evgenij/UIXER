@@ -1,6 +1,6 @@
 <template>
 	<div
-		class="btn-back font-regular text-color-gray flex items-center space-x-1 cursor-pointer"
+		class="btn-back font-regular text-color-gray flex items-center space-x-1 cursor-pointer w-fit mr-0"
 		@click="router.back()"
 	>
 		<svg
