@@ -1,7 +1,7 @@
 <template>
 	<div class="page flex flex-col justify-between grow">
 		<PageHeader></PageHeader>
-		<main class="page-data">
+		<main class="page-data relative">
 			<RouterView />
 		</main>
 		<PageFooter v-if="visibleFooter"></PageFooter>

@@ -253,7 +253,7 @@ import RadioButton from "@/components/ui/RadioButton.vue";
 import ContactsLinks from "@/components/ContactsLinks.vue";
 import $ from "jquery";
 import Button from "@/components/ui/Button.vue";
-import BackBtn from "@/components/elements/BackBtn.vue";
+import BackBtn from "@/components/BackBtn.vue";
 
 const links = [
 	{

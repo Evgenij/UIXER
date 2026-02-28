@@ -6,7 +6,7 @@
 					class="slider__item p-0 leading-none relative px-12 z-50 text-8xl font-bold flex items-end"
 				>
 					<h3 class="block h-fit leading-none">
-						{{ activeItem.name }}
+						{{ activeItem?.name }}
 					</h3>
 				</div>
 				<div
@@ -20,10 +20,12 @@
 					class="numbers flex items-center space-x-4 font-thin text-8xl"
 				>
 					<div class="number number-active">
-						{{ showNumberItem(activeItem.id) }}
+						{{ showNumberItem(activeItem?.id) }}
 					</div>
 					<span class="numbers__line w-6 sm:w-14"></span>
-					<div class="number">{{ showNumberItem(items.length) }}</div>
+					<div class="number">
+						{{ showNumberItem(listItems.length) }}
+					</div>
 				</div>
 				<div class="arrows flex items-center space-x-2">
 					<svg
@@ -86,7 +88,7 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import showNumberItem from "@/mixins/showNumberInSliderMixin.js";
 import ToolBadge from "@/components/ToolBadge.vue";
 
@@ -100,17 +102,23 @@ const activeItem = ref({
 	name: null,
 });
 
+const listItems = computed(() => {
+	return props.items.map((item, index) => {
+		return { id: index + 1, name: item };
+	});
+});
+
 const slide = (direction) => {
 	let currentId;
 	if (direction === "next") {
 		currentId = activeItem.value.id + 1;
 
-		if (currentId <= props.items.length) {
-			activeItem.value = props.items.filter((item) => {
+		if (currentId <= listItems.value.length) {
+			activeItem.value = listItems.value.filter((item) => {
 				return item.id === currentId;
 			})[0];
 		} else {
-			activeItem.value = props.items.filter((item) => {
+			activeItem.value = listItems.value.filter((item) => {
 				return item.id === 1;
 			})[0];
 		}
@@ -118,11 +126,11 @@ const slide = (direction) => {
 		currentId = activeItem.value.id - 1;
 
 		if (currentId <= 0) {
-			activeItem.value = props.items.filter((item) => {
-				return item.id === props.items.length;
+			activeItem.value = listItems.value.filter((item) => {
+				return item.id === listItems.value.length;
 			})[0];
 		} else {
-			activeItem.value = props.items.filter((item) => {
+			activeItem.value = listItems.value.filter((item) => {
 				return item.id === currentId;
 			})[0];
 		}
@@ -130,22 +138,23 @@ const slide = (direction) => {
 };
 
 onMounted(() => {
-	activeItem.value = props.items[0];
+	if (props.items) {
+		activeItem.value = listItems.value[0];
 
-	$.fn.hScroll = function (amount) {
-		amount = amount || 120;
-		$(this).bind("DOMMouseScroll mousewheel", function (event) {
-			let oEvent = event.originalEvent,
-				direction = oEvent.detail
-					? oEvent.detail * -amount
-					: oEvent?.wheelDelta,
-				position = $(this).scrollLeft();
-			position += direction > 0 ? -amount : amount;
-			$(this).scrollLeft(position);
-			event.preventDefault();
-		});
-	};
-
+		$.fn.hScroll = function (amount) {
+			amount = amount || 120;
+			$(this).bind("DOMMouseScroll mousewheel", function (event) {
+				let oEvent = event.originalEvent,
+					direction = oEvent.detail
+						? oEvent.detail * -amount
+						: oEvent?.wheelDelta,
+					position = $(this).scrollLeft();
+				position += direction > 0 ? -amount : amount;
+				$(this).scrollLeft(position);
+				event.preventDefault();
+			});
+		};
+	}
 	$(".scroll-design").hScroll(15);
 });
 </script>

@@ -27,6 +27,17 @@
 				}
 			}
 		}
+
+		.category {
+			&:hover {
+				border-color: $gray;
+			}
+			&.active {
+				background-color: rgba($color: $primary, $alpha: 0.1);
+				border-color: $primary;
+				color: $primary;
+			}
+		}
 	}
 
 	// Laptop 1366

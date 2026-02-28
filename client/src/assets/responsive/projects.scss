@@ -11,17 +11,22 @@
 					}
 				}
 			}
+
+			.filters {
+				padding-left: 140px;
+				padding-right: 140px;
+			}
 		}
 	}
 }
 
-// Laptop 1600
+// Laptop 1900
 @media (max-width: 1900px) {
 	#app {
 		.page-projects {
 			.slider-projects {
-				padding-top: 10%;
-				padding-bottom: 3%;
+				padding-top: 13%;
+				padding-bottom: 2%;
 			}
 			.carousel-3d {
 				&-controls {
@@ -31,6 +36,11 @@
 						height: 480px !important;
 					}
 				}
+			}
+
+			.filters {
+				padding-left: 140px;
+				padding-right: 140px;
 			}
 		}
 	}
@@ -45,9 +55,14 @@
 				margin-left: -250px;
 			}
 
+			.filters {
+				padding-left: 120px;
+				padding-right: 120px;
+			}
+
 			.slider-projects {
-				padding-top: 12%;
-				padding-bottom: 3%;
+				padding-top: 13%;
+				padding-bottom: 2%;
 				margin-top: 0px !important;
 			}
 
@@ -93,6 +108,11 @@
 			.background-panel {
 				width: 500px;
 				margin-left: -250px;
+			}
+
+			.filters {
+				padding-left: 100px;
+				padding-right: 100px;
 			}
 
 			.carousel-3d {
@@ -146,8 +166,8 @@
 			}
 
 			.slider-projects {
-				padding-top: 13%;
-				padding-bottom: 13%;
+				padding-top: 23%;
+				padding-bottom: 2%;
 				margin-top: 0px !important;
 			}
 
