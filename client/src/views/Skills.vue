@@ -48,7 +48,7 @@ import ThemeToggle from "@/components/ThemeToggle.vue";
 import Tabs from "@/components/elements/Tabs/Tabs.vue";
 import { ref } from "vue";
 import Tab from "@/components/elements/Tabs/Tab.vue";
-import BackBtn from "@/components/elements/BackBtn.vue";
+import BackBtn from "@/components/BackBtn.vue";
 import Design from "./skills/Design.vue";
 import Frontend from "./skills/Frontend.vue";
 
@@ -81,30 +81,15 @@ const tabs = [
 const tabsContents = {
 	design: {
 		items: [
-			{
-				id: 1,
-				name: "Figma",
-			},
-			{
-				id: 2,
-				name: "InVision Studio",
-			},
-			{
-				id: 3,
-				name: "Adobe Photoshop",
-			},
-			{
-				id: 4,
-				name: "Adobe Illustrator",
-			},
-			{
-				id: 5,
-				name: "Adobe Premier Pro",
-			},
-			{
-				id: 6,
-				name: "Adobe After Effects",
-			},
+			"Figma",
+			"InVision Studio",
+			"Zeplin",
+			"Framer",
+			"Balsamiq",
+			"Adobe Photoshop",
+			"Adobe Illustrator",
+			"Adobe Premier Pro",
+			"Adobe After Effects",
 		],
 		skills: [
 			"Prototyping",
@@ -122,54 +107,18 @@ const tabsContents = {
 	},
 	frontend: {
 		items: [
-			{
-				id: 1,
-				name: "JavaScript",
-			},
-			{
-				id: 2,
-				name: "TypeScript",
-			},
-			{
-				id: 3,
-				name: "React",
-			},
-			{
-				id: 4,
-				name: "React Router",
-			},
-			{
-				id: 5,
-				name: "Redux",
-			},
-			{
-				id: 6,
-				name: "Node.js",
-			},
-			{
-				id: 7,
-				name: "Vite",
-			},
-			{
-				id: 8,
-				name: "HTML5",
-			},
-			{
-				id: 9,
-				name: "SCSS",
-			},
-			{
-				id: 10,
-				name: "Tailwind",
-			},
-			{
-				id: 11,
-				name: "Vue JS",
-			},
-			{
-				id: 12,
-				name: "Angular",
-			},
+			"JavaScript",
+			"TypeScript",
+			"React",
+			"React Router",
+			"Redux",
+			"Vue JS",
+			"Node.js",
+			"Vite",
+			"HTML5",
+			"SCSS",
+			"Tailwind",
+			"Angular",
 		],
 		skills: [
 			"GIT",

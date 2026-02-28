@@ -314,7 +314,7 @@ import Badge from "@/components/Badge.vue";
 import Button from "@/components/ui/Button.vue";
 import Modal from "@/components/ui/Modal.vue";
 import { ref } from "vue";
-import BackBtn from "@/components/elements/BackBtn.vue";
+import BackBtn from "@/components/BackBtn.vue";
 
 const links = [
 	{

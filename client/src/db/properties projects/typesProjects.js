@@ -5,4 +5,5 @@ export default {
 	game: "Game",
 	landing: "Landing",
 	mobileApp: "Mobile App",
+	sass: "Sass",
 };

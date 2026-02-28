@@ -235,7 +235,7 @@
 						>
 							<ProjectBlock
 								v-for="project in projects
-									.filter((project) => project.showInProd)
+									.filter((project) => project.isVisible)
 									.slice(0, 6)"
 								:data="project"
 								:key="project.id"
@@ -321,7 +321,7 @@ const CVs = [
 	{
 		href: new URL(
 			`../documents/CV - Yevhenii Yermolenko UIUX designer.pdf`,
-			import.meta.url
+			import.meta.url,
 		).href,
 		label: "EN",
 	},

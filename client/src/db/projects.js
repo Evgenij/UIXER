@@ -9,7 +9,7 @@ const getImage = (typeImage, image, folder) => {
 	if (folder) {
 		return new URL(
 			`../images/${typeImage}/${folder}/${image}.webp`,
-			import.meta.url
+			import.meta.url,
 		).href;
 	}
 
@@ -18,155 +18,272 @@ const getImage = (typeImage, image, folder) => {
 };
 
 const projectsData = [
+	// {
+	// 	inDeveloping: true,
+	// 	name: "NextWheels",
+	// 	secondName: "Online store for car rims",
+	// 	subtitle: "Online store for car rims",
+	// 	poster: getImage(typeImage.previews, "nextwheels.jpg"),
+	// 	category: categoriesProjects.code.website,
+	// 	type: typesProjects.onlineStore,
+	// 	date: "February 2025",
+	// 	sources: {
+	// 		demo: null,
+	// 		code: "https://github.com/Evgenij/WheelsNEXT",
+	// 		design: null,
+	// 	},
+	// 	badges: [
+	// 		{
+	// 			label: technologies.nextjs,
+	// 			color: colorsTechnologies.nextjs,
+	// 			textColor: "white",
+	// 		},
+	// 		{
+	// 			label: technologies.react,
+	// 			color: colorsTechnologies.react,
+	// 		},
+	// 		{
+	// 			label: technologies.typeScript,
+	// 			color: colorsTechnologies.typeScript,
+	// 			textColor: "white",
+	// 		},
+	// 	], // max 3
+	// 	technologies: [
+	// 		technologies.nextjs,
+	// 		technologies.react,
+	// 		technologies.typeScript,
+	// 		technologies.redux,
+	// 		technologies.reactRouter,
+	// 		technologies.vercel,
+	// 		technologies.prismaORM,
+	// 		technologies.axios,
+	// 		technologies.vite,
+	// 		technologies.tailwind,
+	// 		technologies.postgresql,
+	// 		technologies.figma,
+	// 	],
+	// 	targets: [
+	// 		"Create an online store to sell car disks",
+	// 		"Realize the complete process of buying car disks through the website",
+	// 		"Implement the mechanism of authorization and registration on the site",
+	// 		"Create convenient filters and sorting of products on the site",
+	// 		"Realize a shopping cart and mechanism for buying car disks",
+	// 	],
+	// 	tasks: [
+	// 		"Define database entities and create a database schema",
+	// 		"Create relationships and data for each entity",
+	// 		"Create a database using the features of Prisma and Vercel",
+	// 		"Create the necessary pages - catalog, shopping cart, etc.",
+	// 		"Create the necessary API methods to retrieve data from the database",
+	// 	],
+	// 	shortenedDescription: [
+	// 		"Modern online store for buying car rims ",
+	// 		"Full-stack application created using modern NextJS framework for React",
+	// 		"Backend written using Vercel and Prisma + PostgreSQL",
+	// 		"code - React (State manager Redux) + TypeScript + TailwindCSS",
+	// 	],
+	// 	description: [
+	// 		{
+	// 			type: typeElementDescription.info,
+	// 			data: "Project in developing",
+	// 		},
+	// 		// {
+	// 		// 	type: typeElementDescription.img,
+	// 		// 	data: getImage(typeImage.projects, "88.jpg", "infurtex"),
+	// 		// },
+	// 	],
+	// },
+	// {
+	// 	inDeveloping: true,
+	// 	name: "Crypto[IO]",
+	// 	secondName: "Crypto mining strategy game",
+	// 	subtitle: "Web game about cryptocurrency mining",
+	// 	poster: getImage(typeImage.previews, "mining-fusion.jpg"),
+	// 	category: categoriesProjects.code.game,
+	// 	type: typesProjects.webApp,
+	// 	date: "November 2024",
+	// 	sources: {
+	// 		demo: null,
+	// 		code: "https://github.com/Evgenij/CryptoIO",
+	// 		design: null,
+	// 	},
+	// 	badges: [
+	// 		{
+	// 			label: technologies.react,
+	// 			color: colorsTechnologies.react,
+	// 		},
+	// 		{
+	// 			label: technologies.nodejs,
+	// 			color: colorsTechnologies.nodejs,
+	// 		},
+	// 		{
+	// 			label: technologies.postgresql,
+	// 			color: colorsTechnologies.postgresql,
+	// 			textColor: "white",
+	// 		},
+	// 	], // max 3
+	// 	technologies: [
+	// 		technologies.react,
+	// 		technologies.redux,
+	// 		technologies.reactRouter,
+	// 		technologies.tailwind,
+	// 		technologies.nodejs,
+	// 		technologies.postgresql,
+	// 		technologies.axios,
+	// 		technologies.vite,
+	// 		technologies.vitest,
+	// 		technologies.typeScript,
+	// 		technologies.html5,
+	// 		technologies.scss,
+	// 		technologies.figma,
+	// 		technologies.spline,
+	// 	],
+	// 	targets: [],
+	// 	tasks: [],
+	// 	shortenedDescription: [
+	// 		"A multiplayer game about building a system for mining",
+	// 		"The game features an online store, shopping cart and order placement, following the example" +
+	// 			" of modern websites",
+	// 		"The system of user skills research is created and the mechanism of" +
+	// 			" system building through Drag&Drop concept is realized",
+	// 		"The game is developed using React, TypeScript, NodeJS and TailwindCSS.",
+	// 		"JWT is used for authorization. The database is developed on PostgreSQL and ORM Sequelize",
+	// 	],
+	// 	description: [
+	// 		{
+	// 			type: typeElementDescription.info,
+	// 			data: "Project in developing",
+	// 		},
+	// 		// {
+	// 		// 	type: typeElementDescription.img,
+	// 		// 	data: getImage(typeImage.projects, "88.jpg", "infurtex"),
+	// 		// },
+	// 	],
+	// },
 	{
-		inDeveloping: true,
-		name: "NextWheels",
-		secondName: "Online store for car rims",
-		subtitle: "Online store for car rims",
-		poster: getImage(typeImage.previews, "nextwheels.jpg"),
-		category: categoriesProjects.frontend.website,
-		type: typesProjects.onlineStore,
-		date: "February 2025",
+		isVisible: true,
+		name: "StworzEvent.pl",
+		secondName: "Platform for automated event management and ticket sales",
+		subtitle: "Professional infrastructure for organizers and experts",
+		poster: getImage(typeImage.previews, "stworzevent"),
+		category: categoriesProjects.code.fullstack, // Замени на fullstack, если есть такая категория
+		type: typesProjects.sass,
+		date: "March 2026",
 		sources: {
-			demo: null,
-			code: "https://github.com/Evgenij/WheelsNEXT",
+			demo: "https://stworzevent.pl",
+			code: "https://github.com/Evgenij/StworzEvent", // Укажи свой актуальный репозиторий
 			design: null,
 		},
 		badges: [
 			{
 				label: technologies.nextjs,
 				color: colorsTechnologies.nextjs,
-				textColor: "white",
-			},
-			{
-				label: technologies.react,
-				color: colorsTechnologies.react,
-			},
-			{
-				label: technologies.typeScript,
-				color: colorsTechnologies.typeScript,
-				textColor: "white",
-			},
-		], // max 3
-		technologies: [
-			technologies.nextjs,
-			technologies.react,
-			technologies.typeScript,
-			technologies.redux,
-			technologies.reactRouter,
-			technologies.vercel,
-			technologies.prismaORM,
-			technologies.axios,
-			technologies.vite,
-			technologies.tailwind,
-			technologies.postgresql,
-			technologies.figma,
-		],
-		targets: [
-			"Create an online store to sell car disks",
-			"Realize the complete process of buying car disks through the website",
-			"Implement the mechanism of authorization and registration on the site",
-			"Create convenient filters and sorting of products on the site",
-			"Realize a shopping cart and mechanism for buying car disks",
-		],
-		tasks: [
-			"Define database entities and create a database schema",
-			"Create relationships and data for each entity",
-			"Create a database using the features of Prisma and Vercel",
-			"Create the necessary pages - catalog, shopping cart, etc.",
-			"Create the necessary API methods to retrieve data from the database",
-		],
-		shortenedDescription: [
-			"Modern online store for buying car rims ",
-			"Full-stack application created using modern NextJS framework for React",
-			"Backend written using Vercel and Prisma + PostgreSQL",
-			"Frontend - React (State manager Redux) + TypeScript + TailwindCSS",
-		],
-		description: [
-			{
-				type: typeElementDescription.info,
-				data: "Project in developing",
-			},
-			// {
-			// 	type: typeElementDescription.img,
-			// 	data: getImage(typeImage.projects, "88.jpg", "infurtex"),
-			// },
-		],
-	},
-	{
-		inDeveloping: true,
-		name: "Crypto[IO]",
-		secondName: "Crypto mining strategy game",
-		subtitle: "Web game about cryptocurrency mining",
-		poster: getImage(typeImage.previews, "mining-fusion.jpg"),
-		category: categoriesProjects.frontend.game,
-		type: typesProjects.webApp,
-		date: "November 2024",
-		sources: {
-			demo: null,
-			code: "https://github.com/Evgenij/CryptoIO",
-			design: null,
-		},
-		badges: [
-			{
-				label: technologies.react,
-				color: colorsTechnologies.react,
-			},
-			{
-				label: technologies.nodejs,
-				color: colorsTechnologies.nodejs,
 			},
 			{
 				label: technologies.postgresql,
 				color: colorsTechnologies.postgresql,
 				textColor: "white",
 			},
+			{
+				label: technologies.lemonSqueezy,
+				color: "#FF6600", // Оранжевый бренд-цвет
+				textColor: "white",
+			},
 		], // max 3
 		technologies: [
+			technologies.nextjs,
 			technologies.react,
-			technologies.redux,
-			technologies.reactRouter,
+			technologies.typescript,
+			technologies.prisma,
 			technologies.tailwind,
-			technologies.nodejs,
-			technologies.postgresql,
-			technologies.axios,
-			technologies.vite,
-			technologies.vitest,
-			technologies.typeScript,
-			technologies.html5,
-			technologies.scss,
-			technologies.figma,
-			technologies.spline,
+			technologies.neonDB,
+			technologies.lemonSqueezy,
+			technologies.resend,
+			technologies.shadcnUI,
+			technologies.zod,
 		],
-		targets: [],
-		tasks: [],
+		targets: [
+			"Develop a high-performance system for creating and managing events in the Polish market",
+			"Implement a multi-tenant architecture where events belong to Organizations with different member roles",
+			"Automate the entire lifecycle: from ticket sales via Lemon Squeezy to automated RSVP and 24h reminders",
+			"Create a 'Founder Club' mechanism with 0% commission for early adopters",
+			"Ensure a professional check-in experience with mobile-ready QR code scanning",
+		],
+
+		tasks: [
+			"Build a dynamic event constructor that allows organizers to create professional landing pages in minutes",
+			"Integrate a secure payment gateway with webhook support for automated order processing",
+			"Implement 'Magic Link' authentication for a frictionless user experience (no passwords needed)",
+			"Develop an organizer dashboard with real-time analytics on sales, views, and attendee check-ins",
+		],
 		shortenedDescription: [
-			"A multiplayer game about building a system for mining",
-			"The game features an online store, shopping cart and order placement, following the example" +
-				" of modern websites",
-			"The system of user skills research is created and the mechanism of" +
-				" system building through Drag&Drop concept is realized",
-			"The game is developed using React, TypeScript, NodeJS and TailwindCSS.",
-			"JWT is used for authorization. The database is developed on PostgreSQL and ORM Sequelize",
+			"StworzEvent.pl is a SaaS platform designed to take the stress out of event organization for experts and agencies",
+			"The system handles everything from automated ticket distribution to team management and professional analytics",
+			"Developed with a cutting-edge stack: Next.js 15, Prisma, Neon (PostgreSQL), and Lemon Squeezy for global payments",
 		],
 		description: [
 			{
-				type: typeElementDescription.info,
-				data: "Project in developing",
+				type: typeElementDescription.p,
+				data: "The core of the system is based on a robust relational schema that separates personal user accounts from business 'Organizations', allowing for scalable team collaboration.",
 			},
 			// {
 			// 	type: typeElementDescription.img,
-			// 	data: getImage(typeImage.projects, "88.jpg", "infurtex"),
+			// 	data: getImage(typeImage.projects, "db-schema", "stworzevent"),
+			// },
+			{
+				type: typeElementDescription.p,
+				data: "The Organizer Dashboard provides a 'bird's-eye view' of all activities, including revenue tracking and attendee lists.",
+			},
+			// {
+			// 	type: typeElementDescription.img,
+			// 	data: getImage(typeImage.projects, "dashboard", "stworzevent"),
+			// },
+			{
+				type: typeElementDescription.p,
+				data: "For participants, the platform offers a seamless registration flow. If a user is already logged in, they can register for an event in just one click.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Key features for the public event page include:",
+			},
+			{
+				type: typeElementDescription.list,
+				data: [
+					"Dynamic content sections",
+					"SEO-optimized meta tags",
+					"Integrated Lemon Squeezy checkout",
+					"Mobile-first responsive design",
+				],
+			},
+			// {
+			// 	type: typeElementDescription.img,
+			// 	data: getImage(typeImage.projects, "event-page", "stworzevent"),
+			// },
+			{
+				type: typeElementDescription.p,
+				data: "The automated notification engine powered by Resend ensures that every attendee receives their ticket and a reminder 24 hours before the event starts.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "On the day of the event, organizers use the built-in mobile scanner to check in guests via QR codes, providing a professional and fast entry process.",
+			},
+			// {
+			// 	type: typeElementDescription.img,
+			// 	data: getImage(
+			// 		typeImage.projects,
+			// 		"check-in-mobile",
+			// 		"stworzevent",
+			// 	),
 			// },
 		],
 	},
 	{
-		showInProd: true,
+		isVisible: true,
 		name: "Infurtex",
 		secondName: "Service for UI/UX design testing",
 		subtitle: "System for testing Design solutions",
 		poster: getImage(typeImage.previews, "infurtex"),
-		category: categoriesProjects.frontend.system,
+		category: categoriesProjects.code.system,
 		type: typesProjects.webApp,
 		date: "May 2022",
 		sources: {
@@ -362,12 +479,12 @@ const projectsData = [
 		],
 	},
 	{
-		showInProd: true,
+		isVisible: true,
 		name: "Upgrade",
 		secondName: "IT project team development system",
 		subtitle: "System for team development of IT projects",
 		poster: getImage(typeImage.previews, "upgrade"),
-		category: categoriesProjects.frontend.system,
+		category: categoriesProjects.code.system,
 		type: typesProjects.webApp,
 		date: "November 2020",
 		sources: {
@@ -551,8 +668,8 @@ const projectsData = [
 		],
 	},
 	{
+		isVisible: true,
 		name: "FNX",
-		showInProd: true,
 		secondName: "IT project team development system",
 		subtitle: "Website design bank",
 		poster: getImage(typeImage.previews, "fnx"),
@@ -720,41 +837,40 @@ const projectsData = [
 			},
 		],
 	},
+	// {
+	// 	name: "Personal greenhouse",
+	// 	poster: getImage(typeImage.previews, "plants"),
+	// 	category: categoriesProjects.design.newDesign,
+	// 	type: typesProjects.mobileApp,
+	// 	date: "July 2024",
+	// 	sources: {
+	// 		demo: null,
+	// 		code: null,
+	// 		design: null,
+	// 	},
+	// 	badges: [
+	// 		{
+	// 			label: technologies.figma,
+	// 			color: colorsTechnologies.figma,
+	// 			textColor: "white",
+	// 		},
+	// 	], // max 3
+	// 	technologies: [technologies.figma],
+	// 	targets: [],
+	// 	tasks: [],
+	// 	description: [
+	// 		// {
+	// 		// 	type: typeElementDescription.p,
+	// 		// 	data: "p",
+	// 		// },
+	// 		// {
+	// 		// 	type: typeElementDescription.img,
+	// 		// 	data: getImage(typeImage.projects, "88.jpg", "infurtex"),
+	// 		// },
+	// 	],
+	// },
 	{
-		showInProd: false,
-		name: "Personal greenhouse",
-		poster: getImage(typeImage.previews, "plants"),
-		category: categoriesProjects.design.newDesign,
-		type: typesProjects.mobileApp,
-		date: "July 2024",
-		sources: {
-			demo: null,
-			code: null,
-			design: null,
-		},
-		badges: [
-			{
-				label: technologies.figma,
-				color: colorsTechnologies.figma,
-				textColor: "white",
-			},
-		], // max 3
-		technologies: [technologies.figma],
-		targets: [],
-		tasks: [],
-		description: [
-			// {
-			// 	type: typeElementDescription.p,
-			// 	data: "p",
-			// },
-			// {
-			// 	type: typeElementDescription.img,
-			// 	data: getImage(typeImage.projects, "88.jpg", "infurtex"),
-			// },
-		],
-	},
-	{
-		showInProd: true,
+		isVisible: true,
 		name: "El Camino",
 		subtitle: "Website that presents Spanish language courses",
 		poster: getImage(typeImage.previews, "spanish"),
@@ -954,38 +1070,38 @@ const projectsData = [
 			},
 		],
 	},
-	{
-		name: "SEO-X",
-		poster: getImage(typeImage.previews, "seo-x.jpg"),
-		category: categoriesProjects.design.newDesign,
-		type: typesProjects.landing,
-		date: "December 2021",
-		sources: {
-			demo: null,
-			code: null,
-			design: "https://www.behance.net/gallery/154950593/Website-of-the-seo-promotion-company",
-		},
-		badges: [
-			{
-				label: technologies.figma,
-				color: colorsTechnologies.figma,
-				textColor: "white",
-			},
-		], // max 3
-		technologies: [technologies.figma],
-		targets: [],
-		tasks: [],
-		description: [
-			// {
-			// 	type: typeElementDescription.p,
-			// 	data: "p",
-			// },
-			// {
-			// 	type: typeElementDescription.img,
-			// 	data: getImage(typeImage.projects, "88.jpg", "infurtex"),
-			// },
-		],
-	},
+	// {
+	// 	name: "SEO-X",
+	// 	poster: getImage(typeImage.previews, "seo-x.jpg"),
+	// 	category: categoriesProjects.design.newDesign,
+	// 	type: typesProjects.landing,
+	// 	date: "December 2021",
+	// 	sources: {
+	// 		demo: null,
+	// 		code: null,
+	// 		design: "https://www.behance.net/gallery/154950593/Website-of-the-seo-promotion-company",
+	// 	},
+	// 	badges: [
+	// 		{
+	// 			label: technologies.figma,
+	// 			color: colorsTechnologies.figma,
+	// 			textColor: "white",
+	// 		},
+	// 	], // max 3
+	// 	technologies: [technologies.figma],
+	// 	targets: [],
+	// 	tasks: [],
+	// 	description: [
+	// 		// {
+	// 		// 	type: typeElementDescription.p,
+	// 		// 	data: "p",
+	// 		// },
+	// 		// {
+	// 		// 	type: typeElementDescription.img,
+	// 		// 	data: getImage(typeImage.projects, "88.jpg", "infurtex"),
+	// 		// },
+	// 	],
+	// },
 ];
 
 export default factoryObjectsDB(projectsData, 1);

@@ -2,6 +2,7 @@ export default {
 	html5: "HTML5",
 	figma: "Figma",
 	react: "React",
+	typescript: "TypeScript",
 	vue: "Vue",
 	angular: "Angular",
 	redux: "Redux",
@@ -42,4 +43,9 @@ export default {
 	userFlow: "User Flow",
 	figmaComponents: "Figma Components",
 	figmaPrototyping: "Figma Prototyping",
+	lemonSqueezy: "Lemon Squeezy",
+	neonDB: "Neon DB",
+	resend: "Resend",
+	shadcnUI: "Shadcn UI",
+	zod: "Zod",
 };

@@ -6,7 +6,20 @@
 		</PageSide>
 
 		<div class="background-panel primary-background absolute h-full"></div>
-		<BackBtn class="absolute m-4 my-6 sm:mt-10 sm:ml-10 z-50" />
+		<div
+			class="absolute filters w-full flex items-start justify-between p-10 pb-0 left-0 z-50"
+		>
+			<BackBtn />
+			<div class="filters_list flex flex-wrap justify-end gap-2 w-1/4">
+				<CategoryItem
+					:data="category"
+					:active="currentCategory === category.name"
+					v-for="category in categories"
+					@select="selectCategory"
+				/>
+			</div>
+		</div>
+
 		<div class="slider-wrapper flex h-full relative">
 			<Carousel3d
 				display="3"
@@ -26,11 +39,9 @@
 				class="slider-projects"
 			>
 				<Slide
-					v-for="(project, index) in projects.filter(
-						(project) => project.showInProd === true
-					)"
+					v-for="(project, index) in localProjects"
 					:index="index"
-					:key="index"
+					:key="project.name"
 					class="slide project relative flex flex-col justify-between space-y-6"
 				>
 					<header class="project__title flex justify-between">
@@ -41,10 +52,8 @@
 						</div>
 						<h4 class="project__name font-extrabold text-4xl">
 							{{ project.name }}
-							<Badge v-if="project.inDeveloping" class="mt-1" />
 						</h4>
 						<router-link
-							v-if="project.technologies.length !== 0"
 							:to="toProject(project.name)"
 							class="project__link font-regular flex items-center text-xl space-x-1"
 						>
@@ -107,15 +116,15 @@
 </template>
 
 <script setup>
-import { onMounted } from "vue";
+import { computed, onMounted, ref, watch } from "vue";
 import themeToggleMixin from "@/mixins/themeToggleMixin.js";
 import showNumberItem from "@/mixins/showNumberInSliderMixin.js";
 import { Carousel3d, Slide } from "vue3-carousel-3d";
 import PageSide from "@/components/elements/PageSide.vue";
 import ThemeToggle from "@/components/ThemeToggle.vue";
-import Badge from "@/components/Badge.vue";
 import projects from "@/db/projects";
-import BackBtn from "@/components/elements/BackBtn.vue";
+import BackBtn from "@/components/BackBtn.vue";
+import CategoryItem from "@/components/CategoryItem.vue";
 
 const links = [
 	{
@@ -138,6 +147,40 @@ const toProject = (name) => {
 		params: { name },
 	};
 };
+
+const computedCategories = computed(() => {
+	return projects.map((item) => {
+		return item.category;
+	});
+});
+
+const categories = [
+	{ name: "All", count: computedCategories.value.length },
+	...Object.entries(
+		computedCategories.value.reduce(
+			(a, v) => ((a[v] = (a[v] || 0) + 1), a),
+			{}
+		)
+	).map(([name, count]) => ({ name, count })),
+];
+
+const currentCategory = ref(categories[0].name);
+const localProjects = ref(projects);
+
+const selectCategory = (nameCategory) => {
+	currentCategory.value = nameCategory;
+};
+
+watch(currentCategory, (newCat, oldCat) => {
+	console.log(newCat, oldCat);
+	if (newCat !== categories[0].name) {
+		localProjects.value = projects.filter(
+			(project) => project.category === newCat
+		);
+	} else {
+		localProjects.value = projects;
+	}
+});
 
 onMounted(() => {
 	themeToggleMixin();
@@ -257,10 +300,6 @@ onMounted(() => {
 	&.right {
 		right: 100px;
 	}
-}
-
-.coming-soon {
-	margin-left: -150px;
 }
 
 .project__number {
