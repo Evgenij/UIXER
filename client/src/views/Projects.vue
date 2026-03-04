@@ -7,17 +7,17 @@
 
 		<div class="background-panel primary-background absolute h-full"></div>
 		<div
-			class="absolute filters w-full flex items-start justify-between p-10 pb-0 left-0 z-50"
+			class="filters w-full flex items-start justify-between p-4 pt-10 lg:p-10 pb-0 left-0 z-50"
 		>
 			<BackBtn />
-			<div class="filters_list flex flex-wrap justify-end gap-2 w-1/4">
+			<!-- <div class="filters_list flex flex-wrap justify-end gap-2 w-1/4">
 				<CategoryItem
 					:data="category"
 					:active="currentCategory === category.name"
 					v-for="category in categories"
 					@select="selectCategory"
 				/>
-			</div>
+			</div> -->
 		</div>
 
 		<div class="slider-wrapper flex h-full relative">
@@ -159,8 +159,8 @@ const categories = [
 	...Object.entries(
 		computedCategories.value.reduce(
 			(a, v) => ((a[v] = (a[v] || 0) + 1), a),
-			{}
-		)
+			{},
+		),
 	).map(([name, count]) => ({ name, count })),
 ];
 
@@ -175,7 +175,7 @@ watch(currentCategory, (newCat, oldCat) => {
 	console.log(newCat, oldCat);
 	if (newCat !== categories[0].name) {
 		localProjects.value = projects.filter(
-			(project) => project.category === newCat
+			(project) => project.category === newCat,
 		);
 	} else {
 		localProjects.value = projects;
