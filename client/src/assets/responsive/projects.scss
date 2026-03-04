@@ -12,21 +12,21 @@
 				}
 			}
 
-			.filters {
-				padding-left: 140px;
-				padding-right: 140px;
-			}
+			// .filters {
+			// 	padding-left: 140px;
+			// 	padding-right: 140px;
+			// }
 		}
 	}
 }
 
 // Laptop 1900
-@media (max-width: 1900px) {
+@media (max-width: 1920px) {
 	#app {
 		.page-projects {
 			.slider-projects {
-				padding-top: 13%;
-				padding-bottom: 2%;
+				padding-top: 7%;
+				padding-bottom: 8%;
 			}
 			.carousel-3d {
 				&-controls {
@@ -38,10 +38,10 @@
 				}
 			}
 
-			.filters {
-				padding-left: 140px;
-				padding-right: 140px;
-			}
+			// .filters {
+			// 	padding-left: 140px;
+			// 	padding-right: 140px;
+			// }
 		}
 	}
 }
@@ -55,14 +55,14 @@
 				margin-left: -250px;
 			}
 
-			.filters {
-				padding-left: 120px;
-				padding-right: 120px;
-			}
+			// .filters {
+			// 	padding-left: 120px;
+			// 	padding-right: 120px;
+			// }
 
 			.slider-projects {
-				padding-top: 13%;
-				padding-bottom: 2%;
+				padding-top: 8%;
+				padding-bottom: 100px;
 				margin-top: 0px !important;
 			}
 
@@ -110,10 +110,16 @@
 				margin-left: -250px;
 			}
 
-			.filters {
-				padding-left: 100px;
-				padding-right: 100px;
+			.slider-projects {
+				padding-top: 10%;
+				padding-bottom: 100px;
+				margin-top: 0px !important;
 			}
+
+			// .filters {
+			// 	padding-left: 100px;
+			// 	padding-right: 100px;
+			// }
 
 			.carousel-3d {
 				&-slide {
@@ -229,7 +235,7 @@
 			}
 
 			.background-panel {
-				top: calc($sizeGrid + 90px);
+				top: calc($sizeGrid + 20px);
 				width: 95%;
 				height: 100%;
 				margin-left: calc(-1 * 100% / 2 + 2.5%);
@@ -246,7 +252,7 @@
 			}
 
 			.slider-projects {
-				padding-top: 30%;
+				padding-top: 15%;
 				margin-top: 0px !important;
 			}
 
@@ -263,7 +269,7 @@
 					justify-content: end;
 					width: 300px !important;
 					margin-left: 0;
-					height: 430px !important;
+					height: 370px !important;
 
 					header {
 						h4 {
