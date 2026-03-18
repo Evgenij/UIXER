@@ -167,7 +167,7 @@ const projectsData = [
 		subtitle: "Professional infrastructure for organizers and experts",
 		poster: getImage(typeImage.previews, "stworzevent"),
 		category: categoriesProjects.code.fullstack, // Замени на fullstack, если есть такая категория
-		type: typesProjects.sass,
+		type: typesProjects.saas,
 		date: "March 2026",
 		sources: {
 			demo: "https://stworzevent.pl",
@@ -194,7 +194,7 @@ const projectsData = [
 			technologies.nextjs,
 			technologies.react,
 			technologies.typescript,
-			technologies.prisma,
+			technologies.prismaORM,
 			technologies.tailwind,
 			technologies.neonDB,
 			technologies.lemonSqueezy,

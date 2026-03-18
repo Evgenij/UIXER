@@ -2,7 +2,7 @@ import factoryObjectsDB from "./factoryObjectsDB";
 
 const placesOfWork = [
 	{
-		current: true,
+		current: false,
 		company: {
 			name: "VizoGEN Ltd.",
 			description: "AI-based photo and video content generation service",

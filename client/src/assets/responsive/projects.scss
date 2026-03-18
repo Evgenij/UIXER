@@ -31,9 +31,9 @@
 			.carousel-3d {
 				&-controls {
 					a {
-						top: -20px;
+						top: -30px;
 						width: 500px !important;
-						height: 480px !important;
+						height: 340px !important;
 					}
 				}
 			}
@@ -60,9 +60,13 @@
 			// 	padding-right: 120px;
 			// }
 
+			.project__number {
+				top: -90px;
+			}
+
 			.slider-projects {
-				padding-top: 8%;
-				padding-bottom: 100px;
+				padding-top: 6%;
+				padding-bottom: 130px;
 				margin-top: 0px !important;
 			}
 
@@ -112,7 +116,7 @@
 
 			.slider-projects {
 				padding-top: 10%;
-				padding-bottom: 100px;
+				padding-bottom: 130px;
 				margin-top: 0px !important;
 			}
 
@@ -172,8 +176,8 @@
 			}
 
 			.slider-projects {
-				padding-top: 23%;
-				padding-bottom: 2%;
+				padding-top: 10%;
+				padding-bottom: 12%;
 				margin-top: 0px !important;
 			}
 
@@ -237,7 +241,7 @@
 			.background-panel {
 				top: calc($sizeGrid + 20px);
 				width: 95%;
-				height: 100%;
+				height: 70%;
 				margin-left: calc(-1 * 100% / 2 + 2.5%);
 			}
 
