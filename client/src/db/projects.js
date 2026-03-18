@@ -279,6 +279,266 @@ const projectsData = [
 	},
 	{
 		isVisible: true,
+		name: "VizoGEN",
+		secondName: "AI-powered model photo generation platform",
+		subtitle: "Upload clothing — get professional model photos using AI",
+		poster: getImage(typeImage.previews, "vizogen"),
+		category: categoriesProjects.design.newDesign,
+		type: typesProjects.saas,
+		date: "2025",
+		sources: {
+			demo: "https://vizogen.ru/",
+			code: null,
+			design: null, // add Figma link if available
+		},
+		badges: [
+			{
+				label: technologies.figma,
+				color: colorsTechnologies.figma,
+				textColor: "white",
+			},
+			{
+				label: technologies.uiKit,
+				color: "#1e1e2e",
+				textColor: "white",
+			},
+		],
+		technologies: [
+			technologies.figma,
+			technologies.figJam,
+			technologies.uiKit,
+			technologies.atomicDesign,
+			technologies.figmaComponents,
+			technologies.figmaPrototyping,
+			technologies.figmaStyles,
+			technologies.responsiveDesign,
+			technologies.userFlow,
+			technologies.cjm,
+		],
+		targets: [
+			"Design the full product from scratch — no brief or references provided — including the marketing landing page, generation platform, and authentication flow",
+			"Make a complex AI-driven process feel simple and intuitive for non-technical users (fashion brands, online retailers)",
+			"Build a scalable design system and UI Kit to ensure visual consistency across all product surfaces",
+			"Deliver an interactive Figma prototype for stakeholder review and developer handoff",
+		],
+		tasks: [
+			"Conduct stakeholder interviews and competitor analysis to define UX strategy without a formal brief",
+			"Map out User Flow and CJM to structure the core generation journey: upload → configure → generate → download",
+			"Design the main landing page, service platform (dashboard + generation flow), and authentication screens",
+			"Build a UI Kit with a dark visual theme: color palette, typography, buttons, inputs, and card components",
+			"Create responsive layouts for Desktop and Mobile",
+			"Produce an interactive Figma prototype with animations for stakeholder approval",
+			"Collaborate with React/JS developers to ensure technical feasibility and smooth design handoff",
+		],
+		shortenedDescription: [
+			"Full product design from scratch for an AI-powered platform that generates model photos from clothing images",
+			"Covered the entire design process: UX research, User Flow, CJM, UI Kit, dark-themed interface, and an interactive Figma prototype",
+			"Designed three core surfaces: marketing landing page, generation platform (SaaS), and authentication flow — with Desktop and Mobile adaptive layouts",
+		],
+		description: [
+			{
+				type: typeElementDescription.h2,
+				data: "About the Project",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "VizoGEN is an AI-based SaaS platform designed for fashion brands and online retailers. The core idea is simple: upload a photo of clothing and receive high-quality model photos wearing it — generated entirely by AI, without photo shoots.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "I joined the project at the very beginning with no brief, no references, and no existing design. My role was to build the entire product design from scratch — from UX strategy to a production-ready prototype.",
+			},
+			// {
+			// 	type: typeElementDescription.img,
+			// 	data: getImage(typeImage.projects, "cover", "vizogen"),
+			// },
+
+			{
+				type: typeElementDescription.h2,
+				data: "1. Research and Discovery",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Since there was no brief, I started by interviewing the team and key stakeholders to understand the product vision, target audience, and core use cases. In parallel, I analyzed competitors in the AI photo generation and virtual try-on space to identify UX patterns, gaps, and opportunities.",
+			},
+			{
+				type: typeElementDescription.problem,
+				data: [
+					"Existing AI generation tools were either too technical for non-developer users or too limited in customization — users had no control over pose, background, or model type.",
+					"Without a brief or references, the design direction had to be defined entirely through stakeholder alignment and self-initiated research.",
+				],
+			},
+			{
+				type: typeElementDescription.solution,
+				data: [
+					"I defined the product's UX strategy independently: mapped the target user (fashion brand managers, e-commerce teams), identified their key pain points, and structured the product around a clear, step-by-step generation flow.",
+				],
+			},
+
+			{
+				type: typeElementDescription.h2,
+				data: "2. UX Planning — CJM and User Flow",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Using FigJam, I built the Customer Journey Map and detailed User Flow to structure the full experience — from the first visit to downloading the generated result.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The core generation flow was mapped as a step-by-step pipeline:",
+			},
+			{
+				type: typeElementDescription.list,
+				data: [
+					"Upload clothing photo (product image)",
+					"Configure model parameters — pose, background, model type",
+					"Launch generation and wait for AI processing",
+					"Preview and download the result",
+					"Access generation history and gallery",
+					"Manage balance, subscription plan, and payments",
+				],
+			},
+			{
+				type: typeElementDescription.p,
+				data: "This structured approach helped align the team early and provided a clear blueprint for every screen and interaction.",
+			},
+			// {
+			// 	type: typeElementDescription.img,
+			// 	data: getImage(typeImage.projects, "userflow", "vizogen"),
+			// },
+
+			{
+				type: typeElementDescription.h2,
+				data: "3. Visual Concept and Design System",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "For an AI product operating in the fashion space, I chose a dark UI theme — it communicates sophistication, focuses attention on the generated images, and aligns with the premium positioning of the service.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Before designing screens, I built a UI Kit and design system in Figma to ensure visual consistency across the entire product:",
+			},
+			{
+				type: typeElementDescription.list,
+				data: [
+					"Color palette — dark backgrounds, accent highlights, semantic states (error, success, loading)",
+					"Typography system — heading and body type scales",
+					"Core components — buttons (primary, secondary, ghost), input fields, cards, modals, badges",
+					"Figma Styles and Variables for efficient scaling and future dark/light theme support",
+				],
+			},
+			// {
+			// 	type: typeElementDescription.img,
+			// 	data: getImage(typeImage.projects, "uikit", "vizogen"),
+			// },
+
+			{
+				type: typeElementDescription.h2,
+				data: "4. Screens and Interfaces",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The product consists of three main surfaces, each designed with a distinct purpose:",
+			},
+			{
+				type: typeElementDescription.h3,
+				data: "Landing Page",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "A marketing-focused page explaining the product value, showcasing generated examples, and driving sign-ups. Clear CTA hierarchy, benefit-driven sections, and social proof blocks.",
+			},
+			// {
+			// 	type: typeElementDescription.img,
+			// 	data: getImage(typeImage.projects, "landing", "vizogen"),
+			// },
+			{
+				type: typeElementDescription.h3,
+				data: "Generation Platform (SaaS Dashboard)",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The core product interface where users upload clothing, configure model parameters, trigger generation, and manage results. The biggest design challenge here was making the AI process feel transparent and controllable without overwhelming the user with technical complexity.",
+			},
+			{
+				type: typeElementDescription.problem,
+				data: [
+					"AI generation is inherently unpredictable — users needed to feel in control of the output without being exposed to the complexity underneath.",
+					"Finding the right balance between simplicity (one-click flow) and flexibility (pose, background, model type settings) required multiple iterations.",
+				],
+			},
+			{
+				type: typeElementDescription.solution,
+				data: [
+					"I structured the configuration step as a guided panel with sensible defaults — users could generate immediately or expand advanced settings. This approach served both casual and power users without compromising the interface clarity.",
+				],
+			},
+			// {
+			// 	type: typeElementDescription.img,
+			// 	data: getImage(typeImage.projects, "platform", "vizogen"),
+			// },
+			{
+				type: typeElementDescription.h3,
+				data: "Authentication Flow",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Clean, minimal sign-up and login screens designed to reduce friction at the entry point and maintain the visual tone of the main product.",
+			},
+			// {
+			// 	type: typeElementDescription.img,
+			// 	data: getImage(typeImage.projects, "auth", "vizogen"),
+			// },
+
+			{
+				type: typeElementDescription.h2,
+				data: "5. Responsive Design",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "After completing the desktop layouts, I adapted the design for mobile devices. Key adjustments included:",
+			},
+			{
+				type: typeElementDescription.list,
+				data: [
+					"Restructuring multi-column layouts into single-column vertical stacks",
+					"Enlarging interactive controls (buttons, upload zones) for touch usability",
+					"Collapsing configuration panels into bottom sheets and drawers",
+					"Simplifying navigation to a compact mobile menu",
+					"Optimizing image-heavy sections for smaller screens",
+				],
+			},
+			// {
+			// 	type: typeElementDescription.img,
+			// 	data: getImage(typeImage.projects, "mobile", "vizogen"),
+			// },
+
+			{
+				type: typeElementDescription.h2,
+				data: "6. Prototype and Handoff",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The final Figma prototype was fully interactive — including micro-animations, transition effects between generation states, and modal interactions. It was presented to stakeholders, approved, and used directly as the specification for the development team.",
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Close collaboration with the React/JS developers was essential throughout the process — I regularly aligned on component feasibility, spacing conventions, and state handling to ensure the design was technically grounded from day one.",
+			},
+
+			{
+				type: typeElementDescription.result,
+				data: [
+					"Designed a complete product from zero — landing page, AI generation platform, and authentication flow — with no initial brief or references.",
+					"Built a scalable UI Kit and dark-themed design system used across all product surfaces.",
+					"The interactive prototype was approved by stakeholders, handed off to development, and fully implemented — the product launched and is live at vizogen.ru.",
+				],
+			},
+		],
+	},
+	{
+		isVisible: true,
 		name: "Infurtex",
 		secondName: "Service for UI/UX design testing",
 		subtitle: "System for testing Design solutions",

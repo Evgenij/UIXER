@@ -1,6 +1,7 @@
 export default {
 	html5: "HTML5",
 	figma: "Figma",
+	figJam: "FigJam",
 	react: "React",
 	typescript: "TypeScript",
 	vue: "Vue",
@@ -41,6 +42,7 @@ export default {
 	figmaStyles: "Figma Styles",
 	responsiveDesign: "Responsive Design",
 	userFlow: "User Flow",
+	cjm: "CJM",
 	figmaComponents: "Figma Components",
 	figmaPrototyping: "Figma Prototyping",
 	lemonSqueezy: "Lemon Squeezy",
