@@ -320,7 +320,7 @@ const links = [
 const CVs = [
 	{
 		href: new URL(
-			`../documents/CV - Yevhenii Yermolenko UIUX designer.pdf`,
+			`../documents/CV - Yevhenii Yermolenko - UIUX designer.pdf`,
 			import.meta.url,
 		).href,
 		label: "EN",
