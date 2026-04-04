@@ -539,6 +539,133 @@ const projectsData = [
 	},
 	{
 		isVisible: true,
+		name: "PlantID",
+		secondName:
+			"Personal plant collection app with AI scan and digital greenhouse",
+		subtitle: "Scan, identify, and grow your digital plant library",
+		poster: getImage(typeImage.previews, "plants"),
+		category: categoriesProjects.design.newDesign,
+		type: typesProjects.mobileApp,
+		date: "2025",
+		sources: {
+			demo: null,
+			code: null,
+			design: "https://www.figma.com/design/9bOPmXEa0YZGUEo5kK5bG7/Plants?node-id=0-1&t=xMdiSHd0sSQ2zf3p-1",
+		},
+		badges: [
+			{
+				label: technologies.figma,
+				color: colorsTechnologies.figma,
+			},
+			{
+				label: "UI/UX Design",
+				color: "#3DAA5C",
+				textColor: "white",
+			},
+			{
+				label: "Prototyping",
+				color: "#2E7D32",
+				textColor: "white",
+			},
+		],
+		technologies: [technologies.figma],
+		targets: [
+			"Design an intuitive mobile experience for plant enthusiasts to scan, identify, and collect plants digitally",
+			"Create a seamless scan-to-identify flow with real-time scanning animation and instant plant card reveal",
+			"Build a personal digital greenhouse with collection management, filtering by family and popularity, and gamified rewards",
+			"Develop a consistent design system with color palette, typography scale, reusable UI kit components, and two themes",
+			"Deliver a fully clickable Figma prototype covering all key flows in both light and dark themes",
+		],
+		tasks: [
+			"Analyze visual references from leading plant and collection apps to define the design direction and UX patterns",
+			"Design a UX wireframe prototype covering core screens: collection, scan flow, empty state, filter panel, and rewards",
+			"Build a UI kit with all reusable components: inputs, buttons, navigation bar, plant cards, headers, reward cards, and pagination",
+			"Define a color system with primary green, semantic colors (blue, red), and full gray scales for both light and dark themes",
+			"Apply the design system to produce polished UI screens in both light and dark themes across all flows",
+		],
+		shortenedDescription: [
+			"plants is a mobile app concept for plant lovers — scan any plant with your camera, get instant identification, and add it to your personal digital greenhouse",
+			"The project covers the complete design process: references, UX prototype, a full UI kit with color system, and final UI screens in light and dark themes",
+			"The result is a clickable Figma prototype with 40+ screens spanning collection management, AI scan flow, filtering, empty states, and a gamified reward system",
+		],
+		description: [
+			{
+				type: typeElementDescription.p,
+				data: "The project started with a reference study phase — analyzing existing plant identification and collection apps to map out UX patterns, visual language, and feature gaps that informed the design direction.",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "references", "plants"),
+			},
+			{
+				type: typeElementDescription.p,
+				data: "Based on the research, a low-fidelity UX prototype was built to validate the core flows before moving to visual design. It covered the main screens: collection overview, scan entry, empty state with onboarding, filter panel, and upcoming rewards.",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "wireframe", "plants"),
+			},
+			{
+				type: typeElementDescription.p,
+				data: "A structured UI kit was assembled as the foundation of the design system, including all reusable components built for both themes:",
+			},
+			{
+				type: typeElementDescription.list,
+				data: [
+					"Typography scale — 6 size levels across light, dark, and accent (green) variants",
+					"Input fields — search with icon, placeholder, and active states",
+					"Navigation bar — 5-tab layout with active state and centered scan button",
+					"Plant cards — grid and list views with photo, name, stats, and action menu",
+					"Buttons — primary (green), secondary, and rescan variants",
+					"Reward cards — progress bar, step label, and plant icon in collapsed and expanded states",
+					"Header — collection title with count and search bar in three visual variants",
+					"Icons, menu items, and pagination controls",
+				],
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "ui-kit", "plants"),
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The color system was defined with a primary green (solid and gradient), semantic blue for info states, semantic red for errors and destructive actions, white, and a full 10-step gray scale adapted separately for light and dark themes.",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "colors", "plants"),
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The light theme UI screens bring together the full design system across the collection flow: card and list views, swipe actions (share, delete), filter panel with family and popularity selectors, and the empty state with reward progress visible below.",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "light-interface", "plants"),
+			},
+			{
+				type: typeElementDescription.p,
+				data: "The scan flow was designed as a dedicated camera experience: the user frames a plant inside a corner-bracket viewfinder, triggers the scan, watches a horizontal progress animation, and receives an identification card with the plant name, family, and two actions — 'More info' or 'Add to collection'. A 'Rescan' option is always available.",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "light-scan", "plants"),
+			},
+			{
+				type: typeElementDescription.p,
+				data: "All screens were fully reproduced in the dark theme, maintaining visual consistency while adapting backgrounds, text colors, and component states to the dark gray scale defined in the color system.",
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "dark-interface", "plants"),
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "dark-scan", "plants"),
+			},
+		],
+	},
+	{
+		isVisible: true,
 		name: "Infurtex",
 		secondName: "Service for UI/UX design testing",
 		subtitle: "System for testing Design solutions",
