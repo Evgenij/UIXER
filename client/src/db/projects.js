@@ -289,7 +289,7 @@ const projectsData = [
 		sources: {
 			demo: "https://vizogen.ru/",
 			code: null,
-			design: null, // add Figma link if available
+			design: "https://www.figma.com/design/nGkZGz6nO2KTEsYquSmYgV/VizoGEN---Design--Copy-?node-id=0-1&t=icuvQmWbFw3v7w8h-1",
 		},
 		badges: [
 			{
@@ -402,11 +402,6 @@ const projectsData = [
 				type: typeElementDescription.p,
 				data: "This structured approach helped align the team early and provided a clear blueprint for every screen and interaction.",
 			},
-			// {
-			// 	type: typeElementDescription.img,
-			// 	data: getImage(typeImage.projects, "userflow", "vizogen"),
-			// },
-
 			{
 				type: typeElementDescription.h2,
 				data: "3. Visual Concept and Design System",
@@ -428,11 +423,14 @@ const projectsData = [
 					"Figma Styles and Variables for efficient scaling and future dark/light theme support",
 				],
 			},
-			// {
-			// 	type: typeElementDescription.img,
-			// 	data: getImage(typeImage.projects, "uikit", "vizogen"),
-			// },
-
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "colors", "vizogen"),
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "buttons", "vizogen"),
+			},
 			{
 				type: typeElementDescription.h2,
 				data: "4. Screens and Interfaces",
@@ -449,10 +447,10 @@ const projectsData = [
 				type: typeElementDescription.p,
 				data: "A marketing-focused page explaining the product value, showcasing generated examples, and driving sign-ups. Clear CTA hierarchy, benefit-driven sections, and social proof blocks.",
 			},
-			// {
-			// 	type: typeElementDescription.img,
-			// 	data: getImage(typeImage.projects, "landing", "vizogen"),
-			// },
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "landing", "vizogen"),
+			},
 			{
 				type: typeElementDescription.h3,
 				data: "Generation Platform (SaaS Dashboard)",
@@ -474,10 +472,14 @@ const projectsData = [
 					"I structured the configuration step as a guided panel with sensible defaults — users could generate immediately or expand advanced settings. This approach served both casual and power users without compromising the interface clarity.",
 				],
 			},
-			// {
-			// 	type: typeElementDescription.img,
-			// 	data: getImage(typeImage.projects, "platform", "vizogen"),
-			// },
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "profile", "vizogen"),
+			},
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "uploadgood", "vizogen"),
+			},
 			{
 				type: typeElementDescription.h3,
 				data: "Authentication Flow",
@@ -486,10 +488,10 @@ const projectsData = [
 				type: typeElementDescription.p,
 				data: "Clean, minimal sign-up and login screens designed to reduce friction at the entry point and maintain the visual tone of the main product.",
 			},
-			// {
-			// 	type: typeElementDescription.img,
-			// 	data: getImage(typeImage.projects, "auth", "vizogen"),
-			// },
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "auth", "vizogen"),
+			},
 
 			{
 				type: typeElementDescription.h2,
@@ -509,11 +511,10 @@ const projectsData = [
 					"Optimizing image-heavy sections for smaller screens",
 				],
 			},
-			// {
-			// 	type: typeElementDescription.img,
-			// 	data: getImage(typeImage.projects, "mobile", "vizogen"),
-			// },
-
+			{
+				type: typeElementDescription.img,
+				data: getImage(typeImage.projects, "mobile", "vizogen"),
+			},
 			{
 				type: typeElementDescription.h2,
 				data: "6. Prototype and Handoff",
